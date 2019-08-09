@@ -1,13 +1,13 @@
 {
   "devDependencies": {
-    "vuepress": "^0.14.10"
+    "vuepress": "^1.0.3"
   },
   "name": "docs",
   "version": "1.0.0",
   "description": "Material-T docs",
   "main": "index.js",
-  "repository": "https://github.com/invom/Material-T-docs",
-  "author": "invom",
+  "repository": "https://github.com/0x2e/Material-T-docs",
+  "author": "Rook1e",
   "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev docs",

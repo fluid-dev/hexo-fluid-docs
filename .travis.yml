@@ -1,0 +1,13 @@
+language: node_js
+node_js: stable
+sudo: required
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+  - source
+before_install:
+  - export TZ='Asia/Shanghai' 
+script:
+  - ./deploy.sh
