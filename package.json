@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "vuepress": "^0.14.10"
+  },
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Material-T docs",
+  "main": "index.js",
+  "repository": "https://github.com/invom/Material-T-docs",
+  "author": "invom",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
