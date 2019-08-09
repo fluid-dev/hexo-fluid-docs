@@ -2,17 +2,19 @@
 
 ## 安装
 
-1. 获取最新版本
+**1. 获取最新版本**
 
 ```bash
 cd themes
-git clone -b master https://github.com/invom/Material-T.git
-```
+git clone -b master https://github.com/0x2e/Material-T.git Material-T
+  ```
 
-2. 修改 `Hexo` 配置文件
+**2. 必要的配置**
 
-``` yml
-// 关闭归档页中的默认分页：
+按如下内容修改根目录中的 `_config.yml` 
+
+```yml
+// 关闭归档页的默认分页：
 archive_generator:
   per_page: 0  
   yearly: true
@@ -20,22 +22,15 @@ archive_generator:
   daily: false
   order_by: -date
 
-// 弃用 Hexo 默认代码高亮
+// 关闭默认的代码高亮
 highlight:
   enable: false
   line_number: false
   auto_detect: false
   tab_replace:
 ```
-3. 初始化 `About Page`
 
-```bash
-hexo new page about
-```
-
-然后编辑 `source/about/index.md`， 添加 Front Matter 属性 type: "about" （必需）。title 可自行修改。
-
-4. 启用主题 `Material-T`
+**3. 在根目录中的 `_config.yml` 中启用 `Material-T`**
 
 ## 更新
 
@@ -43,6 +38,20 @@ hexo new page about
 v0.9 向上升级时，建议先备份，然后直接用新版本替换，以免 git pull 时出现过多冲突。
 :::
 
+建议更新前备份 _config.yml。
+
 ```bash
+cd /themes/Material-T
 git pull
 ```
+
+## 常见问题
+
+### 代码高亮效果异常
+
+1. 请确认已完成上述『关闭默认的代码高亮』步骤
+2. 尝试清空缓存：`hexo clean && hexo g`
+
+### 配置无效
+
+请检查配置文件是否符合 yml 语法，易错处： **空格**、**缩进**、**中英文字符**

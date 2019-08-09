@@ -1,5 +1,7 @@
 # 配置
 
+此页仅为部分配置指南，并不包括所有配置项，具体配置要求请参照主题配置文件中的注释，若存在更多疑问请在 [issues](https://github.com/0x2E/Material-T/issues/new) 留言。
+
 ## banner_img
 
 ::: tip
@@ -36,13 +38,10 @@ index:
 优先级: 手动摘要 > 自动摘要
 :::
 
-若无特殊要求，可配置自动摘要，选取每篇文章中前 n 个字符。由于文章卡片左侧可能有略缩图（固定高度），所以建议175字符左右。
-
 ```yml
 index:
   auto_excerpt:
     enable: true
-    length: 175
 ```
 
 ### 跳转方式
@@ -75,7 +74,7 @@ index:
 ### banner_img
 
 :::tip
-优先级： 单独指定 > post.banner_img
+优先级： Front Matter > post.banner_img
 :::
 
 在 Front Matter 中指定 banner_img 属性。
@@ -104,17 +103,16 @@ babalabala
 选择高亮主题： 修改主题配置文件：
 
 ```yml
-# Code Highlight
-# Theme available: github | tomorrow | tomorrow-night | tomorrow-night-eighties
-post:
-  highlight:
-    enable: true
-    theme: tomorrow-night-eighties
+highlight:
+  enable: true
+  theme: tomorrow-night-eighties
 ```
 
 ### 评论
 
-当前支持 Valine、Disqus
+当前支持 Valine、Disqus。
+
+若需要添加其他评论系统，请自行创建 /themes/Material-T/layout/_partial/comments/your_comment_file.ejs，填入评论系统服务商提供的代码，在主题配置文件中修改 comments.type 为刚刚创建的文件名（不带 .ejs）
 
 ## 归档页
 
@@ -126,13 +124,14 @@ post:
 
 ### 初始化
 
-```bash
-hexo new page about
-```
+~~`hexo new page about` 然后编辑 `source/about/index.md`， 添加 Front Matter 属性 type: "about" （必需）。title 可自行修改。~~
 
-然后编辑 `source/about/index.md`， 添加 Front Matter 属性 type: "about" （必需）。title 可自行修改。
+新版本已实现关于页自动创建。
 
 ### icons
 
 导航栏与关于页的社交网络图标，均引用自 [fontawesome](https://fontawesome.com/icons)。只需要将属性名替换为图标名称，属性值替换为 url 即可。
 
+### 自定义内容
+
+页面中社交图标下方的空白区域支持自定义内容。只需编辑 pages/about.md，再次 `hexo g` 时会自动渲染。 
