@@ -4,10 +4,10 @@
   },
   "name": "docs",
   "version": "1.0.0",
-  "description": "Material-T docs",
+  "description": "hexo--fluid-docs",
   "main": "index.js",
-  "repository": "https://github.com/0x2e/Material-T-docs",
-  "author": "Rook1e",
+  "repository": "https://github.com/fluid-dev/hexo-fluid-docs",
+  "author": "Fluid-dev",
   "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev docs",

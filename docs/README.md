@@ -9,5 +9,5 @@ features:
   details: 1 分钟即可完成基本配置;
 - title: 充满活力
   details: issues 的反馈会及时回复；
-footer: MIT Licensed | Copyright © 2019 Material-T
+footer: MIT Licensed | Copyright © 2019 Fluid-dev
 ---

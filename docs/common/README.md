@@ -1,6 +1,6 @@
 # 配置
 
-此页仅为部分配置指南，并不包括所有配置项，具体配置要求请参照主题配置文件中的注释，若存在更多疑问请在 [issues](https://github.com/0x2E/Material-T/issues/new) 留言。
+此页仅为部分配置指南，**并不包括所有配置项**，具体配置要求请参照主题配置文件中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
 
 ## 功能
@@ -35,7 +35,7 @@ highlight:
 
 主题配置文件中，每个页面都有名为 `banner_img` 的属性，可以为外链，也可以使用相对链接。
 
-若使用相对链接，建议将图片放置在 `Material-T/source/img/` 目录下，对应填写的图片地址为 `/img/your_img_name`
+若使用相对链接，建议将图片放置在 `fluid/source/img/` 目录下，对应填写的图片地址为 `/img/your_img_name`
 
 - 高度
 
@@ -79,14 +79,16 @@ index:
 
 ### 文章信息
 
-包括发布时间、标签。
+包括发布时间、分类、标签。
 
 经过测试，如果首页的文章列表中没有略缩图和摘要，标题+文章信息的显示方式会使页面过于拥挤，所以给出此项配置供喜欢首页只显示文章标题的同学使用。
 
 ```yml
 index:
-  post_info:
-    enable: true
+  post_meta:
+    date: true
+    category: true
+    tag: true
 ```
 
 
@@ -123,7 +125,7 @@ babalabala
 
 当前支持 Valine、Disqus、Gitalk、Utterances。参数设置请参考主题配置文件。
 
-若需要添加其他评论系统，请自行创建 Material-T/layout/_partial/comments/your_comment_file.ejs，填入评论系统服务商提供的代码，在主题配置文件中修改 comments.type 为刚刚创建的文件名（不带 .ejs）
+若需要添加其他评论系统，请自行创建 fluid/layout/_partial/comments/your_comment_file.ejs，填入评论系统服务商提供的代码，在主题配置文件中修改 comments.type 为刚刚创建的文件名（不带 .ejs）
 
 
 ## 归档页
@@ -155,7 +157,7 @@ babalabala
 
 ### 自定义内容
 
-页面中社交图标下方的空白区域支持自定义内容。只需编辑 Material-T/pages/about.md，再次 `hexo g` 时会自动渲染。 
+页面中社交图标下方的空白区域支持自定义内容。只需编辑 fluid/pages/about.md，再次 `hexo g` 时会自动渲染。 
 
 
 ## 404 页

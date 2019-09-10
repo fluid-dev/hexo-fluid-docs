@@ -1,7 +1,7 @@
 module.exports = {
-  title: 'Hi Material-T',
+  title: 'Hi Fluid',
   description: 'Born to be elegent',
-  base: "/Material-T-docs/",
+  base: "/hexo-fluid-docs/",
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
@@ -9,12 +9,12 @@ module.exports = {
     nav: [
       { text: '快速开始', link: '/go/' },
       { text: '配置', link: '/common/' },
-      { text: 'Github', link: 'https://github.com/0x2e/Material-T' },
+      { text: 'Github', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
     ],
     lastUpdated: 'Last Updated',
     sidebar: 'auto',
     // 假如你的文档仓库和项目本身不在一个仓库：
-    docsRepo: '0x2e/Material-T-docs',
+    docsRepo: 'fluid-dev/hexo-fluid-docs',
     // 假如文档不是放在仓库的根目录下：
     docsDir: 'docs',
     // 假如文档放在一个特定的分支下：
