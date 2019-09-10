@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 set -e
 yarn run docs:build
+cp README.md docs/.vuepress/dist
 cd docs/.vuepress/dist
 git init
 git add -A
