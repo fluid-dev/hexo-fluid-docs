@@ -1,14 +1,15 @@
 module.exports = {
   title: 'Hi Fluid',
-  description: 'Born to be elegent',
+  description: 'Born to be elegant',
   base: "/hexo-fluid-docs/",
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
   themeConfig: {
     nav: [
-      { text: '快速开始', link: '/go/' },
-      { text: '配置', link: '/common/' },
+      { text: '使用指南', link: '/guide/' },
+      { text: '更新日志', link: '/changelog/' },
+      { text: '贡献开发', link: '/contribute/' },
       { text: 'Github', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
     ],
     lastUpdated: 'Last Updated',

@@ -1,13 +1,13 @@
 ---
 home: true
-actionText: 快速开始
-actionLink: /go/
+actionText: 使用指南
+actionLink: /guide/
 features:
 - title: 简洁至上
-  details: 以简约的设计帮助你专注于写作;
-- title: 易于配置
-  details: 1 分钟即可完成基本配置;
+  details: 以简约的设计帮助你专注于写作
+- title: 丰富配置
+  details: 每个用户都能配置出独特的样式
 - title: 充满活力
-  details: issues 的反馈会及时回复；
+  details: 团队持续支持更新及处理反馈
 footer: MIT Licensed | Copyright © 2019 Fluid-dev
 ---
