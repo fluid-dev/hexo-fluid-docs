@@ -22,7 +22,7 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照主题配置文件中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
-:::warning
+:::tip
 本指南中提到的：
 - "Hexo 配置" 指的是 Hexo 博客根目录下的 `_config.yml`
 - "主题配置" 指的是 `theme/fluid/_config.yml`
@@ -107,7 +107,7 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 的属性，可以为外链的绝对链接，也可以使用相对链接。
 
 若使用相对链接，建议将图片放置在 `fluid/source/img/`
-目录下，对应填写的图片地址为 `/img/your_img_name` (注意必须以 `/` 开头)
+目录下，对应填写的图片地址为 `/img/your_img_name`。
 
 - 高度
 
@@ -236,14 +236,40 @@ index:
 
 ### 文章首页略缩图
 
-文章 [Front Matter](https://hexo.io/zh-cn/docs/front-matter)
-中配置 index_img 属性。
+文章开头 [Front Matter](https://hexo.io/zh-cn/docs/front-matter) 中配置
+index_img 属性。
+
+```
+---
+title: 文章标题
+tags: [Hexo, Fluid]
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+---
+以下是文章内容
+```
+
+和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/`
+目录下的图片，注意必须以 `/` 开头。
+
+也可以使用外链 Url 的绝对路径。
 
 ### 文章页顶部 Banner
 
 默认显示主题 config 中的 `post.banner_img`，如需要设置单个文章的 Banner，在
 [Front Matter](https://hexo.io/zh-cn/docs/front-matter)
 中指定 banner_img 属性。
+
+```
+---
+title: 文章标题
+tags: [Hexo, Fluid]
+index_img: /img/example.jpg
+banner_img: /img/post_banner.jpg
+date: 2019-10-10 10:00:00
+---
+以下是文章内容
+```
 
 ### 手动摘要
 
