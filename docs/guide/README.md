@@ -9,8 +9,9 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 该主题相较于其他主题的优势：
 1. 设计遵循简洁至上，同时具有轻快的体验，和优雅的颜值；
 2. 提供大量定制化配置项，使每个用户使用该主题都能具有独特的样式；
-3. 支持多端适配，包括极端的分辨率都能轻松应对；
-4. 积极地更新与处理反馈，我们近期已经更新了 20 项新功能及若干优化。
+3. 适配手机、平板等浏览设备，包括极端的分辨率都能轻松应对；
+4. 积极地更新与处理反馈，我们近期已经更新了 30 项新功能及若干优化；
+5. 为数不多支持 KaTeX 语法公式的主题。
 
 示例网站：
 
@@ -141,8 +142,6 @@ navbar:
 
 ### 顶部菜单
 
-菜单中所有入口都可以指定 Url 路径，如果想隐藏某个入口，只需将值设为空即可。
-
 ```yaml
 navbar:
   menu:
@@ -152,12 +151,14 @@ navbar:
     Tags: /tags/
     About: /about/
 ```
+可随意配置键值对，比如通过修改键名将显示名称改为中文，或者修改值的 Url
+来跳转外链，也可以增加键值对增加一个入口。
+
+::: tip
+当使用覆盖配置时，修改原有键名会无法生效，可以将值留空，在下方新增键值对。
+:::
 
 ### 图片懒加载
-
-:::tip
-使当图片滚动到可见范围内才会加载，可以大幅提高网页整体加载速度
-:::
 
 ```yaml
 lazyload:
@@ -165,15 +166,20 @@ lazyload:
   onlypost: false
 ```
 
-`onlypost`: 仅在文章页才使用懒加载。
+开启后，当图片滚动到可见范围内才会加载，可以大幅提高网页整体加载速度
+
+`onlypost` 为 true 时，仅在文章页才使用懒加载。
 
 ### 网页统计
 
-目前仅支持百度统计，开通后获得百度统计的 Key 填入主题配置：
+目前支持百度和谷歌统计，只需填入标识即可。
 
 ```yaml
 baidu_analytics: Key
+google_analytics: UA-XXXXX-Y
 ```
+
+如不想开启则留空。
 
 ## 首页
 
@@ -236,7 +242,7 @@ index:
 
 ### 文章首页略缩图
 
-文章开头 [Front Matter](https://hexo.io/zh-cn/docs/front-matter) 中配置
+文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置
 index_img 属性。
 
 ```
@@ -257,7 +263,7 @@ date: 2019-10-10 10:00:00
 ### 文章页顶部 Banner
 
 默认显示主题 config 中的 `post.banner_img`，如需要设置单个文章的 Banner，在
-[Front Matter](https://hexo.io/zh-cn/docs/front-matter)
+[Front-matter](https://hexo.io/zh-cn/docs/front-matter)
 中指定 banner_img 属性。
 
 ```
@@ -344,6 +350,67 @@ highlight:
 文章样式使用的是 github-markdown，暂时不支持配置，细节调整可自行修改
 `fluid/source/lib/github-markdown/github-markdown.min.css`
 
+### KaTeX 公式
+
+当需要使用 [KaTeX](https://katex.org/) 语法的数学公式时，可手动开启本功能，需要完成两步操作：
+
+1. 设置主题配置
+
+```yaml
+post:
+  math:
+    enable: true
+    specific: false
+    engine: mathjax
+```
+
+`specific`: 当为 true 时，只有在文章
+[Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math:
+true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
+
+`engine`: 公式渲染引擎，目前支持 `mathjax` 或 `katex`。
+
+2. 更换 Markdown 渲染器
+
+由于 Hexo 默认的 Markdown 渲染器不支持复杂公式，所以必须更换渲染器。
+
+先卸载原有渲染器：
+
+`npm uninstall hexo-renderer-marked --save`
+
+然后根据上方配置不同的 `engine`，推荐更换如下渲染器：
+
+mathjax: `npm install hexo-renderer-kramed --save`
+
+katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
+
+注意：渲染器只能保留一种，如果更换公式引擎，对应渲染器也要一并更换。
+
+:::tip
+
+不同的公式引擎有不同的优缺点。
+
+**MathJax**
+
+优点
+- 对 LaTeX 语法支持全面
+- 右键点击公式有扩展功能
+
+缺点
+- 需要加载 JS，页面加载会比较慢，并且有渲染变化
+- kramed 渲染器对内联公式的转义字符 `\` 支持不足
+
+**Katex**
+
+优点
+- 没有 JS 不会影响页面加载
+- 渲染器效果好 (相对 kramed 对 MathJax 的内联公式)
+
+缺点
+- 小部分 LaTeX 不支持
+
+:::
+
 ## Archives 归档页
 
 除 Banner 配置外，暂无其他配置项。
@@ -403,7 +470,7 @@ tag:
 
 [Hexo _config.yml 配置](https://hexo.io/zh-cn/docs/configuration)
 
-[文章 Front Matter 配置](https://hexo.io/zh-cn/docs/front-matter)
+[文章 Front-matter 配置](https://hexo.io/zh-cn/docs/front-matter)
 
 ## 微信交流群
 
