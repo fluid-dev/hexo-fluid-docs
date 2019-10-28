@@ -1,9 +1,9 @@
 module.exports = {
-  title: 'Hi Fluid',
-  description: 'Born to be elegant',
+  title: 'Fluid',
+  description: '一款 Material Design 风格的 Hexo 主题',
   base: "/hexo-fluid-docs/",
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.png' }]
   ],
   themeConfig: {
     nav: [
@@ -25,4 +25,4 @@ module.exports = {
     // 默认为 "Edit this page"
     editLinkText: '帮助我们改善此页面！'
   }
-}
+};

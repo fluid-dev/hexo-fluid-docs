@@ -1,5 +1,6 @@
 ---
 home: true
+heroImage: /fluid_hexo.png
 actionText: 使用指南
 actionLink: /guide/
 features:

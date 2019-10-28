@@ -350,9 +350,10 @@ highlight:
 文章样式使用的是 github-markdown，暂时不支持配置，细节调整可自行修改
 `fluid/source/lib/github-markdown/github-markdown.min.css`
 
-### KaTeX 公式
+### KaTeX 数学公式
 
-当需要使用 [KaTeX](https://katex.org/) 语法的数学公式时，可手动开启本功能，需要完成两步操作：
+当需要使用 [KaTeX](https://katex.org/)
+语法的数学公式时，可手动开启本功能，需要完成两步操作：
 
 1. 设置主题配置
 
