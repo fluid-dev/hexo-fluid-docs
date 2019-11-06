@@ -100,7 +100,7 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 - 默认在根目录生成并使用 `local-search.xml`。
 
-### 顶部 Banner
+### 首页大图
 
 - 图片来源
 
@@ -109,6 +109,14 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 若使用相对链接，建议将图片放置在 `fluid/source/img/`
 目录下，对应填写的图片地址为 `/img/your_img_name`。
+
+比如 `/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg`。
+
+:::tip
+
+目录文件夹也可自定义，但必须在 source 目录下
+
+:::
 
 - 高度
 
@@ -254,7 +262,7 @@ index:
 
 ## 文章页
 
-### 文章首页略缩图
+### 文章在首页的略缩图
 
 文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置
 `index_img` 属性。
@@ -269,16 +277,18 @@ date: 2019-10-10 10:00:00
 以下是文章内容
 ```
 
-和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/`
-目录下的图片，注意必须以 `/` 开头。
+和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg`
+目录下的图片（目录也可自定义，但必须在 source 目录下），注意必须以 `/` 开头。
 
 也可以使用外链 Url 的绝对路径。
 
-### 文章页顶部 Banner
+### 文章页顶部大图
 
 默认显示主题 config 中的 `post.banner_img`，如需要设置单个文章的 Banner，在
 [Front-matter](https://hexo.io/zh-cn/docs/front-matter)
 中指定 banner_img 属性。
+
+本地图片存放位置同上。
 
 ```
 ---
@@ -289,6 +299,14 @@ banner_img: /img/post_banner.jpg
 date: 2019-10-10 10:00:00
 ---
 以下是文章内容
+```
+
+### 文章内容图片
+
+本地图片存放位置同上。
+
+```
+![](/img/example.jpg)
 ```
 
 ### 日期/字数/阅读时长/阅读数
