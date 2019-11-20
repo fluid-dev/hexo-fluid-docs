@@ -63,6 +63,12 @@ theme: fluid
 
 ### 覆盖配置
 
+:::warning
+
+启用此功能将使 `_config.yml` 失效，如果不清楚此功能的用处，请不要设置。
+
+:::
+
 覆盖配置可以使 Fluid 主题配置在 fluid
 目录之外，避免在更新主题时丢失自定义的配置。
 
@@ -159,7 +165,7 @@ navbar:
     Tags: /tags/
     About: /about/
 ```
-可随意配置键值对，比如通过修改键名将显示名称改为中文，或者修改值的 Url
+可随意配置键值对，比如通过修改**键名**(冒号左边部分)将显示名称改为中文，或者修改值的 Url
 来跳转外链，也可以增加键值对增加一个入口。
 
 ::: tip
@@ -194,9 +200,9 @@ web_analytics:
 
 ## 首页
 
-### Slogan
+### Slogan(打字机)
 
-可在主题配置文件中设定是否开启：
+首页大图中的打字机文字，可在主题配置文件中设定是否开启：
 
 ```yaml
 index:
@@ -205,7 +211,18 @@ index:
     text: 这是一条 Slogan
 ```
 
-如果 `text` 为空则按 Hexo 配置的 `subtitle` 显示
+如果 `text` 为空则按 Hexo 配置的 `subtitle` 显示。
+
+相关的打字机动效设置在：
+
+```yaml
+fun_features:
+  typing: # 为 subtitle 添加打字机效果
+    enable: true
+    typeSpeed: 70 # 打印速度
+    cursorChar: "_" # 游标字符
+    loop: false # 是否循环播放效果
+```
 
 ### 自动摘要
 
