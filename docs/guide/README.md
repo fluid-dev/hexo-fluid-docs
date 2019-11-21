@@ -42,10 +42,6 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 按如下内容修改 Hexo 根目录中的 `_config.yml`
 
 ```yaml
-# 设置语言，需要对应下面目录内的文件名，可以自定义文件内容
-# https://github.com/fluid-dev/hexo-theme-fluid/tree/master/languages
-language: zh-CN
-
 # 关闭默认的代码高亮
 highlight:
   enable: false
@@ -197,6 +193,18 @@ web_analytics:
   woyaola:  # 51.la站点统计ID，参见 https://www.51.la/user/site/index
   cnzz:  # 友盟/cnzz站点统计web_id，参见 https://web.umeng.com/main.php?c=site&a=show
 ```
+
+### 多语言
+
+不同语言会影响一些主题自带的文字。
+
+设置语言是在 Hexo 根目录 `_config.yml` 中，需要对应 `fluid/languages/` 目录内的配置文件名，默认提供英文与中文。
+
+```yaml
+language: zh-CN
+```
+
+如果想自定义，建议单独复制一份新文件进行修改，然后指定该文件名。
 
 ## 首页
 
@@ -419,9 +427,31 @@ highlight:
 
 ### 评论
 
-当前支持 Valine、Disqus、Gitalk、Utterances。参数设置请参考主题配置文件。
+开启评论需要在主题 `_config.yml` 中开启并指定评论模块：
 
-若需要添加其他评论系统，请自行创建 fluid/layout/_partial/comments/your_comment_file.ejs，填入评论系统服务商提供的代码，在主题配置文件中修改 comments.type 为刚刚创建的文件名（不带 .ejs）
+```yaml
+post:
+  comments:
+    enable: true
+    type: disqus
+```
+
+然后在下方还要设置对应评论模块的参数，比如 disqus 对应设置：
+
+```yaml
+disqus:
+  shortname: Fluid-dev
+```
+
+当前支持 Valine、Disqus、Gitalk、Utterances，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
+
+若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
+
+:::tip
+
+如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
+
+:::
 
 ### 文章样式
 
