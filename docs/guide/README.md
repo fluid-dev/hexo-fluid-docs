@@ -536,6 +536,8 @@ katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
 除 Banner 配置外，暂无其他配置项。
 
+[添加分类的方法](https://hexo.io/zh-cn/docs/front-matter)
+
 ## Tags 标签页
 
 可以设置词云的一些样式：
@@ -549,6 +551,8 @@ tag:
     start_color: "#BBBBEE"
     end_color: "#337ab7"
 ```
+
+[添加标签的方法](https://hexo.io/zh-cn/docs/front-matter)
 
 ## About 关于页
 
