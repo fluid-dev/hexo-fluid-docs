@@ -4,6 +4,8 @@
 
 仅适用于 v1.6.1 版本，后续版本可能会有变化，请对照原文件是否一致。
 
+另外不要忘了该配置也可以使用[覆盖配置](/guide/#覆盖配置)功能。
+
 ```yaml
 #---------------------------
 # 第三方库
@@ -23,8 +25,6 @@ bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.3.1/
 mdbootstrap: https://cdn.staticfile.org/mdbootstrap/4.8.9/
 
 popper: https://cdn.staticfile.org/popper.js/1.15.0/umd/
-
-nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
 
 prettify: https://cdn.staticfile.org/prettify/r298/
 
