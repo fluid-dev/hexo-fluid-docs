@@ -23,6 +23,8 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照主题配置文件中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
+本指南网页是使用 [VuePress](https://vuepress.vuejs.org/) 生成。
+
 :::tip
 本指南中提到的：
 - "Hexo 配置" 指的是 Hexo 博客根目录下的 `_config.yml`
