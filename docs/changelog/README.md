@@ -1,4 +1,20 @@
+---
+metaTitle: 更新日志-fluid-hexo主题-基于fluid开发的hexo主题-fluid中文-fluid文档-fluid中文文档
+meta:
+  - name: description
+    content: Fluid是基于Hexo的一款 Material Design 风格的主题,fluid,fluid主题,fluid文档,hexo主题,hexo主题文档,fluid中文网,fluid中文文档,
+  - name: keywords
+    content: fulid,hexo主题,fluid文档,hexo主题文档,fluid中文网,fluid中文文档
+---
+
 # 更新日志
+
+### 2019/12/08
+
+- 感谢 [@juukee](https://github.com/juukee)贡献以下功能代码
+- 增加畅言评论插件
+- 增加来必力（Livere）评论插件
+- 增加 daovoice 在线聊天功能
 
 ### 2019/12/05
 
