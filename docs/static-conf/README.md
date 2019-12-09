@@ -1,3 +1,12 @@
+---
+metaTitle: 静态配置-fluid-hexo主题-基于fluid开发的hexo主题-fluid中文-fluid文档-fluid中文文档
+meta:
+  - name: description
+    content: Fluid是基于Hexo的一款 Material Design 风格的主题,fluid,fluid主题,fluid文档,hexo主题,hexo主题文档,fluid中文网,fluid中文文档,
+  - name: keywords
+    content: fulid,hexo主题,fluid文档,hexo主题文档,fluid中文网,fluid中文文档
+---
+
 # 静态配置
 
 以下是 `_static_prefix.yml` 的公共 CDN 配置，国内用户可以参考，对于 GitHub Pages 部署的用户提高网页加载速度格外有效。
