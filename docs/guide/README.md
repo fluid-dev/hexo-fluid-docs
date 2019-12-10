@@ -462,7 +462,7 @@ disqus:
   shortname: Fluid-dev
 ```
 
-当前支持 Valine、Disqus、Gitalk、Utterances，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
+当前支持 Valine、Disqus、Gitalk、Utterances、畅言、来必力(livere)，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
 
 若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
 
@@ -471,6 +471,18 @@ disqus:
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 
 :::
+
+### 在线客服聊天
+开启在线客服需要在主题 `_config.yml` 中设置，默认为未开启此功能：
+应用id在[daovoice](https://dashboard.daovoice.io) 注册并查看
+
+```yaml
+daovoice:
+  enable: true # 是否开启在线客服聊天,开启改为true,关闭为false
+  appid: ''     # 应用ID设置
+```
+
+
 
 ### 文章样式
 
