@@ -79,13 +79,28 @@ theme: fluid  #注意必须和要themes下面的主题文件名字一致
 
 ## 配置设置（重点）
 推荐使用[覆盖设置](https://fluid-dev.github.io/hexo-fluid-docs/guide/#%E8%A6%86%E7%9B%96%E9%85%8D%E7%BD%AE)，
-好处是如果模板更新可以自动覆盖更新，不用担心文件丢失
-以后只需要在此处增加或者删除配置即可
-新建source/_data，增加两个配置文件：
+好处是如果模板更新可以自动覆盖更新，不用担心文件丢失,以后只需要在此处增加或者删除配置即可。
+新建source/_data，增加两个配置文件：规则为（主题文件名字+配置文件）
 ```
 fluid_config.yml    #主配置在这里改动
 fluid_static_prefix.yml #静态资源设置在这里改动
 ```
+::: tip
+此配置可以覆盖掉主题下面的配置
+:::
+### 配置文件优先级
+整个项目就会有三个配置文件：
+
+1.主配置:主目录下面的_config.yml
+
+2.数据配置:source/_data/_config.yml
+
+3.主题配置:themes
+
+优先级从左到右：左最大
+
+主配置<<<数据配置<<<主题配置
+
 ## 本地调试
 第一次运行应用先要安装依赖,推荐使用yarn
 ```yml
@@ -197,8 +212,50 @@ deploy:
 ```
 hexo d 
 ```
+## 主题更新
+
+1.直接在github下载最新版文件，然后替换掉themes下面的主题文件
+故推荐配置全部写在source/_data/下面
+::: tip
+多备份，备份，备份，以避免数据覆盖出错丢失
+:::
+
+(推荐做法)
+
+2.用一个子仓库作为链接，用git更新
+
+步骤：
+
+2.1 先fork主题[Fluid](https://github.com/fluid-dev/hexo-theme-fluid),这样就会自动在你的github仓库新建一个仓库，项目地址为https://github.com/juukee/hexo-theme-fluid ，juukee是只是示例，以实际用户名为准
+
+2.2 在项目主目录增加远程仓库链接
+```yml
+git remote add fluid https://github.com/juukee/hexo-theme-fluid
+##请改成你们自己实际的仓库地址
+```
+2.3 将主题项目仓库作为一个子仓库
+```yml
+# --prefix=themes/fluid 主题目录所在位置
+# fluid 这个是上面一步定义的远程仓库地址
+# master 远程仓库的master分支
+git subtree add --prefix=themes/fluid fluid master 
+```
+更新主题：以后更新主题只需要一条命令搞定
+```yml
+git subtree pull --prefix=themes/fluid fluid master
+```
+推送主题：如果你想开发主题，在主题文件里面修改代码里面，推送到自己仓库，然后PR到作者的主仓库，由作者审核并合并代码
+```yml
+git subtree push --prefix=themes/fluid fluid master
+```
 
 
+
+
+
+
+
+   
 
 
 
