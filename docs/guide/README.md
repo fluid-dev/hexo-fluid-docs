@@ -221,7 +221,7 @@ language: zh-CN
 
 1. 对于所有用户，将各种第三方库配置公共 CDN 是最有效的方式，可以通过配置 `_static_prefix.yml` 来链接，具体可参考 [静态配置](/static-conf/)；
 
-2. 如果你的域名已备案，可以使用七牛云、腾讯云、百度云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
+2. 如果你的域名已备案，可以使用[七牛云](https://portal.qiniu.com/signup?code=1hlwhx3ztjz2q)、腾讯云、百度云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
 
 3. 其他自定义的图片，特别是顶部大图，建议先使用 [tinypng](tinypng.com) 进行压缩，然后注册私有 CDN 存放，推荐一份 [CDN 使用指南](https://www.julydate.com/post/60859300)。
 
