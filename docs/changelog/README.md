@@ -9,6 +9,16 @@ meta:
 
 # 更新日志
 
+### 2019/12/19
+
+- 增加强制 HTTPS 功能
+- 修复搜索功能 BUG
+
+### 2019/12/14
+
+- 感谢 [@KiritoXF](https://github.com/KiritoXF) 贡献主题日语配置
+- 感谢 [@ss-xiong](https://github.com/ss-xiong) 贡献公安备案图标
+
 ### 2019/12/08
 
 - 感谢 [@juukee](https://github.com/juukee)贡献以下功能代码

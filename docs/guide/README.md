@@ -107,6 +107,8 @@ theme: fluid
 jquery: https://cdn.staticfile.org/jquery/3.4.1/
 ```
 
+更多示例可查看[静态配置](https://fluid-dev.github.io/hexo-fluid-docs/static-conf/)
+
 ### 本地搜索
 
 - 已集成 hexo-generator-search 插件，若已安装其他搜索插件请关闭，以避免生成多余的索引文件。
@@ -224,6 +226,18 @@ language: zh-CN
 2. 如果你的域名已备案，可以使用[七牛云](https://portal.qiniu.com/signup?code=1hlwhx3ztjz2q)、腾讯云、百度云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
 
 3. 其他自定义的图片，特别是顶部大图，建议先使用 [tinypng](tinypng.com) 进行压缩，然后注册私有 CDN 存放，推荐一份 [CDN 使用指南](https://www.julydate.com/post/60859300)。
+
+### 强制全局 HTTPS
+
+当你的域名升级到 HTTPS 后，可能之前存在部分图片等资源使用的是 HTTP，这时混用出现网页报错，造成图片无法显示。
+
+这种情况可以启动如下配置：
+
+```yaml
+force_https: true
+```
+
+即可将所有请求强制升级为 HTTPS（如是外部图片需要本身支持 HTTPS）。
 
 ## 首页
 
@@ -472,16 +486,15 @@ disqus:
 
 :::
 
-### 在线客服聊天
-开启在线客服需要在主题 `_config.yml` 中设置，默认为未开启此功能：
-应用id在[daovoice](https://dashboard.daovoice.io) 注册并查看
+### 在线聊天
+开启在线聊天需要在主题 `_config.yml` 中设置，默认为未开启此功能，
+需要在[daovoice](https://dashboard.daovoice.io) 注册并查看，然后将应用 ID 配置就开启：
 
 ```yaml
 daovoice:
-  enable: true # 是否开启在线客服聊天,开启改为true,关闭为false
-  appid: ''     # 应用ID设置
+  enable: true
+  appid: ''
 ```
-
 
 
 ### 文章样式
