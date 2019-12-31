@@ -606,7 +606,7 @@ tag:
 
 ### icons
 
-导航栏与关于页的社交网络图标，均引用自 [fontawesome](https://fontawesome.com/icons)。只需要将属性名替换为图标名称，属性值替换为 url 即可。
+导航栏与关于页的社交网络图标，均引用自 [fontawesome](https://fontawesome.com/v4.7.0/icons/)。只需要将属性名替换为图标名称，属性值替换为 url 即可。
 
 ## 404 页
 
