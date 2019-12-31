@@ -1,0 +1,41 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download Source file
+      uses: actions/checkout@v2
+      with:
+        ref: source
+
+    - name: Prepare Node env
+      uses: actions/setup-node@v1
+      with:
+        node-version: "10.x"
+
+    - name: Set env
+      env: 
+        ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+    - name: Vuepress
+      run: |
+        yarn
+        yarn run docs:build
+        cp README.md docs/.vuepress/dist
+        cd docs/.vuepress/dist
+        git config --global user.name 'Fluid-dev'
+        git config --global user.email 'a.fake.account@github.com'
+        git init
+        git add -A
+        git commit -m 'Update'
+        git push -f git@github.com:fluid-dev/hexo-fluid-docs.git master
