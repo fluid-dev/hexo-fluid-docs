@@ -1,10 +1,10 @@
 ---
-metaTitle: 使用指南-fluid-hexo主题-基于fluid开发的hexo主题-fluid中文-fluid文档-fluid中文文档
+metaTitle: 使用指南 | hexo-theme-fluid
 meta:
   - name: description
-    content: Fluid是基于Hexo的一款 Material Design 风格的主题,fluid,fluid主题,fluid文档,hexo主题,hexo主题文档,fluid中文网,fluid中文文档,
+    content: Fluid 是一款 Material-Design 风格的 Hexo 主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
-    content: fulid,hexo主题,fluid文档,hexo主题文档,fluid中文网,fluid中文文档
+    content: hexo-theme-fluid,fulid,hexo主题,fluid文档
 ---
 
 # 使用指南
@@ -14,13 +14,6 @@ meta:
 Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev](https://github.com/fluid-dev) 负责开发与维护。
 
 主题 Github: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
-
-该主题相较于其他主题的优势：
-1. 设计遵循简洁至上，同时具有轻快的体验，和优雅的颜值；
-2. 提供大量定制化配置项，使每个用户使用该主题都能具有独特的样式；
-3. 适配手机、平板等浏览设备，包括极端的分辨率都能轻松应对；
-4. 积极地更新与处理反馈，我们近期已经更新了 30 项新功能及若干优化；
-5. 为数不多支持 KaTeX 语法公式的主题。
 
 示例网站：
 
@@ -128,9 +121,7 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 比如 `/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg`。
 
 :::tip
-
 目录文件夹也可自定义，但必须在 source 目录下
-
 :::
 
 - 高度
@@ -309,8 +300,7 @@ index:
 
 ### 隐藏指定文章
 
-如果不想某篇文章出现在首页，可以借助第三方插件
-[hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md)。
+如果不想某篇文章出现在首页，可以借助第三方插件 [hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md)。
 
 :::warning
 
@@ -322,8 +312,7 @@ index:
 
 ### 文章在首页的略缩图
 
-文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置
-`index_img` 属性。
+文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置`index_img` 属性。
 
 ```
 ---
@@ -335,20 +324,17 @@ date: 2019-10-10 10:00:00
 以下是文章内容
 ```
 
-和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg`
-目录下的图片（目录也可自定义，但必须在 source 目录下），注意必须以 `/` 开头。
+和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg` 目录下的图片（目录也可自定义，但必须在 source 目录下），注意必须以 `/` 开头。
 
 也可以使用外链 Url 的绝对路径。
 
 ### 文章页顶部大图
 
-默认显示主题 config 中的 `post.banner_img`，如需要设置单个文章的 Banner，在
-[Front-matter](https://hexo.io/zh-cn/docs/front-matter)
-中指定 banner_img 属性。
+默认显示主题 config 中的 `post.banner_img`，如需要设置单个文章的 Banner，在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中指定 banner_img 属性。
 
 本地图片存放位置同上。
 
-```
+```yml
 ---
 title: 文章标题
 tags: [Hexo, Fluid]
@@ -363,7 +349,7 @@ date: 2019-10-10 10:00:00
 
 本地图片存放位置同上。
 
-```
+```markdown
 ![](/img/example.jpg)
 ```
 
@@ -441,12 +427,8 @@ highlight:
 
 使用更多主题的方式：
 
-1. 进入
-   [该链接](https://jmblog.github.io/color-themes-for-google-code-prettify/)
-   下载 `min.css` 文件，并保存为 `文件名.min.css` 到
-   `fluid/source/lib/prettify/`
-2. 找到文件中的 `.prettyprint{ background: ***; ...}`，在 *** 后面加上
-   `!important` ，例如：`.prettyprint{background:#fafbfc!important; ...}`
+1. 进入[该链接](https://jmblog.github.io/color-themes-for-google-code-prettify/)下载 `min.css` 文件，并保存为 `文件名.min.css` 到 `fluid/source/lib/prettify/`
+2. 找到文件中的 `.prettyprint{ background: ***; ...}`，在 *** 后面加上 `!important`，例如：`.prettyprint{background:#fafbfc!important; ...}`
 3. 最后主题配置中设置 `theme: 文件名`（不含后缀）
 
 ### 代码行号
@@ -486,9 +468,9 @@ disqus:
 
 :::
 
-### 在线聊天
-开启在线聊天需要在主题 `_config.yml` 中设置，默认为未开启此功能，
-需要在[daovoice](https://dashboard.daovoice.io) 注册并查看，然后将应用 ID 配置就开启：
+### 在线聊天（daovoice）
+
+默认未开启此功能，需要在 https://dashboard.daovoice.io 注册并查看，然后将应用 ID 填入配置：
 
 ```yaml
 daovoice:
@@ -499,13 +481,11 @@ daovoice:
 
 ### 文章样式
 
-文章样式使用的是 github-markdown，暂时不支持配置，细节调整可自行修改
-`fluid/source/lib/github-markdown/github-markdown.min.css`
+文章样式使用的是 github-markdown，暂时不支持配置，细节调整可自行修改 `fluid/source/lib/github-markdown/github-markdown.min.css`
 
 ### KaTeX 数学公式
 
-当需要使用 [KaTeX](https://katex.org/)
-语法的数学公式时，可手动开启本功能，需要完成三步操作：
+当需要使用 [KaTeX](https://katex.org/) 语法的数学公式时，可手动开启本功能，需要完成三步操作：
 
 **1. 设置主题配置**
 
@@ -517,9 +497,7 @@ post:
     engine: mathjax
 ```
 
-`specific`: 当为 true 时，只有在文章
-[Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math:
-true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
+`specific`: 当为 true 时，只有在文章 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
 
 `engine`: 公式渲染引擎，目前支持 `mathjax` 或 `katex`。
 
