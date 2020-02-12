@@ -89,10 +89,10 @@ theme: fluid
 
 其他情况，建议更新前备份 `/theme/fluid/_config.yml`，以免覆盖自定义的配置项。
 
-### 静态文件
+### 静态资源
 
-所有资源静态文件的 Url 可以通过 `_static_prefix`
-自定义配置，同样也支持覆盖配置，写入 `_data/fluid_static_prefix.yml` 即可。
+所有静态资源文件的 Url 可以通过 `_static_prefix` 自定义配置，同样也支持覆盖配置，写入
+`_data/fluid_static_prefix.yml` 即可。
 
 比如需要指定公共 CDN 的 JQuery 库，只需将原配置改为：
 
@@ -232,6 +232,11 @@ force_https: true
 ```
 
 即可将所有请求强制升级为 HTTPS（如是外部图片需要本身支持 HTTPS）。
+
+### 二级站点路径
+
+如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改 Hexo 根目录 `_config.yml` 中的 `root:
+/blog`
 
 ## 首页
 
