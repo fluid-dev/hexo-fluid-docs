@@ -12,7 +12,7 @@ module.exports = {
       { text: '更新日志', link: '/changelog/' },
       { text: '示例代码', link: '/demo/' },
       { text: '贡献开发', link: '/contribute/' },
-      { text: 'Github', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
+      { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
     ],
     lastUpdated: 'Last Updated',
     sidebar: 'auto',
