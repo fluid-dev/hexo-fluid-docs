@@ -63,7 +63,7 @@ theme: fluid
 
 :::warning
 
-Enable the function may invalidate the former **theme config**
+If you don't understand the feature, don't use it
 
 :::
 

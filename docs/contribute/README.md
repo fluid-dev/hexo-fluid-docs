@@ -4,7 +4,7 @@ meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
-    content: hexo-theme-fluid,fulid,hexo主题,fluid文档
+    content: hexo,theme,fulid,hexo主题,fluid文档,用户文档
 ---
 
 # 贡献开发
@@ -28,4 +28,4 @@ meta:
 
 英文文档翻译：[@EatRice](https://eatrice.top/)
 
-其他贡献：@zhugaoqi [@julydate](https://github.com/julydate)
+其他贡献：[@zhugaoqi](https://github.com/zhugaoqi) [@julydate](https://github.com/julydate)
