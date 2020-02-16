@@ -1,10 +1,10 @@
 ---
 meta:
   - name: keywords
-    content: hexo-theme-fluid,fulid,hexo主题,fluid文档
+    content: hexo,theme,fulid,hexo主题,fluid文档,用户文档
 home: true
 heroImage: /fluid_hexo.png
-actionText: 用户文档
+actionText: 用户手册
 actionLink: /guide/
 features:
 - title: 简洁至上
