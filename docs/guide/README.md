@@ -2,9 +2,9 @@
 metaTitle: 使用指南 | hexo-theme-fluid
 meta:
   - name: description
-    content: Fluid 是一款 Material-Design 风格的 Hexo 主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
+    content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
-    content: hexo,theme,fulid,hexo主题,fluid文档,用户文档
+    content: hexo,theme,fulid,hexo主题,fluid文档,用户文档,博客,文档,博客,文章
 ---
 
 # 使用指南
@@ -37,13 +37,13 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 ## 快速开始
 
-### 1. 获取最新版本
+### 获取最新版本
 
 请优先下载 [最新 release 版本](https://github.com/fluid-dev/hexo-theme-fluid/releases)，master 分支无法保证稳定。
 
 下载后解压到 themes 目录下并重命名为 `fluid`。
 
-### 2. 必要的配置
+### 必要的配置
 
 必须如下修改博客目录下的 `_config.yml`：
 

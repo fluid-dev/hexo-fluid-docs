@@ -1,7 +1,7 @@
 ---
 meta:
   - name: keywords
-    content: hexo,theme,fulid,hexo主题,fluid文档,用户文档
+    content: hexo,theme,fulid,hexo主题,fluid文档,用户文档,博客,文档
 home: true
 heroImage: /fluid_hexo.png
 actionText: 用户手册
