@@ -43,7 +43,7 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 下载后解压到 themes 目录下并重命名为 `fluid`。
 
-### 2. :warning: 必要的配置 :warning:
+### 2. 必要的配置
 
 必须如下修改博客目录下的 `_config.yml`：
 
@@ -588,7 +588,7 @@ about:
 
 #### 代码高亮样式异常
 
-- 请确认已完成上述『[关闭默认的代码高亮](/guide/#快速开始)』步骤
+- 请确认已完成上述『[关闭默认的代码高亮](/guide/#必要的配置)』步骤
 - 尝试清除命令 `hexo clean && hexo g`
 
 #### 配置无效

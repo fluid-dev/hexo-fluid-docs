@@ -1,5 +1,5 @@
 ---
-metaTitle: 搭建示例 | hexo-theme-fluid
+metaTitle: 操作示例 | hexo-theme-fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
@@ -7,7 +7,7 @@ meta:
     content: hexo,theme,fulid,hexo主题,fluid文档,用户文档
 ---
 
-# 搭建示例
+# 操作示例
 
 ## 搭建
 

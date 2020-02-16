@@ -36,7 +36,7 @@ module.exports = {
           { text: '使用指南', link: '/guide/' },
           { text: '静态配置', link: '/static-conf/' },
           { text: '更新日志', link: '/changelog/' },
-          { text: '搭建示例', link: '/demo/' },
+          { text: '操作示例', link: '/demo/' },
           { text: '贡献开发', link: '/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],
