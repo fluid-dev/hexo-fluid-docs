@@ -26,4 +26,6 @@ meta:
 
 [![contributors](https://opencollective.com/hexo-theme-fluid/contributors.svg?width=890&button=false)](https://github.com/fluid-dev/hexo-theme-fluid/graphs/contributors)
 
-非 PR 贡献：@zhugaoqi [@julydate](https://github.com/julydate)
+英文文档翻译：[@EatRice](https://eatrice.top/)
+
+其他贡献：@zhugaoqi [@julydate](https://github.com/julydate)

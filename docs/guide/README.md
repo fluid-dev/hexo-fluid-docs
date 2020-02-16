@@ -19,44 +19,41 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 [Rook1e's blog](https://0x2e.github.io)
 
-[zkqiang's blog](http://zkqiang.cn)
+[zkqiang's blog](https://zkqiang.cn)
+
+[吃白饭的休伯利安号](https://eatrice.top)
 
 ## 关于指南
 
-本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照主题配置文件中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
+本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照主题 config 中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
 本指南网页是使用 [VuePress](https://vuepress.vuejs.org/) 生成。
 
 :::tip
 本指南中提到的：
-- "Hexo 配置" 指的是 Hexo 博客根目录下的 `_config.yml`
-- "主题配置" 指的是 `theme/fluid/_config.yml`
+- "博客 config" 指的 Hexo 博客目录下的 `_config.yml`
+- "主题 config" 指的是 `theme/fluid/_config.yml`
 :::
 
 ## 快速开始
 
-### 获取最新版本
+### 1. 获取最新版本
 
 请优先下载 [最新 release 版本](https://github.com/fluid-dev/hexo-theme-fluid/releases)，master 分支无法保证稳定。
 
 下载后解压到 themes 目录下并重命名为 `fluid`。
 
-### 必要的配置
+### 2. :warning: 必要的配置 :warning:
 
-按如下内容修改 Hexo 根目录中的 `_config.yml`
+必须如下修改博客目录下的 `_config.yml`：
 
 ```yaml
-# 关闭默认的代码高亮
 highlight:
-  enable: false
-```
+  enable: false  # 关闭默认的代码高亮
 
-### 启用主题
+theme: fluid  # 指定主题
 
-依然是根目录中的 `_config.yml`，如下修改：
-```yaml
-# Extensions
-theme: fluid
+language: zh-CN  # 指定语言，可不改
 ```
 
 ## 全局
@@ -64,34 +61,24 @@ theme: fluid
 ### 覆盖配置
 
 :::warning
-
-启用此功能将使 `_config.yml` 失效，如果不清楚此功能的用处，请不要设置。
-
+启用此功能将使主题 `_config.yml` 失效，如果不清楚此功能的用处，请不要设置
 :::
 
-覆盖配置可以使 Fluid 主题配置在 fluid
-目录之外，避免在更新主题时丢失自定义的配置。
+覆盖配置可以使主题 `_config.yml` 放置在 fluid 目录之外，避免在更新主题时丢失自定义的配置。
 
-使用该功能必须保证 Hexo 版本不低于 3.0，因为该功能利用了 Hexo
-[数据文件](https://hexo.io/zh-cn/docs/data-files.html) 功能
+使用该功能必须保证 Hexo 版本不低于 3.0，因为该功能利用了 [Hexo 数据文件](https://hexo.io/zh-cn/docs/data-files.html) 功能
 
 使用方式：
 
-1. 进入 Hexo 博客根目录的 source 目录下（不是主题的 source 目录），创建
-   `_data` 目录（和 `_post` 目录同级）；
-2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将
-   `/theme/fluid/_config.yml` 中被修改的配置或者全部配置，复制到
-   `fluid_config.yml` 中；
+1. 进入博客目录的 source 目录下（不是主题目录的 source），创建 `_data` 目录（和 `_post` 目录同级）；
+2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部内容复制到 `fluid_config.yml` 中；
 3. 以后配置都在 `fluid_config.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
 
-所有资源静态文件的 Url 可以通过 `_static_prefix`
-自定义配置，同样也支持覆盖配置，写入 `_data/fluid_static_prefix.yml` 即可。
-
-其他情况，建议更新前备份 `/theme/fluid/_config.yml`，以免覆盖自定义的配置项。
+所有静态资源文件的 Url 可以通过 `_static_prefix` 自定义配置，同样也支持覆盖配置，写入 `_data/fluid_static_prefix.yml` 即可。
 
 ### 静态资源
 
-所有静态资源文件的 Url 可以通过 `_static_prefix` 自定义配置，同样也支持覆盖配置，写入
+所有静态资源文件的 Url 可以通过 `fluid/_static_prefix.yml` 自定义配置，同样也支持覆盖配置，写入
 `_data/fluid_static_prefix.yml` 即可。
 
 比如需要指定公共 CDN 的 JQuery 库，只需将原配置改为：
@@ -112,11 +99,9 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 - 图片来源
 
-主题配置文件中，每个页面都有名为 `banner_img`
-的属性，可以为外链的绝对链接，也可以使用相对链接。
+主题 config 中，每个页面都有名为 `banner_img` 的属性，可以为外链的绝对链接，也可以使用相对链接。
 
-若使用相对链接，建议将图片放置在 `fluid/source/img/`
-目录下，对应填写的图片地址为 `/img/your_img_name`。
+若使用相对链接，建议将图片放置在 `fluid/source/img/` 目录下，对应填写的图片地址为 `/img/your_img_name`。
 
 比如 `/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg`。
 
@@ -128,15 +113,7 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 鉴于每个人的喜好不同，开放对页面 `banner_img` 高度的控制。
 
-主题配置文件中，每个页面对应的 `banner_img_height` 属性，有效值为 0 - 100。100 即为全屏，个人建议 70 以上。
-
-- 固定 Banner
-
-```yaml
-banner_scroll: false
-```
-
-默认为 false，Banner 将不会跟随页面进行滚动，但在部分环境下因兼容问题会失效。
+主题 config 中，每个页面对应的 `banner_img_height` 属性，有效值为 0 - 100。100 即为全屏，个人建议 70 以上。
 
 ::: tip
 每篇文章可单独设置 Banner，具体见文章页设置
@@ -144,10 +121,9 @@ banner_scroll: false
 
 ### 博客标题
 
-页面左上角的博客标题，默认使用 Hexo 根目录配置中的
-`title`，这个配置同时控制着网页在浏览器标签中的标题。
+页面左上角的博客标题，默认使用博客 config 中的 `title`，这个配置同时控制着网页在浏览器标签中的标题。
 
-如需单独区别设置，可在主题配置中设置：
+如需单独区别设置，可在主题 config 中设置：
 
 ```yaml
 navbar:
@@ -203,7 +179,7 @@ web_analytics:
 
 不同语言会影响一些主题自带的文字。
 
-设置语言是在 Hexo 根目录 `_config.yml` 中，需要对应 `fluid/languages/` 目录内的配置文件名:
+设置语言是在博客 config 中，需要对应 `fluid/languages/` 目录内的配置文件名:
 
 ```yaml
 language: zh-CN
@@ -219,7 +195,7 @@ language: zh-CN
 
 2. 如果你的域名已备案，可以使用[七牛云](https://portal.qiniu.com/signup?code=1hlwhx3ztjz2q)、腾讯云、百度云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
 
-3. 其他自定义的图片，特别是顶部大图，建议先使用 [tinypng](tinypng.com) 进行压缩，然后注册私有 CDN 存放，推荐一份 [CDN 使用指南](https://www.julydate.com/post/60859300)。
+3. 其他自定义的图片，特别是顶部大图，建议先使用 [tinypng](https://tinypng.com) 进行压缩，然后注册私有 CDN 存放，推荐一份 [CDN 使用指南](https://www.julydate.com/post/60859300)。
 
 ### 强制全局 HTTPS
 
@@ -235,14 +211,13 @@ force_https: true
 
 ### 二级站点路径
 
-如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改 Hexo 根目录 `_config.yml` 中的 `root:
-/blog`
+如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改博客 `_config.yml` 中的 `root: /blog`
 
 ## 首页
 
 ### Slogan(打字机)
 
-首页大图中的打字机文字，可在主题配置文件中设定是否开启：
+首页大图中的打字机文字，可在主题 config 中设定是否开启：
 
 ```yaml
 index:
@@ -251,7 +226,7 @@ index:
     text: 这是一条 Slogan
 ```
 
-如果 `text` 为空则按 Hexo 配置的 `subtitle` 显示。
+如果 `text` 为空则按博客 config 的 `subtitle` 显示。
 
 相关的打字机动效设置在：
 
@@ -412,14 +387,14 @@ post:
 请确保已关闭 Hexo 默认代码高亮，否则会出现异常样式
 :::
 
-关闭默认代码高亮的方式，修改 Hexo 根目录中的 `_config.yml`：
+关闭默认代码高亮的方式，修改博客 config：
 
 ```yaml
 highlight:
   enable: false
 ```
 
-可以修改样式的主题，在主题配置中指定：
+可以修改样式的主题，在主题 congig 中指定：
 
 ```yaml
 highlight:
@@ -437,11 +412,11 @@ highlight:
 
 1. 进入[该链接](https://jmblog.github.io/color-themes-for-google-code-prettify/)下载 `min.css` 文件，并保存为 `文件名.min.css` 到 `fluid/source/lib/prettify/`
 2. 找到文件中的 `.prettyprint{ background: ***; ...}`，在 *** 后面加上 `!important`，例如：`.prettyprint{background:#fafbfc!important; ...}`
-3. 最后主题配置中设置 `theme: 文件名`（不含后缀）
+3. 最后主题 config 中设置 `theme: 文件名`（不含后缀）
 
 ### 代码行号
 
-可以在 Hexo 根目录配置中开关：
+可以在博客 config 中开关：
 
 ```yaml
 highlight:
@@ -463,7 +438,7 @@ post:
 
 ```yaml
 disqus:
-  shortname: Fluid-dev
+  shortname: fluid
 ```
 
 当前支持 Valine、Disqus、Gitalk、Utterances、畅言、来必力(livere)，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
@@ -471,9 +446,7 @@ disqus:
 若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
 
 :::tip
-
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
-
 :::
 
 ### 在线聊天（daovoice）
@@ -491,11 +464,11 @@ daovoice:
 
 文章样式使用的是 github-markdown，暂时不支持配置，细节调整可自行修改 `fluid/source/lib/github-markdown/github-markdown.min.css`
 
-### KaTeX 数学公式
+### LaTeX 数学公式
 
-当需要使用 [KaTeX](https://katex.org/) 语法的数学公式时，可手动开启本功能，需要完成三步操作：
+当需要使用 [LaTeX](https://www.latex-project.org/help/documentation/) 语法的数学公式时，可手动开启本功能，需要完成三步操作：
 
-**1. 设置主题配置**
+**1. 设置主题 config**
 
 ```yaml
 post:
@@ -586,13 +559,20 @@ tag:
 
 ## About 关于页
 
-### 自定义内容
+### 编辑关于内容
 
-页面中社交图标下方的空白区域支持自定义内容。只需编辑 fluid/pages/about.md，再次 `hexo g` 时会自动渲染。
+只需编辑 `fluid/pages/about.md`，再次 `hexo g` 时会自动渲染。
 
-### icons
+`about.md` 可以在主题 config 中修改位置，建议修改到 fluid 目录之外，避免更新主题时丢失内容，比如：
 
-导航栏与关于页的社交网络图标，均引用自 [fontawesome](https://fontawesome.com/v4.7.0/icons/)。只需要将属性名替换为图标名称，属性值替换为 url 即可。
+```yaml
+about:
+  md_path: ../../source/_data/fluid_about.md  # 实际位置： blog/source/_data/fluid_about.md
+```
+
+### 社交页图标
+
+图标均引用自 [fontawesome](https://fontawesome.com/v5.10.0/icons?d=gallery)。只需要将属性名替换为图标名称，属性值替换为 url 即可。
 
 ## 404 页
 
@@ -600,26 +580,24 @@ tag:
 
 开启此页面需要在博客的部署环境上配置：
 
-- 如果博客部署在云服务器，需要 Nginx 配置文件设置 `error_page 404 =
-  /404.html`；
+- 如果博客部署在云服务器，需要 Nginx 配置文件设置 `error_page 404 = /404.html`；
 - 如果部署在 Github Pages 上，不需要额外配置，但必须绑定顶级域名才生效；
-- 其他 OSS 等平台，请参考各平台关于 404 页的配置文档，但并不是所有平台都支持跳转
-  Html。
+- 其他 OSS 等平台，请参考各平台关于 404 页的配置文档，但并不是所有平台都支持跳转 Html。
 
 ## 常见问题
 
 #### 代码高亮样式异常
 
-- 请确认已完成上述『[关闭默认的代码高亮](/guide/#必要的配置)』步骤
+- 请确认已完成上述『[关闭默认的代码高亮](/guide/#快速开始)』步骤
 - 尝试清除命令 `hexo clean && hexo g`
 
 #### 配置无效
 
-- 请检查配置文件是否符合 yml 语法，如冒号后需要有空格，缩进需要 2 个空格等
+- 请检查配置文件是否符合 yaml 语法，如冒号后需要有空格，缩进需要 2 个空格等
 
-## 关于 Hexo 的配置
+## 关于更多配置
 
-[Hexo _config.yml 配置](https://hexo.io/zh-cn/docs/configuration)
+[博客 _config.yml 配置](https://hexo.io/zh-cn/docs/configuration)
 
 [文章 Front-matter 配置](https://hexo.io/zh-cn/docs/front-matter)
 

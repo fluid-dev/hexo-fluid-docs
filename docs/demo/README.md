@@ -1,5 +1,5 @@
 ---
-metaTitle: 示例代码 | hexo-theme-fluid
+metaTitle: 搭建示例 | hexo-theme-fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
@@ -7,7 +7,7 @@ meta:
     content: hexo-theme-fluid,fulid,hexo主题,fluid文档
 ---
 
-# 示例代码
+# 搭建示例
 
 ## 搭建
 
@@ -40,7 +40,7 @@ npm install -g hexo
 
 2. 安装 fluid 主题
 
-下载[最新版](https://github.com/fluid-dev/hexo-theme-fluid/releases)并解压到 themes 目录下，重命名为 fluid，然后在根目录下的 _config.yml 设置如下：
+下载[最新版](https://github.com/fluid-dev/hexo-theme-fluid/releases)并解压到 themes 目录下，重命名为 fluid，然后在博客 _config.yml 设置如下：
 
 ```yml
 # Extensions
@@ -49,15 +49,15 @@ npm install -g hexo
 theme: fluid
 ```
 
-## 配置设置（重点）
+## 配置（重点）
 
-推荐使用[覆盖设置](https://fluid-dev.github.io/hexo-fluid-docs/guide/#%E8%A6%86%E7%9B%96%E9%85%8D%E7%BD%AE)功能，可以实现自动覆盖主题文件夹中的配置文件，不用担心更新主题时丢失配置。
+推荐使用[覆盖设置](https://fluid-dev.github.io/hexo-fluid-docs/guide/#%E8%A6%86%E7%9B%96%E9%85%8D%E7%BD%AE)功能，可以在主题目录之外自定义 config，不用担心更新主题时丢失配置。
 
-新建 /source/_data 目录，新建两个配置文件：
+在博客 source 目录中新建 `_data` 目录（不是主题的 source），再新建两个配置文件：
 
 ```
-fluid_config.yml    # 主题配置在这里改动
-fluid_static_prefix.yml # 静态资源设置在这里改动
+fluid_config.yml    # 主题配置在这里修改
+fluid_static_prefix.yml # 静态资源配置在这里修改
 ```
 
 这样主题就会有两个配置文件：
@@ -90,12 +90,10 @@ hexo s # hexo server 的简写
 ## 生成
 
 ```bash
-#二选一
-hexo generate
-hexo g 
+hexo clean && hexo g
 ```
 
-## 压缩
+## 压缩（可选）
 
 采用 gulp 进行页面压缩，全局安装 gulp
 
@@ -113,7 +111,7 @@ npm install gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify --save
 yarn add gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify
 ```
 
-然后在 hexo 根目录新建 gulpfile.js 文件，用于存放 gulp 压缩配置
+然后在博客目录新建 `gulpfile.js` 文件，用于存放 gulp 压缩配置
 
 ```js
 var gulp = require('gulp');
@@ -158,7 +156,9 @@ gulp
 
 ## 部署
 
-在根目录下面 _config.yml 设置，参考如下
+这里演示如何部署到 GitHub Pages 中。
+
+在博客目录 `_config.yml` 中配置，参考如下：
 
 ```yml
 # Deployment
@@ -167,15 +167,12 @@ deploy:
   - type: git
     repo: git@github.com:username/username.github.io.git
     branch: master
-  - type: git
-    repo: git@gitee.com:username/username.git
-    branch: master
 ```
 
 将你的 ssh 密钥上传到远程仓库，如果未设置则需要手工输入用户名和密码。然在终端命令行：
 
 ```bash
-hexo d 
+hexo d
 ```
 
 ## 更新主题
@@ -204,7 +201,7 @@ git remote add fluid https://github.com/juukee/hexo-theme-fluid # 请改成自�
 # --prefix=themes/fluid 主题目录所在位置
 # fluid 这个是上面一步定义的远程仓库地址
 # master 远程仓库的master分支
-git subtree add --prefix=themes/fluid fluid master 
+git subtree add --prefix=themes/fluid fluid master
 ```
 
 更新主题：以后更新主题一条命令搞定
@@ -218,14 +215,3 @@ git subtree pull --prefix=themes/fluid fluid master
 ```bash
 git subtree push --prefix=themes/fluid fluid master
 ```
-
-
-
-
-
-
-
-   
-
-
-
