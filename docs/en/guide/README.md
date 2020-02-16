@@ -1,10 +1,10 @@
 ---
-metaTitle: Documentation | hexo-theme-fluid
+metaTitle: Guide | hexo-theme-fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
-    content: hexo-theme-fluid,fulid,hexo,theme,documentation
+    content: hexo,theme,fulid,documentation,docs
 ---
 
 # Guide
@@ -32,22 +32,22 @@ This page of the guide created by [VuePress](https://vuepress.vuejs.org/).
 :::tip
 
 About the config file:
-- : "blog config" refer to the `_config.yml` in the blog root directory.
-- : "theme config" refer to the path `theme/fluid/_config.yml`
+- : "**blog config**" refer to the `_config.yml` in the blog root directory.
+- : "**theme config**" refer to the path `theme/fluid/_config.yml`
 
 :::
 
 ## Quick Start
 
-### 1. Latest Release
+### Install theme
 
 Please give priority to download [the latest release version](https://github.com/fluid-dev/hexo-theme-fluid/releases),or the master branch may not guarantee stability.
 
 After download, extract it to the themes directory and rename it to `fluid`.
 
-### 2. :warning: Necessary Configuration :warning:
+### Necessary Configuration
 
-Modify `_ config.yml` in the blog root directory as follows。
+Modify `_config.yml` in the blog root directory as follows。
 
 ```yaml
 # close the defaulted highlight
@@ -63,21 +63,21 @@ theme: fluid
 
 :::warning
 
-Enable the function may invalidate the former theme config
+Enable the function may invalidate the former **theme config**
 
 :::
 
-Override configuration cam make the theme config out of the theme dictionary, and avoid losing custom config after theme upgraded.
+Override configuration cam make the **theme config** out of the theme dictionary, and avoid losing custom config after theme upgraded.
 
 You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/zh-cn/docs/data-files.html)
 
 Usage:
 
 1. cd into the folder '*source*' in your *Hexo root dictionary*, `mkdir _data` (beside to the folder '_post');
-2. Create a file *`fluid_config.yml`* in the folder *`_date`* , copy the configurations from `theme config` to `fluid_config.yml`;
-3. You can DIY your config with the file *`fluid_config.yml`*, it can be used when you start `hexo g`.
+2. Create a file `fluid_config.yml` in the folder `_date` , copy the configurations from **theme config** to `fluid_config.yml`;
+3. You can DIY your config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
 
-In other cases, suggest that backup you *theme config* before you upgrade the theme.
+In other cases, suggest that backup you **theme config** before you upgrade the theme.
 
 ### Static Resource
 
@@ -102,7 +102,7 @@ jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 
 - img src
 
-there is Attribute `banner_img`  for Every pages in the `theme config`, you can use absolute or relative path.
+there is Attribute `banner_img`  for Every pages in the **theme config**, you can use absolute or relative path.
 
 If you use relative path, you can save you img at `fluid/source/img/`, so that you can use `/img/{your_img_name}` to get your img.
 
@@ -116,7 +116,7 @@ You can define the ain path yourself, but it should be in the folder `source`
 
 For different people's thoughts, you can control the height of the `banner_img` on the page.
 
-You can set a value to the attribute `banner_img_height` for every pages by modifying the file theme config, 0 - 100 is valiable, We think it is better to choose a number bigger than 70.
+You can set a value to the attribute `banner_img_height` for every pages by modifying the file **theme config**, 0 - 100 is valiable, We think it is better to choose a number bigger than 70.
 
 ::: tip
 Each post page can define its banner independently, you can read the config about the posts for more details.
@@ -124,9 +124,9 @@ Each post page can define its banner independently, you can read the config abou
 
 ### Title of Blog
 
-The title is on the left of the banner, Its value can set by the attribute `title` in file `blog config`, which is alse the title of the browser's tab.
+The title is on the left of the banner, Its value can set by the attribute `title` in file **blog config**, which is alse the title of the browser's tab.
 
-If you want to set varies titles for different pages, you can change the `theme config` as follow:
+If you want to set varies titles for different pages, you can change the **theme config** as follow:
 
 ``` yaml
 navbar:
@@ -182,7 +182,7 @@ web_analytics:
 
 Some languages may change the font of some theme.
 
-You can set up you language in the `blog config`, and you should define the language file name.
+You can set up you language in the **blog config**, and you should define the language file name.
 
 ``` yaml
 language: zh-CN  # default is en
@@ -204,7 +204,7 @@ If you want to add more language, you'd better copy a new file to edit, and defi
 
 When your domain update to `https`, and some resources on your blog only  only support http protocol, the browser will not load this resources.
 
-If it happens, you can change the `theme config` as follow:
+If it happens, you can change the **theme config** as follow:
 
 ```yaml
 force_https: true
@@ -216,7 +216,7 @@ So that you can get *https* for all request(if your resources don't exist in you
 
 ### Slogan
 
-The typewriter text in the large image of the home page can be set in the theme configuration file whether to turn on or not:
+The typewriter text in the large image of the home page can be set in the **theme config**uration file whether to turn on or not:
 
 ```yaml
 index:
@@ -392,7 +392,7 @@ highlight:
   enable: false
 ```
 
-You can change the style of code, in `theme config`
+You can change the style of code, in **theme config**
 
 ```yaml
 highlight:
@@ -410,7 +410,7 @@ For more styles of code:
 
 1. Click [Download](https://jmblog.github.io/color-themes-for-google-code-prettify/) to download 'min.css' file, and save it to `fluid/source/lib/prettify/`
 2. Find `.prettyprint{ background: ***; ...}` in this file, and add `!important` after `***`
-3. Set your style in `theme config`: `theme: your style`(Non extension name)
+3. Set your style in **theme config**: `theme: your style`(Non extension name)
 
 ### Line_number of Code
 
@@ -423,7 +423,7 @@ highlight:
 
 ### comment
 
-You can enable it in `theme config`:
+You can enable it in **theme config**:
 
 ```yaml
 post:
@@ -465,7 +465,7 @@ The style of post is powered by github-markdown, Configuration is not supported 
 
 Before you use [LaTeX](https://www.latex-project.org/help/documentation/) math typesetting, you should finish follow steps:
 
-**1. theme config**
+**1. **theme config****
 
 ```yaml
 post:
@@ -563,7 +563,7 @@ tag:
 
 You can edit `fluid/pages/about.md` to define your area under your social networking icons.
 
-You can modify the `about.md` location in the `theme config`. It is recommended to modify it outside the fluid directory to avoid losing md content when upgrading fluid. For example:
+You can modify the `about.md` location in the **theme config**. It is recommended to modify it outside the fluid directory to avoid losing md content when upgrading fluid. For example:
 
 ```yaml
 about:
@@ -588,7 +588,7 @@ To open this page, you need to configure it on the deployment environment of the
 
 #### Code Highlight Error
 
-- Make sure that [disable highlight](/en/guide/#Quick Start)
+- Make sure that [disable highlight](/en/guide/#necessary-configuration)
 
 - Then try to run `hexo clean && hexo g`
 

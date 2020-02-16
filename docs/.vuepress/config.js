@@ -18,7 +18,7 @@ module.exports = {
   ],
   themeConfig: {
     locales: {
-      '/zh/': {
+      '/': {
         // 多语言下拉菜单的标题
         selectText: 'Languages',
         // 该语言在下拉菜单中的标签
@@ -53,7 +53,7 @@ module.exports = {
           }
         },
         nav: [
-          { text: '使用指南', link: '/guide/' },
+          { text: 'Guide', link: '/en/guide/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],
       }
