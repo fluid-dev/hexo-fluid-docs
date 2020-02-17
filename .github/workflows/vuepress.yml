@@ -19,7 +19,7 @@ jobs:
         node-version: "10.x"
 
     - name: Set env
-      env: 
+      env:
         ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
       run: |
         mkdir -p ~/.ssh/
@@ -49,5 +49,6 @@ jobs:
         wget -q http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
         chmod +x ./ossutil64
         ./ossutil64 config -e oss-ap-southeast-1.aliyuncs.com -i $OSS_AccessKeyID -k $OSS_AccessKeySecret -L CH
+        sed -i 's/\/hexo-fluid-docs\//\/docs\//g' `grep 'hexo-fluid-docs' -rl ./docs/.vuepress/dist/*`
         echo y | ./ossutil64 rm oss://fluid-dev/docs/ -r
         ./ossutil64 cp -r ./docs/.vuepress/dist oss://fluid-dev/docs
