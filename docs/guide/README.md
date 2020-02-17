@@ -80,7 +80,7 @@ language: zh-CN  # 指定语言，可不改
 
 ### 静态资源
 
-所有静态资源文件的 Url 可以通过 `fluid/_static_prefix.yml` 自定义配置，同样也支持覆盖配置，写入 `_data/fluid_static_prefix.yml` 即可。
+所有静态资源文件的 Url 可以通过 `fluid/_static_prefix.yml` 自定义配置，同样也支持覆盖配置，写入 `/source/_data/fluid_static_prefix.yml` 即可。
 
 比如需要指定公共 CDN 的 JQuery 库，只需将原配置改为：
 
@@ -96,15 +96,15 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 - 默认在根目录生成并使用 `local-search.xml`。
 
-### 首页大图
+### 页面顶部大图
 
 - 图片来源
 
-主题 config 中，每个页面都有名为 `banner_img` 的属性，可以为外链的绝对链接，也可以使用相对链接。
+主题配置中，每个页面都有名为 `banner_img` 的属性，可以为外链的绝对链接，也可以使用相对链接。
 
-若使用相对链接，建议将图片放置在 `fluid/source/img/` 目录下，对应填写的图片地址为 `/img/your_img_name`。
+若使用相对链接，建议将图片放置在 `/source/img/` 目录下，对应填写的图片地址为 `/img/your_img_name`。
 
-比如 `/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg`。
+比如 `/img/example.jpg` 对应的是存放在 `/source/img/example.jpg`。
 
 :::tip
 目录文件夹也可自定义，但必须在 source 目录下

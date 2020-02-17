@@ -85,7 +85,7 @@ Usage:
 
 The Url of all resource static files can be customized through `fluid/_static_prefix.yml`, it also can be override with `_data/fluid_static_prefix.yml`.
 
-If we should get the JQuery CDN library, we can add a line at the end of the file `_data/fluid_static_prefix.yml`:
+If we should get the JQuery CDN library, we can add a line at the end of the file `/source/_data/fluid_static_prefix.yml`:
 
 ``` yaml
 jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
@@ -99,15 +99,15 @@ jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 
 - By default, `local-search.xml` is generated and used in the root directory.
 
-### Background Image
+### Banner Image
 
 - img src
 
-there is `banner_img` item for Every pages in the **theme config**, you can use absolute or relative path.
+there is `banner_img` item for every pages in the **theme config**, you can use absolute or relative path.
 
-If you use relative path, you can save you img at `fluid/source/img/`, so that you can use `/img/{your_img_name}` to get your img.
+If you use relative path, you can save you img at `/source/img/`, so that you can use `/img/{your_img_name}` to get your img.
 
-For example, the path `/img/example.jpg`, is in`fluid/source/img/example.jpg`.
+For example, the path `/img/example.jpg`, is in`/source/img/example.jpg`.
 
 ::: tip
 You can define the ain path yourself, but it should be in the folder `source`
