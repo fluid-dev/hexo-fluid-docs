@@ -1,5 +1,5 @@
 ---
-metaTitle: 贡献开发 | hexo-theme-fluid
+metaTitle: 贡献开发 | Hexo Theme Fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid

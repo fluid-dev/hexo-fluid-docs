@@ -1,5 +1,5 @@
 ---
-metaTitle: 使用指南 | hexo-theme-fluid
+metaTitle: 使用指南 | Hexo Theme Fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
@@ -78,12 +78,9 @@ language: zh-CN  # 指定语言，可不改
 2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部内容复制到 `fluid_config.yml` 中；
 3. 以后配置都在 `fluid_config.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
 
-所有静态资源文件的 Url 可以通过 `_static_prefix` 自定义配置，同样也支持覆盖配置，写入 `_data/fluid_static_prefix.yml` 即可。
-
 ### 静态资源
 
-所有静态资源文件的 Url 可以通过 `fluid/_static_prefix.yml` 自定义配置，同样也支持覆盖配置，写入
-`_data/fluid_static_prefix.yml` 即可。
+所有静态资源文件的 Url 可以通过 `fluid/_static_prefix.yml` 自定义配置，同样也支持覆盖配置，写入 `_data/fluid_static_prefix.yml` 即可。
 
 比如需要指定公共 CDN 的 JQuery 库，只需将原配置改为：
 
@@ -374,16 +371,18 @@ post:
 :::tip
 优先级: 手动摘要 > 自动摘要
 
-显示字数固定 4 行，因此当屏幕宽度不足时会隐藏部分摘要。
+显示字数固定 3 行，因此当屏幕宽度不足时会隐藏部分摘要。
 :::
 
-手动指定摘要，使用 `<!-- more -->` 划分文章,例：
+手动指定摘要，使用 `<!-- more -->` 划分文章，例：
 
 ```
 这里是摘要
 <!-- more -->
 这里是正文
 ```
+
+或者在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `excerpt: 这里是摘要` 字段
 
 ### 代码高亮样式
 

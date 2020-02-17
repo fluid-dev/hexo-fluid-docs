@@ -1,5 +1,5 @@
 ---
-metaTitle: Guide | hexo-theme-fluid
+metaTitle: Guide | Hexo Theme Fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
@@ -73,18 +73,15 @@ If you don't understand the feature, don't use it
 
 Override configuration cam make the **theme config** out of the theme dictionary, and avoid losing custom config after theme upgraded.
 
-You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/zh-cn/docs/data-files.html)
+You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/docs/data-files.html)
 
 Usage:
 
-1. cd into the folder '*source*' in your *Hexo root dictionary*, `mkdir _data` (beside to the folder '_post');
+1. cd into the folder '*source*' in your *blog root dictionary*, `mkdir _data` (beside to the folder '_post');
 2. Create a file `fluid_config.yml` in the folder `_date` , copy the configurations from **theme config** to `fluid_config.yml`;
-3. You can DIY your config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
-
-In other cases, suggest that backup you **theme config** before you upgrade the theme.
+3. You can set any config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
 
 ### Static Resource
-
 
 The Url of all resource static files can be customized through `fluid/_static_prefix.yml`, it also can be override with `_data/fluid_static_prefix.yml`.
 
@@ -102,11 +99,11 @@ jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 
 - By default, `local-search.xml` is generated and used in the root directory.
 
-### Banner
+### Background Image
 
 - img src
 
-there is Attribute `banner_img`  for Every pages in the **theme config**, you can use absolute or relative path.
+there is `banner_img` item for Every pages in the **theme config**, you can use absolute or relative path.
 
 If you use relative path, you can save you img at `fluid/source/img/`, so that you can use `/img/{your_img_name}` to get your img.
 
@@ -156,7 +153,7 @@ If you want to add a new option to the menu, you can add it to the file directly
 
 If you want to delete a option, you can use `#` to comment it.
 
-### Lazy Picture
+### Lazyload Image
 
 ``` yaml
 lazyload:
@@ -182,7 +179,7 @@ web_analytics:
   cnzz:  # cnzz analysis's web_id，refer https://web.umeng.com/main.php?c=site&a=show
 ```
 
-### Multi-Languages
+### Multi Languages
 
 Some languages may change the font of some theme.
 
@@ -192,11 +189,11 @@ You can set up you language in the **blog config**, and you should define the la
 language: zh-CN  # default is en
 ```
 
-*en* *zh-CN* and *ja* is defaulted supported.
+*en* *zh-CN* and *ja* is supported currently.
 
 If you want to add more language, you'd better copy a new file to edit, and define the language file name.
 
-### Faster loading
+### Faster Loading
 
 1. For all the users, it is the effective way to use public CDN for the 'third-party lib', you can add it into the file `_static_prefix.yml`；
 
@@ -206,7 +203,7 @@ If you want to add more language, you'd better copy a new file to edit, and defi
 
 ### Enforce Https
 
-When your domain update to `https`, and some resources on your blog only  only support http protocol, the browser will not load this resources.
+When your domain update to `https`, and some resources on your blog only support http protocol, the browser will not load this resources.
 
 If it happens, you can change the **theme config** as follow:
 
@@ -229,7 +226,7 @@ index:
     text: This is a Slogan
 ```
 
-If `text` is '', the `subtitle` in the 'hexo config' will replace it.
+If `text` is '', the `subtitle` in the 'blog config' will replace it.
 
 Related dynamic effect settings:
 
@@ -242,12 +239,12 @@ fun_features:
     loop: false # repeat
 ```
 
-### Auto Abstract
+### Auto Excerpt
 
 :::tip
 Priority: Manually > Automatically
 
-If you don't set the Manual Abstract and you close the auto abstract, the abstract of article will be blank.
+If you don't set the Manual Excerpt and you close the auto abstract, the abstract of post will be blank.
 :::
 
 control the auto abstract：
@@ -267,14 +264,14 @@ index:
 
 options:
 
-1. _blank: open it in new tab
-2. _self: open it in current tab
+1. _blank: open post page in new tab
+2. _self: open post page in current tab
 
-### Article Information
+### Post Meta
 
-You can hide the information, include: time、categories、tags etc.
+You can hide any post meta, include: time、categories、tags etc.
 
-After testing, if there are no thumbnails and summaries in the list of articles on the home page, the display of title + article information will make the page too crowded, so this configuration is given for students who like to display only the title of the article on the home page.
+After testing, if there are no thumbnails and summaries in the list of posts on the home page, the display of title + post information will make the page too crowded, so this configuration is given for students who like to display only the title of the post on the home page.
 
 ``` yaml
 index:
@@ -284,9 +281,9 @@ index:
     tag: true
 ```
 
-### Hide Your Article
+### Hide Your Post
 
-If you don't want some article displayed on the home page, you can use the third-party tool [hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md).
+If you don't want some post displayed on the home page, you can use the third-party tool [hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md).
 
 :::warning
 
@@ -294,17 +291,17 @@ It is a Suggestion, Please read its document carefully, to avoid bad result.
 
 :::
 
-## Post(Article)
+## Post Page
 
-### Thumbnails
+### Index Thumbnails
 
-You can define it at the head of a post [Front-matter](https://hexo.io/zh-cn/docs/front-matter).
+You can define it at the head of a post [Front-matter](https://hexo.io/docs/front-matter).
 
 ```
 ---
 title: post title
 tags: [Hexo, Fluid]
-index_img: your Thumbnails
+index_img: /img/example.jpg
 date: 2019-10-10 10:00:00
 ---
 This the body of the post
@@ -314,9 +311,9 @@ You can save your thumbnails in the `img` folder, or you can create a new folder
 
 You also can using other pictures in other locations， but using the correct link.
 
-### Post Banner Picture
+### Post Banner Image
 
-You can define it at the head of a post, or use the home Banner picture by defaulted
+You can define it at the head of a post, or use the home Banner image by defaulted
 
 
 ```yml
@@ -330,7 +327,7 @@ date: 2019-10-10 10:00:00
 This the body of the post
 ```
 
-### Picture In Post
+### Image In Post
 
 You can save your pictures locally，or other locations.
 
@@ -367,29 +364,31 @@ The format of date must observe ISO-8601；
 
 :::
 
-### Manual Abstract
+### Excerpt
 
 :::tip
 Priority: Manually > Automatically
 
-There are 4 lines works will display, the rest will be hidden automatically
+There are 3 lines works will display, the rest will be hidden automatically
 :::
 
 You can use `<!-- more -->` to define abstract.
 
 ``` markdown
-This is abstract
+This is excerpt
 <!-- more -->
 This is body
 ```
 
-### HighLight
+Or you can set `excerpt: This is excerpt` in [Front-matter](https://hexo.io/docs/front-matter).
+
+### Code HighLight
 
 :::warning
- Make sure that Highlight is enabled, or some style will display on incorrect way.
+Make sure that defaulted highlight is disable, or some style will display on incorrect way.
 :::
 
-You can enable Highlight by modifying `hexo config`:
+You can disable Highlight by modifying `blog config`:
 
 ```yaml
 highlight:
@@ -418,14 +417,14 @@ For more styles of code:
 
 ### Line_number of Code
 
-You can enable it in `hexo config`
+You can enable it in `blog config`
 
 ```yaml
 highlight:
   line_number: true
 ```
 
-### comment
+### Comments
 
 You can enable it in **theme config**:
 
@@ -461,7 +460,7 @@ If you comment board don't display, after you finished below steps, there may be
 <!--   appid: '' -->
 <!-- ``` -->
 
-### Style Of Post
+### Style of Post
 
 The style of post is powered by github-markdown, Configuration is not supported for the time being, you can modify some details by `fluid/source/lib/github-markdown/github-markdown.min.css`
 
@@ -479,7 +478,7 @@ post:
     engine: mathjax
 ```
 
-if `specific`: true，you should add `math: true` into [Front-matter](https://hexo.io/zh-cn/docs/front-matter) , and then the typesetting will be display on post page, and it can improve the speed of page load.
+if `specific`: true，you should add `math: true` into [Front-matter](https://hexo.io/docs/front-matter) , and then the typesetting will be display on post page, and it can improve the speed of page load.
 
 `engine`: engine for typesetting, `mathjax` or `katex` is supported.
 
@@ -535,17 +534,17 @@ Shortcomings.
 
 :::
 
-## Archives
+## Archives Page
 
 There is no attribute, but Banner.
 
-## Categories
+## Categories Page
 
 There is no attribute, but Banner.
 
 [About adding categories](https://hexo.io/docs/front-matter)
 
-## Tags
+## Tags Page
 
 You can changes some style of tags:
 
@@ -561,7 +560,7 @@ tag:
 
 [About adding tags](https://hexo.io/docs/front-matter)
 
-## About
+## About Page
 
 ### Custom Content
 
@@ -574,11 +573,11 @@ about:
   md_path: ../../source/_data/fluid_about.md  # location: blog/source/_data/fluid_about.md
 ```
 
-### icons
+### Icons
 
 The navigation bar and the social networking icon about the page are both quoted from [fontawesome] (https://fontawesome.com/v4.7.0/icons/). You just need to replace the property name with the icon name and the property value with url.
 
-## 404 page
+## 404 Page
 
 If guest try to get the pages, which are not existed, 404 page will display.
 
@@ -602,9 +601,9 @@ To open this page, you need to configure it on the deployment environment of the
 
 ## About Hexo Configuration
 
-[Blog _config.yml](https://hexo.io/zh-cn/docs/configuration)
+[Blog _config.yml](https://hexo.io/docs/configuration)
 
-[Post Front-matter](https://hexo.io/zh-cn/docs/front-matter)
+[Post Front-matter](https://hexo.io/docs/front-matter)
 
 ## MIT
 
