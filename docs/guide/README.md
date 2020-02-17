@@ -37,6 +37,10 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 ## 快速开始
 
+### 搭建 Hexo 博客
+
+如果你还没有 Hexo 博客，请按照 [Hexo 官方文档](https://hexo.io/zh-cn/docs/) 进行安装、建站。
+
 ### 获取最新版本
 
 请优先下载 [最新 release 版本](https://github.com/fluid-dev/hexo-theme-fluid/releases)，master 分支无法保证稳定。

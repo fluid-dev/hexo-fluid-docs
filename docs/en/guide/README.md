@@ -39,9 +39,13 @@ About the config file:
 
 ## Quick Start
 
-### Install theme
+### Install Hexo
 
-Please give priority to download [the latest release version](https://github.com/fluid-dev/hexo-theme-fluid/releases),or the master branch may not guarantee stability.
+If you don't have a hexo blog, please follow [Hexo Docs](https://hexo.io/docs/) to install and initialize your blog。
+
+### Download Theme
+
+Please download [the latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), or the master branch may not guarantee stability.
 
 After download, extract it to the themes directory and rename it to `fluid`.
 

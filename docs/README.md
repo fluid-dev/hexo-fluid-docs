@@ -4,7 +4,7 @@ meta:
     content: hexo,theme,fulid,hexo主题,fluid文档,用户文档,博客,文档
 home: true
 heroImage: /fluid_hexo.png
-actionText: 用户手册
+actionText: 开始使用
 actionLink: /guide/
 features:
 - title: 简洁至上
