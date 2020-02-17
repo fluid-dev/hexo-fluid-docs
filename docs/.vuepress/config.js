@@ -12,7 +12,7 @@ module.exports = {
     }
   },
   title: 'Fluid',
-  base: "/hexo-fluid-docs/",
+  base: "/docs/",
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }]
   ],

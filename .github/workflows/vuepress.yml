@@ -39,3 +39,15 @@ jobs:
         git add -A
         git commit -m 'Update'
         git push -f git@github.com:fluid-dev/hexo-fluid-docs.git master
+
+    - name: Upload to OSS
+      env:
+        OSS_AccessKeyID: ${{ secrets.OSS_AccessKeyID }}
+        OSS_AccessKeySecret: ${{ secrets.OSS_AccessKeySecret }}
+      run: |
+        rm -rf ./docs/.vuepress/dist/.git
+        wget -q http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
+        chmod +x ./ossutil64
+        ./ossutil64 config -e oss-ap-southeast-1.aliyuncs.com -i $OSS_AccessKeyID -k $OSS_AccessKeySecret -L CH
+        echo y | ./ossutil64 rm oss://fluid-dev/docs/ -r
+        ./ossutil64 cp -r ./docs/.vuepress/dist oss://fluid-dev/docs
