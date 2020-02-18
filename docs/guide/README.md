@@ -25,14 +25,14 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 ## 关于指南
 
-本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照主题 config 中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
+本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照**主题配置**中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
 本指南网页是使用 [VuePress](https://vuepress.vuejs.org/) 生成。
 
 :::tip
 本指南中提到的：
-- "博客 config" 指的 Hexo 博客目录下的 `_config.yml`
-- "主题 config" 指的是 `theme/fluid/_config.yml`
+- "**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`
+- "**主题配置**" 指的是 `theme/fluid/_config.yml`
 :::
 
 ## 快速开始
@@ -114,7 +114,7 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 鉴于每个人的喜好不同，开放对页面 `banner_img` 高度的控制。
 
-主题 config 中，每个页面对应的 `banner_img_height` 属性，有效值为 0 - 100。100 即为全屏，个人建议 70 以上。
+**主题配置**中，每个页面对应的 `banner_img_height` 属性，有效值为 0 - 100。100 即为全屏，个人建议 70 以上。
 
 ::: tip
 每篇文章可单独设置 Banner，具体见文章页设置
@@ -122,9 +122,9 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 ### 博客标题
 
-页面左上角的博客标题，默认使用博客 config 中的 `title`，这个配置同时控制着网页在浏览器标签中的标题。
+页面左上角的博客标题，默认使用**博客配置**中的 `title`，这个配置同时控制着网页在浏览器标签中的标题。
 
-如需单独区别设置，可在主题 config 中设置：
+如需单独区别设置，可在**主题配置**中设置：
 
 ```yaml
 navbar:
@@ -180,7 +180,7 @@ web_analytics:
 
 不同语言会影响一些主题自带的文字。
 
-设置语言是在博客 config 中，需要对应 `fluid/languages/` 目录内的配置文件名:
+设置语言是在**博客配置**中，需要对应 `fluid/languages/` 目录内的配置文件名:
 
 ```yaml
 language: zh-CN
@@ -218,7 +218,7 @@ force_https: true
 
 ### Slogan(打字机)
 
-首页大图中的打字机文字，可在主题 config 中设定是否开启：
+首页大图中的打字机文字，可在**主题配置**中设定是否开启：
 
 ```yaml
 index:
@@ -227,7 +227,7 @@ index:
     text: 这是一条 Slogan
 ```
 
-如果 `text` 为空则按博客 config 的 `subtitle` 显示。
+如果 `text` 为空则按**博客配置**的 `subtitle` 显示。
 
 相关的打字机动效设置在：
 
@@ -314,7 +314,7 @@ date: 2019-10-10 10:00:00
 
 ### 文章页顶部大图
 
-默认显示主题 config 中的 `post.banner_img`，如需要设置单个文章的 Banner，在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中指定 banner_img 属性。
+默认显示**主题配置**中的 `post.banner_img`，如需要设置单个文章的 Banner，在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中指定 banner_img 属性。
 
 本地图片存放位置同上。
 
@@ -390,7 +390,7 @@ post:
 请确保已关闭 Hexo 默认代码高亮，否则会出现异常样式
 :::
 
-关闭默认代码高亮的方式，修改博客 config：
+关闭默认代码高亮的方式，修改**博客配置**：
 
 ```yaml
 highlight:
@@ -415,11 +415,11 @@ highlight:
 
 1. 进入[该链接](https://jmblog.github.io/color-themes-for-google-code-prettify/)下载 `min.css` 文件，并保存为 `文件名.min.css` 到 `fluid/source/lib/prettify/`
 2. 找到文件中的 `.prettyprint{ background: ***; ...}`，在 *** 后面加上 `!important`，例如：`.prettyprint{background:#fafbfc!important; ...}`
-3. 最后主题 config 中设置 `theme: 文件名`（不含后缀）
+3. 最后**主题配置**中设置 `theme: 文件名`（不含后缀）
 
 ### 代码行号
 
-可以在博客 config 中开关：
+可以在**博客配置**中开关：
 
 ```yaml
 highlight:
@@ -473,7 +473,7 @@ daovoice:
 
 当需要使用 [LaTeX](https://www.latex-project.org/help/documentation/) 语法的数学公式时，可手动开启本功能，需要完成三步操作：
 
-**1. 设置主题 config**
+**1. 设置主题配置**
 
 ```yaml
 post:
@@ -568,7 +568,7 @@ tag:
 
 只需编辑 `fluid/pages/about.md`，再次 `hexo g` 时会自动渲染。
 
-`about.md` 可以在主题 config 中修改位置，建议修改到 fluid 目录之外，避免更新主题时丢失内容，比如：
+`about.md` 可以在**主题配置**中修改位置，建议修改到 fluid 目录之外，避免更新主题时丢失内容，比如：
 
 ```yaml
 about:
