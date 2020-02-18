@@ -1,7 +1,7 @@
 ---
 meta:
   - name: keywords
-    content: hexo,theme,fulid,documentation,docs,guide
+    content: hexo,theme,fulid,documentation,docs,guide,blog,post,article
 home: true
 heroImage: /fluid_hexo.png
 actionText: Get Started →
@@ -11,7 +11,7 @@ features:
   details: Simple design helps you focus on writing
 - title: Configurable
   details: You can configure your own style
-- title: Team support
-  details: Developers support upgrade and handling issues
+- title: Team Support
+  details: Upgrade actively and handling issues
 footer: MIT Licensed | Copyright © 2020 Fluid-dev | Powered by VuePress
 ---
