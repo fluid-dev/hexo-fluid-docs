@@ -2,7 +2,7 @@
 metaTitle: Guide | Hexo Theme Fluid
 meta:
   - name: description
-    content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
+    content: Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
     content: hexo,theme,fulid,documentation,docs,guide,blog,post,article
 ---
@@ -71,7 +71,7 @@ If you don't understand the feature, don't use it
 
 :::
 
-Override configuration cam make the **theme config** out of the theme dictionary, and avoid losing custom config after theme upgraded.
+Override configuration can make the **theme config** out of the theme dictionary, and avoid losing custom config after theme upgraded.
 
 You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/docs/data-files.html)
 
