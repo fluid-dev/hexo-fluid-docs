@@ -1,4 +1,5 @@
 ---
+metaTitle: Hexo Fluid 用户手册
 meta:
   - name: keywords
     content: hexo,theme,fulid,hexo主题,fluid文档,用户文档,博客,文档

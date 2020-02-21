@@ -1,4 +1,5 @@
 ---
+metaTitle: Hexo Fluid Docs
 meta:
   - name: keywords
     content: hexo,theme,fulid,documentation,docs,guide,blog,post,article

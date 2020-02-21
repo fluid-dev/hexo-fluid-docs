@@ -1,5 +1,5 @@
 ---
-metaTitle: Guide | Hexo Theme Fluid
+metaTitle: Guide | Hexo Fluid
 meta:
   - name: description
     content: Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
