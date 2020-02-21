@@ -51,7 +51,7 @@ theme: fluid
 
 ## 配置（重点）
 
-推荐使用[覆盖设置](https://fluid-dev.github.io/hexo-fluid-docs/guide/#%E8%A6%86%E7%9B%96%E9%85%8D%E7%BD%AE)功能，可以在主题目录之外自定义 config，不用担心更新主题时丢失配置。
+推荐使用[覆盖设置](/guide/#%E8%A6%86%E7%9B%96%E9%85%8D%E7%BD%AE)功能，可以在主题目录之外自定义 config，不用担心更新主题时丢失配置。
 
 在博客 source 目录中新建 `_data` 目录（不是主题的 source），再新建两个配置文件：
 

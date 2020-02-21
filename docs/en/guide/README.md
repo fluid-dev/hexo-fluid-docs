@@ -91,7 +91,7 @@ If we should get the JQuery CDN library, we can add a line at the end of the fil
 jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 ```
 
-<!-- For more examples, you can click[static-conf](https://fluid-dev.github.io/hexo-fluid-docs/static-conf/) -->
+<!-- For more examples, you can click[static-conf](/static-conf/) -->
 
 ### Local Search
 

@@ -88,7 +88,7 @@ language: zh-CN  # 指定语言，可不改
 jquery: https://cdn.staticfile.org/jquery/3.4.1/
 ```
 
-更多示例可查看[静态配置](https://fluid-dev.github.io/hexo-fluid-docs/static-conf/)
+更多示例可查看[静态配置](/static-conf/)
 
 ### 本地搜索
 
