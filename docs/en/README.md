@@ -1,4 +1,5 @@
 ---
+heroText: Fluid
 metaTitle: Hexo Fluid Docs
 meta:
   - name: keywords

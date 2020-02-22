@@ -1,4 +1,5 @@
 ---
+heroText: Fluid
 metaTitle: Hexo Fluid 用户手册
 meta:
   - name: keywords
