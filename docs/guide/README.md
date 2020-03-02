@@ -210,7 +210,11 @@ force_https: true
 
 ### 二级站点路径
 
-如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改**博客配置**中的 `root: /blog`
+如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改**博客配置**中：
+
+```yaml
+root: /blog
+```
 
 ## 首页
 
@@ -306,7 +310,7 @@ date: 2019-10-10 10:00:00
 以下是文章内容
 ```
 
-和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg` 目录下的图片（目录也可自定义，但必须在 source 目录下），注意必须以 `/` 开头。
+和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg` 目录下的图片（目录也可自定义，但必须在 source 目录下）。
 
 也可以使用外链 Url 的绝对路径。
 

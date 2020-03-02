@@ -609,8 +609,8 @@ To open this page, you need to configure it on the deployment environment of the
 
 [MIT](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)
 
-<!-- ## Others -->
+## Others
 
-<!-- [Changelog](/en/changelog/) -->
+[Changelog](/en/changelog/)
 
-<!-- [Contribution](/en/contribute/) -->
+[Contribution](/en/contribute/)
