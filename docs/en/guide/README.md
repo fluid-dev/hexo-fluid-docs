@@ -4,7 +4,7 @@ meta:
   - name: description
     content: Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
-    content: hexo,theme,fulid,documentation,docs,guide,blog,post,article
+    content: hexo,theme,fulid,docs,doc,documentation,document,guide,blog,post,article
 ---
 
 # Guide
@@ -21,7 +21,9 @@ Demo blog:
 
 [zkqiang's blog](https://zkqiang.cn)
 
-[EatRice's blog](https://eatrice.top)
+[吃白饭的休伯利安号](https://eatrice.top)
+
+[上屋顶看北斗七星](https://ruru.eatrice.top)
 
 ## About this Guide
 
@@ -90,8 +92,6 @@ If we should get the JQuery CDN library, we can add a line at the end of the fil
 ``` yaml
 jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 ```
-
-<!-- For more examples, you can click[static-conf](/static-conf/) -->
 
 ### Local Search
 
