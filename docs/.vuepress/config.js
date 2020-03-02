@@ -4,17 +4,17 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
-      description: '一款 Material Design 风格的 Hexo 博客主题'
+      description: '一款 Material Design 风格的 Hexo 博客主题',
     },
     '/en/': {
-      lang: 'en',
-      description: 'An elegant Material-Design theme for Hexo'
-    }
+      lang: 'en-US',
+      description: 'An elegant Material-Design theme for Hexo',
+    },
   },
   title: 'Fluid',
   base: '/hexo-fluid-docs/',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.png' }]
+    ['link', { rel: 'icon', href: '/favicon.png' }],
   ],
   themeConfig: {
     locales: {
@@ -25,12 +25,14 @@ module.exports = {
         label: '简体中文',
         // 编辑链接文字
         editLinkText: '帮助我们完善文档',
+        // 最后更新的描述
+        lastUpdated: '文档更新于',
         // Service Worker 的配置
         serviceWorker: {
           updatePopup: {
-            message: "发现新内容可用.",
-            buttonText: "刷新"
-          }
+            message: '发现新内容可用.',
+            buttonText: '刷新',
+          },
         },
         nav: [
           { text: '使用指南', link: '/guide/' },
@@ -45,11 +47,12 @@ module.exports = {
         label: 'English',
         ariaLabel: 'Languages',
         editLinkText: 'Edit this docs',
+        lastUpdated: 'Last Updated',
         serviceWorker: {
           updatePopup: {
-            message: "New content is available.",
-            buttonText: "Refresh"
-          }
+            message: 'New content is available.',
+            buttonText: 'Refresh',
+          },
         },
         nav: [
           { text: 'Guide', link: '/en/guide/' },
@@ -58,9 +61,8 @@ module.exports = {
           { text: 'Contribute', link: '/en/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],
-      }
+      },
     },
-    lastUpdated: 'Last Updated',
     sidebar: 'auto',
     // 假如你的文档仓库和项目本身不在一个仓库：
     docsRepo: 'fluid-dev/hexo-fluid-docs',
@@ -70,5 +72,18 @@ module.exports = {
     docsBranch: 'source',
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
-  }
+  },
+  plugins: {
+    '@vuepress/last-updated': {
+      transformer: (timestamp, lang) => {
+        const moment = require('moment')
+        moment.locale(lang)
+        return moment(timestamp).format('lll')
+      },
+    },
+    'sitemap': {
+      hostname: 'https://hexo.fluid-dev.com/docs/',
+      dateFormatter: time => new Date(time).toISOString()
+    },
+  },
 };
