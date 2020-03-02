@@ -4,7 +4,7 @@ meta:
   - name: description
     content: Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
-    content: hexo,theme,fulid,docs,doc,documentation,document,guide,blog,post,article
+    content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
 ---
 
 # Guide

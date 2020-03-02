@@ -4,7 +4,7 @@ meta:
   - name: description
     content: Fluid Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
   - name: keywords
-    content: hexo,theme,fulid,docs,doc,documentation,document,guide,blog,post,article
+    content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
 ---
 
 # Example
@@ -17,7 +17,7 @@ meta:
 npm install -g hexo
 ```
 
-Input `hexo -v`in Command line terminal after installation.Appearing imformation of hexo stands for successful installation.
+Input `hexo -v`in Command line terminal after installation.Appearing information of Hexo stands for successful installation.
 
 Next initialize hexo, Execute the command `hexo init` in an empty folder (no files, including hidden files).
 
