@@ -88,8 +88,6 @@ language: zh-CN  # 指定语言，可不改
 jquery: https://cdn.staticfile.org/jquery/3.4.1/
 ```
 
-更多示例可查看[静态配置](/static-conf/)
-
 ### 本地搜索
 
 - 已集成 hexo-generator-search 插件，若已安装其他搜索插件请关闭，以避免生成多余的索引文件。
@@ -192,7 +190,7 @@ language: zh-CN
 
 ### 加快网页加载
 
-1. 对于所有用户，将各种第三方库配置公共 CDN 是最有效的方式，可以通过配置 `_static_prefix.yml` 来链接，具体可参考 [静态配置](/static-conf/)；
+1. 对于所有用户，将各种第三方库配置公共 CDN 是最有效的方式，可以通过配置 `_static_prefix.yml` 来链接（默认已经使用 staticfile CDN，国内用户可不做改动）；
 
 2. 如果你的域名已备案，可以使用[七牛云](https://portal.qiniu.com/signup?code=1hlwhx3ztjz2q)、腾讯云、百度云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
 

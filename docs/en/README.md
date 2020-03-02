@@ -3,7 +3,7 @@ heroText: Fluid
 metaTitle: Hexo Fluid Docs
 meta:
   - name: keywords
-    content: hexo,theme,fulid,documentation,docs,guide,blog,post,article
+    content: hexo,theme,fulid,docs,doc,documentation,document,guide,blog,post,article
 home: true
 heroImage: /fluid_hexo.png
 actionText: Get Started →
