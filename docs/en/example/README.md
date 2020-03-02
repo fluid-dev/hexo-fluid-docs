@@ -184,13 +184,13 @@ Download the newest release directly,then replace the files of theme.so we recom
 
 ### Method Two
 
-Use a subrepository as a link and update with git
+Use a subrepository as a url and update with git
 
 Step:
 
 2.1 Fork the theme [Fluid](https://github.com/fluid-dev/hexo-theme-fluid) to your github account
 
-2.2 Add remote repositort links in the project main catalogue
+2.2 Add remote repository url in the project main catalogue
 
 ```bash
 git remote add fluid https://github.com/juukee/hexo-theme-fluid # 请改成自己实际的仓库地址

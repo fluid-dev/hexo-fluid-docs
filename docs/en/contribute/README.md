@@ -29,6 +29,6 @@ The following workflow participation contributions are recommended:
 
 [![contributors](https://opencollective.com/hexo-theme-fluid/contributors.svg?width=890&button=false)](https://github.com/fluid-dev/hexo-theme-fluid/graphs/contributors)
 
-Documents translation: [@EatRice](https://eatrice.top/) [@橙子杀手](https://ruru.eatrice.top)
+English docs translator: [@EatRice](https://eatrice.top/) [@橙子杀手](https://ruru.eatrice.top)
 
-Other contributions: [@zhugaoqi](https://github.com/zhugaoqi) [@julydate](https://github.com/julydate)
+Contributors outside PR: [@zhugaoqi](https://github.com/zhugaoqi) [@julydate](https://github.com/julydate)

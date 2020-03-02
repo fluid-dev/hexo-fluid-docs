@@ -55,127 +55,127 @@ meta:
 
 ### 2019/10/26
 
-- add WeChat QR code hover box
-- add a smooth scrolling effect
-- increase PV and UV statistics
+- Add WeChat QR code hover box
+- Add a smooth scrolling effect
+- Increase PV and UV statistics
 
 ### 2019/10/20
 
 - Increase Google statistics configuration
-- line Numbers can be turned off by a Hexo configuration
+- Line Numbers can be turned off by a Hexo configuration
 
 ### 2019/10/14
 
 - Fixed banners do not work in iOS and Safari environments anymore
-- adjusting the interval between the title and the date
+- Adjusting the interval between the title and the date
 
 ### 2019/9/17
 
-- repalce favicon with a new one 
-- add new function of picture lazy loading
-- optimize abstract on home page
+- Replace favicon with a new one 
+- Add new function of picture lazy loading
+- Optimize abstract on home page
 ### 2019/9/13
 
-- fix loading problem of valine
+- Fix loading problem of valine
 - Remove the top progress bar
 - Unified default banner img 
-- translate README into English
+- Translate README into English
 
 ### 2019/9/11
 
-- add `_static_prefix.yml` as (URL source) individual config 
-- remove `source_base_path` config items
-- add config item `about.md_path` to specify the path to about.md
+- Add `_static_prefix.yml` as (URL source) individual config 
+- Remove `source_base_path` config items
+- Add config item `about.md_path` to specify the path to about.md
 
 ### 2019/9/10
 
-- add scroll down and top buttons
-- optimize navigation bar configuration
+- Add scroll down and top buttons
+- Optimize navigation bar configuration
 
 
 ### 2019/9/9
 
-- change name to Fluid and migrate to Fluid-dev organization
-- add a set of configuration items' post_meta 'to configure the visibility of some elements in the home page
+- Change name to Fluid and migrate to Fluid-dev organization
+- Add a set of configuration items' post_meta 'to configure the visibility of some elements in the home page
 
 
 ### 2019/9/3
 
-- add a configuration item `source_base_path` to configure the parent path of the resource file
-- add overwrite configuration function to completely resolve configuration conflicts during upgrade
-- zh_cn.yml is changed to zh-cn.yml
-- fixed about. Md path reference problem
+- Add a configuration item `source_base_path` to configure the parent path of the resource file
+- Add overwrite configuration function to completely resolve configuration conflicts during upgrade
+- `zh_cn.yml` is changed to `zh-cn.yml`
+- Fixed about. Md path reference problem
 
 ### 2019/8/30
 
-- support i18n (zh-hans,en)
-- repair # 63
+- Support i18n (zh-hans,en)
+- Repair #63
 
 ### 2019/8/22
 
-- new Utterances and Gitalk comment system
-- new local search function
+- New Utterances and Gitalk comment system
+- New local search function
 
 ### 2019/8/17
 
-- add the loading progress bar in the upper right corner of the page
-- add a configuration item to adjust the theme color
-- optimize some styles
+- Add the loading progress bar in the upper right corner of the page
+- Add a configuration item to adjust the theme color
+- Optimize some styles
 
 
 ### 2019/8/15
 
-- refactor all custom CSS using stylus
-- add label archive, categorize archive, and reconstruct archive page
+- Refactor all custom CSS using stylus
+- Add label archive, categorize archive, and reconstruct archive page
 
 
 ### 2019/8/9
 
-- mobile adaption, adjust the left and right sides of the article and TOC
-- add shadow effect to article images
-- split page attribute
-- new 404 page
+- Mobile adaption, adjust the left and right sides of the article and TOC
+- Add shadow effect to article images
+- Split page attribute
+- Add 404 page
 
 ### 2019/8/2
 
-- add new custom features on about page 
-- adjust the configuration of the about page icon
-- increase baidu statistics
-- adjust slogan and title
-- adjust the priority of code highlighting styles
-- mobile optimization
+- Add new custom features on about page 
+- Adjust the configuration of the about page icon
+- Increase baidu statistics
+- Adjust slogan and title
+- Adjust the priority of code highlighting styles
+- Mobile optimization
 
 
 ### 2019/8/1
 
-- add subtitle typewriter effect
-- optimize the anchor effect in the article page
-- at the bottom of the article page, add HTML support for the custom area, you can customize the display appreciation code and other contents
-- optimize the configuration file and directory structure
-- package upgraded and moved locally
+- Add subtitle typewriter effect
+- Optimize the anchor effect in the article page
+- At the bottom of the article page, add HTML support for the custom area, you can customize the display appreciation code and other contents
+- Optimize the configuration file and directory structure
+- Package upgraded and moved locally
 ### 2019/7/31
 
 Combined with @zkqiang's optimization recommendations:
-- article page style is changed as  Github style
-- add footer filing information
-- optimize the configuration file structure
-- page detail optimization
+- Article page style is changed as  Github style
+- Add footer filing information
+- Optimize the configuration file structure
+- Page detail optimization
 ### 2019/6/6
 
-- improve archive rendering logic
+- Improve archive rendering logic
 
 ### 2019/3/15
 
-- the redesign is basically completed. a lot of thanks to [@zhugaoqi](https://github.com/zhugaoqi) for the design guidance;
-- replace all third-party libraries and pictures with CDN references to greatly reduce the size of the warehouse;
-- redesign archive rendering logic;
-- unified article page layout, new article copyright statement;
-- streamlined pages, configuration items;
-- the old version gradually gives up maintenance, and the code is archived in the 'v0.9' branch;
+- The redesign is basically completed. a lot of thanks to [@zhugaoqi](https://github.com/zhugaoqi) for the design guidance;
+- Replace all third-party libraries and pictures with CDN references to greatly reduce the size of the warehouse;
+- Redesign archive rendering logic;
+- Unified article page layout, new article copyright statement;
+- Streamlined pages, configuration items;
+- The old version gradually gives up maintenance, and the code is archived in the 'v0.9' branch;
 
 ### 2019/1/28
 
-1. _config.yml structure has been greatly changed, and the image path has been unified relative to the root directory
+1. `_config.yml` structure has been greatly changed, and the image path has been unified relative to the root directory
 2. The height of the top image of the index, archive, post, about page can be customized (0-100)
 3. The top image of the article page can be set uniformly or set separately in the article.Priority: banner_img property > topic configuration within the article
 4. Add a new article page layout, optional in the configuration file (post.layout)
