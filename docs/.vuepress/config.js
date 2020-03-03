@@ -1,3 +1,5 @@
+const moment = require('moment-timezone');
+
 module.exports = {
   locales: {
     // 键名是该语言所属的子路径
@@ -76,14 +78,16 @@ module.exports = {
   plugins: {
     '@vuepress/last-updated': {
       transformer: (timestamp, lang) => {
-        const moment = require('moment')
-        moment.locale(lang)
-        return moment(timestamp).format('lll')
-      },
+        if (lang === 'zh-CN') {
+          return moment(timestamp).tz('Asia/Shanghai').locale(lang).format('lll')
+        } else {
+          return moment(timestamp).utc().locale(lang).format('lll')
+        }
+      }
     },
     'sitemap': {
       hostname: 'https://hexo.fluid-dev.com/docs/',
-      dateFormatter: time => new Date(time).toISOString()
+      dateFormatter: time => new moment(time, 'lll').toISOString()
     },
   },
 };
