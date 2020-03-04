@@ -285,16 +285,6 @@ index:
     tag: true
 ```
 
-### 隐藏指定文章
-
-如果不想某篇文章出现在首页，可以借助第三方插件 [hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md)。
-
-:::warning
-
-此处仅作为推荐，请仔细阅读插件的文档，以免造成不良后果。
-
-:::
-
 ## 文章页
 
 ### 文章在首页的略缩图
@@ -591,6 +581,28 @@ about:
 - 如果博客部署在云服务器，需要 Nginx 配置文件设置 `error_page 404 = /404.html`；
 - 如果部署在 Github Pages 上，不需要额外配置，但必须绑定顶级域名才生效；
 - 其他 OSS 等平台，请参考各平台关于 404 页的配置文档，但并不是所有平台都支持跳转 Html。
+
+## 第三方插件
+
+:::warning
+所有插件仅作为推荐，请仔细阅读它们的文档，以免造成不良后果。
+:::
+
+### 置顶文章
+
+[hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
+
+### 隐藏指定文章
+
+[hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2)
+
+### 插入视频
+
+[hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)
+
+### 中英文间自动空格
+
+[hexo-filter-auto-spacing](https://github.com/hexojs/hexo-filter-auto-spacing)
 
 ## 常见问题
 
