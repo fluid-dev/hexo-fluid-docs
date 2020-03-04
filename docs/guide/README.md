@@ -213,7 +213,8 @@ force_https: true
 如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改**博客配置**中：
 
 ```yaml
-root: /blog
+url: http://xxx.com/blog
+root: /blog/
 ```
 
 ## 首页
