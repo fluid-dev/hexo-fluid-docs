@@ -613,6 +613,14 @@ All plugins are only recommended. Please read their documents carefully to avoid
 
 [hexo-filter-auto-spacing](https://github.com/hexojs/hexo-filter-auto-spacing)
 
+### Live2D
+
+[hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)
+
+### RSS Feed
+
+[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
 ## FAQ
 
 #### Code Highlight Error

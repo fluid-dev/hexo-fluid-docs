@@ -610,6 +610,14 @@ about:
 
 [hexo-filter-auto-spacing](https://github.com/hexojs/hexo-filter-auto-spacing)
 
+### 看板娘
+
+[hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)
+
+### RSS Feed
+
+[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
 ## 常见问题
 
 #### 代码高亮样式异常
