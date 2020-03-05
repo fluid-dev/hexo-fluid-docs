@@ -179,7 +179,7 @@ hexo d
 
 ### 方法一
 
-直接在 github 下载最新的 release，然后替换掉 themes 下的主题文件，故推荐将配置全部写在 source/_data/fuid_config.yml
+直接在 github 下载最新的 release，然后替换掉 themes 下的主题文件，故推荐将配置全部写在 source/_data/fluid_config.yml
 
 ### 方法二
 

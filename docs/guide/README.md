@@ -23,6 +23,8 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 [吃白饭的休伯利安号](https://eatrice.top)
 
+[上屋顶看北斗七星](https://ruru.eatrice.top)
+
 ## 关于指南
 
 本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照**主题配置**中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
