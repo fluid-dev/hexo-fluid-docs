@@ -33,6 +33,8 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 本指南中提到的：
 - "**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`
 - "**主题配置**" 指的是 `theme/fluid/_config.yml`
+
+博客与主题的 source 目录最终会合并，因此存放的文件优先选择博客的 source
 :::
 
 ## 快速开始
@@ -106,6 +108,8 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 :::tip
 目录文件夹也可自定义，但必须在 source 目录下
+
+博客与主题的 source 目录最终会合并，因此优先选择博客的 source
 :::
 
 - 高度
@@ -301,7 +305,7 @@ date: 2019-10-10 10:00:00
 以下是文章内容
 ```
 
-和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `fluid/source/img/example.jpg` 目录下的图片（目录也可自定义，但必须在 source 目录下）。
+和 Banner 配置相同，`/img/example.jpg` 对应的是存放在 `/source/img/example.jpg` 目录下的图片（目录也可自定义，但必须在 source 目录下）。
 
 也可以使用外链 Url 的绝对路径。
 
@@ -406,7 +410,7 @@ highlight:
 
 使用更多主题的方式：
 
-1. 进入[该链接](https://jmblog.github.io/color-themes-for-google-code-prettify/)下载 `min.css` 文件，并保存为 `文件名.min.css` 到 `fluid/source/lib/prettify/`
+1. 进入[该链接](https://jmblog.github.io/color-themes-for-google-code-prettify/)下载 `min.css` 文件，并保存为 `文件名.min.css` 到 `/source/lib/prettify/`
 2. 找到文件中的 `.prettyprint{ background: ***; ...}`，在 *** 后面加上 `!important`，例如：`.prettyprint{background:#fafbfc!important; ...}`
 3. 最后**主题配置**中设置 `theme: 文件名`（不含后缀）
 

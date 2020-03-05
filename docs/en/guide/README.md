@@ -37,6 +37,8 @@ About the config file:
 - : "**blog config**" refer to the `_config.yml` in the blog root directory.
 - : "**theme config**" refer to the path `theme/fluid/_config.yml`
 
+The source directory of blog and fluid will be merged eventually, so the source of blog is preferred for the stored files
+
 :::
 
 ## Quick Start
@@ -111,6 +113,8 @@ For example, the path `/img/example.jpg`, is in`/source/img/example.jpg`.
 
 ::: tip
 You can define the ain path yourself, but it should be in the folder `source`
+
+The source directory of blog and fluid will be merged eventually, so the source of blog is preferred.
 :::
 
 - height
