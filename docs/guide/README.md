@@ -265,7 +265,7 @@ subtitle: 若不填默认是 title
 支持 Markdown, HTML
 ```
 
-页面的属性配置可以在**主题配置**中设置：
+页面的属性配置可以在**主题配置**中统一设置：
 
 ```yaml
 page:
@@ -273,7 +273,7 @@ page:
   banner_img_height: 70
 ```
 
-也可以直接在 Front-Matter 里设置：
+也可以直接在 Front-Matter 里单独设置：
 
 ```markdown
 ---
