@@ -64,6 +64,28 @@ theme: fluid  # 指定主题
 language: zh-CN  # 指定语言，可不改
 ```
 
+### 创建「关于页」
+
+自 v1.7.0 开始，「关于页」需要手动创建：
+
+```bash
+$ hexo new page about
+```
+
+创建成功后修改 `/source/about/index.md`，添加 `layout` 属性。
+
+修改后的文件示例如下：
+
+```yml
+title: about
+date: 2020-02-23 19:20:33
+layout: about
+---
+
+# 这里可以写正文
+支持 Markdown, HTML
+```
+
 ## 全局
 
 ### 覆盖配置
@@ -221,6 +243,61 @@ force_https: true
 ```yaml
 url: http://xxx.com/blog
 root: /blog/
+```
+
+### 自定义页面
+
+如果想单独生成一个页面，可先用命令行创建页面：
+
+```sh
+$ hexo new page example
+```
+
+创建成功后修改博客路径下 `/source/example/index.md`：
+
+```markdown
+---
+title: example
+subtitle: 若不填默认是 title
+---
+
+# 这里可以写正文
+支持 Markdown, HTML
+```
+
+页面的属性配置可以在**主题配置**中设置：
+
+```yaml
+page:
+  banner_img: /img/default.png
+  banner_img_height: 70
+```
+
+也可以直接在 Front-Matter 里设置：
+
+```markdown
+---
+title: example
+banner_img: /img/default.png
+banner_img_height: 60
+---
+
+# 这里可以写正文
+```
+
+### 自定义 JS 或 CSS
+
+如果你想引入外部的 JS 或 CSS（比如 IconFont），可以通过以下**主题配置**，具体见注释：
+
+```yaml
+# 指定自定义 js 文件路径，路径是相对 source 目录
+custom_js: /js/custom.js
+
+# 指定自定义 css 文件路径，路径是相对 source 目录
+custom_css: /css/custom.css
+
+# 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突
+custom_html: '<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">'
 ```
 
 ## 首页

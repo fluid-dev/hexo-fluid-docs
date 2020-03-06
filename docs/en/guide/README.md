@@ -65,6 +65,28 @@ highlight:
 theme: fluid
 ```
 
+### Create About Page
+
+Since v1.7.0, the about page needs to be created manually:
+
+```bash
+$ hexo new page about
+```
+
+After successful creation, modify `/source/about/index.md` and add `layout` attribute.
+
+The modified file example is as follows:
+
+```yaml
+title: about
+date: 2020-02-23 19:20:33
+layout: about
+---
+
+# You can write the content here
+Support Markdown, HTML
+```
+
 ## Global
 
 ### Override Configuration
@@ -216,6 +238,60 @@ force_https: true
 ```
 
 So that you can get *https* for all request(if your resources don't exist in your domain, they should support *https*).
+
+### Custom Page
+
+If you want to generate a custom page, you can first create a page from the command:
+
+```sh
+$ hexo new page example
+```
+
+Then edit `/source/example/index.md`：
+
+```markdown
+---
+title: example
+subtitle: Can be omitted, default is title
+---
+
+# Markdown or HTML
+```
+
+The properties of the page can be set in **theme config**:
+
+```yaml
+page:
+  banner_img: /img/default.png
+  banner_img_height: 70
+```
+
+Also set it in the Front-Matter:
+
+```markdown
+---
+title: example
+banner_img: /img/default.png
+banner_img_height: 60
+---
+
+# Markdown or HTML
+```
+
+### Custom JS / CSS
+
+If you want to import external JS or CSS (such as iconfont), you can set these in **theme config**:
+
+```yaml
+# Set the path of the custom JS file, relative to the source directory
+custom_js: /js/custom.js
+
+# Set the path of the custom CSS file, relative to the source directory
+custom_css: /css/custom.css
+
+# Customize the HTML content at the page bottom (above the footer), which can also be used to import JS or CSS externally. Be careful not to conflict with the post.custom configuration
+custom_html: '<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">'
+```
 
 ## Home
 
