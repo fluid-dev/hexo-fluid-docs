@@ -285,9 +285,9 @@ banner_img_height: 60
 # 这里可以写正文
 ```
 
-### 自定义 JS 或 CSS
+### 自定义 JS / CSS / HTML
 
-如果你想引入外部的 JS 或 CSS（比如 IconFont），可以通过以下**主题配置**，具体见注释：
+如果你想引入外部的 JS、CSS（比如 IconFont）或 HTML，可以通过以下**主题配置**，具体见注释：
 
 ```yaml
 # 指定自定义 js 文件路径，路径是相对 source 目录

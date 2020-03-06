@@ -278,9 +278,9 @@ banner_img_height: 60
 # Markdown or HTML
 ```
 
-### Custom JS / CSS
+### Custom JS / CSS / HTML
 
-If you want to import external JS or CSS (such as iconfont), you can set these in **theme config**:
+If you want to import external JS、CSS (such as iconfont) or HTML, you can set these in **theme config**:
 
 ```yaml
 # Set the path of the custom JS file, relative to the source directory
