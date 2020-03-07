@@ -257,7 +257,15 @@ title: example
 subtitle: Can be omitted, default is title
 ---
 
-# Markdown or HTML
+Content (Markdown or HTML)
+```
+
+The content has no markdown style by default. If you want to have the same style as post page, you can add:
+
+```html
+<div class="markdown-body">
+Content
+</div>
 ```
 
 3. The properties of all custom pages can be set in **theme config**:
@@ -277,7 +285,7 @@ banner_img: /img/default.png
 banner_img_height: 60
 ---
 
-# Markdown or HTML
+Markdown or HTML
 ```
 
 ### Custom JS / CSS / HTML

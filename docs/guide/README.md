@@ -255,7 +255,7 @@ root: /blog/
 $ hexo new page example
 ```
 
-2. 创建成功后修改博客路径下 `/source/example/index.md`：
+2. 创建成功后编辑博客目录下 `/source/example/index.md`：
 
 ```markdown
 ---
@@ -263,8 +263,15 @@ title: example
 subtitle: 若不填默认是 title
 ---
 
-# 这里可以写正文
-支持 Markdown, HTML
+这里写正文，支持 Markdown, HTML
+```
+
+正文默认没有 Markdown 样式，如果希望和文章相同的样式，可以加上：
+
+```html
+<div class="markdown-body">
+正文
+</div>
 ```
 
 3. 页面的属性配置可以在**主题配置**中统一设置：
