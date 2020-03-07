@@ -667,36 +667,6 @@ To open this page, you need to configure it on the deployment environment of the
 - If deployed on Github Pages, no additional configuration is required, but the custom domain must be bound.
 - For other platforms such as OSS, please refer to the 404-page configuration documentation for each platform, but not all platforms support redirect to this Html.
 
-## Plugins
-
-:::warning
-All plugins are only recommended. Please read their documents carefully to avoid adverse consequences.
-:::
-
-### Pin Posts
-
-[hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
-
-### Hidden Posts
-
-[hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2)
-
-### Video Tag
-
-[hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)
-
-### Auto Spacing
-
-[hexo-filter-auto-spacing](https://github.com/hexojs/hexo-filter-auto-spacing)
-
-### Live2D
-
-[hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)
-
-### RSS Feed
-
-[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
-
 ## FAQ
 
 #### Code Highlight Error
@@ -718,9 +688,3 @@ All plugins are only recommended. Please read their documents carefully to avoid
 ## MIT
 
 [MIT](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)
-
-## Others
-
-[Changelog](/en/changelog/)
-
-[Contribution](/en/contribute/)

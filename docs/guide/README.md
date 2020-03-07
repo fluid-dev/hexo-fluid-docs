@@ -1,5 +1,5 @@
 ---
-metaTitle: 使用指南 | Hexo Fluid
+metaTitle: 配置指南 | Hexo Fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
@@ -7,7 +7,7 @@ meta:
     content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档,博客,文章
 ---
 
-# 使用指南
+# 配置指南
 
 ## 主题简介
 
@@ -665,36 +665,6 @@ about:
 - 如果部署在 Github Pages 上，不需要额外配置，但必须绑定顶级域名才生效；
 - 其他 OSS 等平台，请参考各平台关于 404 页的配置文档，但并不是所有平台都支持跳转 Html。
 
-## 第三方插件
-
-:::warning
-所有插件仅作为推荐，请仔细阅读它们的文档，以免造成不良后果。
-:::
-
-### 置顶文章
-
-[hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
-
-### 隐藏指定文章
-
-[hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2)
-
-### 插入视频
-
-[hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)
-
-### 中英文间自动空格
-
-[hexo-filter-auto-spacing](https://github.com/hexojs/hexo-filter-auto-spacing)
-
-### 看板娘
-
-[hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)
-
-### RSS Feed
-
-[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
-
 ## 常见问题
 
 #### 代码高亮样式异常
@@ -719,9 +689,3 @@ about:
 ## 开源协议
 
 [MIT](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)
-
-## 其他
-
-[更新日志](/changelog/)
-
-[贡献开发](/contribute/)

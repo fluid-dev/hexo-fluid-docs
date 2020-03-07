@@ -37,9 +37,10 @@ module.exports = {
           },
         },
         nav: [
-          { text: '使用指南', link: '/guide/' },
-          { text: '更新日志', link: '/changelog/' },
+          { text: '配置指南', link: '/guide/' },
+          { text: '插件推荐', link: '/plugin/' },
           { text: '操作示例', link: '/example/' },
+          { text: '更新日志', link: '/changelog/' },
           { text: '贡献开发', link: '/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],
@@ -58,8 +59,9 @@ module.exports = {
         },
         nav: [
           { text: 'Guide', link: '/en/guide/' },
-          { text: 'Changelog', link: '/en/changelog/' },
+          { text: 'Plugin', link: '/plugin/' },
           { text: 'Example', link: '/en/example/' },
+          { text: 'Changelog', link: '/en/changelog/' },
           { text: 'Contribute', link: '/en/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],
@@ -83,11 +85,11 @@ module.exports = {
         } else {
           return moment(timestamp).utc().locale(lang).format('lll')
         }
-      }
+      },
     },
     'sitemap': {
       hostname: 'https://hexo.fluid-dev.com/docs/',
-      dateFormatter: time => new moment(time, 'lll').toISOString()
+      dateFormatter: time => new moment(time, 'lll').toISOString(),
     },
   },
 };
