@@ -241,13 +241,15 @@ So that you can get *https* for all request(if your resources don't exist in you
 
 ### Custom Page
 
-If you want to generate a custom page, you can first create a page from the command:
+If you want to generate a custom page, same as create about page.
+
+1. Create a page from the command:
 
 ```sh
 $ hexo new page example
 ```
 
-Then edit `/source/example/index.md`：
+2. Edit `/source/example/index.md`：
 
 ```markdown
 ---
@@ -258,7 +260,7 @@ subtitle: Can be omitted, default is title
 # Markdown or HTML
 ```
 
-The properties of the page can be set in **theme config**:
+3. The properties of all custom pages can be set in **theme config**:
 
 ```yaml
 page:
@@ -266,7 +268,7 @@ page:
   banner_img_height: 70
 ```
 
-Also set it in the Front-Matter:
+Also set it in [Front-matter](https://hexo.io/zh-cn/docs/front-matter):
 
 ```markdown
 ---

@@ -247,13 +247,15 @@ root: /blog/
 
 ### 自定义页面
 
-如果想单独生成一个页面，可先用命令行创建页面：
+如果想单独生成一个页面，步骤和创建「关于页」类似。
+
+1. 首先用命令行创建页面：
 
 ```sh
 $ hexo new page example
 ```
 
-创建成功后修改博客路径下 `/source/example/index.md`：
+2. 创建成功后修改博客路径下 `/source/example/index.md`：
 
 ```markdown
 ---
@@ -265,7 +267,7 @@ subtitle: 若不填默认是 title
 支持 Markdown, HTML
 ```
 
-页面的属性配置可以在**主题配置**中统一设置：
+3. 页面的属性配置可以在**主题配置**中统一设置：
 
 ```yaml
 page:
@@ -273,7 +275,7 @@ page:
   banner_img_height: 70
 ```
 
-也可以直接在 Front-Matter 里单独设置：
+也可以直接在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里单独设置：
 
 ```markdown
 ---
