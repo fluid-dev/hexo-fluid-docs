@@ -194,10 +194,12 @@ Applicable if no code has been modified by yourself (except for configuration fi
 Applicable to cases where some codes are customized or you want to pull the master branch
 :::
 
-1. Pull the master branch of fluid repo to your branch
+1. Make sure your fluid directory has git and all changes have been committed
+
+2. Pull the master branch of fluid repo to your branch
 
 ```bash
 git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
-2. Resolve code conflicts and keep your modified parts
+3. Resolve code conflicts and keep your modified parts

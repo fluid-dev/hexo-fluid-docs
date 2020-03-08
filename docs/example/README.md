@@ -195,10 +195,12 @@ hexo d
 适用于自定义了一些代码，或想体验 master 分支的情况
 :::
 
-1. 把 fluid 仓库的 master 分支拉取到自己的分支上（可新建一个分支再拉取）
+1. 确定自己的 fluid 目录已经开启 git，并且所有改动都已 commit
+
+2. 把 fluid 仓库的 master 分支拉取到自己的分支上（可新建一个分支再拉取）
 
 ```bash
 git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
-2. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）
+1. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）
