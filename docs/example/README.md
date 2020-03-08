@@ -179,39 +179,26 @@ hexo d
 
 ### 方法一
 
-直接在 github 下载最新的 release，然后替换掉 themes 下的主题文件，故推荐将配置全部写在 source/_data/fluid_config.yml
+:::tip
+适用于没有自行修改任何代码的情况（配置文件除外）
+:::
+
+1. 将自己的配置文件备份（如果完整使用[覆盖配置](/guide/#覆盖配置)功能可忽略此步骤）
+
+2. 将 fluid 文件夹全部删除，重新下载 [release](https://github.com/fluid-dev/hexo-theme-fluid/releases) 并解压
+
+3. 如果某些配置发生了变化（改名或弃用），release 的说明里会特别提示，同步修改原配置文件即可。 
 
 ### 方法二
 
-用一个子仓库作为链接，用 git 更新
+:::tip
+适用于自定义了一些代码，或想体验 master 分支的情况
+:::
 
-步骤：
-
-2.1 先 fork 主题 [Fluid](https://github.com/fluid-dev/hexo-theme-fluid) 到你的 github 账户
-
-2.2 在项目主目录增加远程仓库链接
+1. 把 fluid 仓库的 master 分支拉取到自己的分支上（可新建一个分支再拉取）
 
 ```bash
-git remote add fluid https://github.com/juukee/hexo-theme-fluid # 请改成自己实际的仓库地址
+git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
-2.3 将主题项目仓库作为一个子仓库
-
-```bash
-# --prefix=themes/fluid 主题目录所在位置
-# fluid 这个是上面一步定义的远程仓库地址
-# master 远程仓库的master分支
-git subtree add --prefix=themes/fluid fluid master
-```
-
-更新主题：以后更新主题一条命令搞定
-
-```bash
-git subtree pull --prefix=themes/fluid fluid master
-```
-
-推送主题：如果你想开发主题，在主题文件里面修改代码，推送到自己仓库，然后 PR 到作者的主仓库，由作者审核并合并代码
-
-```bash
-git subtree push --prefix=themes/fluid fluid master
-```
+2. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）

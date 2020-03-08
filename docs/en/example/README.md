@@ -176,43 +176,28 @@ Upload your SSH key to the remote repository. If not, enter the username and pas
 hexo d
 ```
 
-## Theme Updating
+## Theme Upgrading
 
 ### Method One
 
-Download the newest release directly,then replace the files of theme.so we recommend you to write all config in the `source/_data/fluid_config.yml`
+:::tip
+Applicable if no code has been modified by yourself (except for configuration file)
+:::
+
+1. Backup your config files. We recommend you to use [Override-Configuration](/en/guide/#override-configuration)
+
+2. Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then replace the fluid directory.
 
 ### Method Two
 
-Use a subrepository as a url and update with git
+:::tip
+Applicable to cases where some codes are customized or you want to pull the master branch
+:::
 
-Step:
-
-2.1 Fork the theme [Fluid](https://github.com/fluid-dev/hexo-theme-fluid) to your github account
-
-2.2 Add remote repository url in the project main catalogue
+1. Pull the master branch of fluid repo to your branch
 
 ```bash
-git remote add fluid https://github.com/juukee/hexo-theme-fluid # 请改成自己实际的仓库地址
+git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
-2.3 Use theme project repository as a subrepository.
-
-```bash
-# --prefix=themes/fluid position of theme catalogue
-# fluid This is the remote warehouse address defined in the previous step
-# master master branch of remote repository
-git subtree add --prefix=themes/fluid fluid master
-```
-
-Update theme:only need one command to update the theme in the later operation
-
-```bash
-git subtree pull --prefix=themes/fluid fluid master
-```
-
-Push theme: if you want to develop a theme, modify the code in the theme file, push it to your own repository, and then PR to the author's main repository, where the author will review and merge the code
-
-```bash
-git subtree push --prefix=themes/fluid fluid master
-```
+2. Resolve code conflicts and keep your modified parts
