@@ -56,9 +56,6 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 必须如下修改博客目录下的 `_config.yml`：
 
 ```yaml
-highlight:
-  enable: false  # 关闭默认的代码高亮
-
 theme: fluid  # 指定主题
 
 language: zh-CN  # 指定语言，可不改
@@ -76,7 +73,8 @@ $ hexo new page about
 
 修改后的文件示例如下：
 
-```yml
+```yaml
+---
 title: about
 date: 2020-02-23 19:20:33
 layout: about
@@ -403,7 +401,7 @@ date: 2019-10-10 10:00:00
 
 本地图片存放位置同上。
 
-```yml
+```yaml
 ---
 title: 文章标题
 tags: [Hexo, Fluid]

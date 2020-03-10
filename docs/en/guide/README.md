@@ -58,11 +58,7 @@ After download, extract it to the themes directory and rename it to `fluid`.
 Modify `_config.yml` in the blog root directory as follows。
 
 ```yaml
-# close the defaulted highlight
-highlight:
-  enable: false
-
-theme: fluid
+theme: fluid  # set theme
 ```
 
 ### Create About Page
@@ -78,6 +74,7 @@ After successful creation, modify `/source/about/index.md` and add `layout` attr
 The modified file example is as follows:
 
 ```yaml
+---
 title: about
 date: 2020-02-23 19:20:33
 layout: about
