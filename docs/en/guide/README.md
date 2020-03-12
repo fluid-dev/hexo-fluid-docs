@@ -649,15 +649,27 @@ tag:
 
 ## About Page
 
-### Custom Content
+### Create About Page
 
-You can edit `fluid/pages/about.md` to define your area under your social networking icons.
+Since v1.7.0, the about page needs to be created manually:
 
-You can modify the `about.md` location in the **theme config**. It is recommended to modify it outside the fluid directory to avoid losing md content when upgrading fluid. For example:
+```bash
+$ hexo new page about
+```
+
+After successful creation, modify `/source/about/index.md` and add `layout` attribute.
+
+The modified file example is as follows:
 
 ```yaml
-about:
-  md_path: ../../source/_data/fluid_about.md  # location: blog/source/_data/fluid_about.md
+---
+title: about
+date: 2020-02-23 19:20:33
+layout: about
+---
+
+# You can write the content here
+Support Markdown, HTML
 ```
 
 ### Icons
