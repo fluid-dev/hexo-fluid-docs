@@ -326,21 +326,29 @@ fun_features:
     loop: false # repeat
 ```
 
-### Auto Excerpt
+### Post Excerpt
 
-:::tip
-Priority: Manually > Automatically
-
-If you don't set the Manual Excerpt and you close the auto abstract, the abstract of post will be blank.
-:::
-
-control the auto abstract：
+control the excerpt automatically (default is enable)：
 
 ```yaml
 index:
   auto_excerpt:
     enable: true
 ```
+
+If you need manual, you can use `<!-- more -->` to define excerpt.
+
+``` markdown
+This is excerpt
+<!-- more -->
+This is body
+```
+
+Or you can set `excerpt: This is excerpt` in [Front-matter](https://hexo.io/docs/front-matter).
+
+Priority: Manually > Automatically.
+
+There are 3 lines works will display in index page, the rest will be hidden automatically.
 
 ### Post Url Target
 
@@ -450,24 +458,6 @@ The format of date must observe ISO-8601；
 `{}`can replace number, you can change other content.
 
 :::
-
-### Excerpt
-
-:::tip
-Priority: Manually > Automatically
-
-There are 3 lines works will display, the rest will be hidden automatically
-:::
-
-You can use `<!-- more -->` to define abstract.
-
-``` markdown
-This is excerpt
-<!-- more -->
-This is body
-```
-
-Or you can set `excerpt: This is excerpt` in [Front-matter](https://hexo.io/docs/front-matter).
 
 ### Code HighLight
 
