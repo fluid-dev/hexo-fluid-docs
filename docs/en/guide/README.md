@@ -676,18 +676,6 @@ To open this page, you need to configure it on the deployment environment of the
 - If deployed on Github Pages, no additional configuration is required, but the custom domain must be bound.
 - For other platforms such as OSS, please refer to the 404-page configuration documentation for each platform, but not all platforms support redirect to this Html.
 
-## FAQ
-
-#### Code Highlight Error
-
-- Make sure that [disable highlight](/en/guide/#necessary-configuration)
-
-- Then try to run `hexo clean && hexo g`
-
-#### Configuration Invalid
-
-- Check yml files format, such must be a blank after `:`, or two blanks to indent.
-
 ## About Hexo Configuration
 
 [Blog _config.yml](https://hexo.io/docs/configuration)
