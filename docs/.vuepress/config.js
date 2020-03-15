@@ -1,4 +1,5 @@
 const moment = require('moment-timezone');
+const path = require('path');
 
 module.exports = {
   locales: {
@@ -92,4 +93,5 @@ module.exports = {
       dateFormatter: time => new moment(time, 'lll').toISOString(),
     },
   },
+  enhanceAppFiles: path.resolve(__dirname, 'script.js')
 };
