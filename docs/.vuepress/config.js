@@ -89,7 +89,7 @@ module.exports = {
       },
     },
     'sitemap': {
-      hostname: 'https://hexo.fluid-dev.com/docs/',
+      hostname: 'https://fluid-dev.github.io/',
       dateFormatter: time => new moment(time, 'lll').toISOString(),
     },
   },
