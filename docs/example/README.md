@@ -203,4 +203,4 @@ hexo d
 git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
-1. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）
+3. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）
