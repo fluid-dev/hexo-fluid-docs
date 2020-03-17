@@ -633,11 +633,11 @@ katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
 ## 归档页
 
-除 Banner 配置外，暂无其他配置项。
+具体见配置文件注释
 
 ## 分类页
 
-除 Banner 配置外，暂无其他配置项。
+具体见配置文件注释
 
 [添加分类的方法](https://hexo.io/zh-cn/docs/front-matter)
 
@@ -654,6 +654,8 @@ tag:
     start_color: "#BBBBEE"
     end_color: "#337ab7"
 ```
+
+其他配置具体见配置文件注释
 
 [添加标签的方法](https://hexo.io/zh-cn/docs/front-matter)
 
