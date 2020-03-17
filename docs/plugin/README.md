@@ -21,10 +21,6 @@ meta:
 
 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
 
-## 隐藏指定文章
-
-[hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2)
-
 ## 插入视频
 
 [hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)

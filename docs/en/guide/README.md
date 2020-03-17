@@ -248,7 +248,7 @@ $ hexo new page example
 
 2. Edit `/source/example/index.md`：
 
-```markdown
+```yaml
 ---
 title: example
 subtitle: Can be omitted, default is title
@@ -275,7 +275,7 @@ page:
 
 Also set it in [Front-matter](https://hexo.io/zh-cn/docs/front-matter):
 
-```markdown
+```yaml
 ---
 title: example
 banner_img: /img/default.png
@@ -376,14 +376,23 @@ index:
     tag: true
 ```
 
-### Hide Your Post
+### Hide Post
 
-If you don't want some post displayed on the home page, you can use the third-party tool [hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md).
+If you want to hide some posts from the index page, you can define `hide: true` at the head of a post [Front-matter](https://hexo.io/docs/front-matter).
 
-:::warning
+```yaml
+---
+title: post title
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+hide: true
+---
+This is post content
+```
 
-It is a Suggestion, Please read its document carefully, to avoid bad result.
-
+:::tip
+Hiding makes the post invisible in both category page and tag page.
+You can still enter post link.
 :::
 
 ## Post Page
@@ -392,14 +401,14 @@ It is a Suggestion, Please read its document carefully, to avoid bad result.
 
 You can define it at the head of a post [Front-matter](https://hexo.io/docs/front-matter).
 
-```
+```yaml
 ---
 title: post title
 tags: [Hexo, Fluid]
 index_img: /img/example.jpg
 date: 2019-10-10 10:00:00
 ---
-This the body of the post
+This is post content
 ```
 
 You can save your thumbnails in the `img` folder, or you can create a new folder in folder `source` to save them in folder `source`.
@@ -411,7 +420,7 @@ You also can using other pictures in other locations， but using the correct li
 You can define it at the head of a post, or use the home Banner image by defaulted
 
 
-```yml
+```yaml
 ---
 title: your title
 tags: [Hexo, Fluid]
@@ -472,14 +481,14 @@ highlight:
   enable: false
 ```
 
-You can change the style of code, in **theme config**
+You can change the highlight style of code, in **theme config**
 
 ```yaml
 highlight:
   theme: tomorrow-night-eighties
 ```
 
-Fuild has 4 styles of code.
+Fluid has 4 highlight styles.
 
 - github-v2
 - tomorrow

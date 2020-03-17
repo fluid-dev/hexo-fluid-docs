@@ -255,7 +255,7 @@ $ hexo new page example
 
 2. 创建成功后编辑博客目录下 `/source/example/index.md`：
 
-```markdown
+```yaml
 ---
 title: example
 subtitle: 若不填默认是 title
@@ -282,7 +282,7 @@ page:
 
 也可以直接在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里单独设置：
 
-```markdown
+```yaml
 ---
 title: example
 banner_img: /img/default.png
@@ -385,13 +385,33 @@ index:
     tag: true
 ```
 
+### 隐藏文章
+
+如果想把某些文章隐藏起来，不在首页和其他分类里展示，可以在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `hide: true` 属性。
+
+```yaml
+---
+title: 文章标题
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+hide: true
+---
+以下是文章内容
+```
+
+:::tip
+隐藏会使文章在分类和标签类里都不显示
+
+隐藏后依然可以通过文章链接访问
+:::
+
 ## 文章页
 
 ### 文章在首页的略缩图
 
-文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置`index_img` 属性。
+在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `index_img` 属性。
 
-```
+```yaml
 ---
 title: 文章标题
 tags: [Hexo, Fluid]

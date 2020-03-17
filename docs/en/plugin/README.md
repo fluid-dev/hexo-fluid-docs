@@ -21,10 +21,6 @@ All plugins are only recommended. Please read their documents carefully to avoid
 
 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
 
-## Hidden Posts
-
-[hexo-generator-index2](https://github.com/Jamling/hexo-generator-index2)
-
 ## Video Tag
 
 [hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)
