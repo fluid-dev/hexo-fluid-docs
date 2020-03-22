@@ -492,7 +492,7 @@ highlight:
   enable: false
 ```
 
-可以修改样式的主题，在主题 congig 中指定：
+可以修改样式的主题，在主题 config 中指定：
 
 ```yaml
 highlight:
