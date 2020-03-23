@@ -226,13 +226,15 @@ language: zh-CN
 
 当你的域名升级到 HTTPS 后，可能之前存在部分图片等资源使用的是 HTTP，这时混用出现网页报错，造成图片无法显示。
 
-这种情况可以启动如下配置：
+控制台里也会出现报错：`Mixed Content: The page at 'https://xxx' was loaded over HTTPS`。
+
+这种情况可以在**主题配置**中开启此配置：
 
 ```yaml
 force_https: true
 ```
 
-即可将所有请求强制升级为 HTTPS（如是外部图片需要本身支持 HTTPS）。
+即可将所有请求强制升级为 HTTPS（如是外部资源，需要本身支持 HTTPS）。
 
 ### 二级站点路径
 

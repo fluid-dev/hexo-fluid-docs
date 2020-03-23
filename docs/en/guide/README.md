@@ -228,13 +228,15 @@ If you want to add more language, you'd better copy a new file to edit, and defi
 
 When your domain update to `https`, and some resources on your blog only support http protocol, the browser will not load this resources.
 
+There will be errors in the console: `Mixed Content: The page at 'https://xxx' was loaded over HTTPS`。
+
 If it happens, you can change the **theme config** as follow:
 
 ```yaml
 force_https: true
 ```
 
-So that you can get *https* for all request(if your resources don't exist in your domain, they should support *https*).
+Then all requests are forced to HTTPS (if it is an external resource, it needs to support HTTPS itself)
 
 ### Custom Page
 
