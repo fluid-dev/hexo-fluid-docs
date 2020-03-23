@@ -88,10 +88,8 @@ Support Markdown, HTML
 
 ### Override Configuration
 
-:::warning
-
-If you don't understand the feature, don't use it
-
+:::tip
+It can upgrade the theme smoothly, and is recommended for everyone to learn to use
 :::
 
 Override configuration can make the **theme config** out of the theme dictionary, and avoid losing custom config after theme upgraded.
@@ -103,6 +101,15 @@ Usage:
 1. cd into the folder '*source*' in your *blog root dictionary*, `mkdir _data` (beside to the folder '_post');
 2. Create a file `fluid_config.yml` in the folder `_date` , copy the configurations from **theme config** to `fluid_config.yml`;
 3. You can set any config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
+
+If you want to cancel some configurations, you should do this:
+
+```yaml
+about:
+  icons:  # This is set to null, otherwise the configuration can't be override
+    # "fab fa-github": https://github.com
+    # "fab fa-twitter": https://twitter.com
+```
 
 ### Static Resource
 

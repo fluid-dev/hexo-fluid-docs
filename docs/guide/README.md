@@ -88,8 +88,8 @@ layout: about
 
 ### 覆盖配置
 
-:::warning
-启用此功能将使原**主题配置**失效，如果不清楚此功能的用处，请不要设置
+:::tip
+可实现平滑升级主题，推荐所有人学习使用
 :::
 
 覆盖配置可以使**主题配置**放置在 fluid 目录之外，避免在更新主题时丢失自定义的配置。
@@ -101,6 +101,15 @@ layout: about
 1. 进入博客目录的 source 目录下（不是主题目录的 source），创建 `_data` 目录（和 `_post` 目录同级）；
 2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部内容复制到 `fluid_config.yml` 中；
 3. 以后配置都在 `fluid_config.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
+
+如果想取消某些配置，注意不要把主键删掉，不然是无法覆盖的，比如：
+
+```yaml
+about:
+  icons:  # 这里设为空值，而不是注释掉，否则无法覆盖配置
+    # "fab fa-github": https://github.com
+    # "fab fa-twitter": https://twitter.com
+```
 
 ### 静态资源
 
