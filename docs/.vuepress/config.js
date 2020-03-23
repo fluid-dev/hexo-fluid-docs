@@ -60,7 +60,7 @@ module.exports = {
         },
         nav: [
           { text: 'Guide', link: '/en/guide/' },
-          { text: 'Plugin', link: '/plugin/' },
+          { text: 'Plugin', link: '/en/plugin/' },
           { text: 'Example', link: '/en/example/' },
           { text: 'Changelog', link: '/en/changelog/' },
           { text: 'Contribute', link: '/en/contribute/' },
