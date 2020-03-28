@@ -9,7 +9,7 @@ meta:
 
 # 配置指南
 
-:::warning
+:::tip
 致主题的新用户：
 
 本指南经过数个版本打磨，绝大部分功能都有详细说明，请仔细阅读。
@@ -502,25 +502,14 @@ post:
 
 ### 代码高亮样式
 
-:::warning
-请确保已关闭 Hexo 默认代码高亮，否则会出现异常样式
-:::
-
-关闭默认代码高亮的方式，修改**博客配置**：
-
-```yaml
-highlight:
-  enable: false
-```
-
-可以修改样式的主题，在**主题配置**中指定：
+在**主题配置**中指定样式方案：
 
 ```yaml
 highlight:
   theme: tomorrow-night-eighties
 ```
 
-主题自带了 4 种配置样式：
+主题自带了 4 种样式：
 
 - github-v2
 - tomorrow
@@ -580,10 +569,22 @@ daovoice:
   appid: ''
 ```
 
+### 插入便签
 
-### 文章样式
+你可以在 markdown 中加入如下的 HTML 内容来使用便签：
 
-文章样式使用的是 github-markdown，暂时不支持配置，细节调整可自行修改 `fluid/source/lib/github-markdown/github-markdown.min.css`
+```html
+<p class="note note-primary">标签</p>
+```
+
+可选便签：
+
+<p class="note note-primary">note-primary</p>
+<p class="note note-secondary">note-secondary</p>
+<p class="note note-danger">note-danger</p>
+<p class="note note-warning">note-warning</p>
+<p class="note note-info">note-info</p>
+<p class="note note-light">note-light</p>
 
 ### LaTeX 数学公式
 

@@ -477,18 +477,7 @@ The format of date must observe ISO-8601；
 
 :::
 
-### Code HighLight
-
-:::warning
-Make sure that defaulted highlight is disable, or some style will display on incorrect way.
-:::
-
-You can disable Highlight by modifying `blog config`:
-
-```yaml
-highlight:
-  enable: false
-```
+### Code Highlight
 
 You can change the highlight style of code, in **theme config**
 
@@ -519,7 +508,7 @@ highlight:
   line_number: true
 ```
 
-### Comments
+### Comment
 
 You can enable it in **theme config**:
 
@@ -555,9 +544,22 @@ If you comment board don't display, after you finished below steps, there may be
 <!--   appid: '' -->
 <!-- ``` -->
 
-### Style of Post
+### Note
 
-The style of post is powered by github-markdown, Configuration is not supported for the time being, you can modify some details by `fluid/source/lib/github-markdown/github-markdown.min.css`
+You can use notes by inserting the HTML into markdown:
+
+```html
+<p class="note note-primary">Note</p>
+```
+
+Optional:
+
+<p class="note note-primary">note-primary</p>
+<p class="note note-secondary">note-secondary</p>
+<p class="note note-danger">note-danger</p>
+<p class="note note-warning">note-warning</p>
+<p class="note note-info">note-info</p>
+<p class="note note-light">note-light</p>
 
 ### LaTeX
 
