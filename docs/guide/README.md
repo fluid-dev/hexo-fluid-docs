@@ -9,6 +9,16 @@ meta:
 
 # 配置指南
 
+:::warning
+致主题的新用户：
+
+本指南经过数个版本打磨，绝大部分功能都有详细说明，请仔细阅读。
+
+页面个人化定制可以通过[自定义功能](/guide/#自定义-js-css-html)实现。
+
+另外所有配置以本地 `hexo s` 为准，部署后的异常大部分是缓存原因。
+:::
+
 ## 主题简介
 
 Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev](https://github.com/fluid-dev) 负责开发与维护。
@@ -654,7 +664,7 @@ katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
 ## 标签页
 
-可以设置词云的一些样式：
+标签是以词云的形式展示，标签的大小和颜色会根据标签下的文章数量变化，相关配置如下：
 
 ```yaml
 tag:
