@@ -13,6 +13,10 @@ meta:
 所有插件仅作为推荐，请仔细阅读它们的文档，以免造成不良后果。
 :::
 
+## 压缩生成文件
+
+[hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier)
+
 ## 生成文章短链接
 
 [hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink)

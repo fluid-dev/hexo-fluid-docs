@@ -587,7 +587,7 @@ daovoice:
 
 <p class="note note-primary">note-primary</p>
 <p class="note note-secondary">note-secondary</p>
-<p class="note note-success">note-danger</p>
+<p class="note note-success">note-success</p>
 <p class="note note-danger">note-danger</p>
 <p class="note note-warning">note-warning</p>
 <p class="note note-info">note-info</p>
@@ -662,6 +662,26 @@ katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 缺点
 - 小部分 LaTeX 不支持
 
+:::
+
+### Mermaid 流程图
+
+当需要使用 [Mermaid](http://mermaid-js.github.io/mermaid/#/) 渲染流程图时，可手动开启本功能：
+
+```yaml
+post:
+  mermaid:
+    enable: true
+    specific: false
+    options:
+```
+
+`specific`: 建议开启。当为 true 时，只有在文章 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `mermaid: true` 才会在文章页启动流程图渲染，以便在页面不包含流程图时提高加载速度。
+
+`options`: 官方 API 的配置项，具体可见 [mermaidAPI.js](http://mermaid-js.github.io/mermaid/#/mermaidAPI)
+
+:::tip
+自定义页面默认不加载，如需使用，需在 Front-matter 中指定 `mermaid: true`
 :::
 
 ## 归档页

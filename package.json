@@ -6,7 +6,7 @@
     "vuepress-plugin-sitemap": "^2.3.1"
   },
   "name": "docs",
-  "version": "1.7.4",
+  "version": "1.8.0",
   "description": "hexo-fluid-docs",
   "main": "index.js",
   "repository": "https://github.com/fluid-dev/hexo-fluid-docs",

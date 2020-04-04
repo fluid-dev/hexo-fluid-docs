@@ -94,66 +94,9 @@ hexo s # abbreviation of hexo server.
 hexo clean && hexo g
 ```
 
-## Zip (Alternative)
+## Minify (Alternative)
 
-Use gulp for page zipping and install gulp globally
-
-```bash
-yarn global add gulp
-npm install -g gulp
-```
-
-Install dependency package:
-
-```bash
-npm install gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify --save
-
-# or use yarn
-yarn add gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify
-```
-
-Then create a new 'gulpfile.js' file in the blog directory to hold the gulp compression configuration
-
-```js
-var gulp = require('gulp');
-var minifycss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var htmlmin = require('gulp-htmlmin');
-var htmlclean = require('gulp-htmlclean');
-// zip public catalogue css
-gulp.task('minify-css', function() {
-    return gulp.src('./public/**/*.css')
-        .pipe(minifycss())
-        .pipe(gulp.dest('./public'));
-});
-// zip public catalogue html
-gulp.task('minify-html', function() {
-  return gulp.src('./public/**/*.html')
-    .pipe(htmlclean())
-    .pipe(htmlmin({collaspseWhiteSpace:true}))
-    .pipe(htmlmin({
-         removeComments: true,
-         minifyJS: true,
-         minifyCSS: true,
-         minifyURLs: true,
-    }))
-    .pipe(gulp.dest('./public'))
-});
-// zip public/js catalogue js
-gulp.task('minify-js', function() {
-    return gulp.src('./public/**/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('./public'));
-});
-// executing the gulp command
-gulp.task('default', gulp.series('minify-html','minify-css','minify-js'));
-```
-
-The above Settings only need to be set once, and there is no need to set it later. If you run directly in the terminal, you can directly compress the files in the public automatically
-
-```bash
-gulp
-```
+You can use [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) to minify the generated files and images
 
 ## Deployment
 

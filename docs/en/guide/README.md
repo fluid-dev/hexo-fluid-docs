@@ -556,6 +556,7 @@ Optional:
 
 <p class="note note-primary">note-primary</p>
 <p class="note note-secondary">note-secondary</p>
+<p class="note note-success">note-success</p>
 <p class="note note-danger">note-danger</p>
 <p class="note note-warning">note-warning</p>
 <p class="note note-info">note-info</p>

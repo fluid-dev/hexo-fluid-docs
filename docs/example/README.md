@@ -95,70 +95,32 @@ hexo clean && hexo g
 
 ## 压缩（可选）
 
-采用 gulp 进行页面压缩，全局安装 gulp
+可以使用 [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) 插件对生成的文件和图片进行压缩，大致步骤：
+
+先安装插件：
 
 ```bash
-yarn global add gulp
-npm install -g gulp
+npm i hexo-all-minifier --save
+
+# Mac 系统还需要额外安装
+brew install libtool automake autoconf nasm
 ```
 
-安装依赖包:
+然后在博客配置中加入：
 
-```bash
-npm install gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify --save
-
-# 或使用 yarn
-yarn add gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify
+```yaml
+all_minifier: true
 ```
 
-然后在博客目录新建 `gulpfile.js` 文件，用于存放 gulp 压缩配置
+这样即可快速使用。
 
-```js
-var gulp = require('gulp');
-var minifycss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var htmlmin = require('gulp-htmlmin');
-var htmlclean = require('gulp-htmlclean');
-// 压缩 public 目录 css
-gulp.task('minify-css', function() {
-    return gulp.src('./public/**/*.css')
-        .pipe(minifycss())
-        .pipe(gulp.dest('./public'));
-});
-// 压缩 public 目录 html
-gulp.task('minify-html', function() {
-  return gulp.src('./public/**/*.html')
-    .pipe(htmlclean())
-    .pipe(htmlmin({collaspseWhiteSpace:true}))
-    .pipe(htmlmin({
-         removeComments: true,
-         minifyJS: true,
-         minifyCSS: true,
-         minifyURLs: true,
-    }))
-    .pipe(gulp.dest('./public'))
-});
-// 压缩 public/js 目录 js
-gulp.task('minify-js', function() {
-    return gulp.src('./public/**/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('./public'));
-});
-// 执行 gulp 命令时执行的任务
-gulp.task('default', gulp.series('minify-html','minify-css','minify-js'));
-```
-
-以上只需要一次设置，以后就不需要设置，直接在终端运行，就可以直接把 public 里面的文件自动压缩
-
-```bash
-gulp
-```
+具体的细节配置可参考[官方文档](https://github.com/chenzhutian/hexo-all-minifier)
 
 ## 部署
 
 这里演示如何部署到 GitHub Pages 中。
 
-在博客目录 `_config.yml` 中配置，参考如下：
+在博客配置中设置部署仓库，参考如下：
 
 ```yml
 # Deployment

@@ -13,6 +13,10 @@ meta:
 All plugins are only recommended. Please read their documents carefully to avoid adverse consequences.
 :::
 
+## Minifier
+
+[hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier)
+
 ## Hex Post Link
 
 [hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink)
