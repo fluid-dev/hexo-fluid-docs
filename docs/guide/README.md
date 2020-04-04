@@ -554,7 +554,7 @@ disqus:
 若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
 
 :::warning
-disqus 仅为演示，实际上 disqus 已经被墙，国内用户请不要使用，推荐使用 Utterances
+disqus 仅为演示，实际上 disqus 已经被墙，国内用户请不要使用，推荐使用 [Utterances](https://litstronger.github.io/2020/04/03/hexo-fluid%E6%B7%BB%E5%8A%A0utterances%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/)
 
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::
