@@ -12,11 +12,13 @@ meta:
 :::tip
 致主题的新用户：
 
-本指南经过数个版本打磨，绝大部分功能都有详细说明，请仔细阅读。
+- 本指南经过数个版本打磨，绝大部分功能都有详细说明，请仔细阅读。
 
-页面个人化定制可以通过[自定义功能](/guide/#自定义-js-css-html)实现。
+- 页面个人化定制可以通过[自定义功能](/guide/#自定义-js-css-html)实现。
 
-另外所有配置以本地 `hexo s` 为准，部署后的异常大部分是缓存原因。
+- 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean`。
+
+- 页面结果以本地 `hexo s` 为准，部署后的异常大部分是缓存原因。
 :::
 
 ## 主题简介
@@ -161,6 +163,10 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 ::: tip
 每篇文章可单独设置 Banner，具体见文章页设置
+
+本主题不支持固定背景（fixed），原因：
+1. 与目前代码结构有较大冲突，需要大量修改
+2. `fixed` 在移动端兼容性很差
 :::
 
 ### 博客标题
@@ -201,9 +207,9 @@ lazyload:
   onlypost: false
 ```
 
-开启后，当图片滚动到可见范围内才会加载，可以大幅提高网页整体加载速度
+开启后，当图片滚动到可见范围内才会加载，可以大幅提高网页整体加载速度。
 
-`onlypost` 为 true 时，仅在文章页才使用懒加载。
+`onlypost` 为 true 时，仅在文章页才使用懒加载。自定义页面在 Front-matter 中指定 `lazyload: true` 可单独开启（仅对 md 文档部分有效）。
 
 ### 网页统计
 
@@ -581,6 +587,7 @@ daovoice:
 
 <p class="note note-primary">note-primary</p>
 <p class="note note-secondary">note-secondary</p>
+<p class="note note-success">note-danger</p>
 <p class="note note-danger">note-danger</p>
 <p class="note note-warning">note-warning</p>
 <p class="note note-info">note-info</p>
@@ -600,7 +607,7 @@ post:
     engine: mathjax
 ```
 
-`specific`: 当为 true 时，只有在文章 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
+`specific`: 建议开启。当为 true 时，只有在文章 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
 
 `engine`: 公式渲染引擎，目前支持 `mathjax` 或 `katex`。
 
@@ -626,6 +633,10 @@ katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
 如果公式没有被正确渲染，请仔细检查是否符合上面三步操作。
 
+另外不同的渲染器，可能会导致一些 Markdown 语法不支持。
+
+自定义页面默认不加载渲染，如需使用，需在 Front-matter 中指定 `math: true`
+
 :::
 
 :::tip
@@ -642,7 +653,7 @@ katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 - 需要加载 JS，页面加载会比较慢，并且有渲染变化
 - kramed 渲染器对内联公式的转义字符 `\` 支持不足
 
-**Katex**
+**KaTeX**
 
 优点
 - 没有 JS 不会影响页面加载
@@ -709,6 +720,33 @@ layout: about
 ### 社交页图标
 
 图标均引用自 [fontawesome](https://fontawesome.com/v5.10.0/icons?d=gallery)。只需要将属性名替换为图标名称，属性值替换为 url 即可。
+
+## 友情链接页
+
+友情链接页用于展示好友的博客入口，默认关闭，开启需要先在 `navbar` 项中将 `links` 的注释(#号)删掉：
+
+```yaml
+navbar:
+  menu:
+    home: /
+    archive: /archives/
+    category: /categories/
+    tag: /tags/
+    about: /about/
+    links: /links/
+```
+
+然后找到 `links` 的配置项，对页面内容进行配置：
+
+```yaml
+links:
+  items:
+    Fluid Docs: [https://hexo.fluid-dev.com/docs/, 主题使用指南, /img/favicon.png]
+    Fluid Repo: [https://github.com/fluid-dev/hexo-theme-fluid, 主题 GitHub 仓库, /img/favicon.png]
+    Fluid Changelog: [https://github.com/fluid-dev/hexo-theme-fluid/blob/master/Changelog.md, 主题更新日志, /img/favicon.png]
+```
+
+`items` 中，冒号左侧的键是友链标题、冒号右侧的值是列表，内容分别对应 \[链接, 简介, 头像\]，其中头像可以省略
 
 ## 404 页
 
