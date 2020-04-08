@@ -134,7 +134,6 @@ https://cdn.jsdelivr.net/gh/user/repo@version/file
 https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@master/source/img/favicon.png
 ```
 
-
 ## 部署
 
 这里演示如何部署到 GitHub Pages 中。
