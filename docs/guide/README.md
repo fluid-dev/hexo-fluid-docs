@@ -216,11 +216,14 @@ lazyload:
 目前支持多种统计网站，开启后按需填入 Key 或 ID 即可。
 
 ```yaml
-web_analytics:
-  enable: true
+web_analytics:  # 网页访问统计
+  enable: false # 默认为false，启用网页统计改为true即可
   baidu:  # 百度统计的Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
   google:  # Google统计的Tracking ID，参见 https://analytics.google.com/analytics/web/
-  tencent:  # 腾讯统计的H5 App id，参见 https://mta.qq.com/h5/manage/ctr_app_manage
+  tencent:  # 腾讯统计的H5 App id，参见 https://mta.qq.com/h5/manage/ctr_app_manage (开启高级功能才有cid)
+    sid:
+    cid:
+  tajs:   # 腾讯统计早期版站点统计sID，参见 https://ta.qq.com/#/site/list
   woyaola:  # 51.la站点统计ID，参见 https://www.51.la/user/site/index
   cnzz:  # 友盟/cnzz站点统计web_id，参见 https://web.umeng.com/main.php?c=site&a=show
 ```
