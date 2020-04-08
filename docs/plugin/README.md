@@ -40,3 +40,7 @@ meta:
 ## RSS Feed
 
 [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
+## 可视化编辑页面与文档
+
+[hexo-admin](https://github.com/jaredly/hexo-admin)
