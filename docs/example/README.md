@@ -116,11 +116,11 @@ all_minifier: true
 
 具体的细节配置可参考[官方文档](https://github.com/chenzhutian/hexo-all-minifier)
 
-## 使用jsDelivr服务（可选）
+## 使用 jsDelivr 服务（可选）
 
-插入来自Github仓库的图片，由于网络情况可能会出现加载慢和无法加载的情况，我们可以使用 [jsDelivr](https://www.jsdelivr.com/) 来加速图片文件等媒体文件的加载。
+插入来自 Github 仓库的图片，由于网络情况可能会出现加载慢和无法加载的情况，我们可以使用 [jsDelivr](https://www.jsdelivr.com/) 来加速图片文件等媒体文件的加载。
 
-通常情况下，可以新建一个仓库来存放这些文件，目前已知的有图片、视频和引用的相关文件可以使用，Github仓库最大上传文件为25M，请注意文件大小。
+通常情况下，可以新建一个仓库来存放这些文件，目前已知的有图片、视频和引用的相关文件可以使用，Github 仓库最大上传文件为25M，请注意文件大小。
 
 使用方法（文件的绝对地址）
 
@@ -128,7 +128,7 @@ all_minifier: true
 https://cdn.jsdelivr.net/gh/user/repo@version/file
 ```
 
-相关实例（博客仓库下master分支里favicon图片文件）
+相关实例（博客仓库下 master 分支里 favicon 图片文件）
 
 ```实例
 https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@master/source/img/favicon.png
