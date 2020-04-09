@@ -546,7 +546,9 @@ If you comment board don't display, after you finished below steps, there may be
 <!--   appid: '' -->
 <!-- ``` -->
 
-### Note
+### Tag Plugin
+
+#### Note
 
 You can use notes by inserting the HTML into markdown:
 
@@ -571,6 +573,60 @@ Optional:
 <p class="note note-warning">warning</p>
 <p class="note note-info">info</p>
 <p class="note note-light">light</p>
+
+#### Label
+
+```markdown
+{% label primary @text %}
+```
+
+Or：
+
+```html
+<span class="label label-primary">Label</span>
+```
+
+Optional：
+
+<span class="label label-primary">primary</span>
+<span class="label label-default">default</span>
+<span class="label label-info">info</span>
+<span class="label label-success">success</span>
+<span class="label label-warning">warning</span>
+<span class="label label-danger">danger</span>
+
+#### Button
+
+```markdown
+{% btn url, text, title %}
+```
+
+Or：
+
+```html
+<a class="btn" href="url" title="title">text</a>
+```
+
+<a class="btn" href="javascript:;" title="title">text</a>
+
+#### Group Images
+
+```markdown
+{% gp x-y %}
+  ![](url)
+  ![](url)
+  ![](url)
+  ![](url)
+  ![](url)
+{% endgp %}
+```
+
+x：image total
+y：lines
+
+eg: `{% gp 5-2 %}`
+
+![Group Images](../../.vuepress/public/gp.png)
 
 ### LaTeX
 
