@@ -570,9 +570,11 @@ daovoice:
   appid: ''
 ```
 
-### 插入便签
+### Tag 插件
 
-你可以在 markdown 中加入如下的 HTML 内容来使用便签：
+#### 插入便签
+
+你可以在 markdown 中加入如下的代码来使用便签：
 
 ```markdown
 {% note success %}
@@ -595,6 +597,79 @@ daovoice:
 <p class="note note-warning">warning</p>
 <p class="note note-info">info</p>
 <p class="note note-light">light</p>
+
+:::warning
+使用时 `{% note primary %}` 和 `{% endnote %}` 需单独一行，否则会出现问题
+:::
+
+#### Label
+
+你可以在 markdown 中加入如下的代码来使用 Label：
+
+```markdown
+{% label primary @text %}
+```
+
+或者使用 HTML 形式：
+
+```html
+<span class="label label-primary">Label</span>
+```
+
+可选 Label：
+
+<span class="label label-primary">primary</span>
+<span class="label label-default">default</span>
+<span class="label label-info">info</span>
+<span class="label label-success">success</span>
+<span class="label label-warning">warning</span>
+<span class="label label-danger">danger</span>
+
+:::warning
+若使用 `{% label primary @text %}`，text 不能以 @ 开头
+:::
+
+#### Button
+
+你可以在 markdown 中加入如下的代码来使用 Button：
+
+```markdown
+{% btn url, text, title %}
+```
+
+或者使用 HTML 形式：
+
+```html
+<a class="btn" href="#" title="title">text</a>
+```
+
+url：跳转链接  
+text：显示的文字  
+title：鼠标悬停时显示的文字（可选）
+
+<a class="btn" href="#" title="title">text</a>
+
+#### Group Pictures
+
+将多张图片拼接显示  
+你可以在 markdown 中加入如下的代码来使用 Group Pictures：
+
+```markdown
+{% gp x-y %}
+  ![](url)
+  ![](url)
+  ![](url)
+  ![](url)
+  ![](url)
+{% endgp %}
+```
+
+x：图片数量
+y：分为几行显示
+
+图中样例为 `{% gp 5-2 %}`
+
+![Group Pictures](../.vuepress/public/gp.png)
 
 ### LaTeX 数学公式
 
