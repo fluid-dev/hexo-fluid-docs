@@ -184,3 +184,15 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
 3. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）
+
+## 加快网页加载
+
+- 对于所有用户，将各种第三方库配置公共 CDN 是最有效的方式，可以通过配置 `_static_prefix.yml` 来链接（默认已经使用 staticfile CDN，国内用户可不做改动）；
+
+- 如果你的域名已备案，可以使用[七牛云](https://portal.qiniu.com/signup?code=1hlwhx3ztjz2q)、阿里云、腾讯云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
+
+- 没有备案，也可以通过香港及海外地区的云，或者私有 CDN 等方式进行加速，推荐一份 [CDN 使用指南](https://www.julydate.com/post/60859300)。
+
+- 如果图片是存在 source 目录中，建议搭配 [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) 插件，可自动对图片进行压缩；
+
+- 如果是存放在外部的图片，建议先使用 [tinypng](https://tinypng.com) 进行压缩。

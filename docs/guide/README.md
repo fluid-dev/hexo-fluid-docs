@@ -12,13 +12,19 @@ meta:
 :::tip
 致主题的新用户：
 
-- 本指南经过数个版本打磨，绝大部分功能都有详细说明，请仔细阅读。
+- 本指南经过数个版本打磨，绝大部分功能都有详细说明，请仔细阅读；
 
-- 页面个人化定制可以通过[自定义功能](/guide/#自定义-js-css-html)实现。
+- 本指南中提到的："**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`，"**主题配置**" 指的是 `theme/fluid/_config.yml`，两者文件名相同，注意区分；
 
-- 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean`。
+- 博客与主题的 source 目录最终会合并，因此存放的文件优先选择博客的 source；
 
-- 页面结果以本地 `hexo s` 为准，部署后的异常大部分是缓存原因。
+- 页面个人化定制可以通过[自定义功能](/guide/#自定义-js-css-html)实现；
+
+- 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean`；
+
+- 页面结果以本地 `hexo s` 为准，部署后的异常大部分是缓存原因；
+
+- 没有经验的用户可以参考 [操作示例](/example/) 进行操作。
 :::
 
 ## 主题简介
@@ -33,23 +39,15 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 [zkqiang's blog](https://zkqiang.cn)
 
-[吃白饭的休伯利安号](https://eatrice.top)
+[吃白饭的休伯利安号（有代码修改）](https://eatrice.top)
 
-[上屋顶看北斗七星](https://ruru.eatrice.top)
+[上屋顶看北斗七星（有代码修改）](https://ruru.eatrice.top)
 
 ## 关于指南
 
 本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照**主题配置**中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
 本指南网页是使用 [VuePress](https://vuepress.vuejs.org/) 生成。
-
-:::tip
-本指南中提到的：
-- "**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`
-- "**主题配置**" 指的是 `theme/fluid/_config.yml`
-
-博客与主题的 source 目录最终会合并，因此存放的文件优先选择博客的 source
-:::
 
 ## 快速开始
 
@@ -118,9 +116,9 @@ layout: about
 
 ```yaml
 about:
-  icons:  # 这里设为空值，而不是注释掉，否则无法覆盖配置
-    # "fab fa-github": https://github.com
-    # "fab fa-twitter": https://twitter.com
+  icons:  # 不要把 icon 注释掉，否则无法覆盖配置
+    # - { class: 'iconfont icon-github-fill', link: 'https://github.com' }
+    # - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
 ```
 
 ### 静态资源
@@ -161,6 +159,10 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 **主题配置**中，每个页面对应的 `banner_img_height` 属性，有效值为 0 - 100。100 即为全屏，个人建议 70 以上。
 
+- 蒙版透明度
+
+**主题配置**中，每个页面对应的 `banner_mask_alpha` 属性，有效值为 0 - 1.0， 0 是完全透明（无蒙版），1 是完全不透明
+
 ::: tip
 每篇文章可单独设置 Banner，具体见文章页设置
 
@@ -185,19 +187,15 @@ navbar:
 ```yaml
 navbar:
   menu:
-    Home: /
-    Archives: /archives/
-    Categories: /categories/
-    Tags: /tags/
-    About: /about/
+    - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
+    - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill', name: '联系我' }
 ```
-左边键是菜单名，右边值是对应链接。
 
-默认的菜单名关联有[多语言](/guide/#多语言)，如需修改，建议改多语言配置。
-
-新增菜单直接加入其中。
-
-删除默认菜单，直接将右边值注释留空即可。
+- `key`: 用于关联有[多语言](/guide/#多语言)，如不存在关联则显示 key 本身的值
+- `link`: 跳转链接
+- `icon`: 图标的 css class，可省略，主题内置图标详见[这里](/icon/)
+- `name`: 强制使用此名称显示（不再按多语言显示），可省略
 
 ### 图片懒加载
 
@@ -241,14 +239,6 @@ language: zh-CN
 默认提供英文(en)、简体中文(zh-CN)、日文(ja)。
 
 如果想自定义，建议单独复制一份新文件进行修改，然后指定该文件名。
-
-### 加快网页加载
-
-1. 对于所有用户，将各种第三方库配置公共 CDN 是最有效的方式，可以通过配置 `_static_prefix.yml` 来链接（默认已经使用 staticfile CDN，国内用户可不做改动）；
-
-2. 如果你的域名已备案，可以使用[七牛云](https://portal.qiniu.com/signup?code=1hlwhx3ztjz2q)、腾讯云、百度云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
-
-3. 其他自定义的图片，特别是顶部大图，建议先使用 [tinypng](https://tinypng.com) 进行压缩，然后注册私有 CDN 存放，推荐一份 [CDN 使用指南](https://www.julydate.com/post/60859300)。
 
 ### 强制全局 HTTPS
 
@@ -308,6 +298,7 @@ subtitle: 若不填默认是 title
 page:
   banner_img: /img/default.png
   banner_img_height: 70
+  banner_mask_alpha: 0.3
 ```
 
 也可以直接在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里单独设置：
@@ -317,6 +308,7 @@ page:
 title: example
 banner_img: /img/default.png
 banner_img_height: 60
+banner_mask_alpha: 0.5
 ---
 
 # 这里可以写正文
@@ -582,19 +574,27 @@ daovoice:
 
 你可以在 markdown 中加入如下的 HTML 内容来使用便签：
 
+```markdown
+{% note success %}
+文字 或者 `markdown` 均可
+{% endnote %}
+```
+
+或者使用 HTML 形式：
+
 ```html
 <p class="note note-primary">标签</p>
 ```
 
 可选便签：
 
-<p class="note note-primary">note-primary</p>
-<p class="note note-secondary">note-secondary</p>
-<p class="note note-success">note-success</p>
-<p class="note note-danger">note-danger</p>
-<p class="note note-warning">note-warning</p>
-<p class="note note-info">note-info</p>
-<p class="note note-light">note-light</p>
+<p class="note note-primary">primary</p>
+<p class="note note-secondary">secondary</p>
+<p class="note note-success">success</p>
+<p class="note note-danger">danger</p>
+<p class="note note-warning">warning</p>
+<p class="note note-info">info</p>
+<p class="note note-light">light</p>
 
 ### LaTeX 数学公式
 
@@ -742,7 +742,19 @@ layout: about
 
 ### 社交页图标
 
-图标均引用自 [fontawesome](https://fontawesome.com/v5.10.0/icons?d=gallery)。只需要将属性名替换为图标名称，属性值替换为 url 即可。
+在**主题配置**中设置：
+
+```yaml
+about:
+  icons:
+    - { class: 'iconfont icon-github-fill', link: 'https://github.com' }
+    - { class: 'iconfont icon-douban-fill', link: 'https://github.com' }
+    - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
+```
+
+- `class`: 图标的 css class，主题内置图标详见[这里](/icon/)
+- `link`: 跳转链接
+- `qrcode`: 二维码图片，当使用此字段后，点击不再跳转，而是悬浮二维码
 
 ## 友情链接页
 
@@ -751,12 +763,7 @@ layout: about
 ```yaml
 navbar:
   menu:
-    home: /
-    archive: /archives/
-    category: /categories/
-    tag: /tags/
-    about: /about/
-    links: /links/
+    - { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' }
 ```
 
 然后找到 `links` 的配置项，对页面内容进行配置：
@@ -764,12 +771,18 @@ navbar:
 ```yaml
 links:
   items:
-    Fluid Docs: [https://hexo.fluid-dev.com/docs/, 主题使用指南, /img/favicon.png]
-    Fluid Repo: [https://github.com/fluid-dev/hexo-theme-fluid, 主题 GitHub 仓库, /img/favicon.png]
-    Fluid Changelog: [https://github.com/fluid-dev/hexo-theme-fluid/blob/master/Changelog.md, 主题更新日志, /img/favicon.png]
+    - {
+      title: 'Fluid Docs',
+      intro: '主题使用指南',
+      link: 'https://hexo.fluid-dev.com/docs/',
+      image: '/img/favicon.png'
+    }
 ```
 
-`items` 中，冒号左侧的键是友链标题、冒号右侧的值是列表，内容分别对应 \[链接, 简介, 头像\]，其中头像可以省略
+- `title`: 友链站的标题
+- `intro`: 站点或博主的简介，可省略
+- `link`: 跳转链接
+- `image`: 头像图片，可省略
 
 ## 404 页
 

@@ -29,10 +29,6 @@ All plugins are only recommended. Please read their documents carefully to avoid
 
 [hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)
 
-## Auto Spacing
-
-[hexo-filter-auto-spacing](https://github.com/hexojs/hexo-filter-auto-spacing)
-
 ## Live2D
 
 [hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)

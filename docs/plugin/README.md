@@ -29,10 +29,6 @@ meta:
 
 [hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)
 
-## 中英文间自动空格
-
-[hexo-filter-auto-spacing](https://github.com/hexojs/hexo-filter-auto-spacing)
-
 ## 看板娘
 
 [hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)

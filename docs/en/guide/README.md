@@ -107,8 +107,8 @@ If you want to cancel some configurations, you should do this:
 ```yaml
 about:
   icons:  # This is set to null, otherwise the configuration can't be override
-    # "fab fa-github": https://github.com
-    # "fab fa-twitter": https://twitter.com
+    # - { class: 'iconfont icon-github-fill', link: 'https://github.com' }
+    # - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
 ```
 
 ### Static Resource
@@ -147,7 +147,11 @@ The source directory of blog and fluid will be merged eventually, so the source 
 
 For different people's thoughts, you can control the height of the `banner_img` on the page.
 
-You can set a value to the attribute `banner_img_height` for every pages by modifying the file **theme config**, 0 - 100 is valiable, We think it is better to choose a number bigger than 70.
+You can set a value to `banner_img_height` for every pages in **theme config**, 0 - 100 is valiable, We think it is better to choose a number bigger than 70.
+
+- mask alpha
+
+You can set a value `banner_mask_alpha` for every pages in **theme config**, 0 - 1.0 is valiable, 0 is completely transparent (no mask), 1 is completely opaque
 
 ::: tip
 Each post page can define its banner independently, you can read the config about the posts for more details.
@@ -169,19 +173,15 @@ navbar:
 ``` yaml
 navbar:
   menu:
-    Home: /
-    Archives: /archives/
-    Categories: /categories/
-    Tags: /tags/
-    About: /about/
+    - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
+    - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill', name: 'About Me' }
 ```
-The name of menu is on the left, and the right is path for them.
 
-The defaulted name of menu is linked to [multi-languages](/en/guide/#multi-languages), if you want to change, you can change the multi-languages config.
-
-If you want to add a new option to the menu, you can add it to the file directly.
-
-If you want to delete a option, you can use `#` to comment it.
+- `key`: relate to [multilingual] (/en/guide/#multi-languages). If no related , the value of the key itself will be displayed
+- `link`: href link
+- `icon`: css class of icon, can be omitted. [Built-in icons of theme](/en/icon/) 
+- `name`: force this name to be displayed (no longer in multiple languages), can be omitted
 
 ### Lazyload Image
 
@@ -280,6 +280,7 @@ Content
 page:
   banner_img: /img/default.png
   banner_img_height: 70
+  banner_mask_alpha: 0.3
 ```
 
 Also set it in [Front-matter](https://hexo.io/zh-cn/docs/front-matter):
@@ -289,6 +290,7 @@ Also set it in [Front-matter](https://hexo.io/zh-cn/docs/front-matter):
 title: example
 banner_img: /img/default.png
 banner_img_height: 60
+banner_mask_alpha: 0.3
 ---
 
 Markdown or HTML
@@ -499,7 +501,7 @@ For more styles of code:
 2. Find `.prettyprint{ background: ***; ...}` in this file, and add `!important` after `***`
 3. Set your style in **theme config**: `theme: your style`(Non extension name)
 
-### Line_number of Code
+### Line Number of Code
 
 You can enable it in `blog config`
 
@@ -548,19 +550,27 @@ If you comment board don't display, after you finished below steps, there may be
 
 You can use notes by inserting the HTML into markdown:
 
+```markdown
+{% note success %}
+Some content or `markdown`
+{% endnote %}
+```
+
+Or：
+
 ```html
 <p class="note note-primary">Note</p>
 ```
 
 Optional:
 
-<p class="note note-primary">note-primary</p>
-<p class="note note-secondary">note-secondary</p>
-<p class="note note-success">note-success</p>
-<p class="note note-danger">note-danger</p>
-<p class="note note-warning">note-warning</p>
-<p class="note note-info">note-info</p>
-<p class="note note-light">note-light</p>
+<p class="note note-primary">primary</p>
+<p class="note note-secondary">secondary</p>
+<p class="note note-success">success</p>
+<p class="note note-danger">danger</p>
+<p class="note note-warning">warning</p>
+<p class="note note-info">info</p>
+<p class="note note-light">light</p>
 
 ### LaTeX
 
@@ -685,7 +695,7 @@ Support Markdown, HTML
 
 ### Icons
 
-The navigation bar and the social networking icon about the page are both quoted from [fontawesome] (https://fontawesome.com/v4.7.0/icons/). You just need to replace the property name with the icon name and the property value with url.
+[Built-in icons of theme](/en/icon/) 
 
 ## 404 Page
 
