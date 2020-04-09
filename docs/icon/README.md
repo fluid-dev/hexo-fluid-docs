@@ -11,7 +11,7 @@ meta:
 
 主题内置了一些社交类图标，均来自 [Iconfont](https://www.iconfont.cn/)，由于不支持公开展示，因此只能通过图片：
 
-![内置图标](https://fluid-dev.github.io/hexo-fluid-docs/iconfont.png)
+![内置图标](../.vuepress/public/iconfont.png)
 
 将 `icon-` 开头的那行填入 css class 即可，例如 `iconfont icon-wechat-fill`。
 

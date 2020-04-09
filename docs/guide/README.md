@@ -572,7 +572,7 @@ daovoice:
 
 ### Tag 插件
 
-#### 插入便签
+#### Note 标签
 
 你可以在 markdown 中加入如下的代码来使用便签：
 
@@ -602,7 +602,7 @@ daovoice:
 使用时 `{% note primary %}` 和 `{% endnote %}` 需单独一行，否则会出现问题
 :::
 
-#### Label
+#### Label 行内标签
 
 你可以在 markdown 中加入如下的代码来使用 Label：
 
@@ -629,7 +629,7 @@ daovoice:
 若使用 `{% label primary @text %}`，text 不能以 @ 开头
 :::
 
-#### Button
+#### Button 按钮
 
 你可以在 markdown 中加入如下的代码来使用 Button：
 
@@ -640,16 +640,16 @@ daovoice:
 或者使用 HTML 形式：
 
 ```html
-<a class="btn" href="#" title="title">text</a>
+<a class="btn" href="url" title="title">text</a>
 ```
 
 url：跳转链接  
 text：显示的文字  
 title：鼠标悬停时显示的文字（可选）
 
-<a class="btn" href="#" title="title">text</a>
+<a class="btn" href="javascript:;" title="title">text</a>
 
-#### Group Pictures
+#### Group Pictures 组图
 
 将多张图片拼接显示  
 你可以在 markdown 中加入如下的代码来使用 Group Pictures：
