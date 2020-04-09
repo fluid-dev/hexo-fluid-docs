@@ -11,7 +11,7 @@ meta:
 
 There are some built-in social icons in the theme, all from [iconcont](https://www.iconcont.cn/):
 
-![icons](/iconfont.png)
+![icons](https://fluid-dev.github.io/hexo-fluid-docs/iconfont.png)
 
 Just fill the beginning of 'icon-' into CSS class, eg: `iconfont icon-twitter-fill`.
 
