@@ -578,23 +578,84 @@ daovoice:
   appid: ''
 ```
 
-### 插入便签
+### Tag 插件
 
-你可以在 markdown 中加入如下的 HTML 内容来使用便签：
+#### Note 标签
 
-```html
-<p class="note note-primary">标签</p>
+你可以在 markdown 中加入如下的代码来使用便签：
+
+```swig
+{% note primary %}
+标签
+{% endnote %}
 ```
 
 可选便签：
 
-<p class="note note-primary">note-primary</p>
-<p class="note note-secondary">note-secondary</p>
-<p class="note note-success">note-success</p>
-<p class="note note-danger">note-danger</p>
-<p class="note note-warning">note-warning</p>
-<p class="note note-info">note-info</p>
-<p class="note note-light">note-light</p>
+<p class="note note-primary">note primary</p>
+<p class="note note-secondary">note secondary</p>
+<p class="note note-success">note success</p>
+<p class="note note-danger">note danger</p>
+<p class="note note-warning">note warning</p>
+<p class="note note-info">note info</p>
+<p class="note note-light">note light</p>
+
+:::warning
+使用时 `{% note primary %}` 和 `{% endnote %}` 需单独一行，否则会出现问题
+:::
+
+#### Label
+
+你可以在 markdown 中加入如下的代码来使用 Label：
+
+```swig
+{% label primary @text %}
+```
+
+可选便签：
+
+<span class="label label-primary">primary</span>
+<span class="label label-default">default</span>
+<span class="label label-info">info</span>
+<span class="label label-success">success</span>
+<span class="label label-warning">warning</span>
+<span class="label label-danger">danger</span>
+
+#### Button
+
+你可以在 markdown 中加入如下的代码来使用 Button：
+
+```swig
+{% btn url, text, title %}
+```
+
+url：跳转链接  
+text：显示的文字  
+title：鼠标悬停时显示的文字（可选）
+
+<a class="btn" href="#" title="title">text</a>
+
+#### Group Pictures
+
+将多张图片拼接显示  
+你可以在 markdown 中加入如下的代码来使用 Group Pictures：
+
+```swig
+{% gp x-y %}
+  ![](url)
+  ![](url)
+  ![](url)
+  ![](url)
+  ![](url)
+{% endgp %}
+```
+
+x：图片数量
+y：分为几行显示
+
+图中样例为 `{% gp 5-2 %}`
+
+![Group Pictures](../.vuepress/public/gp.png)
 
 ### LaTeX 数学公式
 
