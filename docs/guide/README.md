@@ -322,7 +322,7 @@ banner_mask_alpha: 0.5
 # 指定自定义 js 文件路径，路径是相对 source 目录
 custom_js: /js/custom.js
 
-# 指定自定义 css 文件路径，路径是相对 source 目录
+# 指定自定义 css 文件路径，路径是相对 source 目录，也可以是 URL 链接
 custom_css: /css/custom.css
 
 # 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突
