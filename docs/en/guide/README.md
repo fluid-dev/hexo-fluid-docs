@@ -481,34 +481,22 @@ The format of date must observe ISO-8601；
 
 ### Code Highlight
 
-You can change the highlight style of code, in **theme config**
+Highlight style can be selected from here: <https://highlightjs.org/static/demo/> 
+
+then set the name of style into **theme config**:
 
 ```yaml
 highlight:
-  theme: tomorrow-night-eighties
+  enable: true
+  style: 'Github Gist'
+  bg_color: false
+  copy_btn: true
 ```
 
-Fluid has 4 highlight styles.
+`bg_color`: whether to change the code background color according to style. If style color is white, it is better to `false`
+`copy_btn`: display the button to copy code
 
-- github-v2
-- tomorrow
-- tomorrow-night
-- tomorrow-night-eighties
-
-For more styles of code:
-
-1. Click [Download](https://jmblog.github.io/color-themes-for-google-code-prettify/) to download 'min.css' file, and save it to `fluid/source/lib/prettify/`
-2. Find `.prettyprint{ background: ***; ...}` in this file, and add `!important` after `***`
-3. Set your style in **theme config**: `theme: your style`(Non extension name)
-
-### Line Number of Code
-
-You can enable it in `blog config`
-
-```yaml
-highlight:
-  line_number: true
-```
+Line number of code is not supported.
 
 ### Comment
 

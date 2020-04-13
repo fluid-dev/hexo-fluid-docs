@@ -503,34 +503,23 @@ post:
 
 ### 代码高亮样式
 
-在**主题配置**中指定样式方案：
+高亮样式从这里挑选：<https://highlightjs.org/static/demo/>
+
+然后将 style 的名称填入**主题配置**：
 
 ```yaml
 highlight:
-  theme: tomorrow-night-eighties
+  enable: true
+  style: 'Github Gist'
+  bg_color: false
+  copy_btn: true
 ```
 
-主题自带了 4 种样式：
+`bg_color`: 是否根据 style 改变代码背景色，如果 style 是白色背景最好关闭此项
 
-- github-v2
-- tomorrow
-- tomorrow-night
-- tomorrow-night-eighties
+`copy_btn`: 是否开启复制代码的按钮
 
-使用更多主题的方式：
-
-1. 进入[该链接](https://jmblog.github.io/color-themes-for-google-code-prettify/)下载 `min.css` 文件，并保存为 `文件名.min.css` 到 `/source/lib/prettify/`
-2. 找到文件中的 `.prettyprint{ background: ***; ...}`，在 *** 后面加上 `!important`，例如：`.prettyprint{background:#fafbfc!important; ...}`
-3. 最后**主题配置**中设置 `theme: 文件名`（不含后缀）
-
-### 代码行号
-
-可以在**博客配置**中开关：
-
-```yaml
-highlight:
-  line_number: true
-```
+高亮暂不支持行号。
 
 ### 评论
 
