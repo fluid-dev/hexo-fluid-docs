@@ -574,7 +574,7 @@ daovoice:
 
 #### Note 标签
 
-你可以在 markdown 中加入如下的代码来使用便签：
+在 markdown 中加入如下的代码来使用便签：
 
 ```markdown
 {% note success %}
@@ -604,7 +604,7 @@ daovoice:
 
 #### Label 行内标签
 
-你可以在 markdown 中加入如下的代码来使用 Label：
+在 markdown 中加入如下的代码来使用 Label：
 
 ```markdown
 {% label primary @text %}
@@ -629,6 +629,30 @@ daovoice:
 若使用 `{% label primary @text %}`，text 不能以 @ 开头
 :::
 
+#### Checkbox 勾选框
+
+在 markdown 中加入如下的代码来使用 Checkbox：
+
+```markdown
+{% cb text, checked?, incline? %}
+```
+
+text：显示的文字  
+checked：默认是否已勾选，默认 false
+incline: 是否内联（可以理解为后面的文字是否换行），默认 false
+
+示例：
+<div>
+  <input type="checkbox" checked>{% cb 普通示例 %}
+</div>
+<div>
+  <input type="checkbox" checked>{% cb 默认选中, true %}
+</div>
+<input type="checkbox">{% cb 内联示例, false, true %} 后面文字不换行
+<div>
+  <input type="checkbox">{% cb false %} 也可以只传入一个参数，文字写在后边（这样不支持外联）
+</div>
+
 #### Button 按钮
 
 你可以在 markdown 中加入如下的代码来使用 Button：
@@ -649,27 +673,27 @@ title：鼠标悬停时显示的文字（可选）
 
 <a class="btn" href="javascript:;" title="title">text</a>
 
-#### Group Pictures 组图
+#### Group Image 组图
 
 将多张图片拼接显示  
-你可以在 markdown 中加入如下的代码来使用 Group Pictures：
+你可以在 markdown 中加入如下的代码来使用 Group Image：
 
 ```markdown
-{% gp x-y %}
+{% gi x-y %}
   ![](url)
   ![](url)
   ![](url)
   ![](url)
   ![](url)
-{% endgp %}
+{% endgi %}
 ```
 
 x：图片数量
 y：分为几行显示
 
-图中样例为 `{% gp 5-2 %}`
+图中样例为 `{% gi 5-2 %}`
 
-![Group Pictures](../.vuepress/public/gp.png)
+![Group Images](../.vuepress/public/gp.png)
 
 ### LaTeX 数学公式
 
