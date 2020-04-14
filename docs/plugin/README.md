@@ -41,6 +41,10 @@ meta:
 
 [hexo-admin](https://github.com/jaredly/hexo-admin)
 
+## 加密文章或页面
+
+[hexo-blog-encrypt](https://github.com/MikeCoder/hexo-blog-encrypt)
+
 ## 更多常见博客功能
 
 :::tip

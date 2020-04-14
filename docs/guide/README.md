@@ -322,8 +322,9 @@ banner_mask_alpha: 0.5
 # 指定自定义 js 文件路径，路径是相对 source 目录
 custom_js: /js/custom.js
 
-# 指定自定义 css 文件路径，路径是相对 source 目录，也可以是 URL 链接
+# 指定自定义 css 文件路径，路径是相对 source 目录，也可以是 URL 链接，以下分别为单个 CSS 文件与多个文件的实例
 custom_css: /css/custom.css
+custom_css: [/css/custom.css,/css/iconfont.css]
 
 # 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突
 custom_html: '<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">'
