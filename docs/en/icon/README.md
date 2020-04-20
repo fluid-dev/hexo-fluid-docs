@@ -15,7 +15,7 @@ There are some built-in social icons in the theme, all from [iconcont](https://w
 
 ![icons](../../.vuepress/public/iconfont.png)
 
-Just fill the beginning of 'icon-' into CSS class, eg: `iconfont icon-twitter-fill`.
+Just fill the beginning with 'icon-' into CSS class, eg: `iconfont icon-twitter-fill`.
 
 The icons are mainly used in related pages, of course, you can also use any place by HTML. 
 

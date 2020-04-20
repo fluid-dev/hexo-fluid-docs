@@ -34,8 +34,8 @@ This page of the guide created by [VuePress](https://vuepress.vuejs.org/).
 :::tip
 
 About the config file:
-- : "**blog config**" refer to the `_config.yml` in the blog root directory.
-- : "**theme config**" refer to the path `theme/fluid/_config.yml`
+- "**blog config**" refer to the `_config.yml` in the blog root directory.
+- "**theme config**" refer to the path `theme/fluid/_config.yml`
 
 The source directory of blog and fluid will be merged eventually, so the source of blog is preferred for the stored files
 
@@ -88,11 +88,9 @@ Support Markdown, HTML
 
 ### Override Configuration
 
-:::tip
-It can upgrade the theme smoothly, and is recommended for everyone to learn to use
-:::
+**This feature can makes upgrade the theme smoother, recommended everyone to learn to use.**
 
-Override configuration can make the **theme config** out of the theme dictionary, and avoid losing custom config after theme upgraded.
+Override configuration can make the **theme config** out of the theme dictionary, and avoid losing custom config after the theme upgraded.
 
 You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/docs/data-files.html)
 
@@ -101,6 +99,14 @@ Usage:
 1. cd into the folder '*source*' in your *blog root dictionary*, `mkdir _data` (beside to the folder '_post');
 2. Create a file `fluid_config.yml` in the folder `_date` , copy the configurations from **theme config** to `fluid_config.yml`;
 3. You can set any config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
+
+:::tip
+You can also copy only part of the configurations.
+
+The configuration existing in `fluid_config.yml` is of high priority, modifying `_config.yml` is invalid.
+
+There may be configuration changes in the theme of upgrading, you need to manually modify `fluid_config.yml` synchronously.
+:::
 
 If you want to cancel some configurations, you should do this:
 
@@ -131,11 +137,19 @@ jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 
 - img src
 
-there is `banner_img` item for every pages in the **theme config**, you can use absolute or relative path.
+there is `banner_img` item for every pages in the **theme config**, you can use a relative path or url.
 
-If you use relative path, you can save you img at `/source/img/`, so that you can use `/img/{your_img_name}` to get your img.
+use a local image：
 
-For example, the path `/img/example.jpg`, is in`/source/img/example.jpg`.
+```yaml
+banner_img: /img/bg/example.jpg   # stored at /source/img/bg/example.jpg
+```
+
+use a url:
+
+```yaml
+banner_img: https://static.zkqiang.cn/example.jpg
+```
 
 ::: tip
 You can define the ain path yourself, but it should be in the folder `source`
@@ -147,11 +161,11 @@ The source directory of blog and fluid will be merged eventually, so the source 
 
 For different people's thoughts, you can control the height of the `banner_img` on the page.
 
-You can set a value to `banner_img_height` for every pages in **theme config**, 0 - 100 is valiable, We think it is better to choose a number bigger than 70.
+You can set a value to `banner_img_height` for every pages in **theme config**, 0 - 100 is valuable, We think it is better to choose a number bigger than 70.
 
 - mask alpha
 
-You can set a value `banner_mask_alpha` for every pages in **theme config**, 0 - 1.0 is valiable, 0 is completely transparent (no mask), 1 is completely opaque
+You can set a value `banner_mask_alpha` for every pages in **theme config**, 0 - 1.0 is valuable, 0 is completely transparent (no mask), 1 is completely opaque
 
 ::: tip
 Each post page can define its banner independently, you can read the config about the posts for more details.
@@ -159,9 +173,9 @@ Each post page can define its banner independently, you can read the config abou
 
 ### Title of Blog
 
-The title is on the left of the banner, Its value can set by the attribute `title` in file **blog config**, which is alse the title of the browser's tab.
+The title is on the left of the banner, Its value can set by the attribute `title` in file **blog config**, which is also the title of the browser's tab.
 
-If you want to set varies titles for different pages, you can change the **theme config** as follow:
+If you want to set varies titles for different pages, you can change the **theme config** as follows:
 
 ``` yaml
 navbar:
@@ -243,7 +257,7 @@ If it happens, you can change the **theme config** as follow:
 force_https: true
 ```
 
-Then all requests are forced to HTTPS (if it is an external resource, it needs to support HTTPS itself)
+Then all requests are forced by HTTPS (if it is an external resource, it needs to support HTTPS itself)
 
 ### Custom Page
 
@@ -521,7 +535,7 @@ Valine、Disqus、Gitalk、Utterances、Changyan、livere can be supported curre
 For more comment systems, you can add corresponding ejs file into `fluid/layout/_partial/comments/`, according to your system document, and then modify `post.comments.type` link to your system.
 
 :::tip
-If you comment board don't display, after you finished below steps, there may be something wrong with you code,You can find it on the console of you browser
+If you comment board don't display, after you finished below steps, there may be something wrong with you code,You can find it on the console of your browser
 :::
 
 <!-- ### daovoice -->

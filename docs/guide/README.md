@@ -98,21 +98,25 @@ layout: about
 
 ### 覆盖配置
 
-:::tip
-可实现平滑升级主题，推荐所有人学习使用
-:::
+**该功能可实现平滑升级主题，推荐所有人学习使用**。
 
 覆盖配置可以使**主题配置**放置在 fluid 目录之外，避免在更新主题时丢失自定义的配置。
 
-使用该功能必须保证 Hexo 版本不低于 3.0，因为该功能利用了 [Hexo 数据文件](https://hexo.io/zh-cn/docs/data-files.html) 功能
+使用该功能必须保证 Hexo 版本不低于 3.0，因为该功能利用了 [Hexo 数据文件](https://hexo.io/zh-cn/docs/data-files.html) 功能。
 
 使用方式：
 
 1. 进入博客目录的 source 目录下（不是主题目录的 source），创建 `_data` 目录（和 `_post` 目录同级）；
-2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部内容复制到 `fluid_config.yml` 中；
+2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部配置（或部分配置）复制到 `fluid_config.yml` 中；
 3. 以后配置都在 `fluid_config.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
 
-如果想取消某些配置，注意不要把主键删掉，不然是无法覆盖的，比如：
+:::tip
+也可以只覆盖部分配置，但注意只要存在于 `fluid_config.yml` 的配置都是高优先级，修改原 `_config.yml` 都是无效的。
+
+另外每次更新主题可能存在配置变更，请注意更新说明，可能需要手动对 `fluid_config.yml` 同步修改。
+:::
+
+如果想将某些配置覆盖为空，注意不要把主键删掉，不然是无法覆盖的，比如：
 
 ```yaml
 about:
@@ -141,16 +145,24 @@ jquery: https://cdn.staticfile.org/jquery/3.4.1/
 
 - 图片来源
 
-主题配置中，每个页面都有名为 `banner_img` 的属性，可以为外链的绝对链接，也可以使用相对链接。
+主题配置中，每个页面都有名为 `banner_img` 的属性，可以使用本地图片的相对路径，也可以为外站链接，比如：
 
-若使用相对链接，建议将图片放置在 `/source/img/` 目录下，对应填写的图片地址为 `/img/your_img_name`。
+指向本地图片：
 
-比如 `/img/example.jpg` 对应的是存放在 `/source/img/example.jpg`。
+```yaml
+banner_img: /img/bg/example.jpg   # 对应存放在 /source/img/bg/example.jpg
+```
+
+指向外站链接：
+
+```yaml
+banner_img: https://static.zkqiang.cn/example.jpg
+```
 
 :::tip
-目录文件夹也可自定义，但必须在 source 目录下
+如果是本地图片，目录文件夹可自定义，但必须在 source 目录下，博客与主题的 source 目录最终会合并，因此优先选择博客的 source。
 
-博客与主题的 source 目录最终会合并，因此优先选择博客的 source
+图片大小建议压缩到 1MB 以内，否则会严重拖慢页面加载。
 :::
 
 - 高度

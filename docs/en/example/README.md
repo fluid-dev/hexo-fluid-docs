@@ -21,7 +21,7 @@ Input `hexo -v`in Command line terminal after installation.Appearing information
 
 Next initialize hexo, Execute the command `hexo init` in an empty folder (no files, including hidden files).
 
-Successful catelogue structure:
+Successful catalogue structure:
 
 ```text
 │  .gitignore
@@ -41,7 +41,7 @@ Successful catelogue structure:
 
 2. Install fluid theme
 
-Download [the latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases)and unzip it in the themes directory, rename it fluid, then set it as follows in blog `_config.yml`: 
+Download [the latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases)and unzip it in the theme directory, rename it fluid, then set it as follows in blog `_config.yml`: 
 
 ```yml
 # Extensions
@@ -52,7 +52,7 @@ theme: fluid
 
 ## Config (Critical)
 
-[Override-Configuration](/en/guide/#override-configuration) is recommended, you can You can customize config outside of the theme directory without worrying about losing configuration when updating the theme.
+[Override-Configuration](/en/guide/#override-configuration) is recommended, you can customize config outside of the theme directory without worrying about losing configuration when updating the theme.
 
 create `_data` directory in the source directory of blog (not source in the theme directory), then create another two config documents:
 
