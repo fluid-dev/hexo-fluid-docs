@@ -163,7 +163,7 @@ For different people's thoughts, you can control the height of the `banner_img` 
 
 You can set a value to `banner_img_height` for every pages in **theme config**, 0 - 100 is valuable, We think it is better to choose a number bigger than 70.
 
-- mask alpha
+- alpha of mask
 
 You can set a value `banner_mask_alpha` for every pages in **theme config**, 0 - 1.0 is valuable, 0 is completely transparent (no mask), 1 is completely opaque
 
