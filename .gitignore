@@ -1,5 +1,4 @@
 .idea/
-.DS_Store
 *.log
 *.iml
 yarn.lock
@@ -13,5 +12,6 @@ node_modules
 .DS_Store
 docs/_book
 test/
+dist/
 
 # End of https://www.gitignore.io/api/vuejs
