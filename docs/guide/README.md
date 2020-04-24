@@ -221,6 +221,45 @@ lazyload:
 
 `onlypost` 为 true 时，仅在文章页才使用懒加载。自定义页面在 Front-matter 中指定 `lazyload: true` 可单独开启（仅对 md 文档部分有效）。
 
+### 全局字体
+
+所有页面统一字体的字号和字族可以通过**主题配置**中的下列配置项设置：
+
+```yaml
+font:  # 主题字体配置
+  font_size: 16px        # 全局字号
+  font_family:           # 全局字体族
+  code_font_size: 85%    # 代码的字号
+```
+
+关于字体族（`font-family`）如果不了解可以看[这篇文章](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-family)先了解一下。
+
+需要注意：
+- 最好使用系统自带的字体，否则需要通过[自定义功能](/guide/#自定义-js-css-html)额外引入 `@font-face`，字体一般较大，不建议引入；
+- 应当至少添加一个通用的字体族名（如 serif，具体见上方链接文章）。
+
+如果想设置单独的页面，可以直接在 markdown 里通过 style 标签实现：
+
+```html
+---
+title: example
+---
+
+<style>
+  /* 设置整个页面的字体 */
+  html, body, .markdown-body {
+    font-family: KaiTi,"Microsoft YaHei",Georgia, sans, serif;
+    font-size: 15px;
+  }
+
+  /* 只设置 markdown 字体 */
+  .markdown-body {
+    font-family: KaiTi,"Microsoft YaHei",Georgia, sans, serif;
+    font-size: 15px;
+  }
+</style>
+```
+
 ### 网页统计
 
 目前支持多种统计网站，开启后按需填入 Key 或 ID 即可。

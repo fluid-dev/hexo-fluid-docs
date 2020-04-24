@@ -209,6 +209,39 @@ When enabled, the image will only be loaded when scrolling to the visible range,
 
 if `onlypost` is true, the `lazyload` will be enabled only on the post pages.
 
+### Font
+
+The font-size and font-family of all page can be set through this items in **theme config**:
+
+```yaml
+font:
+  font_size: 16px
+  font_family:
+  code_font_size: 85%
+```
+
+If you want to set a specific page, you can write the style tag in markdown:
+
+```html
+---
+title: example
+---
+
+<style>
+  /* For the page */
+  html, body, .markdown-body {
+    font-family: KaiTi,"Microsoft YaHei",Georgia, sans, serif;
+    font-size: 15px;
+  }
+
+  /* For the markdown content only */
+  .markdown-body {
+    font-family: KaiTi,"Microsoft YaHei",Georgia, sans, serif;
+    font-size: 15px;
+  }
+</style>
+```
+
 ### Web Analytics
 
 Varies analytics servers have been supported, you can fill the 'Key' and 'ID' to enable it.
