@@ -620,7 +620,7 @@ daovoice:
 
 ### Tag 插件
 
-#### Note 标签
+#### 便签
 
 在 markdown 中加入如下的代码来使用便签：
 
@@ -650,7 +650,7 @@ daovoice:
 使用时 `{% note primary %}` 和 `{% endnote %}` 需单独一行，否则会出现问题
 :::
 
-#### Label 行内标签
+#### 行内标签
 
 在 markdown 中加入如下的代码来使用 Label：
 
@@ -677,7 +677,7 @@ daovoice:
 若使用 `{% label primary @text %}`，text 不能以 @ 开头
 :::
 
-#### Checkbox 勾选框
+#### 勾选框
 
 在 markdown 中加入如下的代码来使用 Checkbox：
 
@@ -686,7 +686,7 @@ daovoice:
 ```
 
 text：显示的文字  
-checked：默认是否已勾选，默认 false
+checked：默认是否已勾选，默认 false  
 incline: 是否内联（可以理解为后面的文字是否换行），默认 false
 
 示例：
@@ -701,7 +701,7 @@ incline: 是否内联（可以理解为后面的文字是否换行），默认 f
   <input type="checkbox">{% cb false %} 也可以只传入一个参数，文字写在后边（这样不支持外联）
 </div>
 
-#### Button 按钮
+#### 按钮
 
 你可以在 markdown 中加入如下的代码来使用 Button：
 
@@ -721,13 +721,12 @@ title：鼠标悬停时显示的文字（可选）
 
 <a class="btn" href="javascript:;" title="title">text</a>
 
-#### Group Image 组图
+#### 组图
 
-将多张图片拼接显示  
-你可以在 markdown 中加入如下的代码来使用 Group Image：
+如果想把多张图片按一定布局组合显示，你可以在 markdown 中按如下格式：
 
 ```markdown
-{% gi x-y %}
+{% gi total n1-n2-... %}
   ![](url)
   ![](url)
   ![](url)
@@ -736,12 +735,12 @@ title：鼠标悬停时显示的文字（可选）
 {% endgi %}
 ```
 
-x：图片数量
-y：分为几行显示
+total：图片总数量，对应中间包含的图片 url 数量  
+n1-n2-...：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于 total，否则按默认样式
 
-图中样例为 `{% gi 5-2 %}`
+如下图为 `{% gi 5 3-2 %}` 示例，代表共 5 张图，第一行 3 张图，第二行 2 张图。
 
-![Group Images](../.vuepress/public/gp.png)
+![Group Images](../.vuepress/public/group_image.png)
 
 ### LaTeX 数学公式
 

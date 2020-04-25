@@ -540,7 +540,7 @@ highlight:
   copy_btn: true
 ```
 
-`bg_color`: whether to change the code background color according to style. If style color is white, it is better to `false`
+`bg_color`: whether to change the code background color according to style. If style color is white, it is better to `false`  
 `copy_btn`: display the button to copy code
 
 Line number of code is not supported.
@@ -585,7 +585,7 @@ If you comment board don't display, after you finished below steps, there may be
 
 #### Note
 
-You can use notes by inserting the HTML into markdown:
+You can use notes by inserting the snippet into markdown:
 
 ```markdown
 {% note success %}
@@ -611,6 +611,8 @@ Optional:
 
 #### Label
 
+You can use labels by inserting the snippet into markdown:
+
 ```markdown
 {% label primary @text %}
 ```
@@ -630,6 +632,30 @@ Optional：
 <span class="label label-warning">warning</span>
 <span class="label label-danger">danger</span>
 
+#### CheckBox
+
+You can use the following format in markdown:
+
+```markdown
+{% cb text, checked?, incline? %}
+```
+
+text: text of item  
+checked：this item is checked or not, default false
+incline: inline or not, default false
+
+eg：
+<div>
+  <input type="checkbox" checked>{% cb simple %}
+</div>
+<div>
+  <input type="checkbox" checked>{% cb checked, true %}
+</div>
+<input type="checkbox">{% cb inline, false, true %} no wrapping after text
+<div>
+  <input type="checkbox">{% cb false %} You can also write some text after the checkbox
+</div>
+
 #### Button
 
 ```markdown
@@ -646,22 +672,24 @@ Or：
 
 #### Group Images
 
+If you want to display a group of multiple images, you can use the following format in markdown:
+
 ```markdown
-{% gp x-y %}
+{% gi total n1-n2-... %}
   ![](url)
   ![](url)
   ![](url)
   ![](url)
   ![](url)
-{% endgp %}
+{% endgi %}
 ```
 
-x：image total
-y：lines
+total：total number of images  
+n1-n2-... ：number of images in each row
 
-eg: `{% gp 5-2 %}`
+eg: `{% gp 5 3-2 %}` means 5 images in total, 3 in the first row and 2 in the second row.
 
-![Group Images](../../.vuepress/public/gp.png)
+![Group Images](../../.vuepress/public/group_image.png)
 
 ### LaTeX
 
