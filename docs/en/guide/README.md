@@ -106,6 +106,8 @@ You can also copy only part of the configurations.
 The configuration existing in `fluid_config.yml` is of high priority, modifying `_config.yml` is invalid.
 
 There may be configuration changes in the theme of upgrading, you need to manually modify `fluid_config.yml` synchronously.
+
+You can use `hexo g -- debug` to check override configuration.
 :::
 
 If you want to cancel some configurations, you should do this:
