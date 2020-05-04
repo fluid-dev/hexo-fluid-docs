@@ -9,11 +9,13 @@ meta:
 
 # 支持我们
 
-## 赞赏
+## 赞助
 
-你可以通过下方二维码赞助本项目，资金将用于服务器开销以及今后的公共接口服务
+你可以通过下方二维码赞助本项目，部分资金将用于服务器开销以及今后的公共接口服务
 
-<img width="600" src="https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/reward.png" alt="reward">
+<img width="600" src="https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/sponsor.png" alt="sponsor">
+
+其他商业赞助可发送邮件至 zkqiang#126.com (#替换为@)
 
 ## 贡献代码
 
