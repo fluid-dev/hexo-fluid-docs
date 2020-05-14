@@ -261,3 +261,97 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ### 在新建页面添加评论
 
 目前，主题配置文件只能在文章页面添加评论，如果需要在新建的页面添加评论插件，请在打开评论插件的情况下，在文章页面查看评论插件对应的 HTML 代码，并添加到页面的 Markdown 文件中。
+
+### 增加二级导航
+
+二级导航需要在主题目录下的`layout`文件夹中的`nav.ejs`文件，按照如下形式修改代码（其中注释的位置就是修改的主要位置，你也可以按照自己的想法修改这个地方的内容）：
+```html
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        <% for(const each of theme.navbar.menu) { %>
+          <% if (!each.link) continue %>
+          <% var text = each.name || __(each.key + '.title') %>
+          <% if (text.indexOf('.title') !== -1) {
+            text = each.key
+          } %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= url_for(each.link) %>">
+              <%- each.icon ? '<i class="' + each.icon + '"></i>' : '' %>
+              <%- text %></a>
+<!--以上的部分是一级导航的部分，不需要修改-->
+<!--以下是二级导航的部分，需要添加的内容-->
+              <!--这里判断有没有二级菜单，有的话遍历出二级菜单（就是竖着的那部分）-->
+              <% if (each.submenu) { %>
+                <ul class="sub-menu">
+                  <!--遍历出二级菜单（就是竖着的那部分）-->
+                  <% for (const submenu of each.submenu){ %>
+                    <li>
+                      <!--a标签里输出二级菜单的路径-->
+                      <a href="<%- url_for(submenu.link) %>">
+                        <!--i标签里输出二级菜单的icon的class-->
+                        <%- each.icon ? '<i class="' + submenu.icon + '"></i>' : '' %>
+                        <!--//这里输出二级菜单名-->
+                        <%= submenu.key %>
+                      </a>
+                    </li>
+                  <% } %>
+                </ul>
+              <% } %>
+<!--以上是添加的二级导航的内容-->
+          </li>
+        <% } %>
+<!--后面是rearch按钮的内容-->
+```
+
+然后可以打开主题目录下`source/css/mian.styl`文件直接添加相应的css代码（此步不太规范，可以考虑在对应的css代码部分添加）：
+
+```css
+.sub-menu {
+    display: none;
+    position: relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.2);
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    height: auto;
+    box-shadow: -6px 6px 8px black;
+}
+// 以上是控制二级菜单呼出的形式
+.sub-menu .li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.nav-item:hover .sub-menu {
+    display: block;
+}
+// 控制鼠标停留在一级菜单上时呼出二级菜单
+ul {
+    list-style: none;
+}
+li.nav-item {
+    padding: 0 15px;
+}
+```
+
+最后在主题配置文件中改变`menu`部分的写法以适配修改的模板，打开主题配置文件`fluid_config.yml`，在菜单部分以“_分类_”菜单为例我们做如下的改动
+`submenu`指定二级菜单，和一级菜单类似，其中的内容用`[]`括起来！！！
+```yml
+navbar:
+  blog_title:  # 导航栏左侧的标题，为空则按 hexo config.title 显示
+  menu:  # 可自行增减，key 用来关联 languages/*.yml，如不存在关联则显示 key 本身的值；icon 是 css class，可以省略；增加 name 可以强制显示指定名称
+    - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
+    - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
+    - { key: 'category', link: '#', icon: 'iconfont icon-category-fill', submenu: [
+      { key: '全部', link: '/categories/', icon: 'iconfont icon-category-fill' },
+      { key: '生活', link: '/categories/生活/', icon: 'iconfont icon-category-fill' },
+      { key: '笔记', link: '/categories/笔记/', icon: 'iconfont icon-category-fill' }
+    ]}
+    - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
+    #- { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' } # 友链页，把前面#去掉即可展示
+    # 二级菜单的形式为 submenu: [{二级菜单a},{二级菜单b}]
+```
