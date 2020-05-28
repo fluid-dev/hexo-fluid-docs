@@ -73,7 +73,7 @@ language: zh-CN  # 指定语言，可不改
 
 ### 创建「关于页」
 
-自 v1.7.0 开始，「关于页」需要手动创建：
+首次使用主题的「关于页」需要手动创建：
 
 ```bash
 $ hexo new page about
@@ -194,7 +194,7 @@ navbar:
   blog_title: 博客标题
 ```
 
-### 顶部菜单
+### 导航菜单
 
 ```yaml
 navbar:
@@ -206,8 +206,23 @@ navbar:
 
 - `key`: 用于关联有[多语言](/guide/#多语言)，如不存在关联则显示 key 本身的值
 - `link`: 跳转链接
-- `icon`: 图标的 css class，可省略，主题内置图标详见[这里](/icon/)
+- `icon`: 图标的 css class，可以省略（即没有图标），主题内置图标详见[这里](/icon/)
 - `name`: 强制使用此名称显示（不再按多语言显示），可省略
+
+另外支持二级菜单（下拉菜单），配置写法如下：
+
+```yaml
+menu:
+  - {
+      key: '文档',
+      icon: 'iconfont icon-books',
+      submenu: [
+        { key: '配置指南', link: 'https://hexo.fluid-dev.com/docs/guide/' },
+        { key: '操作示例', link: 'https://hexo.fluid-dev.com/docs/example/' },
+        { key: '图标用法', link: 'https://hexo.fluid-dev.com/docs/icon/' }
+      ]
+  }
+```
 
 ### 图片懒加载
 
@@ -275,7 +290,36 @@ web_analytics:  # 网页访问统计
   tajs:   # 腾讯统计早期版站点统计sID，参见 https://ta.qq.com/#/site/list
   woyaola:  # 51.la站点统计ID，参见 https://www.51.la/user/site/index
   cnzz:  # 友盟/cnzz站点统计web_id，参见 https://web.umeng.com/main.php?c=site&a=show
+  leancloud:  # LeanCloud 计数统计，可用于 PV UV 展示，如果 web_analytics.enable 没有开启，PV UV 展示只会查询，不会增加
+    app_id:
+    app_key:
+    server_url:  # REST API 服务器地址，国际版不填
 ```
+
+### 展示 PV 与 UV 统计
+
+页脚可以展示 PV 与 UV 统计数据，目前支持两种数据来源：[LeanCloud](https://www.leancloud.cn/) 与 [不蒜子](http://busuanzi.ibruce.info/)。
+
+相关**主题配置**如下：
+
+```yaml
+footer:
+  statistics:
+    enable: false
+    source: "leancloud"  # 可选 leancloud | busuanzi
+    pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含)，下同
+    uv_format: "总访客数 {} 人"
+```
+
+:::tip
+不蒜子不需要申请账号，直接开启即可，但有时候会响应缓慢拖慢整个页面加载。
+
+不蒜子在 localhost 域名下显示的不是真正的数据，因此无需在意。
+
+LeanCloud 使用前需要申请账号（国内需要身份认证），然后在 `web_analytics` 配置项中将 `leancloud` API 相关参数填上才能生效。
+
+LeanCloud 在 localhost 域名下不会增加数据。
+:::
 
 ### 多语言
 
@@ -486,6 +530,16 @@ hide: true
 隐藏后依然可以通过文章链接访问
 :::
 
+### 在线聊天（daovoice）
+
+默认未开启此功能，需要在 https://dashboard.daovoice.io 注册并查看，然后将应用 ID 填入配置：
+
+```yaml
+daovoice:
+  enable: true
+  appid: ''
+```
+
 ## 文章页
 
 ### 文章在首页的略缩图
@@ -533,7 +587,7 @@ date: 2019-10-10 10:00:00
 
 ### 日期/字数/阅读时长/阅读数
 
-显示在文章页大标题下的文章信息，默认这些功能都是开启的。
+显示在文章页大标题下的文章信息，除了阅读次数，其他功能都是默认开启的。
 
 ```yaml
 post:
@@ -547,17 +601,16 @@ post:
     min2read:  # 阅读时间
       enable: true
       format: "{} 分钟"
-    views:  # 阅读次数，统计基于不蒜子
-      enable: true
+    views:  # 阅读次数
+      enable: false
+      source: "leancloud"  # 统计数据来源，可选：leancloud | busuanzi   注意不蒜子会间歇抽风
       format: "{} 次"
 ```
 
 :::tip
-
 日期格式必须遵循 ISO-8601 规范，否则无法正常显示；
 
 其他格式必须包括 `{}` 符号代替数字，文字可自由设置。
-
 :::
 
 ### 代码高亮样式
@@ -608,14 +661,21 @@ disqus 仅为演示，实际上 disqus 已经被墙，国内用户请不要使�
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::
 
-### 在线聊天（daovoice）
+### 脚注
 
-默认未开启此功能，需要在 https://dashboard.daovoice.io 注册并查看，然后将应用 ID 填入配置：
+主题内置了脚注语法支持，可以在文章末尾自动生成带有锚点的脚注，该功能在**主题配置**中默认开启：
 
 ```yaml
-daovoice:
-  enable: true
-  appid: ''
+post:
+  footnote:
+    enable: true
+```
+
+脚注语法如下：
+
+```
+这是一句话[^1]
+[^1]: 这是对应的脚注
 ```
 
 ### Tag 插件
@@ -869,7 +929,7 @@ tag:
 
 ### 创建关于页
 
-自 v1.7.0 开始，「关于页」需要手动创建：
+首次使用主题的「关于页」需要手动创建：
 
 ```bash
 $ hexo new page about
@@ -897,13 +957,14 @@ layout: about
 ```yaml
 about:
   icons:
-    - { class: 'iconfont icon-github-fill', link: 'https://github.com' }
-    - { class: 'iconfont icon-douban-fill', link: 'https://github.com' }
+    - { class: 'iconfont icon-github-fill', link: 'https://github.com', tip: 'GitHub' }
+    - { class: 'iconfont icon-douban-fill', link: 'https://github.com', tip: '豆瓣' }
     - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
 ```
 
 - `class`: 图标的 css class，主题内置图标详见[这里](/icon/)
 - `link`: 跳转链接
+- `tip`: 鼠标悬浮在图标上显示的提示文字
 - `qrcode`: 二维码图片，当使用此字段后，点击不再跳转，而是悬浮二维码
 
 ## 友情链接页

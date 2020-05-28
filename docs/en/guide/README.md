@@ -199,6 +199,21 @@ navbar:
 - `icon`: css class of icon, can be omitted. [Built-in icons of theme](/en/icon/) 
 - `name`: force this name to be displayed (no longer in multiple languages), can be omitted
 
+Navbar supports subordinate menu:
+
+```yaml
+menu:
+  - {
+      key: 'Docs',
+      icon: 'iconfont icon-books',
+      submenu: [
+        { key: 'Guide', link: 'https://hexo.fluid-dev.com/docs/en/guide/' },
+        { key: 'Example', link: 'https://hexo.fluid-dev.com/docs/en/example/' },
+        { key: 'Icon', link: 'https://hexo.fluid-dev.com/docs/en/icon/' }
+      ]
+  }
+```
+
 ### Lazyload Image
 
 ``` yaml
@@ -455,6 +470,16 @@ Hiding makes the post invisible in both category page and tag page.
 You can still enter post link.
 :::
 
+<!-- ### daovoice -->
+
+<!-- It is disenable defaulted, you should registration it at https://dashboard.daovoice.io , and fill your ID. -->
+
+<!-- ```yaml -->
+<!-- daovoice: -->
+<!--   enable: true -->
+<!--   appid: '' -->
+<!-- ``` -->
+
 ## Post Page
 
 ### Index Thumbnails
@@ -501,7 +526,7 @@ You can save your pictures locally，or other locations.
 
 ### Date/Word Count/Reading Time/Reading count
 
-These information display after your post title by defaultly.
+These metas display after the post title.
 
 ```yaml
 post:
@@ -516,7 +541,8 @@ post:
       enable: true
       format: "{} minute"
     views:  # Reading count
-      enable: true
+      enable: false
+      source: "leancloud"
       format: "{} times"
 ```
 
@@ -573,15 +599,24 @@ For more comment systems, you can add corresponding ejs file into `fluid/layout/
 If you comment board don't display, after you finished below steps, there may be something wrong with you code,You can find it on the console of your browser
 :::
 
-<!-- ### daovoice -->
+### Footnote
 
-<!-- It is disenable defaulted, you should registration it at https://dashboard.daovoice.io , and fill your ID. -->
+Fluid has built-in footnote, which can automatically generate footnotes with anchor points at the end of the post.
 
-<!-- ```yaml -->
-<!-- daovoice: -->
-<!--   enable: true -->
-<!--   appid: '' -->
-<!-- ``` -->
+This is enabled by default in **theme config**:
+
+```yaml
+post:
+  footnote:
+    enable: true
+```
+
+Syntax：
+
+```
+There are some words[^1]
+[^1]: This is the footnote
+```
 
 ### Tag Plugin
 
