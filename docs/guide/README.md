@@ -33,15 +33,15 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 主题 GitHub: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 
-示例网站：
+预览网站：
 
-[Rook1e's blog](https://rook1e.com)
+[Demo](https://hexo.fluid-dev.com/)
 
 [zkqiang's blog](https://zkqiang.cn)
 
-[吃白饭的休伯利安号（有代码修改）](https://eatrice.top)
+[Rook1e's blog](https://rook1e.com)
 
-[上屋顶看北斗七星（有代码修改）](https://ruru.eatrice.top)
+[吃白饭的休伯利安号（有代码修改）](https://eatrice.top)
 
 ## 关于指南
 

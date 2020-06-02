@@ -15,15 +15,15 @@ Fluid is an elegant Material-Design theme for Hexo, developed by [Fluid-dev](htt
 
 GitHub Repository: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 
-Demo blog:
+Preview:
 
-[Rook1e's blog](https://rook1e.com)
+[Demo](https://hexo.fluid-dev.com/)
 
 [zkqiang's blog](https://zkqiang.cn)
 
-[吃白饭的休伯利安号](https://eatrice.top)
+[Rook1e's blog](https://rook1e.com)
 
-[上屋顶看北斗七星](https://ruru.eatrice.top)
+[吃白饭的休伯利安号](https://eatrice.top)
 
 ## About this Guide
 
