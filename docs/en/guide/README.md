@@ -613,9 +613,28 @@ post:
 
 Syntax：
 
-```
+```markdown
 There are some words[^1]
 [^1]: This is the footnote
+```
+
+A better way to use it is to put a footnote at the end of the post:
+
+```markdown
+Content
+
+## Reference
+[^1]: Text-A
+[^2]: Text-B
+```
+
+You can also add section headers automatically by modifying `header`:
+
+```yaml
+post:
+  footnote:
+    enable: true
+    header: '<h2>Reference</h2>'  # It's equivalent to writing `## Reference`
 ```
 
 ### Tag Plugin
