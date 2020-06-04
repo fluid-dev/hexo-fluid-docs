@@ -107,6 +107,7 @@ module.exports = {
         $page.frontmatter.date && new Date($page.frontmatter.date),
       modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
     },
+    'vuepress-plugin-smooth-scroll': {},
     'vuepress-plugin-baidu-autopush':{},
   },
 };

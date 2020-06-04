@@ -17,5 +17,8 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
   }
 }
