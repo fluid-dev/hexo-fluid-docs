@@ -411,7 +411,7 @@ index:
     enable: true
 ```
 
-If you need manual, you can use `<!-- more -->` to define excerpt.
+If you need manual, you can use `<!-- more -->` to define except.
 
 ``` markdown
 This is excerpt
@@ -419,11 +419,20 @@ This is excerpt
 This is body
 ```
 
-Or you can set `excerpt: This is excerpt` in [Front-matter](https://hexo.io/docs/front-matter).
+Or you can set `excerpt` in [Front-matter](https://hexo.io/docs/front-matter):
 
+```yaml
+---
+title: This is a title
+excerpt: Some words
+---
+```
+
+:::tip
 Priority: Manually > Automatically.
 
 There are 3 lines works will display in index page, the rest will be hidden automatically.
+:::
 
 ### Post Url Target
 

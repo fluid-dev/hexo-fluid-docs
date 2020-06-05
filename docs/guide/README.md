@@ -319,6 +319,8 @@ footer:
 LeanCloud 使用前需要申请账号（国内需要身份认证），然后在 `web_analytics` 配置项中将 `leancloud` API 相关参数填上才能生效。
 
 LeanCloud 在 localhost 域名下不会增加数据。
+
+如果参数填写错误或者接口异常，不会显示数据，请在浏览器控制台排查具体原因。
 :::
 
 ### 多语言
@@ -468,21 +470,30 @@ index:
     enable: true
 ```
 
-若要手动指定摘要，使用 `<!-- more -->` MD文档里划分，例：
+若要手动指定摘要，使用 `<!-- more -->` MD文档里划分，如：
 
-```
+```markdown
 这里是摘要
 <!-- more -->
 这里是正文
 ```
 
-或者在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `excerpt: 这里是摘要` 字段
+或者在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `excerpt` 字段，如：
 
+```yaml
+---
+title: 这是标题
+excerpt: 这是摘要
+---
+```
+
+:::tip
 优先级: 手动摘要 > 自动摘要
 
 如果关闭自动摘要，并且没有设置手动摘要，摘要区域空白
 
 无论哪种摘要都最多显示 3 行，当屏幕宽度不足时会隐藏部分摘要。
+:::
 
 ### 文章跳转方式
 
@@ -655,8 +666,8 @@ disqus:
 
 若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
 
-:::warning
-disqus 仅为演示，实际上 disqus 已经被墙，国内用户请不要使用，推荐使用 Utterances（[经验贴](https://litstronger.github.io/2020/04/03/hexo-fluid%E6%B7%BB%E5%8A%A0utterances%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/)）
+:::tip
+国内用户推荐推荐使用 Valine 或者 Utterances
 
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::
