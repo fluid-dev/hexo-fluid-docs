@@ -306,7 +306,7 @@ web_analytics:  # 网页访问统计
 footer:
   statistics:
     enable: false
-    source: "leancloud"  # 可选 leancloud | busuanzi
+    source: "busuanzi"  # 可选 leancloud | busuanzi  根据自己需求选择
     pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含)，下同
     uv_format: "总访客数 {} 人"
 ```
