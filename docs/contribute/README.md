@@ -9,11 +9,13 @@ meta:
 
 # 支持我们
 
-## 赞助
+## 打赏
 
-你可以通过下方二维码赞助本项目，部分资金将用于服务器开销以及今后的公共接口服务
+你可以通过[爱发电](https://afdian.net/@zkqiang)支持我们的开源创作，资金将用于服务器开销以及今后的公共接口服务
 
-<img width="600" src="https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/sponsor.png" alt="sponsor">
+<a href="https://afdian.net/@zkqiang">
+  <img width="300" src="https://static.zkqiang.cn/images/20200715113201.png-slim" alt="support me">
+</a>
 
 其他商业赞助可发送邮件至 zkqiang#126.com (#替换为@)
 
