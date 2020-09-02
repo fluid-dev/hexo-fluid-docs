@@ -287,7 +287,6 @@ web_analytics:  # 网页访问统计
   tencent:  # 腾讯统计的H5 App id，参见 https://mta.qq.com/h5/manage/ctr_app_manage (开启高级功能才有cid)
     sid:
     cid:
-  tajs:   # 腾讯统计早期版站点统计sID，参见 https://ta.qq.com/#/site/list
   woyaola:  # 51.la站点统计ID，参见 https://www.51.la/user/site/index
   cnzz:  # 友盟/cnzz站点统计web_id，参见 https://web.umeng.com/main.php?c=site&a=show
   leancloud:  # LeanCloud 计数统计，可用于 PV UV 展示，如果 web_analytics.enable 没有开启，PV UV 展示只会查询，不会增加
@@ -433,6 +432,22 @@ custom_css:
   - /css/custom.css
   - //at.alicdn.com/t/font_1736178_ijqayz9ro8k.css
 ```
+
+### 暗色模式
+
+主题暗色模式，开启后菜单中会出现切换按钮
+
+```yaml
+dark_mode:
+  enable: true
+  default: auto
+```
+
+`default` 是暗色默认的模式，可选参数：auto / light / dark
+
+选择 auto 时优先遵循 [prefers-color-scheme](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-color-scheme)，如果不支持则按用户本地时间 18 点到次日 6 点之间进入暗色模式。
+
+无论选择任何模式，当用户手动切换后会在用户本地保存选项，该用户不再按照默认模式。
 
 ## 首页
 

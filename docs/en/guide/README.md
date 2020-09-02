@@ -375,6 +375,24 @@ custom_css: /css/custom.css
 custom_html: '<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">'
 ```
 
+### Dark Mode
+
+Theme dark mode, switch button will appear in the menu after enable.
+
+```yaml
+dark_mode:
+  enable: true
+  default: auto
+```
+
+`default` Is the default mode of dark color, optional parameters：auto / light / dark
+
+When you select `auto`, the color schema of viewers will follow [prefers-color-scheme](https://developer.mozilla.org/en/docs/Web/CSS/@media/prefers-color-scheme)
+
+If this is not supported, enter dark mode from 18:00 local time to 6:00 the next day.
+
+Regardless of any mode is selected, when the viewer manually switches, the options will be saved in local-storage, and the viewer will no follow the default mode.
+
 ## Home
 
 ### Slogan
