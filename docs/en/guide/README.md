@@ -558,16 +558,18 @@ These metas display after the post title.
 ```yaml
 post:
   meta:
-    date:  # 日期
+    author:  # post author, first according to `author` in front-matter, then according to `author` in Hexo config
+      enable: false
+    date:  # post date, first according to `date` in front-matter, then according to date of md file
       enable: true
       format: "dddd, MMMM Do YYYY, h:mm a"  # format ISO-8601
     wordcount:  # word count
       enable: true
       format: "{} words"  # placeholder
-    min2read:  # 阅读时间
+    min2read:  # Time required to read
       enable: true
       format: "{} minute"
-    views:  # Reading count
+    views:  # views count
       enable: false
       source: "leancloud"
       format: "{} times"

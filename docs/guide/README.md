@@ -613,12 +613,14 @@ date: 2019-10-10 10:00:00
 
 ### 日期/字数/阅读时长/阅读数
 
-显示在文章页大标题下的文章信息，除了阅读次数，其他功能都是默认开启的。
+显示在文章页大标题下的文章信息，除了作者和阅读次数，其他功能都是默认开启的。
 
 ```yaml
 post:
   meta:
-    date:  # 日期
+    author:  # 作者，优先根据 front-matter 里 author 字段，其次是 hexo 配置中 author 值
+      enable: false
+    date:  # 文章日期，优先根据 front-matter 里 date 字段，其次是 md 文件日期
       enable: true
       format: "dddd, MMMM Do YYYY, h:mm a"  # 格式参照 ISO-8601 日期格式化
     wordcount:  # 字数统计
