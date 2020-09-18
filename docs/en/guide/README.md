@@ -15,15 +15,7 @@ Fluid is an elegant Material-Design theme for Hexo, developed by [Fluid-dev](htt
 
 GitHub Repository: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 
-Preview:
-
-[Demo](https://hexo.fluid-dev.com/)
-
-[zkqiang's blog](https://zkqiang.cn)
-
-[Rook1e's blog](https://rook1e.com)
-
-[吃白饭的休伯利安号](https://eatrice.top)
+Preview: [Fluid's Blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
 
 ## About this Guide
 
@@ -33,11 +25,9 @@ This page of the guide created by [VuePress](https://vuepress.vuejs.org/).
 
 :::tip
 
-About the config file:
+About the config file in the guide:
 - "**blog config**" refer to the `_config.yml` in the blog root directory.
 - "**theme config**" refer to the path `theme/fluid/_config.yml`
-
-The source directory of blog and fluid will be merged eventually, so the source of blog is preferred for the stored files
 
 :::
 
@@ -620,12 +610,12 @@ disqus:
   shortname: fluid
 ```
 
-Valine、Disqus、Gitalk、Utterances、Changyan、livere can be supported currently.
+Valine、Disqus、Gitalk、Utterances、Changyan、Livere、Remark42 can be supported currently.
 
 For more comment systems, you can add corresponding ejs file into `fluid/layout/_partial/comments/`, according to your system document, and then modify `post.comments.type` link to your system.
 
 :::tip
-If you comment board don't display, after you finished below steps, there may be something wrong with you code,You can find it on the console of your browser
+If your comment area is not displayed, there may be throwing some errors, you can find out the reason in the console of your browser.
 :::
 
 ### Footnote

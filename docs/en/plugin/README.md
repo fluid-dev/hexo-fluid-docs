@@ -10,7 +10,7 @@ meta:
 # Plugin
 
 :::warning
-All plugins are only recommended. Please read their documents carefully to avoid adverse consequences.
+All plugins are only recommended and can’t be sure they are fully compatible with Fluid, please read their documentation carefully to avoid adverse consequences.
 :::
 
 ## Minifier

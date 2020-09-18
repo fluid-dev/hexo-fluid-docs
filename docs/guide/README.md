@@ -9,12 +9,22 @@ meta:
 
 # 配置指南
 
+## 主题简介
+
+Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev](https://github.com/fluid-dev) 负责开发与维护。
+
+主题 GitHub: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
+
+预览网站：[Fluid's Blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
+
+## 关于指南
+
 :::tip
 致主题的新用户：
 
-- 本指南经过数个版本打磨，绝大部分功能都有详细说明，请仔细阅读；
+- 本指南经过数个版本打磨，绝大部分的功能都有详细说明，请仔细阅读；
 
-- 本指南中提到的："**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`，"**主题配置**" 指的是 `theme/fluid/_config.yml`，两者文件名相同，注意区分；
+- 本指南中提到的："**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`，"**主题配置**" 指的是 `theme/fluid/_config.yml` 或者 `_config.fluid.yml` ，注意区分；
 
 - 博客与主题的 source 目录最终会合并，因此存放的文件优先选择博客的 source；
 
@@ -22,30 +32,16 @@ meta:
 
 - 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean`；
 
-- 页面结果以本地 `hexo s` 为准，部署后的异常大部分是缓存原因；
+- 页面结果以本地 `hexo s` 为准，部署后的异常大部分是缓存原因，在确认没有报错的情况下，等待若干时间后即可正常；
 
 - 没有经验的用户可以参考 [操作示例](/example/) 进行操作。
 :::
 
-## 主题简介
+本指南不包括所有的配置说明，几乎每个配置在**主题配置**中都有注释，可配合指南共同参考使用。
 
-Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev](https://github.com/fluid-dev) 负责开发与维护。
+另外本指南仅包含主题范围内的使用说明，如果是 Hexo 的使用或者 Hexo 插件的使用，请查阅各自的文档。
 
-主题 GitHub: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
-
-预览网站：
-
-[Demo](https://hexo.fluid-dev.com/)
-
-[zkqiang's blog](https://zkqiang.cn)
-
-[Rook1e's blog](https://rook1e.com)
-
-[吃白饭的休伯利安号（有代码修改）](https://eatrice.top)
-
-## 关于指南
-
-本指南仅为部分配置说明，**并不包括所有配置项**，具体配置要求请参照**主题配置**中的注释，若存在更多疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
+若存在其他主题相关的疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
 本指南网页是使用 [VuePress](https://vuepress.vuejs.org/) 生成。
 
@@ -679,7 +675,7 @@ disqus:
   shortname: fluid
 ```
 
-当前支持 Valine、Disqus、Gitalk、Utterances、畅言、来必力(livere)，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
+当前支持 Valine、Disqus、Gitalk、Utterances、畅言、来必力(livere)、Remark42，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
 
 若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
 
@@ -1052,12 +1048,6 @@ links:
 - 如果博客部署在云服务器，需要 Nginx 配置文件设置 `error_page 404 = /404.html`；
 - 如果部署在 Github Pages 上，不需要额外配置，但必须绑定顶级域名才生效；
 - 其他 OSS 等平台，请参考各平台关于 404 页的配置文档，但并不是所有平台都支持跳转 Html。
-
-## 关于更多配置
-
-[博客 _config.yml 配置](https://hexo.io/zh-cn/docs/configuration)
-
-[文章 Front-matter 配置](https://hexo.io/zh-cn/docs/front-matter)
 
 ## 微信交流群
 
