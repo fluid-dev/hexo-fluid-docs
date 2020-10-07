@@ -766,7 +766,11 @@ eg: `{% gp 5 3-2 %}` means 5 images in total, 3 in the first row and 2 in the se
 
 ![Group Images](../../.vuepress/public/group_image.png)
 
-### LaTeX
+### Math
+
+```tip
+For hexo 5.0+, you can try [hexo-math](https://github.com/hexojs/hexo-math) plugin to support more customization.
+```
 
 Before you use [LaTeX](https://www.latex-project.org/help/documentation/) math typesetting, you should finish follow steps:
 
