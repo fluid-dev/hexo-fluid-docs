@@ -552,6 +552,33 @@ hide: true
 隐藏后依然可以通过文章链接访问
 :::
 
+### 文章排序
+
+如果想手动将某些文章固定在首页靠前的位置，可以在安装 `hexo-generator-index` >= 2.0.0 版本的情况下，在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `sticky` 属性：
+
+```yaml
+---
+title: 文章标题
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+sticky: 100
+---
+以下是文章内容
+```
+
+`sticky` 数值越大，该文章越靠前，达到类似于置顶的效果，其他未设置的文章依然按默认排序。
+
+当文章设置了 `sticky` 后，主题会默认在首页文章标题前增加一个图标，来标识这是一个置顶文章，你可以通过**主题配置**去关闭或修改这个功能：
+
+```yaml
+index:
+  post_sticky:
+    enable: true
+    icon: 'iconfont icon-top'
+```
+
+`icon` 可以通过[自定义图标](/icon/)修改为其他图标。
+
 ### 在线聊天（daovoice）
 
 默认未开启此功能，需要在 https://dashboard.daovoice.io 注册并查看，然后将应用 ID 填入配置：

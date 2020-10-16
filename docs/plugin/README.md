@@ -21,10 +21,6 @@ meta:
 
 [hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink)
 
-## 置顶文章
-
-[hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
-
 ## 插入视频
 
 [hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)

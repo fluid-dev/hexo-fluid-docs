@@ -468,9 +468,9 @@ index:
     tag: true
 ```
 
-### Hide Post
+### Hide Posts
 
-If you want to hide some posts from the index page, you can define `hide: true` at the head of a post [Front-matter](https://hexo.io/docs/front-matter).
+If you want to hide some posts on the index page, you can set `hide: true` at the [Front-matter](https://hexo.io/docs/front-matter) of the post.
 
 ```yaml
 ---
@@ -486,6 +486,33 @@ This is post content
 Hiding makes the post invisible in both category page and tag page.
 You can still enter post link.
 :::
+
+### Sort Posts
+
+If you want to sort posts on the index page, you can set `sticky` at the [Front-matter](https://hexo.io/docs/front-matter) of the post, the premise is `hexo-generator-index` >= 2.0.0.
+
+```yaml
+---
+title: post title
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+sticky: 100
+---
+This is post content
+```
+
+The higher value of `sticky`, the more forward the post will be.
+
+When the post is setting with `sticky`, Fluid will add an icon before the post title on the index page by default. You can modify something in **theme config**:
+
+```yaml
+index:
+  post_sticky:
+    enable: true
+    icon: 'iconfont icon-top'
+```
+
+`icon` can be modified to other icons through [custom icon](/icon/)
 
 <!-- ### daovoice -->
 

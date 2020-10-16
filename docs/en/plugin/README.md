@@ -21,10 +21,6 @@ All plugins are only recommended and can’t be sure they are fully compatible w
 
 [hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink)
 
-## Pin Posts
-
-[hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
-
 ## Video Tag
 
 [hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)
