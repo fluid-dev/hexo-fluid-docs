@@ -1,15 +1,7 @@
 {
-  "devDependencies": {
-    "moment": "^2.24.0",
-    "moment-timezone": "^0.5.28",
-    "vuepress": "^1.3.0",
-    "vuepress-plugin-baidu-autopush": "^1.0.1",
-    "vuepress-plugin-seo": "^0.1.3",
-    "vuepress-plugin-sitemap": "^2.3.1"
-  },
-  "name": "docs",
-  "version": "1.8.1",
-  "description": "hexo-fluid-docs",
+  "name": "hexo-fluid-docs",
+  "version": "1.8.4",
+  "description": "Docs for hexo-theme-fluid",
   "main": "index.js",
   "repository": "https://github.com/fluid-dev/hexo-fluid-docs",
   "author": "Fluid-dev",
@@ -18,7 +10,13 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "dependencies": {
-    "vuepress-plugin-smooth-scroll": "^0.0.9"
+  "devDependencies": {
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.31",
+    "vuepress": "^1.7.1",
+    "vuepress-plugin-baidu-autopush": "^1.0.1",
+    "vuepress-plugin-seo": "^0.1.4",
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-smooth-scroll": "^0.0.10"
   }
 }
