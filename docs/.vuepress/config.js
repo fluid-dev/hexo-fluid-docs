@@ -1,5 +1,4 @@
 const moment = require('moment-timezone');
-const path = require('path');
 
 module.exports = {
   locales: {
@@ -10,7 +9,7 @@ module.exports = {
       description: '一款 Material Design 风格的 Hexo 博客主题',
     },
     '/en/': {
-      lang: 'en-US',
+      lang: 'en',
       description: 'An elegant Material-Design theme for Hexo',
     },
   },
@@ -25,7 +24,7 @@ module.exports = {
         // 多语言下拉菜单的标题
         selectText: 'Languages',
         // 该语言在下拉菜单中的标签
-        label: '简体中文',
+        label: '🇨🇳 简体中文',
         // 编辑链接文字
         editLinkText: '帮助我们完善文档',
         // 最后更新的描述
@@ -38,9 +37,10 @@ module.exports = {
           },
         },
         nav: [
+          { text: '开始使用', link: '/start/' },
           { text: '配置指南', link: '/guide/' },
           { text: '插件推荐', link: '/plugin/' },
-          { text: '操作示例', link: '/example/' },
+          { text: '进阶玩法', link: '/advance/' },
           { text: '图标用法', link: '/icon/' },
           { text: '支持我们', link: '/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
@@ -48,7 +48,7 @@ module.exports = {
       },
       '/en/': {
         selectText: 'Languages',
-        label: 'English',
+        label: '🇬🇧 English',
         ariaLabel: 'Languages',
         editLinkText: 'Edit this docs',
         lastUpdated: 'Last Updated',
@@ -59,9 +59,10 @@ module.exports = {
           },
         },
         nav: [
+          { text: 'Start', link: '/en/start/' },
           { text: 'Guide', link: '/en/guide/' },
           { text: 'Plugin', link: '/en/plugin/' },
-          { text: 'Example', link: '/en/example/' },
+          { text: 'Advance', link: '/en/advance/' },
           { text: 'Icon', link: '/en/icon/' },
           { text: 'Contribute', link: '/en/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
@@ -87,6 +88,11 @@ module.exports = {
           return moment(timestamp).utc().locale(lang).format('lll')
         }
       },
+    },
+    'vuepress-plugin-clean-urls': {
+      normalSuffix: '/',
+      indexSuffix: '/',
+      notFoundPath: '/404.html',
     },
     'sitemap': {
       hostname: 'https://fluid-dev.github.io/',

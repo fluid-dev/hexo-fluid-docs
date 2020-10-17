@@ -9,32 +9,22 @@ meta:
 
 # 配置指南
 
-## 主题简介
-
-Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev](https://github.com/fluid-dev) 负责开发与维护。
-
-主题 GitHub: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
-
-预览网站：[Fluid's Blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
-
 ## 关于指南
 
 :::tip
 致主题的新用户：
 
-- 本指南经过数个版本打磨，绝大部分的功能都有详细说明，请仔细阅读；
+- 本指南经过数个版本打磨，绝大部分的功能都有详细说明，请仔细阅读，节约自己和他人的时间；
 
 - 本指南中提到的："**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`，"**主题配置**" 指的是 `theme/fluid/_config.yml` 或者 `_config.fluid.yml` ，注意区分；
 
 - 博客与主题的 source 目录最终会合并，因此存放的文件优先选择博客的 source；
 
-- 页面个人化定制可以通过[自定义功能](/guide/#自定义-js-css-html)实现；
-
 - 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean`；
 
 - 页面结果以本地 `hexo s` 为准，部署后的异常大部分是缓存原因，在确认没有报错的情况下，等待若干时间后即可正常；
 
-- 没有经验的用户可以参考 [操作示例](/example/) 进行操作。
+- 由于主题的不同版本会存在配置差异，本指南以最新版本为准。
 :::
 
 本指南不包括所有的配置说明，几乎每个配置在**主题配置**中都有注释，可配合指南共同参考使用。
@@ -43,76 +33,25 @@ Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev]
 
 若存在其他主题相关的疑问请在 [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new) 留言。
 
-本指南网页是使用 [VuePress](https://vuepress.vuejs.org/) 生成。
-
-## 快速开始
-
-### 搭建 Hexo 博客
-
-如果你还没有 Hexo 博客，请按照 [Hexo 官方文档](https://hexo.io/zh-cn/docs/) 进行安装、建站。
-
-### 获取最新版本
-
-请优先下载 [最新 release 版本](https://github.com/fluid-dev/hexo-theme-fluid/releases)，master 分支无法保证稳定。
-
-下载后解压到 themes 目录下并重命名为 `fluid`。
-
-### 必要的配置
-
-必须如下修改博客目录下的 `_config.yml`：
-
-```yaml
-theme: fluid  # 指定主题
-
-language: zh-CN  # 指定语言，可不改
-```
-
-### 创建「关于页」
-
-首次使用主题的「关于页」需要手动创建：
-
-```bash
-$ hexo new page about
-```
-
-创建成功后修改 `/source/about/index.md`，添加 `layout` 属性。
-
-修改后的文件示例如下：
-
-```yaml
----
-title: about
-date: 2020-02-23 19:20:33
-layout: about
----
-
-# 这里可以写正文
-支持 Markdown, HTML
-```
-
 ## 全局
 
 ### 覆盖配置
 
-**该功能可实现平滑升级主题，推荐所有人学习使用**。
-
+:::tip
 覆盖配置可以使**主题配置**放置在 fluid 目录之外，避免在更新主题时丢失自定义的配置。
 
-使用该功能必须保证 Hexo 版本不低于 3.0，因为该功能利用了 [Hexo 数据文件](https://hexo.io/zh-cn/docs/data-files.html) 功能。
-
-使用方式：
-
-1. 进入博客目录的 source 目录下（不是主题目录的 source），创建 `_data` 目录（和 `_post` 目录同级）；
-2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部配置（或部分配置）复制到 `fluid_config.yml` 中；
-3. 以后配置都在 `fluid_config.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
-
-:::tip
-- 也可以只覆盖部分配置，但注意只要存在于 `fluid_config.yml` 的配置都是高优先级，修改原 `_config.yml` 是无效的。
-- 每次更新主题可能存在配置变更，请注意更新说明，可能需要手动对 `fluid_config.yml` 同步修改。
-- 想查看覆盖配置有没有生效，可以通过 `hexo g --debug` 查看命令行输出。
+通过 Npm 安装主题的用户可忽略，其他用户建议学习使用。
 :::
 
-如果想将某些配置覆盖为空，注意不要把主键删掉，不然是无法覆盖的，比如：
+Hexo 5.0.0 版本以上的用户，在博客目录下创建 `_config.fluid.yml` 文件，将主题的 [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/release/_config.yml) 内容复制过去。
+
+以后如果修改任何主题配置，都只需修改 `_config.fluid.yml` 的配置即可。
+
+注意：
+- 只要存在于 `_config.fluid.yml` 的配置都是高优先级，修改原 `_config.yml` 是无效的。
+- 每次更新主题可能存在配置变更，请注意更新说明，可能需要手动对 `_config.fluid.yml` 同步修改。
+- 想查看覆盖配置有没有生效，可以通过 `hexo g --debug` 查看命令行输出。
+- 如果想将某些配置覆盖为空，注意不要把主键删掉，不然是无法覆盖的，比如：
 
 ```yaml
 about:
@@ -121,14 +60,27 @@ about:
     # - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
 ```
 
+<details>
+  <summary>Hexo 低于 5.0.0 版本点击这里</summary>
+
+必须确保 Hexo 版本不低于 3.0.0，使用方式：
+
+1. 进入博客目录的 source 目录下（不是主题目录的 source），创建 `_data` 目录（和 `_post` 目录同级）；
+2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部配置（或部分配置）复制到 `fluid_config.yml` 中；
+3. 以后配置都在 `fluid_config.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
+
+</details>
+
 ### 静态资源
 
-所有静态资源文件的 Url 可以通过 `fluid/_static_prefix.yml` 自定义配置，同样也支持覆盖配置，写入 `/source/_data/fluid_static_prefix.yml` 即可。
+所有静态资源文件的 Url 可以通过**主题配置**中的 `static_prefix` 配置项修改。
 
 比如需要指定公共 CDN 的 JQuery 库，只需将原配置改为：
 
 ```yaml
-jquery: https://cdn.staticfile.org/jquery/3.4.1/
+static_prefix:
+  # ...
+  jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 ```
 
 ### 本地搜索
@@ -213,8 +165,8 @@ menu:
       key: '文档',
       icon: 'iconfont icon-books',
       submenu: [
+        { key: '主题博客', link: 'https://hexo.fluid-dev.com/' },
         { key: '配置指南', link: 'https://hexo.fluid-dev.com/docs/guide/' },
-        { key: '操作示例', link: 'https://hexo.fluid-dev.com/docs/example/' },
         { key: '图标用法', link: 'https://hexo.fluid-dev.com/docs/icon/' }
       ]
   }
@@ -484,9 +436,9 @@ index:
 若要手动指定摘要，使用 `<!-- more -->` MD文档里划分，如：
 
 ```markdown
-这里是摘要
+正文的一部分作为摘要
 <!-- more -->
-这里是正文
+余下的正文
 ```
 
 或者在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `excerpt` 字段，如：
@@ -578,16 +530,6 @@ index:
 ```
 
 `icon` 可以通过[自定义图标](/icon/)修改为其他图标。
-
-### 在线聊天（daovoice）
-
-默认未开启此功能，需要在 https://dashboard.daovoice.io 注册并查看，然后将应用 ID 填入配置：
-
-```yaml
-daovoice:
-  enable: true
-  appid: ''
-```
 
 ## 文章页
 
@@ -1079,11 +1021,3 @@ links:
 - 如果博客部署在云服务器，需要 Nginx 配置文件设置 `error_page 404 = /404.html`；
 - 如果部署在 Github Pages 上，不需要额外配置，但必须绑定顶级域名才生效；
 - 其他 OSS 等平台，请参考各平台关于 404 页的配置文档，但并不是所有平台都支持跳转 Html。
-
-## 微信交流群
-
-[查看微信群二维码](https://github.com/fluid-dev/hexo-theme-fluid/issues/96)
-
-## 开源协议
-
-[MIT](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)

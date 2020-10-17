@@ -9,98 +9,33 @@ meta:
 
 # Guide
 
-## Theme Introduction
-
-Fluid is an elegant Material-Design theme for Hexo, developed by [Fluid-dev](https://github.com/fluid-dev)
-
-GitHub Repository: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
-
-Preview: [Fluid's Blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
-
 ## About this Guide
 
 This guide is only for partial configuration instructions, **Not for the all configs**, For specific configuration requirements, please refer to the comments in the file `_config.yml` at the path of the theme. For more help, Please write your questions at [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new).
 
-This page of the guide created by [VuePress](https://vuepress.vuejs.org/).
-
 :::tip
-
 About the config file in the guide:
 - "**blog config**" refer to the `_config.yml` in the blog root directory.
 - "**theme config**" refer to the path `theme/fluid/_config.yml`
-
 :::
-
-## Quick Start
-
-### Install Hexo
-
-If you don't have a hexo blog, please follow [Hexo Docs](https://hexo.io/docs/) to install and initialize your blog。
-
-### Download Theme
-
-Please download [the latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), or the master branch may not guarantee stability.
-
-After download, extract it to the themes directory and rename it to `fluid`.
-
-### Necessary Configuration
-
-Modify `_config.yml` in the blog root directory as follows。
-
-```yaml
-theme: fluid  # set theme
-```
-
-### Create About Page
-
-Since v1.7.0, the about page needs to be created manually:
-
-```bash
-$ hexo new page about
-```
-
-After successful creation, modify `/source/about/index.md` and add `layout` attribute.
-
-The modified file example is as follows:
-
-```yaml
----
-title: about
-date: 2020-02-23 19:20:33
-layout: about
----
-
-# You can write the content here
-Support Markdown, HTML
-```
 
 ## Global
 
 ### Override Configuration
 
-**This feature can makes upgrade the theme smoother, recommended everyone to learn to use.**
-
-Override configuration can make the **theme config** out of the theme dictionary, and avoid losing custom config after the theme upgraded.
-
-You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/docs/data-files.html)
-
-Usage:
-
-1. cd into the folder '*source*' in your *blog root dictionary*, `mkdir _data` (beside to the folder '_post');
-2. Create a file `fluid_config.yml` in the folder `_date` , copy the configurations from **theme config** to `fluid_config.yml`;
-3. You can set any config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
-
 :::tip
-You can also copy only part of the configurations.
+Override configuration can avoid losing your customized configuration when updating Fluid.
 
-The configuration existing in `fluid_config.yml` is of high priority, modifying `_config.yml` is invalid.
-
-There may be configuration changes in the theme of upgrading, you need to manually modify `fluid_config.yml` synchronously.
-
-You can use `hexo g -- debug` to check override configuration.
+Users who install Fluid via Npm can ignore it, other users are recommended to learn to use it.
 :::
 
-If you want to cancel some configurations, you should do this:
+If your Hexo version >= 5.0.0, create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/release/_config.yml)
+
+Notice:
+- The configuration existing in `_config.fluid.yml` is of high priority, modifying `_config.yml` is useless.
+- There may be configuration changes in the theme of upgrading, you need to manually modify `_config.fluid.yml` synchronously.
+- You can use `hexo g -- debug` to check override configuration.
+- If you want to cancel some configurations, you should do this:
 
 ```yaml
 about:
@@ -109,14 +44,29 @@ about:
     # - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
 ```
 
-### Static Resource
+<details>
+  <summary>Hexo version < 5.0.0 click here</summary>
 
-The Url of all resource static files can be customized through `fluid/_static_prefix.yml`, it also can be override with `_data/fluid_static_prefix.yml`.
+You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/docs/data-files.html)
 
-If we should get the JQuery CDN library, we can add a line at the end of the file `/source/_data/fluid_static_prefix.yml`:
+Usage:
 
-``` yaml
-jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
+1. cd into the dictionary '*source*' in your *blog root dictionary*, then `mkdir _data` (beside to the folder '_post');
+2. Create a file `fluid_config.yml` in the folder `_date` , copy the configurations from **theme config** to `fluid_config.yml`;
+3. You can set any config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
+
+</details>
+
+### Static Assets
+
+The Url of all static files can be customized through the `static_prefix` item in **theme config**.
+
+For example, custom the JQuery CDN library, you can set:
+
+```yaml
+static_prefix:
+  # ...
+  jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/
 ```
 
 ### Local Search
@@ -198,7 +148,7 @@ menu:
       icon: 'iconfont icon-books',
       submenu: [
         { key: 'Guide', link: 'https://hexo.fluid-dev.com/docs/en/guide/' },
-        { key: 'Example', link: 'https://hexo.fluid-dev.com/docs/en/example/' },
+        { key: 'Advance', link: 'https://hexo.fluid-dev.com/docs/en/advance/' },
         { key: 'Icon', link: 'https://hexo.fluid-dev.com/docs/en/icon/' }
       ]
   }
@@ -276,14 +226,6 @@ language: zh-CN  # default is en
 *en* *zh-CN* and *ja* is supported currently.
 
 If you want to add more language, you'd better copy a new file to edit, and define the language file name.
-
-### Faster Loading
-
-1. For all the users, it is the effective way to use public CDN for the 'third-party lib', you can add it into the file `_static_prefix.yml`；
-
-2. You can use OSS and bind your domain, then upload the files in the folder `public` to your OSS.
-
-3. For your custom images, especially the big banner picture, you can use [tinypng](https://tinypng.com) to compress them, and upload them to your private CDN.
 
 ### Enforce Https
 
@@ -387,7 +329,7 @@ Regardless of any mode is selected, when the viewer manually switches, the optio
 
 ### Slogan
 
-The typewriter text in the large image of the home page can be set in the **theme config**uration file whether to turn on or not:
+The typing text in the banner image of the home page can be set in the **theme config**:
 
 ```yaml
 index:
@@ -396,22 +338,22 @@ index:
     text: This is a Slogan
 ```
 
-If `text` is '', the `subtitle` in the 'blog config' will replace it.
+If `text` is blank, the `subtitle` in the **blog config** will replace it.
 
-Related dynamic effect settings:
+About typing settings:
 
 ```yaml
 fun_features:
-  typing: # 为 subtitle add Slogan effect
+  typing:
     enable: true
-    typeSpeed: 70 # Slogan speed
-    cursorChar: "_" # cursor style
-    loop: false # repeat
+    typeSpeed: 70
+    cursorChar: "_"
+    loop: false
 ```
 
 ### Post Excerpt
 
-control the excerpt automatically (default is enable)：
+Control the excerpt automatically (default is enable)：
 
 ```yaml
 index:
@@ -422,9 +364,9 @@ index:
 If you need manual, you can use `<!-- more -->` to define except.
 
 ``` markdown
-This is excerpt
+Part of the content as an excerpt
 <!-- more -->
-This is body
+The rest of the text
 ```
 
 Or you can set `excerpt` in [Front-matter](https://hexo.io/docs/front-matter):
@@ -512,17 +454,7 @@ index:
     icon: 'iconfont icon-top'
 ```
 
-`icon` can be modified to other icons through [custom icon](/icon/)
-
-<!-- ### daovoice -->
-
-<!-- It is disenable defaulted, you should registration it at https://dashboard.daovoice.io , and fill your ID. -->
-
-<!-- ```yaml -->
-<!-- daovoice: -->
-<!--   enable: true -->
-<!--   appid: '' -->
-<!-- ``` -->
+`icon` can be modified to other icons through [custom icon](/en/icon/)
 
 ## Post Page
 
@@ -931,13 +863,3 @@ To open this page, you need to configure it on the deployment environment of the
 - If your blog is deployed on a cloud server, you need to set the Nginx profile `error_page 404 = ./404.html`;
 - If deployed on Github Pages, no additional configuration is required, but the custom domain must be bound.
 - For other platforms such as OSS, please refer to the 404-page configuration documentation for each platform, but not all platforms support redirect to this Html.
-
-## About Hexo Configuration
-
-[Blog _config.yml](https://hexo.io/docs/configuration)
-
-[Post Front-matter](https://hexo.io/docs/front-matter)
-
-## MIT
-
-[MIT](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)

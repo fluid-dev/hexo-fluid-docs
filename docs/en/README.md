@@ -1,5 +1,6 @@
 ---
 heroText: Fluid
+description: An elegant Material-Design theme for Hexo
 metaTitle: Hexo Fluid Docs
 meta:
   - name: keywords
@@ -7,7 +8,7 @@ meta:
 home: true
 heroImage: /fluid_hexo.png
 actionText: Get Started →
-actionLink: /en/guide/
+actionLink: /en/start/
 features:
 - title: Simplicity
   details: Simple design helps you focus on writing

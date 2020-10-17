@@ -1,12 +1,14 @@
 {
   "name": "hexo-fluid-docs",
   "version": "1.8.4",
-  "description": "Docs for hexo-theme-fluid",
+  "description": "Docs for hexo theme fluid",
   "main": "index.js",
   "repository": "https://github.com/fluid-dev/hexo-fluid-docs",
   "author": "Fluid-dev",
   "license": "MIT",
   "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
@@ -17,6 +19,7 @@
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-seo": "^0.1.4",
     "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-smooth-scroll": "^0.0.10"
+    "vuepress-plugin-smooth-scroll": "^0.0.10",
+    "vuepress-plugin-clean-urls": "^1.1.2"
   }
 }
