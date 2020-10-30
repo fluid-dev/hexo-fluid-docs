@@ -401,18 +401,63 @@ dark_mode:
 
 ### Slogan(打字机)
 
-首页大图中的打字机文字，可在**主题配置**中设定是否开启：
+首页大图中的标题文字，可在**主题配置**中设定是否开启：
 
 ```yaml
 index:
   slogan:
     enable: true
     text: 这是一条 Slogan
+    api:
+      enable: false
+      url: "https://v1.hitokoto.cn/"
+      method: "GET"
+      headers: {}
+      keys: ["hitokoto"]
 ```
 
 如果 `text` 为空则按**博客配置**的 `subtitle` 显示。
 
-相关的打字机动效设置在：
+另外支持通过 API 接口获取内容，如果请求失败则按 text 字段显示：
+
+`url`: API 地址，必须返回的是一个 JSON 格式
+
+`method`: 请求方法，可选 `GET`、`POST`、`PUT`
+
+`headers`: 请求头，如果接口需要传一些验证的头部信息，在这里设置
+
+`keys`: 从请求结果获取字符串的取值字段，程序会根据列表中的字段依次取值，最终需要获得到一个字符串
+
+例如 API 返回的内容为：
+
+```json
+[
+    {
+        "data": {
+            "author": "Fluid",
+            "content": "An elegant theme"
+        }
+    },
+    {
+        "data": {
+            "author": "Test",
+            "content": "Test content"
+        }
+    }
+]
+```
+
+设置 `keys: ["data", "content"]`，程序会如下执行：
+
+1. 由于返回体是列表，程序会首先获取第一个元素（不是列表则跳过此步骤）
+2. 通过第一个 key `data` 获取值，发现不是一个字符串，继续执行
+3. 通过第二个 key `content` 获取值，发现是一个字符串，返回内容；如果不是字符串则获取失败，使用 text 值
+
+:::warning
+如果 API 没有请求成功，请打开浏览器的控制台（console）检查是否报错，其中如果有包含 `No Access-Control-Allow-Origin header` 的报错，说明该 API 有跨域限制，这必须从 API 后端服务来解决。
+:::
+
+标题文字默认开启了打字机动效，相关配置如下：
 
 ```yaml
 fun_features:
@@ -422,6 +467,10 @@ fun_features:
     cursorChar: "_" # 游标字符
     loop: false # 是否循环播放效果
 ```
+
+:::tip
+请求 API 的功能必须同时开启打字机动效才能生效
+:::
 
 ### 文章摘要
 
@@ -644,15 +693,28 @@ disqus:
   shortname: fluid
 ```
 
-当前支持 Valine、Disqus、Gitalk、Utterances、畅言、来必力(livere)、Remark42，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
+当前支持 Valine、Disqus、Gitalk、Utterances、畅言、来必力(livere)、Remark42、twikoo，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
 
 若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
 
 :::tip
-国内用户推荐推荐使用 Valine 或者 Utterances
+国内用户推荐使用 Valine 或者 Utterances
 
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::
+
+如果想在某个文章页关闭评论，或者想在某个自定义页面开启评论，可以通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制，例如在关于页开启评论：
+
+```yaml
+---
+title: 关于页
+layout: about
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+comment: true
+---
+以下是正文内容
+```
 
 ### 脚注
 
@@ -913,6 +975,27 @@ post:
 :::tip
 自定义页面默认不加载，如需使用，需在 Front-matter 中指定 `mermaid: true`
 :::
+
+mermaid 在 Markdown 中是使用代码块书写：
+
+```markdown
+\`\`\`mermaid
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+\`\`\`
+```
 
 ## 归档页
 

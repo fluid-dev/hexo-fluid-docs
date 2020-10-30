@@ -336,11 +336,52 @@ index:
   slogan:
     enable: true
     text: This is a Slogan
+    api:
+      enable: false
+      url: "https://v1.hitokoto.cn/"
+      method: "GET"
+      headers: {}
+      keys: ["hitokoto"]
 ```
 
 If `text` is blank, the `subtitle` in the **blog config** will replace it.
 
-About typing settings:
+In addition, the content can be obtained through the API interface. If the request fails, it will be displayed in the text field:
+
+`url`: API url, which must be returned in JSON format
+
+`method`: request method, optional `GET`, `POST`, `PUT`
+
+`headers`: request headers, if the url requires some header items, set it here
+
+`keys`: Get the value field of the string from the response result, the program will get the value according to the field in the list, and finally need to get a string
+
+For example, the content returned by the url is:
+
+```json
+[
+    {
+        "data": {
+            "author": "Fluid",
+            "content": "An elegant theme"
+        }
+    },
+    {
+        "data": {
+            "author": "Test",
+            "content": "Test content"
+        }
+    }
+]
+```
+
+Set `keys: ["data", "content"]`, the program will execute as follows:
+
+1. If the response is a list, the program will get the first item (if not a list, skip this step)
+2. Get the value through the first key `data`, find that it is not a string, continue execution
+3. Get the value through the second key `content`, find it is a string, and return the content; if it is not a string, the retrieval fails and the text value is used
+
+The subtitle is enabled by default typing mobility, and the related configs is as follows:
 
 ```yaml
 fun_features:
@@ -350,6 +391,10 @@ fun_features:
     cursorChar: "_"
     loop: false
 ```
+
+:::tip
+Use the API feature of slogan must be first enable the typing feature
+:::
 
 ### Post Excerpt
 
@@ -489,7 +534,7 @@ index_img: your Thumbnails
 banner_img:  your post banner
 date: 2019-10-10 10:00:00
 ---
-This the body of the post
+This the content of the post
 ```
 
 ### Image In Post
@@ -569,13 +614,28 @@ disqus:
   shortname: fluid
 ```
 
-Valine、Disqus、Gitalk、Utterances、Changyan、Livere、Remark42 can be supported currently.
+Valine, Disqus, Gitalk, Utterances, Changyan, Livere, Remark42, twikoo can be supported currently.
 
 For more comment systems, you can add corresponding ejs file into `fluid/layout/_partial/comments/`, according to your system document, and then modify `post.comments.type` link to your system.
 
 :::tip
 If your comment area is not displayed, there may be throwing some errors, you can find out the reason in the console of your browser.
 :::
+
+If you want to disable comment plugin on a post page, or want to enable comments on a custom page, you can set `comment: bool` into [Front-matter](https://hexo.io/zh-cn/docs/front-matter).
+
+For example, enable comments on the about page:
+
+```yaml
+---
+title: About Page
+layout: about
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+comment: true
+---
+Some words...
+```
 
 ### Footnote
 
@@ -731,7 +791,7 @@ eg: `{% gp 5 3-2 %}` means 5 images in total, 3 in the first row and 2 in the se
 For hexo 5.0+, you can try [hexo-math](https://github.com/hexojs/hexo-math) plugin to support more customization.
 ```
 
-Before you use [LaTeX](https://www.latex-project.org/help/documentation/) math typesetting, you should finish follow steps:
+If you want to use [LaTeX](https://www.latex-project.org/help/documentation/) math, you should finish follow steps:
 
 **1. **theme config****
 
@@ -798,6 +858,43 @@ Shortcomings.
 - A small part of LaTeX do not support it.
 
 :::
+
+### Mermaid
+
+If you want to use [Mermaid](http://mermaid-js.github.io/mermaid/#/), you should enable it:
+
+```yaml
+post:
+  mermaid:
+    enable: true
+    specific: false
+    options:
+```
+
+`specific`: If true, only set `mermaid: true` into Front-matter will enable mermaid, to load faster when the page does not contain mermaid
+
+`options`: API options, see [mermaidAPI.js](http://mermaid-js.github.io/mermaid/#/mermaidAPI)
+
+Write mermaid in Markdown：
+
+```markdown
+\`\`\`mermaid
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+\`\`\`
+```
 
 ## Archives Page
 
