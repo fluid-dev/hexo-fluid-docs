@@ -655,25 +655,31 @@ post:
 其他格式必须包括 `{}` 符号代替数字，文字可自由设置。
 :::
 
-### 代码高亮样式
-
-高亮样式从这里挑选：<https://highlightjs.org/static/demo/>
-
-然后将 style 的名称填入**主题配置**：
+### 代码块
 
 ```yaml
-highlight:
-  enable: true
-  style: 'Github Gist'
-  bg_color: false
+code:
   copy_btn: true
+  highlight:
+    enable: true
+    lib: "highlightjs"
+    highlightjs:
+      style: 'Github Gist'
+      bg_color: false
+    prismjs:
+      style: "default"
+      preprocess: true
 ```
-
-`bg_color`: 是否根据 style 改变代码背景色，如果 style 是白色背景最好关闭此项
 
 `copy_btn`: 是否开启复制代码的按钮
 
-高亮暂不支持行号。
+`highlight`: 是否开启代码高亮
+
+`lib`: 选择生成高亮的库，可选项: highlightjs、prismjs，对应下面两组配置，高亮的配置说明具体见**主题配置**中的注释
+
+:::warning
+高亮暂不支持行号
+:::
 
 ### 评论
 

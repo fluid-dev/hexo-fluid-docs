@@ -577,24 +577,31 @@ The format of date must observe ISO-8601；
 
 :::
 
-### Code Highlight
-
-Highlight style can be selected from here: <https://highlightjs.org/static/demo/> 
-
-then set the name of style into **theme config**:
+### Code Block
 
 ```yaml
-highlight:
-  enable: true
-  style: 'Github Gist'
-  bg_color: false
+code:
   copy_btn: true
+  highlight:
+    enable: true
+    lib: "highlightjs"
+    highlightjs:
+      style: 'Github Gist'
+      bg_color: false
+    prismjs:
+      style: "default"
+      preprocess: true
 ```
 
-`bg_color`: whether to change the code background color according to style. If style color is white, it is better to `false`  
-`copy_btn`: display the button to copy code
+`copy_btn`: If true, enable copy code button
 
-Line number of code is not supported.
+`highlight`: Configs of highlight library
+
+`lib`: Select the library to generate the highlight, options: highlightjs, prismjs, see the comments of the highlight configs in **theme config**
+
+:::warning
+Line numbers are not currently supported
+:::
 
 ### Comment
 
