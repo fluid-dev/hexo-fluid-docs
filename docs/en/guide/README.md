@@ -29,7 +29,7 @@ Override configuration can avoid losing your customized configuration when updat
 Users who install Fluid via Npm can ignore it, other users are recommended to learn to use it.
 :::
 
-If your Hexo version >= 5.0.0, create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/release/_config.yml)
+If your Hexo version >= 5.0.0, create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
 
 Notice:
 - The configuration existing in `_config.fluid.yml` is of high priority, modifying `_config.yml` is useless.

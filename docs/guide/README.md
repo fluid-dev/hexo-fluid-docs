@@ -43,7 +43,7 @@ meta:
 通过 Npm 安装主题的用户可忽略，其他用户建议学习使用。
 :::
 
-Hexo 5.0.0 版本以上的用户，在博客目录下创建 `_config.fluid.yml` 文件，将主题的 [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/release/_config.yml) 内容复制过去。
+Hexo 5.0.0 版本以上的用户，在博客目录下创建 `_config.fluid.yml` 文件，将主题的 [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) 内容复制过去。
 
 以后如果修改任何主题配置，都只需修改 `_config.fluid.yml` 的配置即可。
 
