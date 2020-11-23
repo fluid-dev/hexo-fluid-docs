@@ -836,14 +836,14 @@ incline: 是否内联（可以理解为后面的文字是否换行），默认 f
 
 示例：
 <div>
-  <input type="checkbox" checked>{% cb 普通示例 %}
+  <input type="checkbox" disabled checked>{% cb 普通示例 %}
 </div>
 <div>
-  <input type="checkbox" checked>{% cb 默认选中, true %}
+  <input type="checkbox" disabled checked>{% cb 默认选中, true %}
 </div>
-<input type="checkbox">{% cb 内联示例, false, true %} 后面文字不换行
+<input type="checkbox" disabled>{% cb 内联示例, false, true %} 后面文字不换行
 <div>
-  <input type="checkbox">{% cb false %} 也可以只传入一个参数，文字写在后边（这样不支持外联）
+  <input type="checkbox" disabled>{% cb false %} 也可以只传入一个参数，文字写在后边（这样不支持外联）
 </div>
 
 #### 按钮

@@ -747,14 +747,14 @@ incline: inline or not, default false
 
 eg：
 <div>
-  <input type="checkbox" checked>{% cb simple %}
+  <input type="checkbox" disabled checked>{% cb simple %}
 </div>
 <div>
-  <input type="checkbox" checked>{% cb checked, true %}
+  <input type="checkbox" disabled checked>{% cb checked, true %}
 </div>
-<input type="checkbox">{% cb inline, false, true %} no wrapping after text
+<input type="checkbox" disabled>{% cb inline, false, true %} no wrapping after text
 <div>
-  <input type="checkbox">{% cb false %} You can also write some text after the checkbox
+  <input type="checkbox" disabled>{% cb false %} You can also write some text after the checkbox
 </div>
 
 #### Button
