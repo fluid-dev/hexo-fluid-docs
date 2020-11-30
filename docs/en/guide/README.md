@@ -882,10 +882,26 @@ post:
 
 `options`: API options, see [mermaidAPI.js](http://mermaid-js.github.io/mermaid/#/mermaidAPI)
 
-Write mermaid in Markdown：
+Write mermaid in Markdown, you can use the mermaid tag:
 
 ```markdown
-\`\`\`mermaid
+{% mermaid %}
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+
+section A section
+Completed task        :done,    des1, 2014-01-06,2014-01-08
+Active task           :active,  des2, 2014-01-09, 3d
+Future task           :         des3, after des2, 5d
+Future task2          :         des4, after des3, 5d
+{% endmermaid %}
+```
+
+Alternatively, it can be written in code block:
+
+```markdown
+```mermaid
 classDiagram
 Class01 <|-- AveryLongClass : Cool
 Class03 *-- Class04
@@ -900,7 +916,6 @@ Class01 : size()
 Class01 : int chimp
 Class01 : int gorilla
 Class08 <--> C2: Cool label
-\`\`\`
 ```
 
 ## Archives Page

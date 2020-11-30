@@ -982,10 +982,26 @@ post:
 自定义页面默认不加载，如需使用，需在 Front-matter 中指定 `mermaid: true`
 :::
 
-mermaid 在 Markdown 中是使用代码块书写：
+使用 Mermaid 可以通过内置的 Tag 书写：
 
 ```markdown
-\`\`\`mermaid
+{% mermaid %}
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+{% endmermaid %}
+```
+
+也可以通过代码块书写：
+
+```markdown
+```mermaid
 classDiagram
 Class01 <|-- AveryLongClass : Cool
 Class03 *-- Class04
@@ -1000,7 +1016,6 @@ Class01 : size()
 Class01 : int chimp
 Class01 : int gorilla
 Class08 <--> C2: Cool label
-\`\`\`
 ```
 
 ## 归档页
