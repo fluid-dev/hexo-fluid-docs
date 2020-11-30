@@ -582,9 +582,9 @@ index:
 
 ## 文章页
 
-### 文章在首页的略缩图
+### 文章在首页的封面图
 
-在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `index_img` 属性。
+对于单篇文章，在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `index_img` 属性。
 
 ```yaml
 ---
@@ -600,9 +600,17 @@ date: 2019-10-10 10:00:00
 
 也可以使用外链 Url 的绝对路径。
 
+如果想统一给文章设置一个默认图片（文章不设置 `index_img` 则默认使用这张图片），可在**主题配置**中设置：
+```yaml
+post:
+  default_index_img: /img/example.jpg
+```
+
+当 `default_index_img` 和 `index_img` 都为空时，该文章在首页将不显示图片。
+
 ### 文章页顶部大图
 
-默认显示**主题配置**中的 `post.banner_img`，如需要设置单个文章的 Banner，在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中指定 banner_img 属性。
+默认显示**主题配置**中的 `post.banner_img`，如需要设置单个文章的 Banner，在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中指定 `banner_img` 属性。
 
 本地图片存放位置同上。
 

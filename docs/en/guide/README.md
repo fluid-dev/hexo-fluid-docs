@@ -503,9 +503,9 @@ index:
 
 ## Post Page
 
-### Index Thumbnails
+### Index Image
 
-You can define it at the head of a post [Front-matter](https://hexo.io/docs/front-matter).
+You can define it at [Front-matter](https://hexo.io/docs/front-matter) of a post.
 
 ```yaml
 ---
@@ -517,21 +517,29 @@ date: 2019-10-10 10:00:00
 This is post content
 ```
 
-You can save your thumbnails in the `img` folder, or you can create a new folder in folder `source` to save them in folder `source`.
+You can save the index image in the `img` folder, or create a new folder in folder `source` to save them.
 
-You also can using other pictures in other locations， but using the correct link.
+You also can using other images in other locations, but using the correct link.
 
-### Post Banner Image
+If you want to set a default image for all posts (when any post does not set the `index_img` will use this image by default), which can be set in **theme config**:
 
-You can define it at the head of a post, or use the home Banner image by defaulted
+```yaml
+post:
+  default_index_img: /img/example.jpg
+```
 
+When `default_index_img` and `index_img` are empty, no image will be displayed on the home page of the post.
+
+### Banner Image
+
+The default display of `post.banner_img` in **theme config**, you can set `banner_img` via [Front-matter](https://hexo.io/zh-cn/docs/front-matter) to set it separately:
 
 ```yaml
 ---
 title: your title
 tags: [Hexo, Fluid]
-index_img: your Thumbnails
-banner_img:  your post banner
+index_img: /img/example.jpg
+banner_img: /img/banner.jpg
 date: 2019-10-10 10:00:00
 ---
 This the content of the post
