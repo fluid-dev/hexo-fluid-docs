@@ -553,9 +553,9 @@ You can save your pictures locally，or other locations.
 ![](/img/example.jpg)
 ```
 
-### Date/Word Count/Reading Time/Reading count
+### Post Meta
 
-These metas display after the post title.
+This meta display after the post title.
 
 ```yaml
 post:
@@ -926,19 +926,19 @@ Class01 : int gorilla
 Class08 <--> C2: Cool label
 ```
 
-## Archives Page
+## Archive Page
 
-There is no attribute, but Banner.
+Please refer to **theme config** comments for details.
 
-## Categories Page
+## Category Page
 
-There is no attribute, but Banner.
+Please refer to **theme config** comments for details.
 
 [About adding categories](https://hexo.io/docs/front-matter)
 
-## Tags Page
+## Tag Page
 
-You can changes some style of tags:
+You can custom some style of tags:
 
 ``` yaml
 tag:
