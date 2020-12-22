@@ -18,7 +18,7 @@ meta:
 
 - 本指南中提到的："**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`，"**主题配置**" 指的是 `theme/fluid/_config.yml` 或者 `_config.fluid.yml` ，注意区分；
 
-- 博客与主题的 source 目录最终会合并，因此存放的文件优先选择博客的 source；
+- 本指南中提到的 `source` 目录都指的是博客目录下的 `source` 文件夹，不推荐修改主题内 `source` 目录；
 
 - 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean`；
 
@@ -768,10 +768,6 @@ post:
 ```
 
 ### Tag 插件
-
-:::warning
-所有 Tag 仍在测试中，后续版本可能会修改
-:::
 
 #### 便签
 
