@@ -802,9 +802,9 @@ eg: `{% gp 5 3-2 %}` means 5 images in total, 3 in the first row and 2 in the se
 
 ### Math
 
-```tip
+:::tip
 For hexo 5.0+, you can try [hexo-math](https://github.com/hexojs/hexo-math) plugin to support more customization.
-```
+:::
 
 If you want to use [LaTeX](https://www.latex-project.org/help/documentation/) math, you should finish follow steps:
 
@@ -837,6 +837,14 @@ mathjax: `npm install hexo-renderer-kramed --save`
 katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
 **3. After installing, run `hexo clean`**
+
+Write LaTeX in Markdown:
+
+```markdown
+$$
+E=mc^2
+$$
+```
 
 :::warning
 

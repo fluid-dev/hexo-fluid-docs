@@ -893,9 +893,9 @@ n1-n2-...：每行的图片数量，可以省略，默认单行最多 3 张图�
 
 ### LaTeX 数学公式
 
-```tip
+:::tip
 Hexo 5.0 以上，可尝试 Hexo 官方的 [hexo-math](https://github.com/hexojs/hexo-math) 插件，支持更多定制化参数，使用方式参照仓库内的文档，以下介绍的是主题内置的 LaTeX 功能。
-```
+:::
 
 当需要使用 [LaTeX](https://www.latex-project.org/help/documentation/) 语法的数学公式时，可手动开启本功能，需要完成三步操作：
 
@@ -928,6 +928,14 @@ mathjax: `npm install hexo-renderer-kramed --save`
 katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
 **3. 安装完成后执行 `hexo clean`**
+
+书写公式的格式：
+
+```markdown
+$$
+E=mc^2
+$$
+```
 
 :::warning
 
