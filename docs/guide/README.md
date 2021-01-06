@@ -670,6 +670,7 @@ code:
   copy_btn: true
   highlight:
     enable: true
+    line_number: true
     lib: "highlightjs"
     highlightjs:
       style: 'Github Gist'
@@ -681,13 +682,11 @@ code:
 
 `copy_btn`: 是否开启复制代码的按钮
 
+`line_number`: 是否开启行号
+
 `highlight`: 是否开启代码高亮
 
 `lib`: 选择生成高亮的库，可选项: highlightjs、prismjs，对应下面两组配置，高亮的配置说明具体见**主题配置**中的注释
-
-:::warning
-高亮暂不支持行号
-:::
 
 ### 评论
 

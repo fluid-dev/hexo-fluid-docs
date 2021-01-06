@@ -592,6 +592,7 @@ code:
   copy_btn: true
   highlight:
     enable: true
+    line_number: true
     lib: "highlightjs"
     highlightjs:
       style: 'Github Gist'
@@ -603,13 +604,11 @@ code:
 
 `copy_btn`: If true, enable copy code button
 
+`line_number`: If true, the code block display line numbers
+
 `highlight`: Configs of highlight library
 
 `lib`: Select the library to generate the highlight, options: highlightjs, prismjs, see the comments of the highlight configs in **theme config**
-
-:::warning
-Line numbers are not currently supported
-:::
 
 ### Comment
 
