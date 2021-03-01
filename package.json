@@ -1,6 +1,6 @@
 {
   "name": "hexo-fluid-docs",
-  "version": "1.8.7",
+  "version": "1.8.8",
   "description": "Docs for hexo theme fluid",
   "main": "index.js",
   "repository": "https://github.com/fluid-dev/hexo-fluid-docs",

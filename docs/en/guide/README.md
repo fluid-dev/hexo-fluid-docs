@@ -292,6 +292,15 @@ banner_mask_alpha: 0.3
 Markdown or HTML
 ```
 
+Enable comment plugin on the custom page via the [Front-matter](https://hexo.io/zh-cn/docs/front-matter) set `comment: 'type'`:
+
+```yaml
+---
+title: example
+comment: 'disque'
+---
+```
+
 ### Custom JS / CSS / HTML
 
 If you want to import external JS、CSS (such as iconfont) or HTML, you can set these in **theme config**:
@@ -302,6 +311,9 @@ custom_js: /js/custom.js
 
 # Set the path of the custom CSS file, relative to the source directory
 custom_css: /css/custom.css
+
+# Customize <head> HTML content
+custom_head: '<meta name="key" content="value">'
 
 # Customize the HTML content at the page bottom (above the footer), which can also be used to import JS or CSS externally. Be careful not to conflict with the post.custom configuration
 custom_html: '<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">'
@@ -636,9 +648,9 @@ For more comment systems, you can add corresponding ejs file into `fluid/layout/
 If your comment area is not displayed, there may be throwing some errors, you can find out the reason in the console of your browser.
 :::
 
-If you want to disable comment plugin on a post page, or want to enable comments on a custom page, you can set `comment: bool` into [Front-matter](https://hexo.io/zh-cn/docs/front-matter).
+If you want to disable comment plugin on a post page, or want to enable comments on a custom page, you can set `comment: false` or `comment: 'type'` into [Front-matter](https://hexo.io/zh-cn/docs/front-matter).
 
-For example, enable comments on the about page:
+For example, enable comment plugin on the about page:
 
 ```yaml
 ---
@@ -646,7 +658,7 @@ title: About Page
 layout: about
 index_img: /img/example.jpg
 date: 2019-10-10 10:00:00
-comment: true
+comment: 'disqus'
 ---
 Some words...
 ```
@@ -987,6 +999,36 @@ Support Markdown, HTML
 ### Icons
 
 [Built-in icons of theme](/en/icon/) 
+
+### Link Page
+
+The link page is used to display the site of friends. It is closed by default. To enable it, you need to delete the comment (#) of `links` in the `navbar` config item:
+
+```yaml
+navbar:
+  menu:
+    - { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' }
+```
+
+Then find the config item of `links` and set:
+
+```yaml
+links:
+  items:
+    - {
+      title: 'Fluid Docs',
+      intro: 'Theme usage guide',
+      link: 'https://hexo.fluid-dev.com/docs/',
+      avatar: '/img/favicon.png'
+    }
+  default_avatar: /img/avatar.png
+```
+
+- `title`: The title of the site
+- `intro`: The introduction of the site
+- `link`: The link of the site
+- `avatar`: The avatar image of the site, can be omitted
+- `default_avatar`: The default avatar of the site (replace only when the avatar is specified and fails to load)
 
 ## 404 Page
 

@@ -355,7 +355,16 @@ banner_img_height: 60
 banner_mask_alpha: 0.5
 ---
 
-# 这里可以写正文
+这里可以写正文
+```
+
+自定义页面也可以开启评论插件，通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `comment: 'type'`：
+
+```yaml
+---
+title: example
+comment: 'valine'
+---
 ```
 
 ### 自定义 JS / CSS / HTML
@@ -368,6 +377,9 @@ custom_js: /js/custom.js
 
 # 指定自定义 css 文件路径，路径是相对 source 目录
 custom_css: /css/custom.css
+
+# 自定义 <head> 节点中的 HTML 内容
+custom_head: '<meta name="key" content="value">'
 
 # 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突
 custom_html: '<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">'
@@ -716,7 +728,9 @@ disqus:
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::
 
-如果想在某个文章页关闭评论，或者想在某个自定义页面开启评论，可以通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制，例如在关于页开启评论：
+如果想在某个文章页关闭评论，或者想在某个自定义页面开启评论，可以通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，并且可以通过 `comment: 'type'` 来改变评论插件。
+
+例如在关于页开启并指定评论插件：
 
 ```yaml
 ---
@@ -724,7 +738,7 @@ title: 关于页
 layout: about
 index_img: /img/example.jpg
 date: 2019-10-10 10:00:00
-comment: true
+comment: 'valine'
 ---
 以下是正文内容
 ```
@@ -1118,14 +1132,18 @@ links:
       title: 'Fluid Docs',
       intro: '主题使用指南',
       link: 'https://hexo.fluid-dev.com/docs/',
-      image: '/img/favicon.png'
+      avatar: '/img/favicon.png'
     }
+  default_avatar: /img/avatar.png
 ```
 
 - `title`: 友链站的标题
 - `intro`: 站点或博主的简介，可省略
 - `link`: 跳转链接
-- `image`: 头像图片，可省略
+- `avatar`: 头像图片，可省略
+- `default_avatar`: 成员的默认头像（仅在指定了头像并且加载失败时生效）
+
+友链页也可以使用自定义区域和评论，使用方式类似于文章页，具体见配置项与相关注释。
 
 ## 404 页
 
