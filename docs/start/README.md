@@ -113,10 +113,6 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 
 3. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）。
 
-## 微信交流群
-
-[查看微信群二维码](https://github.com/fluid-dev/hexo-theme-fluid/issues/96)
-
 ## 开源协议
 
 [MIT](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)
