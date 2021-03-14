@@ -154,17 +154,25 @@ menu:
   }
 ```
 
-### Lazyload Image
+### Lazyload
 
-``` yaml
+Lazyload will make the image or comment plugin load only when it scrolls to visible, which can greatly improve the speed of loading your blog.
+
+It is enabled by default, you can set some items in **theme config**:
+
+```yaml
 lazyload:
   enable: true
+  loading_img: /img/loading.gif
   onlypost: false
+  offset_factor: 2
 ```
 
-When enabled, the image will only be loaded when scrolling to the visible range, which can greatly improve the overall loading speed of the web page.
+`loading_img`: The placeholder image when loading
 
-if `onlypost` is true, the `lazyload` will be enabled only on the post pages.
+`onlypost`: If true, only enable lazyload on the post page. For custom pages, you can set `lazyload: true` in [Front-matter](https://hexo.io/zh-cn/docs/front-matter)
+
+`offset_factor`: The factor of viewport height that triggers loading
 
 ### Font
 
@@ -994,6 +1002,17 @@ layout: about
 
 # You can write the content here
 Support Markdown, HTML
+```
+
+### Meta
+
+You can set some meta information about yourself in **theme config**:
+
+```yaml
+about:
+  avatar: /img/avatar.png
+  name: "Fluid"
+  intro: "An elegant theme for Hexo"
 ```
 
 ### Icons

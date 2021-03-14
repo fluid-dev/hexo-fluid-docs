@@ -172,17 +172,25 @@ menu:
   }
 ```
 
-### 图片懒加载
+### 懒加载
+
+懒加载又称延迟加载。开启后，当图片或评论插件滚动到可见范围内才会加载，可以大幅提高打开网页的速度。
+
+该功能默认开启，可以在**主题配置**中修改参数：
 
 ```yaml
 lazyload:
   enable: true
+  loading_img: /img/loading.gif
   onlypost: false
+  offset_factor: 2
 ```
 
-开启后，当图片滚动到可见范围内才会加载，可以大幅提高网页整体加载速度。
+`loading_img`: 指定加载时的占位图片
 
-`onlypost` 为 true 时，仅在文章页才使用懒加载。自定义页面在 Front-matter 中指定 `lazyload: true` 可单独开启（仅对 md 文档部分有效）。
+`onlypost`: 为 true 时，懒加载仅在文章页生效，如果自定义页面需要使用，可以在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `lazyload: true`
+
+`offset_factor`: 触发加载的偏移倍数，基数是视窗高度（即提前 N 屏高度触发加载），可根据部署环境的请求速度调节
 
 ### 全局字体
 
@@ -1094,6 +1102,17 @@ layout: about
 
 # 这里可以写正文
 支持 Markdown, HTML
+```
+
+### 关于信息
+
+在关于页介绍自己的基础信息，可以在**主题配置**中设置：
+
+```yaml
+about:
+  avatar: /img/avatar.png
+  name: "Fluid"
+  intro: "An elegant theme for Hexo"
 ```
 
 ### 社交页图标
