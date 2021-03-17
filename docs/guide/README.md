@@ -726,12 +726,23 @@ disqus:
   shortname: fluid
 ```
 
-当前支持 Valine、Disqus、Gitalk、Utterances、畅言、来必力(livere)、Remark42、twikoo，使用和参数设置需要自行查询各自的文档（文档地址在配置注释里）。
+当前支持的评论插件如下：
+- [Valine](https://valine.js.org/configuration.html) :基于 LeanCloud
+- [Waline](https://waline.js.org/) : 从 Valine 衍生而来，额外增加了服务端和多种功能
+- [Gitalk](https://github.com/gitalk/gitalk) : 基于 GitHub Issues
+- [Utterances](https://utteranc.es) : 基于 GitHub Issues
+- [Disqus](https://disqus.com) : 基于第三方的服务
+- [畅言](http://changyan.kuaizhan.com) : 基于第三方的服务
+- [来必力(livere)](https://www.livere.com) : 基于第三方的服务
+- [Remark42](https://remark42.com) : 需要自托管后端服务
+- [twikoo](https://twikoo.js.org) : 基于腾讯云开发
 
-若需要自定义添加其他评论系统，请自行在 `fluid/layout/_partial/comments/` 目录内创建 ejs 文件，参照自带的 ejs 填入评论服务商提供的代码，再修改 `post.comments.type` 为对应文件名。
+使用方式和参数设置请点击上面链接查看各自的文档。
+
+若想自己添加新的评论插件，可通过[自定义功能](/guide/#自定义-js-css-html)加入 `<script>`，并判断是否存在 `#comments` 元素进行挂载。
 
 :::tip
-国内用户推荐使用 Valine 或者 Utterances
+国内用户推荐使用 Valine、Waline 或者 twikoo
 
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::

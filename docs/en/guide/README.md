@@ -648,9 +648,20 @@ disqus:
   shortname: fluid
 ```
 
-Valine, Disqus, Gitalk, Utterances, Changyan, Livere, Remark42, twikoo can be supported currently.
+List of supported comment plugins：
+- [Valine](https://valine.js.org/configuration.html) : based on LeanCloud
+- [Waline](https://waline.js.org/) : derived from Valine with self-hosted service
+- [Gitalk](https://github.com/gitalk/gitalk) : based on GitHub Issues
+- [Utterances](https://utteranc.es) : based on GitHub Issues
+- [Disqus](https://disqus.com) : based on third-party service
+- [Changyan](http://changyan.kuaizhan.com) : based on third-party service
+- [livere](https://www.livere.com) : based on third-party service
+- [Remark42](https://remark42.com) : based on self-hosted service
+- [twikoo](https://twikoo.js.org) : based on Tencent CloudBase
 
-For more comment systems, you can add corresponding ejs file into `fluid/layout/_partial/comments/`, according to your system document, and then modify `post.comments.type` link to your system.
+For usage and parameter setting, please click the link above to view the respective documents.
+
+If you want to import a new comment plugin, you can add `<script>` through [Custom JS](/en/guide/#custom-js-css-html), and judge whether there is `#comments` element to mount.
 
 :::tip
 If your comment area is not displayed, there may be throwing some errors, you can find out the reason in the console of your browser.
