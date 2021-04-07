@@ -315,66 +315,6 @@ url: http://xxx.com/blog
 root: /blog/
 ```
 
-### 自定义页面
-
-如果想单独生成一个页面，步骤和创建「关于页」类似。
-
-1. 首先用命令行创建页面：
-
-```sh
-$ hexo new page example
-```
-
-2. 创建成功后编辑博客目录下 `/source/example/index.md`：
-
-```yaml
----
-title: example
-subtitle: 若不填默认是 title
----
-
-这里写正文，支持 Markdown, HTML
-```
-
-正文默认没有 Markdown 样式，如果希望和文章相同的样式，可以加上：
-
-```html
-<div class="markdown-body">
-正文
-</div>
-```
-
-3. 页面的属性配置可以在**主题配置**中统一设置：
-
-```yaml
-page:
-  banner_img: /img/default.png
-  banner_img_height: 70
-  banner_mask_alpha: 0.3
-```
-
-也可以直接在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里单独设置：
-
-```yaml
----
-title: example
-banner_img: /img/default.png
-banner_img_height: 60
-banner_mask_alpha: 0.5
----
-
-这里可以写正文
-```
-
-自定义页面也可以开启评论插件，通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `comment: 'type'`：
-
-```yaml
----
-title: example
-comment: 'valine'
----
-```
-
 ### 自定义 JS / CSS / HTML
 
 如果你想引入外部的 JS、CSS（比如 IconFont）或 HTML，可以通过以下**主题配置**，具体见注释：
@@ -747,7 +687,7 @@ disqus:
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::
 
-如果想在某个文章页关闭评论，或者想在某个自定义页面开启评论，可以通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，并且可以通过 `comment: 'type'` 来改变评论插件。
+如果想在某个文章页关闭评论，或者想在某个自定义页面开启评论，可以通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件。
 
 例如在关于页开启并指定评论插件：
 
@@ -1107,7 +1047,6 @@ $ hexo new page about
 ```yaml
 ---
 title: about
-date: 2020-02-23 19:20:33
 layout: about
 ---
 
@@ -1134,7 +1073,7 @@ about:
 about:
   icons:
     - { class: 'iconfont icon-github-fill', link: 'https://github.com', tip: 'GitHub' }
-    - { class: 'iconfont icon-douban-fill', link: 'https://github.com', tip: '豆瓣' }
+    - { class: 'iconfont icon-douban-fill', link: 'https://douban.com', tip: '豆瓣' }
     - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
 ```
 
@@ -1142,6 +1081,29 @@ about:
 - `link`: 跳转链接
 - `tip`: 鼠标悬浮在图标上显示的提示文字
 - `qrcode`: 二维码图片，当使用此字段后，点击不再跳转，而是悬浮二维码
+
+:::tip
+关闭 icons 时注意不要把 `icons` 这个 key 也一起注释，否则会被覆盖配置填充上默认值，请按照如下设置：
+```yaml
+about:
+  icons:
+    # - { class: 'iconfont icon-github-fill', link: 'https://github.com', tip: 'GitHub' }
+    # - { class: 'iconfont icon-douban-fill', link: 'https://douban.com', tip: '豆瓣' }
+    # - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }
+```
+:::
+
+### 评论
+
+开启评论的方式是通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件。
+
+```yaml
+---
+title: about
+layout: about
+comment: 'valine'
+---
+```
 
 ## 友情链接页
 
@@ -1174,6 +1136,72 @@ links:
 - `default_avatar`: 成员的默认头像（仅在指定了头像并且加载失败时生效）
 
 友链页也可以使用自定义区域和评论，使用方式类似于文章页，具体见配置项与相关注释。
+
+## 自定义页面
+
+### 创建页面
+
+如果想单独生成一个页面，步骤和创建「关于页」类似。
+
+1. 首先用命令行创建页面：
+
+```sh
+$ hexo new page example
+```
+
+2. 创建成功后编辑博客目录下 `/source/example/index.md`：
+
+```yaml
+---
+title: example
+subtitle: 若不填默认是 title
+---
+
+这里写正文，支持 Markdown, HTML
+```
+
+正文默认没有 Markdown 样式，如果希望和文章相同的样式，可以加上：
+
+```html
+<div class="markdown-body">
+正文
+</div>
+```
+
+### 配置
+
+页面的参数配置可以在**主题配置**中统一设置：
+
+```yaml
+page:
+  banner_img: /img/default.png
+  banner_img_height: 70
+  banner_mask_alpha: 0.3
+```
+
+也可以直接在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里单独设置：
+
+```yaml
+---
+title: example
+banner_img: /img/default.png
+banner_img_height: 60
+banner_mask_alpha: 0.5
+---
+
+这里可以写正文
+```
+
+### 评论
+
+自定义页面也可以开启评论插件，和关于页的方式相同，通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件：
+
+```yaml
+---
+title: example
+comment: 'valine'
+---
+```
 
 ## 404 页
 

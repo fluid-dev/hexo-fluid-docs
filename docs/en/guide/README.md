@@ -249,66 +249,6 @@ force_https: true
 
 Then all requests are forced by HTTPS (if it is an external resource, it needs to support HTTPS itself)
 
-### Custom Page
-
-If you want to generate a custom page, same as create about page.
-
-1. Create a page from the command:
-
-```sh
-$ hexo new page example
-```
-
-2. Edit `/source/example/index.md`：
-
-```yaml
----
-title: example
-subtitle: Can be omitted, default is title
----
-
-Content (Markdown or HTML)
-```
-
-The content has no markdown style by default. If you want to have the same style as post page, you can add:
-
-```html
-<div class="markdown-body">
-Content
-</div>
-```
-
-3. The properties of all custom pages can be set in **theme config**:
-
-```yaml
-page:
-  banner_img: /img/default.png
-  banner_img_height: 70
-  banner_mask_alpha: 0.3
-```
-
-Also set it in [Front-matter](https://hexo.io/zh-cn/docs/front-matter):
-
-```yaml
----
-title: example
-banner_img: /img/default.png
-banner_img_height: 60
-banner_mask_alpha: 0.3
----
-
-Markdown or HTML
-```
-
-Enable comment plugin on the custom page via the [Front-matter](https://hexo.io/zh-cn/docs/front-matter) set `comment: 'type'`:
-
-```yaml
----
-title: example
-comment: 'disque'
----
-```
-
 ### Custom JS / CSS / HTML
 
 If you want to import external JS、CSS (such as iconfont) or HTML, you can set these in **theme config**:
@@ -1007,7 +947,6 @@ The modified file example is as follows:
 ```yaml
 ---
 title: about
-date: 2020-02-23 19:20:33
 layout: about
 ---
 
@@ -1028,7 +967,32 @@ about:
 
 ### Icons
 
-[Built-in icons of theme](/en/icon/) 
+Set icons in **theme config**:
+
+```yaml
+about:
+  icons:
+    - { class: 'iconfont icon-github-fill', link: 'https://github.com', tip: 'GitHub' }
+    - { class: 'iconfont icon-youtube-fill', link: 'https://youtube.com', tip: 'YouTube' }
+    - { class: 'iconfont icon-twitter-fill', qrcode: '/img/favicon.png' }
+```
+
+- `class`: CSS class of icons, [more built-in icons of theme](/en/icon/)
+- `link`: target link
+- `tip`: display the tip when the mouse hovers over the icon
+- `qrcode`: QR-code image, when using this field, clicking will not be directed, but hover QR-code
+
+### Comment
+
+Enable comment plugin via the [Front-matter](https://hexo.io/zh-cn/docs/front-matter) set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
+
+```yaml
+---
+title: about
+layout: about
+comment: 'disqus'
+---
+```
 
 ### Link Page
 
@@ -1059,6 +1023,70 @@ links:
 - `link`: The link of the site
 - `avatar`: The avatar image of the site, can be omitted
 - `default_avatar`: The default avatar of the site (replace only when the avatar is specified and fails to load)
+
+## Custom Page
+
+### Create page
+
+If you want to create a custom page, same as create about page.
+
+1. Create a page from the command:
+
+```sh
+$ hexo new page example
+```
+
+2. Edit `/source/example/index.md`：
+
+```yaml
+---
+title: example
+subtitle: Can be omitted, default is title
+---
+
+Content (Markdown or HTML)
+```
+
+The content has no markdown style by default. If you want to have the same style as post page, you can add:
+
+```html
+<div class="markdown-body">
+Content
+</div>
+```
+
+### Configuration
+
+The params of all custom pages can be set in **theme config**:
+
+```yaml
+page:
+  banner_img: /img/default.png
+  banner_img_height: 70
+  banner_mask_alpha: 0.3
+```
+
+Also set it in [Front-matter](https://hexo.io/zh-cn/docs/front-matter):
+
+```yaml
+---
+title: example
+banner_img: /img/default.png
+banner_img_height: 60
+banner_mask_alpha: 0.3
+---
+
+Markdown or HTML
+```
+
+Enable comment plugin in the same way as the about page, via the [Front-matter](https://hexo.io/zh-cn/docs/front-matter), set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
+
+```yaml
+---
+title: example
+comment: 'disqus'
+---
+```
 
 ## 404 Page
 

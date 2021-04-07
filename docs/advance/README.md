@@ -75,7 +75,7 @@ hexo d
 
 - 对于所有用户，将各种第三方库配置公共 CDN 是最有效的方式，可以通过**主题配置**中的 `static_prefix` 配置来链接（默认使用 jsDelivr CDN）；
 
-- 如果你的域名已备案，可以使用[七牛云](https://portal.qiniu.com/signup?code=1hlwhx3ztjz2q)、阿里云、腾讯云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
+- 如果你的域名已备案，可以使用[七牛云](https://s.qiniu.com/N7beiu)、阿里云、腾讯云等大厂的 OSS 服务并绑定域名，将生成后的 public 目录下全部上传到 OSS，然后你不仅可以无服务器部署博客，加载速度也将无可比拟；
 
 - 没有备案，也可以通过香港及海外地区的云，或者私有 CDN 等方式进行加速，推荐一份 [CDN 使用指南](https://www.julydate.com/post/60859300)。
 
