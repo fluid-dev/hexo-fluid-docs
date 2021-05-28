@@ -73,9 +73,7 @@ About content
 
 #### Way A
 
-:::tip
-Applicable to installed theme via Npm.
-:::
+> Applicable to installed theme via Npm.
 
 Execute the command in your blog directory：
 
@@ -85,9 +83,7 @@ npm update --save hexo-theme-fluid
 
 #### Way B
 
-:::tip
-Applicable to installed theme via release and all codes have not been modified.
-:::
+> Applicable to installed theme via release and all codes have not been modified.
 
 1. Backup your config files. We recommend you to use [override configuration](/en/guide/#override-configuration).
 
@@ -95,9 +91,7 @@ Applicable to installed theme via release and all codes have not been modified.
 
 #### Way C
 
-:::tip
-Applicable to cases where some codes have been modified, or you want to pull the master branch.
-:::
+> Applicable to cases where some codes have been modified, or you want to pull the master branch.
 
 1. Make sure your fluid directory has git and all changes have been committed.
 
