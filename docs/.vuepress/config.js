@@ -39,9 +39,8 @@ module.exports = {
         nav: [
           { text: '开始使用', link: '/start/' },
           { text: '配置指南', link: '/guide/' },
-          { text: '插件推荐', link: '/plugin/' },
-          { text: '进阶玩法', link: '/advance/' },
           { text: '图标用法', link: '/icon/' },
+          { text: '进阶玩法', link: '/advance/' },
           { text: '支持我们', link: '/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],
@@ -61,9 +60,8 @@ module.exports = {
         nav: [
           { text: 'Start', link: '/en/start/' },
           { text: 'Guide', link: '/en/guide/' },
-          { text: 'Plugin', link: '/en/plugin/' },
-          { text: 'Advance', link: '/en/advance/' },
           { text: 'Icon', link: '/en/icon/' },
+          { text: 'Advance', link: '/en/advance/' },
           { text: 'Contribute', link: '/en/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],

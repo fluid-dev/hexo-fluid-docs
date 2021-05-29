@@ -94,7 +94,7 @@ banner_img: https://static.zkqiang.cn/example.jpg
 ```
 
 ::: tip
-You can define the ain path yourself, but it should be in the folder `source`
+You can define the ain path yourself, but it should be in the `source` directory
 
 The source directory of blog and fluid will be merged eventually, so the source of blog is preferred.
 :::
@@ -477,7 +477,7 @@ date: 2019-10-10 10:00:00
 This is post content
 ```
 
-You can save the index image in the `img` folder, or create a new folder in folder `source` to save them.
+You can save the index image in the `img` folder, or create a new directory in `source` directory to save them.
 
 You also can using other images in other locations, but using the correct link.
 
@@ -595,9 +595,10 @@ List of supported comment plugins：
 - [Utterances](https://utteranc.es) : based on GitHub Issues
 - [Disqus](https://disqus.com) : based on third-party service
 - [Changyan](http://changyan.kuaizhan.com) : based on third-party service
-- [livere](https://www.livere.com) : based on third-party service
+- [Livere](https://www.livere.com) : based on third-party service
 - [Remark42](https://remark42.com) : based on self-hosted service
-- [twikoo](https://twikoo.js.org) : based on Tencent CloudBase
+- [Twikoo](https://twikoo.js.org) : based on Tencent CloudBase
+- [Cusdis](https://cusdis.com) : based on third-party or self-hosted service
 
 For usage and parameter setting, please click the link above to view the respective documents.
 
@@ -1079,6 +1080,8 @@ banner_mask_alpha: 0.3
 Markdown or HTML
 ```
 
+### Comment
+
 Enable comment plugin in the same way as the about page, via the [Front-matter](https://hexo.io/zh-cn/docs/front-matter), set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
 
 ```yaml
@@ -1095,5 +1098,7 @@ If guest try to get the pages, which are not existed, 404 page will display.
 To open this page, you need to configure it on the deployment environment of the blog:
 
 - If your blog is deployed on a cloud server, you need to set the Nginx profile `error_page 404 = ./404.html`;
-- If deployed on Github Pages, no additional configuration is required, but the custom domain must be bound.
-- For other platforms such as OSS, please refer to the 404-page configuration documentation for each platform, but not all platforms support redirect to this Html.
+- If deployed on GitHub Pages, no additional configuration is required, but the custom domain must be bound.
+- For other platforms such as OSS, please refer to the 404-page configuration documentation for each platform, but not all platforms support redirect to 404 page.
+
+Fluid contains the default 404 page, you can also place the custom `404.html` in `source` directory

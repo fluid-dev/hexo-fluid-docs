@@ -9,34 +9,29 @@ meta:
 
 # 进阶玩法
 
-## 压缩生成文件
+## Hexo 插件
 
-可以使用 [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) 插件对生成的文件和图片进行压缩，大致步骤：
+:::warning
+所有插件仅作为推荐，并且不能保证完全与 Fluid 兼容使用（Fluid 开发组会尽力适配，但实际上大部分不兼容是我们无法单方面解决的），请仔细阅读它们的文档，以免造成不良后果。
+:::
 
-先安装插件：
+[hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) : 压缩 Hexo 生成的文件
 
-```bash
-npm i hexo-all-minifier --save
+[hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink) : 通过 Hex 算法生成永久的文章链接
 
-# Mac 系统还需要额外安装
-brew install libtool automake autoconf nasm
-```
+[hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer) : 可以在文章中插入视频 Tag
 
-然后在博客配置中加入：
+[live2d-widget](https://github.com/stevenjoezhang/live2d-widget) : 在网页上加入 Live2D 看板娘
 
-```yaml
-all_minifier: true
-```
+[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) : 生成 Atom 1.0 or RSS 2.0 feed
 
-这样即可快速使用。
-
-具体的细节配置可参考[官方文档](https://github.com/chenzhutian/hexo-all-minifier)
+[hexo-admin](https://github.com/jaredly/hexo-admin) : 为 Hexo 搭建可视化管理页面
 
 ## 使用 jsDelivr 服务
 
-插入来自 Github 仓库的图片，由于网络情况可能会出现加载慢和无法加载的情况，我们可以使用 [jsDelivr](https://www.jsdelivr.com/) 来加速图片文件等媒体文件的加载。
+插入来自 GitHub 仓库的图片，由于网络情况可能会出现加载慢和无法加载的情况，我们可以使用 [jsDelivr](https://www.jsdelivr.com/) 来加速图片文件等媒体文件的加载。
 
-通常情况下，可以新建一个仓库来存放这些文件，目前已知的有图片、视频和引用的相关文件可以使用，Github 仓库最大上传文件为 25M，请注意文件大小。
+通常情况下，可以新建一个仓库来存放这些文件，目前已知的有图片、视频和引用的相关文件可以使用，GitHub 仓库最大上传文件为 25M，请注意文件大小。
 
 使用方法（文件的绝对地址）
 
@@ -48,27 +43,6 @@ https://cdn.jsdelivr.net/gh/user/repo@version/file
 
 ```
 https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@master/source/img/favicon.png
-```
-
-## 部署
-
-这里演示如何部署到 GitHub Pages 中。
-
-在博客配置中设置部署仓库，参考如下：
-
-```yaml
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  - type: git
-    repo: git@github.com:username/username.github.io.git
-    branch: master
-```
-
-将你的 ssh 密钥上传到远程仓库，如果未设置则需要手工输入用户名和密码。然在终端命令行：
-
-```bash
-hexo d
 ```
 
 ## 加快网页加载

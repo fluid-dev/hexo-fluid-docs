@@ -673,9 +673,10 @@ disqus:
 - [Utterances](https://utteranc.es) : 基于 GitHub Issues
 - [Disqus](https://disqus.com) : 基于第三方的服务
 - [畅言](http://changyan.kuaizhan.com) : 基于第三方的服务
-- [来必力(livere)](https://www.livere.com) : 基于第三方的服务
-- [Remark42](https://remark42.com) : 需要自托管后端服务
-- [twikoo](https://twikoo.js.org) : 基于腾讯云开发
+- [来必力(Livere)](https://www.livere.com) : 基于第三方的服务
+- [Remark42](https://remark42.com) : 需要自托管服务端
+- [Twikoo](https://twikoo.js.org) : 基于腾讯云开发
+- [Cusdis](https://cusdis.com) : 基于第三方服务或自托管服务
 
 使用方式和参数设置请点击上面链接查看各自的文档。
 
@@ -1210,5 +1211,7 @@ comment: 'valine'
 开启此页面需要在博客的部署环境上配置：
 
 - 如果博客部署在云服务器，需要 Nginx 配置文件设置 `error_page 404 = /404.html`；
-- 如果部署在 Github Pages 上，不需要额外配置，但必须绑定顶级域名才生效；
+- 如果部署在 GitHub Pages 上，不需要额外配置，但必须绑定顶级域名才生效；
 - 其他 OSS 等平台，请参考各平台关于 404 页的配置文档，但并不是所有平台都支持跳转 Html。
+
+主题包含默认的404页面，你也可以将自定义的 `404.html` 放置在博客的 `source` 目录下。

@@ -9,30 +9,23 @@ meta:
 
 # Advance
 
-## Minify
+## Hexo Plugin
 
-You can use [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) to minify the generated files and images
+:::warning
+All plugins are only recommended and can’t be sure they are fully compatible with Fluid, please read their documentation carefully to avoid adverse consequences.
+:::
 
-## Deployment
+[hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) : minify the generated files
 
-Here's how to deploy to GitHub Pages
+[hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink) : generate post links through Hex
 
-Configure in the blog directory 'config.yml', refer to the following:
+[hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer) : allow inserting video tag into markdown
 
-```yaml
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  - type: git
-    repo: git@github.com:username/username.github.io.git
-    branch: master
-```
+[live2d-widget](https://github.com/stevenjoezhang/live2d-widget) : add Live2D widget to web page
 
-Upload your SSH key to the remote repository. If not, enter the username and password manually.On the terminal command line:
+[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) : generate Atom 1.0 or RSS 2.0 feed
 
-```bash
-hexo d
-```
+[hexo-admin](https://github.com/jaredly/hexo-admin) : an admin UI for Hexo
 
 ### Faster Loading
 

@@ -15,7 +15,7 @@ Fluid is an elegant Material-Design theme for Hexo, developed by [Fluid-dev](htt
 
 GitHub Repository: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 
-Preview: [Fluid's Blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
+Preview: [Fluid's blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
 
 ## Quick Start
 

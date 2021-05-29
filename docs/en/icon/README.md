@@ -21,4 +21,4 @@ The icons are mainly used in related pages, of course, you can also use any plac
 
 ## Custom Icons
 
-If you want to use other icons, you can set `iconfont` of **_static_prefix.yml** to include your own Iconfont or Font-Awesome, and then insert them to css class.
+If you want to use other icons, you can set `iconfont` of **theme config** to include your own Iconfont or Font-Awesome, and then insert them to css class.
