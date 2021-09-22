@@ -13,7 +13,7 @@ meta:
 
 你可以扫描下方微信赞赏码支持我们的开源创作，资金将用于服务器及域名开销以及今后的公共接口服务。
 
-<img src="https://github.com/fluid-dev/static/blob/master/hexo-theme-fluid/sponsor.png?s=200&v=4" width="200" alt="爱发电">
+<img src="https://github.com/fluid-dev/static/blob/master/hexo-theme-fluid/sponsor.png?raw=true" width="200" alt="微信赞赏码">
 
 ## 商业赞助
 
