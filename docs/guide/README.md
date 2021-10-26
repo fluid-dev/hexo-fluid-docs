@@ -89,6 +89,14 @@ static_prefix:
 
 - 默认在根目录生成并使用 `local-search.xml`。
 
+### 网站图标
+- 在source目录下新建文件夹img, 并放入favicon.ico 
+- 在`_config.fluid.yml`配置如下：
+```yaml
+favicon: /img/favicon.ico
+```
+> 注意：图标路径不能为 `/img/favicon.png`，会与`Fluid`默认图标冲突。
+
 ### 页面顶部大图
 
 - 图片来源
