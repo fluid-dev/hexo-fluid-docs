@@ -947,12 +947,11 @@ The modified file example is as follows:
 
 ```yaml
 ---
-title: about
+title: 标题
 layout: about
 ---
 
-# You can write the content here
-Support Markdown, HTML
+You can write the content here, support Markdown, HTML
 ```
 
 ### Meta
@@ -989,7 +988,7 @@ Enable comment plugin via the [Front-matter](https://hexo.io/zh-cn/docs/front-ma
 
 ```yaml
 ---
-title: about
+title: This is a title
 layout: about
 comment: 'disqus'
 ---

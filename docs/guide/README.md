@@ -1047,13 +1047,16 @@ $ hexo new page about
 
 ```yaml
 ---
-title: about
+title: 标题
 layout: about
 ---
 
-# 这里可以写正文
-支持 Markdown, HTML
+这里可以写正文，支持 Markdown, HTML
 ```
+
+:::warning
+`layout: about` 必须存在，并且不能修改成其他值，否则不会显示头像等样式。
+:::
 
 ### 关于信息
 
@@ -1100,7 +1103,7 @@ about:
 
 ```yaml
 ---
-title: about
+title: 标题
 layout: about
 comment: 'valine'
 ---

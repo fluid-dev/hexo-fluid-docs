@@ -61,12 +61,11 @@ The modified example is as follows:
 
 ```yaml
 ---
-title: about
-date: 2020-02-23 19:20:33
+title: This is a title
 layout: about
 ---
 
-About content
+You can write the content here, support Markdown, HTML
 ```
 
 ## Theme Upgrade

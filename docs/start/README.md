@@ -63,13 +63,16 @@ hexo new page about
 
 ```yaml
 ---
-title: about
-date: 2020-02-23 19:20:33
+title: 标题
 layout: about
 ---
 
 这里写关于页的正文，支持 Markdown, HTML
 ```
+
+:::warning
+`layout: about` 必须存在，并且不能修改成其他值，否则不会显示头像等样式。
+:::
 
 ## 更新主题
 
