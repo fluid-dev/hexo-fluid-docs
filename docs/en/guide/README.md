@@ -803,7 +803,7 @@ Uninstall the former engine:
 
 Then change your engine, such as:
 
-mathjax: `npm install hexo-renderer-kramed --save`
+mathjax: `npm install hexo-renderer-pandoc --save` **also need to [install Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
 
 katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
@@ -819,9 +819,11 @@ $$
 
 :::warning
 
-You can't install more than one engines
+You can't install more than one renderer, and can't install plugins such as `hexo-math` or `hexo-katex`.
 
 If your typesetting can't display correctly, you can check the below steps.
+
+The custom page doesn't load math by default, you need to specify `math: true`  into [Front-matter](https://hexo.io/docs/front-matter) to ues it.
 
 :::
 

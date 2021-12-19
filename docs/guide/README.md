@@ -884,7 +884,7 @@ post:
 
 `specific`: 建议开启。当为 true 时，只有在文章 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
 
-`engine`: 公式渲染引擎，目前支持 `mathjax` 或 `katex`。
+`engine`: 公式引擎，目前支持 `mathjax` 或 `katex`。
 
 **2. 更换 Markdown 渲染器**
 
@@ -896,7 +896,7 @@ post:
 
 然后根据上方配置不同的 `engine`，推荐更换如下渲染器：
 
-mathjax: `npm install hexo-renderer-kramed --save`
+mathjax:`npm install hexo-renderer-pandoc --save` **并且还需[安装 Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
 
 katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
@@ -912,9 +912,11 @@ $$
 
 :::warning
 
-不可同时安装多个渲染器，如果更换公式引擎，对应渲染器也要一并更换。
-
 如果公式没有被正确渲染，请仔细检查是否符合上面三步操作。
+
+不可以同时安装多个渲染插件，包括 `hexo-math` 或者 `hexo-katex` 这类插件，请注意检查 `package.json`。
+
+如果更换公式引擎，对应渲染器也要一并更换。
 
 另外不同的渲染器，可能会导致一些 Markdown 语法不支持。
 
@@ -933,14 +935,12 @@ $$
 - 右键点击公式有扩展功能
 
 缺点
-- 需要加载 JS，页面加载会比较慢，并且有渲染变化
-- kramed 渲染器对内联公式的转义字符 `\` 支持不足
+- 需要加载 JS，页面加载会比较慢
 
 **KaTeX**
 
 优点
 - 没有 JS 不会影响页面加载
-- 渲染器效果好 (相对 kramed 对 MathJax 的内联公式)
 
 缺点
 - 小部分 LaTeX 不支持
