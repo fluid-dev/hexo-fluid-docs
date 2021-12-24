@@ -20,9 +20,9 @@ meta:
 
 - 本指南中提到的 `source` 目录都指的是博客目录下的 `source` 文件夹，不推荐修改主题内 `source` 目录；
 
-- 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean`；
+- 每次无论 `hexo g` 或 `hexo s`，都最好先使用 `hexo clean` 清除本地缓存；
 
-- 页面结果以本地 `hexo s` 为准，部署后的异常大部分是缓存原因，在确认没有报错的情况下，等待若干时间后即可正常；
+- 页面结果以本地 `hexo s` 为准，部署后的异常大部分是线上缓存原因，在确认没有报错的情况下，等待若干时间后即可正常；
 
 - 由于主题的不同版本会存在配置差异，本指南以最新版本为准。
 :::
@@ -356,6 +356,31 @@ dark_mode:
 选择 auto 时优先遵循 [prefers-color-scheme](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-color-scheme)，如果不支持则按用户本地时间 18 点到次日 6 点之间进入暗色模式。
 
 无论选择任何模式，当用户手动切换后会在用户本地保存选项，该用户不再按照默认模式。
+
+### OpenGraph
+
+[OpenGraph](https://ogp.me/) 是 Facebook 发布的一套网页元信息标记协议，可以让任何页面成为社交平台中的富媒体标签。
+
+本主题基于 [Hexo 内置方法](https://hexo.io/docs/helpers.html#open-graph)实现了该功能，并且默认开启，但如果想在 Facebook 等平台更好地使用，需要在**主题配置**完善如下配置项：
+
+```yaml
+open_graph:
+  enable: true
+  twitter_card: summary_large_image
+  twitter_id:
+  twitter_site:
+  google_plus:
+  fb_admins:
+  fb_app_id:
+```
+
+另外你可以在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置字段来指定单个页面的 OpenGraph 属性：
+
+```yaml
+---
+og_img: /img/og.png
+---
+```
 
 ## 首页
 

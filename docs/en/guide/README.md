@@ -285,6 +285,31 @@ If this is not supported, enter dark mode from 18:00 local time to 6:00 the next
 
 Regardless of any mode is selected, when the viewer manually switches, the options will be saved in local-storage, and the viewer will no follow the default mode.
 
+### OpenGraph
+
+[OpenGraph](https://ogp.me/) enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.
+
+Fluid implements this feature based on [Hexo built-in method](https://hexo.io/docs/helpers.html#open-graph) and is enabled by default, but if you want to use it better on social such as Facebook, you need to complete the following config items in **theme config**:
+
+```yaml
+open_graph:
+  enable: true
+  twitter_card: summary_large_image
+  twitter_id:
+  twitter_site:
+  google_plus:
+  fb_admins:
+  fb_app_id:
+```
+
+In addition, you can set fields in [Front-matter](https://hexo.io/docs/front-matter) to specify the OpenGraph property of a single page:
+
+```yaml
+---
+og_img: /img/og.png
+---
+```
+
 ## Home
 
 ### Slogan
