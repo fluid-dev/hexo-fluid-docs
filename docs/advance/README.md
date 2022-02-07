@@ -59,46 +59,55 @@ https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@master/source/img/favicon
 
 ## StaticFile CDN
 
-目前**主题配置**中默认的 CDN 已经替换为 jsDelivr，如果仍想使用 staticfile，可以按照下方修改配置（注意有个别在 staticfile 是没有的，可以自行替换为 cdnjs 或者 bootcdn ）：
+目前**主题配置**中默认的 CDN 已经替换为 jsDelivr，如果仍想使用 staticfile，可以按照下方修改配置：
 
 ```yaml
-  anchor: https://cdn.staticfile.org/anchor-js/4.3.0/
+static_prefix:
+  # 内部静态
+  # Internal static
+  internal_js: /js
+  internal_css: /css
+  internal_img: /img
+
+  anchor: https://cdn.staticfile.org/anchor-js/4.3.1/
 
   github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
 
-  jquery: https://cdn.staticfile.org/jquery/3.5.1/
+  jquery: https://cdn.staticfile.org/jquery/3.6.0/
 
-  bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.5.3/
+  bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.6.1/
 
-  highlightjs: https://cdn.staticfile.org/highlight.js/10.4.0/
+  highlightjs: https://cdn.staticfile.org/highlight.js/11.4.0/
 
-  prismjs: https://cdn.staticfile.org/prism/1.22.0/
+  prismjs: https://cdn.staticfile.org/prism/1.26.0/
 
-  tocbot: https://cdn.staticfile.org/tocbot/4.12.0/
+  tocbot: https://cdn.staticfile.org/tocbot/4.18.0/
 
-  typed: https://cdn.staticfile.org/typed.js/2.0.11/
+  typed: https://cdn.staticfile.org/typed.js/2.0.12/
 
   fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
 
   nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
 
-  mathjax: https://cdn.staticfile.org/mathjax/3.1.2/es5/
+  mathjax: https://cdn.staticfile.org/mathjax/3.2.0/es5/
 
-  katex: https://cdn.staticfile.org/KaTeX/0.12.0/
+  katex: https://cdn.staticfile.org/KaTeX/0.15.2/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://cdn.staticfile.org/clipboard.js/2.0.6/
+  clipboard: https://cdn.staticfile.org/clipboard.js/2.0.10/
 
-  mermaid: https://cdn.staticfile.org/mermaid/8.8.3/
+  mermaid: https://cdn.staticfile.org/mermaid/8.13.10/
 
-  valine: https://cdn.staticfile.org/valine/1.4.14/
+  valine: https://cdn.staticfile.org/valine/1.4.16/
 
-  waline: https://cdn.jsdelivr.net/npm/@waline/client@0.4.2/dist/
+  waline: https://cdn.staticfile.org/waline/1.5.2/
 
-  gitalk: https://cdn.staticfile.org/gitalk/1.7.0/
+  gitalk: https://cdn.staticfile.org/gitalk/1.7.2/
 
-  disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/
+  disqusjs: https://cdn.staticfile.org/disqusjs/1.3.0/
 
-  twikoo: https://cdn.jsdelivr.net/npm/twikoo@0.1.15/dist/
+  twikoo: https://cdn.staticfile.org/twikoo/1.4.17/
+
+  hint: https://cdn.staticfile.org/hint.css/2.7.0/
 ```
