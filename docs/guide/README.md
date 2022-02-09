@@ -43,7 +43,7 @@ meta:
 通过 Npm 安装主题的用户可忽略，其他用户建议学习使用。
 :::
 
-Hexo 5.0.0 版本以上的用户，在博客目录下创建 `_config.fluid.yml` 文件，将主题的 [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) 内容复制过去。
+Hexo 5.0.0 版本以上的用户，在博客目录下创建 `_config.fluid.yml` 文件，将主题的 [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) 全部配置（或部分配置）复制过去。
 
 以后如果修改任何主题配置，都只需修改 `_config.fluid.yml` 的配置即可。
 
@@ -65,8 +65,8 @@ about:
 
 必须确保 Hexo 版本不低于 3.0.0，使用方式：
 
-1. 进入博客目录的 source 目录下（不是主题目录的 source），创建 `_data` 目录（和 `_post` 目录同级）；
-2. 在 `_data` 目录下创建 `fluid_config.yml` 文件，将 `/theme/fluid/_config.yml` 中全部配置（或部分配置）复制到 `fluid_config.yml` 中；
+1. 进入博客目录的 `source/_data` 目录（如不存在则创建）；
+2. 在 `_data` 文件夹下创建 `fluid_config.yml` 文件，将主题的 [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) 全部配置（或部分配置）复制到 `fluid_config.yml` 中；
 3. 以后配置都在 `fluid_config.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
 
 </details>
@@ -152,10 +152,10 @@ navbar:
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill', name: '联系我' }
 ```
 
-- `key`: 用于关联有[多语言](/guide/#多语言)，如不存在关联则显示 key 本身的值
+- `key`: 用于关联有[语言配置](/guide/#语言配置)，如不存在关联则显示 key 本身的值
 - `link`: 跳转链接
 - `icon`: 图标的 css class，可以省略（即没有图标），主题内置图标详见[这里](/icon/)
-- `name`: 强制使用此名称显示（不再按多语言显示），可省略
+- `name`: 强制使用此名称显示（不再按语言配置显示），可省略
 
 另外支持二级菜单（下拉菜单），配置写法如下：
 
@@ -278,7 +278,7 @@ LeanCloud 在 localhost 域名下不会增加数据。
 如果参数填写错误或者接口异常，不会显示数据，请在浏览器控制台排查具体原因。
 :::
 
-### 多语言
+### 语言配置
 
 不同语言会影响一些主题自带的文字。
 
@@ -288,9 +288,16 @@ LeanCloud 在 localhost 域名下不会增加数据。
 language: zh-CN
 ```
 
-默认提供英文(en)、简体中文(zh-CN)、日文(ja)。
+你可以在主题 [languages](https://github.com/fluid-dev/hexo-theme-fluid/tree/master/languages) 目录里查看支持哪些语言，只要上面的配置的值和文件名相同即可。
 
-如果想自定义，建议单独复制一份新文件进行修改，然后指定该文件名。
+你也可以使用类似于覆盖配置的方式去自定义语言，可按如下操作：
+
+1. 进入博客目录的 `source/_data` 目录（如不存在则创建），创建 `languages` 文件夹；
+2. 在 `_languages` 文件夹下创建 `xxx.yml` 文件（`xxx` 替换为对应语言的代码，例如 `zh-CN`）
+3. 主题 [languages](https://github.com/fluid-dev/hexo-theme-fluid/tree/master/languages) 目录下对应语言的配置内容复制到 `xxx.yml` 中；
+4. 以后配置都在 `xxx.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
+
+当然你可以按这个方法创建一份其他语言的配置。
 
 ### 强制全局 HTTPS
 
@@ -1112,7 +1119,7 @@ about:
 - `qrcode`: 二维码图片，当使用此字段后，点击不再跳转，而是悬浮二维码
 
 :::tip
-关闭 icons 时注意不要把 `icons` 这个 key 也一起注释，否则会被覆盖配置填充上默认值，请按照如下设置：
+关闭 icons 时注意不要把 `icons` 这个 key 也一起注释，否则会被[覆盖配置](/guide/#覆盖配置)填充上默认值，请按照如下设置：
 ```yaml
 about:
   icons:

@@ -1,5 +1,5 @@
 ---
-metaTitle: 进阶玩法 | Hexo Fluid
+metaTitle: 进阶用法 | Hexo Fluid
 meta:
   - name: description
     content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
@@ -7,7 +7,48 @@ meta:
     content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档
 ---
 
-# 进阶玩法
+# 进阶用法
+
+## 注入代码
+
+如果你想充分修改主题，又不想直接修改源码影响日后更新，本主题提供了代码注入功能，可以将代码无侵入式加入到主题里。
+
+你可以直接注入 HTML 片段，不过建议你了解一下 [EJS 模板引擎](https://ejs.bootcss.com/)，这样你就可以像主题里的 `ejs` 文件一样编写自己的组件再注入进去。
+
+进入博客目录下 `scripts` 文件夹（如不存在则创建），在里面创建任意名称的 js 文件，在文件中写入如下内容：
+
+```js
+hexo.extend.filter.register('theme_inject', function(injects) {
+  injects.header.file('default', 'source/_inject/test1.ejs', { params: { key: 'value' } });
+  injects.footer.raw('default', '<script async src="https://xxxxxx" crossorigin="anonymous"></script>');
+});
+```
+
+`header` 和 `footer` 是注入点的名称，表示代码注入到页面的什么位置；
+`file` 方法表示注入的是文件，后面第二个参数则是文件的路径，第三个参数是传入文件的参数（也可省略）；
+`raw` 方法表示注入的是原生代码，后面第二个参数则是一句原生的 HTML 语句；
+`default` 表示注入的键名，可以使用任意键名，同一个注入点下的相同键名会使注入的内容覆盖，而不同键名则会让内容依次排列，这里 default 为主题默认键名，通常会替换掉主题默认的组件；
+
+主题目前提供的注入点如下：
+
+| 注入点名称 | 注入范围 | 存在 `default` 键 |
+| --- | --- | --- |
+| head | `<head>` 标签中的结尾 | 无 |
+| header | `<header>` 标签中所有内容 | 有 |
+| bodyBegin | `<body>` 标签中的开始 | 无 |
+| bodyEnd | `<body>` 标签中的结尾 | 无 |
+| footer | `<footer>` 标签中所有内容 | 有 |
+| postMetaTop | 文章页 `<header>` 标签中 meta 部分内容 | 有 |
+| postMetaBottom | 文章页底部 meta 部分内容 | 有 |
+| postMarkdownBegin | `<div class="markdown-body">` 标签中的开始 | 无 |
+| postMarkdownEnd | `<div class="markdown-body">` 标签中的结尾 | 无 |
+| postLeft | 文章页左侧边栏 | 有 |
+| postRight | 文章页右侧边栏 | 有 |
+| postCopyright | 文章页版权信息 | 有 |
+| postRight | 文章页右侧边栏 | 无 |
+| postComments | 文章页评论 | 有 |
+| pageComments | 自定义页评论 | 有 |
+| linksComments | 友链页评论 | 有 |
 
 ## Hexo 插件
 

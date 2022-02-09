@@ -51,9 +51,9 @@ You should make sure that your version of *Hexo* is not lower than *3.0*, becaus
 
 Usage:
 
-1. cd into the dictionary '*source*' in your *blog root dictionary*, then `mkdir _data` (beside to the folder '_post');
-2. Create a file `fluid_config.yml` in the folder `_date` , copy the configurations from **theme config** to `fluid_config.yml`;
-3. You can set any config with the file `fluid_config.yml`, it can be used when you start `hexo g`.
+1. Go to or create `source/_data` directory of the blog directory;
+2. Create a file `fluid_config.yml` in `_date` , copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) to `fluid_config.yml`;
+3. You can set any config with the file `fluid_config.yml`, it can be used when `hexo g`.
 
 </details>
 
@@ -119,14 +119,14 @@ The title is on the left of the banner, Its value can set by the attribute `titl
 
 If you want to set varies titles for different pages, you can change the **theme config** as follows:
 
-``` yaml
+```yaml
 navbar:
   blog_title: your title
 ```
 
 ### Navbar
 
-``` yaml
+```yaml
 navbar:
   menu:
     - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
@@ -134,7 +134,7 @@ navbar:
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill', name: 'About Me' }
 ```
 
-- `key`: relate to [multilingual] (/en/guide/#multi-languages). If no related , the value of the key itself will be displayed
+- `key`: relate to [multilingual] (/en/guide/#languages). If no related , the value of the key itself will be displayed
 - `link`: href link
 - `icon`: css class of icon, can be omitted. [Built-in icons of theme](/en/icon/) 
 - `name`: force this name to be displayed (no longer in multiple languages), can be omitted
@@ -221,19 +221,23 @@ web_analytics:
   cnzz:  # cnzz analysis's web_id，refer https://web.umeng.com/main.php?c=site&a=show
 ```
 
-### Multi Languages
+### Languages
 
-Some languages may change the font of some theme.
+Set a different language in the **blog config** will change the text of the theme:
 
-You can set up you language in the **blog config**, and you should define the language file name.
-
-``` yaml
-language: zh-CN  # default is en
+```yaml
+language: en
 ```
 
-*en* *zh-CN* and *ja* is supported currently.
+You can check which languages are supported in the theme [languages](https://github.com/fluid-dev/hexo-theme-fluid/tree/master/languages) directory, as long as the value of the above configuration is the same as the file name.
 
-If you want to add more language, you'd better copy a new file to edit, and define the language file name.
+You can also use a similar way to override the configuration to customize the language:
+
+1. Go to or create `source/_data` directory of the blog directory, then create the `languages` folder;
+2. Create a file `en.yml` in `_languages` , copy the content of [en.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/languages/en.yml) ();
+3. You can set any config with the new `en.yml`, it can be used when `hexo g`.
+
+Of course, you can also choose other language yaml, just keep the filename and config value the same.
 
 ### Enforce Https
 
@@ -393,7 +397,7 @@ index:
 
 If you need manual, you can use `<!-- more -->` to define except.
 
-``` markdown
+```markdown
 Part of the content as an excerpt
 <!-- more -->
 The rest of the text
@@ -432,7 +436,7 @@ You can hide any post meta, include: time、categories、tags etc.
 
 After testing, if there are no thumbnails and summaries in the list of posts on the home page, the display of title + post information will make the page too crowded, so this configuration is given for students who like to display only the title of the post on the home page.
 
-``` yaml
+```yaml
 index:
   post_meta:
     date: true
@@ -946,7 +950,7 @@ Please refer to **theme config** comments for details.
 
 You can custom some style of tags:
 
-``` yaml
+```yaml
 tag:
   tagcloud:
     min_font: 15

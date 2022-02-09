@@ -40,7 +40,7 @@ module.exports = {
           { text: '开始使用', link: '/start/' },
           { text: '配置指南', link: '/guide/' },
           { text: '图标用法', link: '/icon/' },
-          { text: '进阶玩法', link: '/advance/' },
+          { text: '进阶用法', link: '/advance/' },
           { text: '支持我们', link: '/contribute/' },
           { text: 'GitHub', link: 'https://github.com/fluid-dev/hexo-theme-fluid' },
         ],
