@@ -13,6 +13,12 @@ meta:
 
 ## 注入代码
 
+:::warning
+
+该功能需要 Fluid 1.9.0-beta 版本
+
+:::
+
 如果你想充分修改主题，又不想直接修改源码影响日后更新，本主题提供了代码注入功能，可以将代码无侵入式加入到主题里。
 
 你可以直接注入 HTML 片段，不过建议你了解一下 [EJS 模板引擎](https://ejs.bootcss.com/)，这样你就可以像主题里的 `ejs` 文件一样编写自己的组件再注入进去。
@@ -21,15 +27,15 @@ meta:
 
 ```js
 hexo.extend.filter.register('theme_inject', function(injects) {
-  injects.header.file('default', 'source/_inject/test1.ejs', { params: { key: 'value' } });
+  injects.header.file('default', 'source/_inject/test1.ejs', { key: 'value' }, -1);
   injects.footer.raw('default', '<script async src="https://xxxxxx" crossorigin="anonymous"></script>');
 });
 ```
 
-`header` 和 `footer` 是注入点的名称，表示代码注入到页面的什么位置；
-`file` 方法表示注入的是文件，后面第二个参数则是文件的路径，第三个参数是传入文件的参数（也可省略）；
-`raw` 方法表示注入的是原生代码，后面第二个参数则是一句原生的 HTML 语句；
-`default` 表示注入的键名，可以使用任意键名，同一个注入点下的相同键名会使注入的内容覆盖，而不同键名则会让内容依次排列，这里 default 为主题默认键名，通常会替换掉主题默认的组件；
+- `header` 和 `footer` 是注入点的名称，表示代码注入到页面的什么位置；
+- `file` 方法表示注入的是文件，第一个参数下面介绍，第二个参数则是文件的路径，第三个参数是传入文件的参数（可省略），第四个参数是顺序（可省略）；
+- `raw` 方法表示注入的是原生代码，第一个参数下面介绍，第二个参数则是一句原生的 HTML 语句；
+- `default` 表示注入的键名，可以使用任意键名，同一个注入点下的相同键名会使注入的内容覆盖，而不同键名则会让内容依次排列（默认按执行先后顺序，可通过 `file` 第四个参数指定），这里 default 为主题默认键名，通常会替换掉主题默认的组件；
 
 主题目前提供的注入点如下：
 
