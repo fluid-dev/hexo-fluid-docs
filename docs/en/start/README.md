@@ -7,6 +7,8 @@ meta:
     content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
 ---
 
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+
 # Start
 
 ## Introduction
@@ -101,6 +103,8 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
 3. Resolve code conflicts if any.
+
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
 
 ## MIT
 

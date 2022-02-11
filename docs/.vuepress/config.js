@@ -17,6 +17,12 @@ module.exports = {
   base: '/hexo-fluid-docs/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
+    ['script', {
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2938778520580915',
+      defer: 'defer',
+      async: 'async',
+      crossOrigin: 'anonymous'
+    }],
   ],
   themeConfig: {
     locales: {
@@ -76,6 +82,12 @@ module.exports = {
     docsBranch: 'source',
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
+    // 谷歌广告的参数
+    ads: {
+      client: 'ca-pub-2938778520580915',
+      slot: '1666104182',
+      inSlot: '8208010546'
+    }
   },
   plugins: {
     '@vuepress/last-updated': {

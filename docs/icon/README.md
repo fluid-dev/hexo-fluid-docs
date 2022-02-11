@@ -7,6 +7,8 @@ meta:
     content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档,博客,文章
 ---
 
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+
 # 图标
 
 ## 内置社交图标
@@ -18,6 +20,8 @@ meta:
 将 `icon-` 开头的那行填入 css class 即可，例如 `iconfont icon-wechat-fill`。
 
 以上主要用在关于页中，当然你也可以通过插入 HTML 的方式用到主题的任何地方。
+
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
 
 ## 自定义图标
 

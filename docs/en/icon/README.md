@@ -7,6 +7,8 @@ meta:
     content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
 ---
 
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+
 # Icons
 
 ## Build-in Icons
@@ -18,6 +20,8 @@ There are some built-in social icons in the theme, all from [iconcont](https://w
 Just fill the beginning with 'icon-' into CSS class, eg: `iconfont icon-twitter-fill`.
 
 The icons are mainly used in related pages, of course, you can also use any place by HTML. 
+
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
 
 ## Custom Icons
 

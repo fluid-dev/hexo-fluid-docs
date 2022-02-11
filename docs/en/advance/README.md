@@ -7,6 +7,8 @@ meta:
     content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
 ---
 
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+
 # Advance
 
 ## Hexo Plugin
@@ -26,6 +28,8 @@ All plugins are only recommended and can’t be sure they are fully compatible w
 [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) : generate Atom 1.0 or RSS 2.0 feed
 
 [hexo-admin](https://github.com/jaredly/hexo-admin) : an admin UI for Hexo
+
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
 
 ### Faster Loading
 

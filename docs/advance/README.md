@@ -7,6 +7,8 @@ meta:
     content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档
 ---
 
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+
 # 进阶用法
 
 ## 注入代码
@@ -67,6 +69,8 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) : 生成 Atom 1.0 or RSS 2.0 feed
 
 [hexo-admin](https://github.com/jaredly/hexo-admin) : 为 Hexo 搭建可视化管理页面
+
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
 
 ## 使用 jsDelivr 服务
 

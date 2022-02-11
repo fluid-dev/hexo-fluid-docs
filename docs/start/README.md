@@ -7,6 +7,8 @@ meta:
     content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档,博客,文章
 ---
 
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+
 # 开始使用
 
 ## 主题简介
@@ -109,6 +111,8 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
 3. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）。
+
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
 
 ## 版本号释义
 

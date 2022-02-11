@@ -7,6 +7,8 @@ meta:
     content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
 ---
 
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+
 # Development Contribution
 
 ## How to contribute
@@ -22,6 +24,8 @@ The following workflow participation contributions are recommended:
 4. Commit changes locally (don’t forget to describe it in the commit log)
 5. Push the submission to the repository of the fork
 6. Create develop branch of pull request to fluid-dev/hexo-theme-fluid
+
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
 
 ## Contributors
 
