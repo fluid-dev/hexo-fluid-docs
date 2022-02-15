@@ -17,12 +17,6 @@ module.exports = {
   base: '/hexo-fluid-docs/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
-    ['script', {
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2938778520580915',
-      defer: 'defer',
-      async: 'async',
-      crossOrigin: 'anonymous'
-    }],
   ],
   themeConfig: {
     locales: {

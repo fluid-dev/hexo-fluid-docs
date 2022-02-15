@@ -7,7 +7,7 @@ meta:
     content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档,博客,文章
 ---
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
 
 # 图标
 
@@ -21,7 +21,7 @@ meta:
 
 以上主要用在关于页中，当然你也可以通过插入 HTML 的方式用到主题的任何地方。
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## 自定义图标
 

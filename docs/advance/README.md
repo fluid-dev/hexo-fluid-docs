@@ -7,7 +7,7 @@ meta:
     content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档
 ---
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot class="side-ads"></Adsense>
+<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
 
 # 进阶用法
 
@@ -76,7 +76,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
 [hexo-admin](https://github.com/jaredly/hexo-admin) : 为 Hexo 搭建可视化管理页面
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot></InArticleAdsense>
+<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## 使用 jsDelivr 服务
 
