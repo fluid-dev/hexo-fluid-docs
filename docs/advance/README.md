@@ -11,7 +11,41 @@ meta:
 
 # 进阶用法
 
-## 注入代码
+## Hexo 注入代码
+
+[Hexo 注入器](https://hexo.io/zh-cn/api/injector.html)是 Hexo 5 版本自身加入的一项新功能，所以在所有 Hexo 主题都是支持这个功能的。
+
+注入器可以将 HTML 片段注入生成页面的 `<head>` 和 `<body>` 节点中。
+
+编写注入代码，需要在博客的根目录下创建 `scripts` 文件夹，然后在里面任意命名创建一个 js 文件即可。
+
+例如创建一个 `/blog/scripts/example.js`，内容为：
+
+```javascript
+hexo.extend.injector.register('body_end', '<script src="/jquery.js"></script>', 'default');
+```
+
+上述代码会在生成的页面 `</body>` 注入加载 `jquery.js` 的代码。
+
+`register` 函数可接受三个参数，第一个参数是代码片段注入的位置，接受以下值：  
+- `head_begin`: 注入在 `<head>` 之后（默认）  
+- `head_end`: 注入在 `</head>` 之前  
+- `body_begin`: 注入在 `<body>` 之后  
+- `body_end`: 注入在 `</body>` 之前  
+
+第二个参数是注入的片段，可以是字符串，也可以是一个返回值为字符串的函数。
+
+第三个参数是注入的页面类型，接受以下值：
+- `default`: 注入到每个页面（默认值）  
+- `home`: 只注入到主页（`is_home()` 为 `true` 的页面）  
+- `post`: 只注入到文章页面（`is_post()` 为 `true` 的页面）  
+- `page`: 只注入到独立页面（`is_page()` 为 `true` 的页面）  
+- `archive`: 只注入到归档页面（`is_archive()` 为 `true` 的页面）  
+- `category`: 只注入到分类页面（`is_category()` 为 `true` 的页面）  
+- `tag`: 只注入到标签页面（`is_tag()` 为 `true` 的页面）  
+- 或是其他自定义 layout 名称，例如在Fluid 主题中 `about` 对应关于页、`links` 对应友联页  
+
+## Fluid 注入代码
 
 :::warning
 
@@ -19,13 +53,15 @@ meta:
 
 :::
 
+Fluid 主题也提供了一套注入代码功能，相较于 Hexo 注入功能更细致更丰富，并且支持注入 `ejs` 代码。
+
 如果你想充分修改主题，又不想直接修改源码影响日后更新，本主题提供了代码注入功能，可以将代码无侵入式加入到主题里。
 
 你可以直接注入 HTML 片段，不过建议你了解一下 [EJS 模板引擎](https://ejs.bootcss.com/)，这样你就可以像主题里的 `ejs` 文件一样编写自己的组件再注入进去。
 
 进入博客目录下 `scripts` 文件夹（如不存在则创建），在里面创建任意名称的 js 文件，在文件中写入如下内容：
 
-```js
+```javascript
 hexo.extend.filter.register('theme_inject', function(injects) {
   injects.header.file('default', 'source/_inject/test1.ejs', { key: 'value' }, -1);
   injects.footer.raw('default', '<script async src="https://xxxxxx" crossorigin="anonymous"></script>');
@@ -107,58 +143,3 @@ https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@master/source/img/favicon
 - 如果图片是存在 source 目录中，建议搭配 [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) 插件，可自动对图片进行压缩；
 
 - 如果是存放在外部的图片，建议先使用 [tinypng](https://tinypng.com) 进行压缩。
-
-## StaticFile CDN
-
-目前**主题配置**中默认的 CDN 已经替换为 jsDelivr，如果仍想使用 staticfile，可以按照下方修改配置：
-
-```yaml
-static_prefix:
-  # 内部静态
-  # Internal static
-  internal_js: /js
-  internal_css: /css
-  internal_img: /img
-
-  anchor: https://cdn.staticfile.org/anchor-js/4.3.1/
-
-  github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
-
-  jquery: https://cdn.staticfile.org/jquery/3.6.0/
-
-  bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.6.1/
-
-  highlightjs: https://cdn.staticfile.org/highlight.js/11.4.0/
-
-  prismjs: https://cdn.staticfile.org/prism/1.26.0/
-
-  tocbot: https://cdn.staticfile.org/tocbot/4.18.0/
-
-  typed: https://cdn.staticfile.org/typed.js/2.0.12/
-
-  fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
-
-  nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
-
-  mathjax: https://cdn.staticfile.org/mathjax/3.2.0/es5/
-
-  katex: https://cdn.staticfile.org/KaTeX/0.15.2/
-
-  busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
-
-  clipboard: https://cdn.staticfile.org/clipboard.js/2.0.10/
-
-  mermaid: https://cdn.staticfile.org/mermaid/8.13.10/
-
-  valine: https://cdn.staticfile.org/valine/1.4.16/
-
-  waline: https://cdn.staticfile.org/waline/1.5.2/
-
-  gitalk: https://cdn.staticfile.org/gitalk/1.7.2/
-
-  disqusjs: https://cdn.staticfile.org/disqusjs/1.3.0/
-
-  twikoo: https://cdn.staticfile.org/twikoo/1.4.17/
-
-  hint: https://cdn.staticfile.org/hint.css/2.7.0/
-```
