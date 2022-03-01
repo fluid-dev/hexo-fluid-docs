@@ -1,15 +1,6 @@
----
-metaTitle: Contribute | Hexo Fluid
-meta:
-  - name: description
-    content: Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
-  - name: keywords
-    content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
----
+# Development Contribution
 
 <Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
-# Development Contribution
 
 ## How to contribute
 

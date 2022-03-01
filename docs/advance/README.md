@@ -1,15 +1,6 @@
----
-metaTitle: 进阶用法 | Hexo Fluid
-meta:
-  - name: description
-    content: Fluid 是一款 Material-Design 风格的 Hexo 博客主题。Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
-  - name: keywords
-    content: hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档
----
+# 进阶用法
 
 <Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
-# 进阶用法
 
 ## Hexo 注入代码
 

@@ -1,15 +1,6 @@
----
-metaTitle: Start | Hexo Fluid
-meta:
-  - name: description
-    content: Fluid is an elegant Material-Design theme for Hexo. https://github.com/fluid-dev/hexo-theme-fluid
-  - name: keywords
-    content: hexo,theme,fluid,docs,doc,documentation,document,guide,blog,post,article
----
+# Start
 
 <Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
-# Start
 
 ## Introduction
 
@@ -106,6 +97,6 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
-## MIT
+## License
 
-[MIT](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)
+[GPL-V3](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)

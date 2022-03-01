@@ -6,10 +6,12 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
+      title: 'Hexo Fluid 用户手册',
       description: '一款 Material Design 风格的 Hexo 博客主题',
     },
     '/en/': {
       lang: 'en',
+      title: 'Hexo Fluid Docs',
       description: 'An elegant Material-Design theme for Hexo',
     },
   },
@@ -17,6 +19,7 @@ module.exports = {
   base: '/hexo-fluid-docs/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
+    ['meta', { name: 'keywords', content: 'hexo,theme,fluid,hexo主题,fluid文档,用户文档,博客,文档,博客,文章,docs,doc,documentation,document,guide,blog,post,article'}]
   ],
   themeConfig: {
     locales: {
