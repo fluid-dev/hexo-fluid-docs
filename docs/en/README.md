@@ -16,5 +16,5 @@ features:
   details: You can configure your own style
 - title: Team Support
   details: Upgrade actively and handling issues
-footer: MIT Licensed | Copyright © 2020 Fluid-dev | Powered by VuePress
+footer: GPL Licensed | Copyright © 2022 Fluid-dev | Powered by VuePress
 ---
