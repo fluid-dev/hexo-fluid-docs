@@ -81,24 +81,24 @@ npm update --save hexo-theme-fluid
 
 #### 方式二
 
-> 适用于通过 Release 压缩包安装主题，且没有自行修改任何代码的情况（配置文件除外）。
+> 适用于通过 Release 压缩包安装主题，且没有自行修改任何代码的情况。
 
-1. 将自己的配置文件备份（如果完整使用[覆盖配置](/guide/#覆盖配置)功能可忽略此步骤）；
+1. 先将原文件夹重命名为别的名称，例如 `fluid-bkp`，用于升级失败进行回退；
 
-2. 将 fluid 文件夹全部删除，重新下载 [release](https://github.com/fluid-dev/hexo-theme-fluid/releases) 并解压；
+2. 按照安装步骤，重新下载 [release](https://github.com/fluid-dev/hexo-theme-fluid/releases) 并解压重命名为 `fluid`；
 
 3. 如果某些配置发生了变化（改名或弃用），release 的说明里会特别提示，同步修改原配置文件即可。 
 
 #### 方式三
 
-> 适用于自定义了一些代码，或想体验 master 分支的情况。
+> 适用于自定义了一些代码，或想体验其他分支的情况，以 dev 分支为例。
 
 1. 确定自己的 fluid 目录已经开启 git，并且所有改动都已 commit；
 
-2. 把 fluid 仓库的 master 分支拉取到自己的分支上（可新建一个分支再拉取）：
+2. 把 fluid 仓库的 develop 分支拉取到自己当前的分支上（也可新建一个分支再拉取）：
 
 ```bash
-git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
+git pull https://github.com/fluid-dev/hexo-theme-fluid.git develop
 ```
 
 3. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）。
