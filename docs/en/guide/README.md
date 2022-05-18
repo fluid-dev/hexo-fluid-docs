@@ -233,7 +233,7 @@ You can check which languages are supported in the theme [languages](https://git
 You can also use a similar way to override the configuration to customize the language:
 
 1. Go to or create `source/_data` directory of the blog directory, then create the `languages` folder;
-2. Create a file `en.yml` in `_languages` , copy the content of [en.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/languages/en.yml) ();
+2. Create a file `en.yml` in `_languages` , copy the content of [en.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/languages/en.yml);
 3. You can set any config with the new `en.yml`, it can be used when `hexo g`.
 
 Of course, you can also choose other language yaml, just keep the filename and config value the same.
