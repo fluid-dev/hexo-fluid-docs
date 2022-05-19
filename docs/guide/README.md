@@ -289,12 +289,6 @@ language: zh-CN
 
 你可以在主题 [languages](https://github.com/fluid-dev/hexo-theme-fluid/tree/master/languages) 目录里查看支持哪些语言，只要上面的配置的值和文件名相同即可。
 
-:::warning
-
-下面的覆盖配置功能需要 Fluid 1.9.0-beta 版本
-
-:::
-
 你也可以使用类似于覆盖配置的方式去自定义语言，可按如下操作：
 
 1. 进入博客目录的 `source/_data` 目录（如不存在则创建），创建 `languages` 文件夹；

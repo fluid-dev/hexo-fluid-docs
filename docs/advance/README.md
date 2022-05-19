@@ -38,12 +38,6 @@ hexo.extend.injector.register('body_end', '<script src="/jquery.js"></script>', 
 
 ## Fluid 注入代码
 
-:::warning
-
-该功能需要 Fluid 1.9.0-beta 版本
-
-:::
-
 Fluid 主题也提供了一套注入代码功能，相较于 Hexo 注入功能更细致更丰富，并且支持注入 `ejs` 代码。
 
 如果你想充分修改主题，又不想直接修改源码影响日后更新，本主题提供了代码注入功能，可以将代码无侵入式加入到主题里。
