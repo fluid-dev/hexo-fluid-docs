@@ -923,7 +923,7 @@ post:
 
 **2. 更换 Markdown 渲染器**
 
-由于 Hexo 默认的 Markdown 渲染器不支持复杂公式，所以必须更换渲染器。
+由于 Hexo 默认的 Markdown 渲染器不支持复杂公式，所以需要更换渲染器（mathjax 可选择性更换）。
 
 先卸载原有渲染器：
 
@@ -931,9 +931,9 @@ post:
 
 然后根据上方配置不同的 `engine`，推荐更换如下渲染器：
 
-mathjax:`npm install hexo-renderer-pandoc --save` **并且还需[安装 Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
+mathjax（可选）:`npm install hexo-renderer-pandoc --save` **并且还需[安装 Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
 
-katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
+katex（必须）: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
 
 **3. 安装完成后执行 `hexo clean`**
 
