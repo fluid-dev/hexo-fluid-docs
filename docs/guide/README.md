@@ -292,8 +292,8 @@ language: zh-CN
 你也可以使用类似于覆盖配置的方式去自定义语言，可按如下操作：
 
 1. 进入博客目录的 `source/_data` 目录（如不存在则创建），创建 `languages` 文件夹；
-2. 在 `_languages` 文件夹下创建 `xxx.yml` 文件（`xxx` 替换为对应语言的代码，例如 `zh-CN`）
-3. 主题 [languages](https://github.com/fluid-dev/hexo-theme-fluid/tree/master/languages) 目录下对应语言的配置内容复制到 `xxx.yml` 中；
+2. 在 `source/_data/languages` 文件夹下创建 `xxx.yml` 文件（`xxx` 替换为对应语言的代码，例如 `zh-CN`）
+3. 将 [fluid/languages](https://github.com/fluid-dev/hexo-theme-fluid/tree/master/languages) 目录下对应语言的配置内容复制到 `xxx.yml` 中；
 4. 以后配置都在 `xxx.yml` 中修改，配置会在 `hexo g` 时自动覆盖。
 
 当然你可以按这个方法创建一份其他语言的配置。
