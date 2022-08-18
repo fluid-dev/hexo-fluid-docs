@@ -648,6 +648,8 @@ post:
       enable: false
       source: "leancloud"  # 统计数据来源，可选：leancloud | busuanzi   注意不蒜子会间歇抽风
       format: "{} 次"
+    updated:  # 文章最后更新日期，优先 front-matter 里 updated 字段，其次是文章最后改动时间
+      enable: true # 默认为false
 ```
 
 :::tip
