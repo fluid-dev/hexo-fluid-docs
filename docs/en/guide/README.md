@@ -565,6 +565,8 @@ post:
       enable: false
       source: "leancloud"
       format: "{} times"
+    updated:  # last modified date, first according to `updated` in front-matter, then according to the post last modified time
+      enable: true # default value is false
 ```
 
 :::tip
