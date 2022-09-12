@@ -8,7 +8,7 @@ This guide is only for partial configuration instructions, **Not for the all con
 
 :::tip
 About the config file in the guide:
-- "**blog config**" refer to the `_config.yml` in the blog root directory.
+- "**site config**" refer to the `_config.yml` in the blog root directory.
 - "**theme config**" refer to the path `theme/fluid/_config.yml`
 :::
 
@@ -110,7 +110,7 @@ Each post page can define its banner independently, you can read the config abou
 
 ### Title of Blog
 
-The title is on the left of the banner, Its value can set by the attribute `title` in file **blog config**, which is also the title of the browser's tab.
+The title is on the left of the banner, Its value can set by the attribute `title` in file **site config**, which is also the title of the browser's tab.
 
 If you want to set varies titles for different pages, you can change the **theme config** as follows:
 
@@ -222,7 +222,7 @@ web_analytics:
 
 ### Languages
 
-Set a different language in the **blog config** will change the text of the theme:
+Set a different language in the **site config** will change the text of the theme:
 
 ```yaml
 language: en
@@ -332,7 +332,7 @@ index:
       keys: ["hitokoto"]
 ```
 
-If `text` is blank, the `subtitle` in the **blog config** will replace it.
+If `text` is blank, the `subtitle` in the **site config** will replace it.
 
 In addition, the content can be obtained through the API interface. If the request fails, it will be displayed in the text field:
 
@@ -843,7 +843,7 @@ npm uninstall hexo-renderer-marked --save
 npm install hexo-renderer-markdown-it --save
 npm install @traptitech/markdown-it-katex --save
 ```
-Then append to **blog config**:
+Then append to **site config**:
 ```yaml
 markdown:
   plugins:

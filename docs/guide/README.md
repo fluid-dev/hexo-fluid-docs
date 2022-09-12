@@ -9,7 +9,7 @@
 
 - 本指南经过数个版本打磨，绝大部分的功能都有详细说明，请仔细阅读，节约自己和他人的时间；
 
-- 本指南中提到的："**博客配置**" 指的 Hexo 博客目录下的 `_config.yml`，"**主题配置**" 指的是 `theme/fluid/_config.yml` 或者 `_config.fluid.yml` ，注意区分；
+- 本指南中提到的："**站点配置**" 指的 Hexo 博客目录下的 `_config.yml`，"**主题配置**" 指的是 `theme/fluid/_config.yml` 或者 `_config.fluid.yml` ，注意区分；
 
 - 本指南中提到的 `source` 目录都指的是博客目录下的 `source` 文件夹，不推荐修改主题内 `source` 目录；
 
@@ -128,7 +128,7 @@ banner_img: https://static.zkqiang.cn/example.jpg
 
 ### 博客标题
 
-页面左上角的博客标题，默认使用**博客配置**中的 `title`，这个配置同时控制着网页在浏览器标签中的标题。
+页面左上角的博客标题，默认使用**站点配置**中的 `title`，这个配置同时控制着网页在浏览器标签中的标题。
 
 如需单独区别设置，可在**主题配置**中设置：
 
@@ -281,7 +281,7 @@ LeanCloud 在 localhost 域名下不会增加数据。
 
 不同语言会影响一些主题自带的文字。
 
-设置语言是在**博客配置**中，需要对应 `fluid/languages/` 目录内的配置文件名:
+设置语言是在**站点配置**中，需要对应 `fluid/languages/` 目录内的配置文件名:
 
 ```yaml
 language: zh-CN
@@ -314,7 +314,7 @@ force_https: true
 
 ### 二级站点路径
 
-如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改**博客配置**中：
+如果你的博客部署在二级路径（如: xxx.com/blog/），需要修改**站点配置**中：
 
 ```yaml
 url: http://xxx.com/blog
@@ -407,7 +407,7 @@ index:
       keys: ["hitokoto"]
 ```
 
-如果 `text` 为空则按**博客配置**的 `subtitle` 显示。
+如果 `text` 为空则按**站点配置**的 `subtitle` 显示。
 
 另外支持通过 API 接口获取内容，如果请求失败则按 text 字段显示：
 
@@ -941,7 +941,7 @@ npm uninstall hexo-renderer-marked --save
 npm install hexo-renderer-markdown-it --save
 npm install @traptitech/markdown-it-katex --save
 ```
-然后在**博客配置**中添加：
+然后在**站点配置**中添加：
 ```yaml
 markdown:
   plugins:
