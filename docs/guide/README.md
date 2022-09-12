@@ -902,7 +902,7 @@ n1-n2-...：每行的图片数量，可以省略，默认单行最多 3 张图�
 ### LaTeX 数学公式
 
 :::tip
-Hexo 5.0 以上，可尝试 Hexo 官方的 [hexo-math](https://github.com/hexojs/hexo-math) 插件，支持更多定制化参数，使用方式参照仓库内的文档，以下介绍的是主题内置的 LaTeX 功能。
+Hexo 5.0 以上，可尝试 Hexo 官方的 [hexo-math](https://github.com/hexojs/hexo-math) 插件，支持更多定制化参数，使用方式参照链接内的文档，以下介绍的是主题内置的 LaTeX 功能。
 :::
 
 当需要使用 [LaTeX](https://www.latex-project.org/help/documentation/) 语法的数学公式时，可手动开启本功能，需要完成三步操作：
@@ -925,15 +925,29 @@ post:
 
 由于 Hexo 默认的 Markdown 渲染器不支持复杂公式，所以需要更换渲染器（mathjax 可选择性更换）。
 
-先卸载原有渲染器：
-
-`npm uninstall hexo-renderer-marked --save`
-
 然后根据上方配置不同的 `engine`，推荐更换如下渲染器：
 
-mathjax（可选）:`npm install hexo-renderer-pandoc --save` **并且还需[安装 Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
+:::tip mathjax
+```bash
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-pandoc --save
+``` 
+**并且还需[安装 Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
+:::
 
-katex（必须）: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
+:::tip katex
+```bash
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-markdown-it --save
+npm install @traptitech/markdown-it-katex --save
+```
+然后在**博客配置**中添加：
+```yaml
+markdown:
+  plugins:
+    - "@traptitech/markdown-it-katex"
+```
+:::
 
 **3. 安装完成后执行 `hexo clean`**
 
@@ -946,40 +960,11 @@ $$
 ```
 
 :::warning
-
-如果公式没有被正确渲染，请仔细检查是否符合上面三步操作。
-
-不可以同时安装多个渲染插件，包括 `hexo-math` 或者 `hexo-katex` 这类插件，请注意检查 `package.json`。
-
-如果更换公式引擎，对应渲染器也要一并更换。
-
-另外不同的渲染器，可能会导致一些 Markdown 语法不支持。
-
-自定义页面默认不加载渲染，如需使用，需在 Front-matter 中指定 `math: true`
-
-:::
-
-:::tip
-
-不同的公式引擎有不同的优缺点。
-
-**MathJax**
-
-优点
-- 对 LaTeX 语法支持全面
-- 右键点击公式有扩展功能
-
-缺点
-- 需要加载 JS，页面加载会比较慢
-
-**KaTeX**
-
-优点
-- 没有 JS 不会影响页面加载
-
-缺点
-- 小部分 LaTeX 不支持
-
+- 如果公式没有被正确渲染，请仔细检查是否符合上面三步操作。
+- 不可以同时安装多个渲染插件，包括 `hexo-math` 或者 `hexo-katex` 这类插件，请注意检查 `package.json`。
+- 如果更换公式引擎，对应渲染器也要一并更换。
+- 不同的渲染器，可能会导致一些 Markdown 语法不支持，或者渲染样式有细微差异。
+- 自定义页面默认不加载渲染，如需使用，需在 Front-matter 中指定 `math: true`
 :::
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>

@@ -829,15 +829,27 @@ if `specific`: true，you should add `math: true` into [Front-matter](https://he
 
 Because the default engine of hexo doesn't support math typesetting, it should be changed by other better engine.
 
-Uninstall the former engine:
+:::tip mathjax
+```bash
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-pandoc --save
+``` 
+**Also need to [install Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
+:::
 
-`npm uninstall hexo-renderer-marked --save`
-
-Then change your engine, such as:
-
-mathjax: `npm install hexo-renderer-pandoc --save` **also need to [install Pandoc](https://github.com/jgm/pandoc/blob/master/INSTALL.md)**
-
-katex: `npm install @upupming/hexo-renderer-markdown-it-plus --save`
+:::tip katex
+```bash
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-markdown-it --save
+npm install @traptitech/markdown-it-katex --save
+```
+Then append to **blog config**:
+```yaml
+markdown:
+  plugins:
+    - "@traptitech/markdown-it-katex"
+```
+:::
 
 **3. After installing, run `hexo clean`**
 
@@ -850,41 +862,9 @@ $$
 ```
 
 :::warning
-
-You can't install more than one renderer, and can't install plugins such as `hexo-math` or `hexo-katex`.
-
-If your typesetting can't display correctly, you can check the below steps.
-
-The custom page doesn't load math by default, you need to specify `math: true`  into [Front-matter](https://hexo.io/docs/front-matter) to ues it.
-
-:::
-
-
-:::tip
-
-Different formula engines have different advantages and disadvantages.
-
-**MathJax**
-
-Advantages：
-
-- full support for LaTeX syntax.
-- right-click formula has extended function.
-
-Shortcomings:
-
-- need to load JS, pages will be slow to load, and there will be rendering changes.
-- the kramed renderer does not support the escape character `\` of inline formulas.
-
-**Katex**
-
-Advantages:
-
-- No JS will not affect page loading.
-- the renderer works well (relative to kramed's inline formula for MathJax).
-Shortcomings.
-- A small part of LaTeX do not support it.
-
+- You can't install more than one renderer, and can't install plugins such as `hexo-math` or `hexo-katex`.
+- If your typesetting can't display correctly, you can check the below steps.
+- The custom page doesn't load math by default, you need to specify `math: true`  into [Front-matter](https://hexo.io/docs/front-matter) to ues it.
 :::
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
