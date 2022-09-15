@@ -712,6 +712,7 @@ disqus:
 - [Remark42](https://remark42.com) : 需要自托管服务端
 - [Twikoo](https://twikoo.js.org) : 基于腾讯云开发
 - [Cusdis](https://cusdis.com) : 基于第三方服务或自托管服务
+- [Giscus](https://giscus.app/zh-CN): 基于 GitHub Discussion
 
 使用方式和参数设置请点击上面链接查看各自的文档。
 

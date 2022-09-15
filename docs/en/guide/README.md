@@ -631,6 +631,7 @@ List of supported comment plugins：
 - [Remark42](https://remark42.com) : based on self-hosted service
 - [Twikoo](https://twikoo.js.org) : based on Tencent CloudBase
 - [Cusdis](https://cusdis.com) : based on third-party or self-hosted service
+- [Giscus](https://giscus.app): based on GitHub Discussion
 
 For usage and parameter setting, please click the link above to view the respective documents.
 
