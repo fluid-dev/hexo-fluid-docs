@@ -9,7 +9,7 @@ This guide is only for partial configuration instructions, **Not for the all con
 :::tip
 About the config file in the guide:
 - "**site config**" refer to the `_config.yml` in the blog root directory.
-- "**theme config**" refer to the path `theme/fluid/_config.yml`
+- "**theme config**" refer to the path `theme/fluid/_config.yml` or `_config.fluid.yml`.
 :::
 
 ## Global
