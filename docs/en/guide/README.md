@@ -19,14 +19,14 @@ About the config file in the guide:
 :::tip
 Override configuration can avoid losing your customized configuration when updating Fluid.
 
-Users who install Fluid via Npm can ignore it, other users are recommended to learn to use it.
+Users who installed Fluid via Npm can ignore it, other users are recommended to learn to use it.
 :::
 
 If your Hexo version >= 5.0.0, create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
 
 Notice:
 - The configuration existing in `_config.fluid.yml` is of high priority, modifying `_config.yml` is useless.
-- There may be configuration changes in the theme of upgrading, you need to manually modify `_config.fluid.yml` synchronously.
+- There may be configuration changes in the upgraded theme, you need to manually modify `_config.fluid.yml` synchronously.
 - You can use `hexo g -- debug` to check override configuration.
 - If you want to cancel some configurations, you should do this:
 
@@ -64,53 +64,53 @@ static_prefix:
 
 ### Local Search
 
-- The hexo-generator-search plug-in has been integrated, please close if you have installed other search plug-ins to avoid generating redundant index files.
+- The hexo-generator-search plug-in has been integrated, please disable it if you had installed other search plug-ins to avoid generating redundant index files.
 
-- By default, `local-search.xml` is generated and used in the root directory.
+- By default, `local-search.xml` is generated in the root directory and being used.
 
 ### Banner Image
 
-- img src
+- image source
 
-there is `banner_img` item for every pages in the **theme config**, you can use a relative path or url.
+There is `banner_img` property for every pages in the **theme config**, it can be assigned a relative path or url.
 
-use a local image：
+To use a local image:
 
 ```yaml
 banner_img: /img/bg/example.jpg   # stored at /source/img/bg/example.jpg
 ```
 
-use a url:
+To use a url:
 
 ```yaml
 banner_img: https://static.zkqiang.cn/example.jpg
 ```
 
 ::: tip
-You can define the ain path yourself, but it should be in the `source` directory
+You can define the path yourself, but it should be in the `source` directory
 
 The source directory of blog and fluid will be merged eventually, so the source of blog is preferred.
 :::
 
 - height
 
-For different people's thoughts, you can control the height of the `banner_img` on the page.
+For different people's preferences, you can control the height of the `banner_img` on the page.
 
-You can set a value to `banner_img_height` for every pages in **theme config**, 0 - 100 is valuable, We think it is better to choose a number bigger than 70.
+You can set `banner_img_height` for every pages in **theme config** with a valid range of 0 - 100. We think it is better to choose a number bigger than 70.
 
 - alpha of mask
 
-You can set a value `banner_mask_alpha` for every pages in **theme config**, 0 - 1.0 is valuable, 0 is completely transparent (no mask), 1 is completely opaque
+You can set `banner_mask_alpha` for every pages in **theme config** with a valid range of 0 - 1.0. 0 is completely transparent (no mask) while 1 is completely opaque.
 
 ::: tip
-Each post page can define its banner independently, you can read the config about the posts for more details.
+The banner of each post page can be set independently. You can read the config about the posts for more details.
 :::
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### Title of Blog
 
-The title is on the left of the banner, Its value can set by the attribute `title` in file **site config**, which is also the title of the browser's tab.
+The title is on the left side of the banner. It can be set by modifying the property `title` in file **site config**, which is also the title of the browser's tab.
 
 If you want to set varies titles for different pages, you can change the **theme config** as follows:
 

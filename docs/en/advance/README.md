@@ -24,7 +24,7 @@ All plugins are only recommended and can’t be sure they are fully compatible w
 
 ### Faster Loading
 
-1. For all the users, it is the effective way to use public CDN for the third-party lib, you can add it into `static_prefix` in **theme config**；
+1. For all the users, it is effective to use public CDN for the third-party lib, you can add it into `static_prefix` in **theme config**；
 
 2. You can use OSS and bind your domain, then upload the files in the folder `public` to your OSS.
 

@@ -14,13 +14,13 @@ Preview: [Fluid's blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https:/
 
 ### Install Hexo
 
-If you don't have a hexo blog, please follow [Hexo Docs](https://hexo.io/docs/) to install and initialize your blog。
+If you don't have a hexo blog, please follow [Hexo Docs](https://hexo.io/docs/) to install and initialize your blog.
 
-#### Download Fluid
+### Download Fluid
 
-#### Way A
+#### Method A
 
-If your Hexo version >= 5.0.0, you can be installed via Npm:
+Installing directly via Npm is recommended for Hexo version 5.0.0 and above. Run the following command in the blog directory:
 
 ```sh
 npm install --save hexo-theme-fluid
@@ -28,7 +28,7 @@ npm install --save hexo-theme-fluid
 
 Then create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
 
-#### Way B
+#### Method B
 
 Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then extract it to `themes` directory and renamed to `fluid`.
 
@@ -61,27 +61,31 @@ layout: about
 You can write the content here, support Markdown, HTML
 ```
 
+:::warning
+`layout: about` must exists and can not be modified as other values, otherwise avatar and other styles will not be shown.
+:::
+
 ## Theme Upgrade
 
-#### Way A
+#### Method A
 
-> Applicable to installed theme via Npm.
+> Applicable for Npm-installed theme.
 
-Execute the command in your blog directory：
+Execute the command in your blog directory:
 
 ```bash
 npm update --save hexo-theme-fluid
 ```
 
-#### Way B
+#### Method B
 
-> Applicable to installed theme via release and all codes have not been modified.
+> Applicable for installed theme via release and all codes have not been modified.
 
 1. Backup your config files. We recommend you to use [override configuration](/en/guide/#override-configuration).
 
 2. Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then replace the fluid directory.
 
-#### Way C
+#### Method C
 
 > Applicable to cases where some codes have been modified, or you want to pull the master branch.
 

@@ -10,7 +10,7 @@ There are some built-in social icons in the theme, all from [Iconfont](https://w
 
 Just fill the beginning with 'icon-' into CSS class, eg: `iconfont icon-twitter-fill`.
 
-The icons are mainly used in related pages, of course, you can also use any place by HTML. 
+The icons are mainly used in related pages, of course, you can also use them in any place by HTML.
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
