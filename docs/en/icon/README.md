@@ -4,7 +4,7 @@
 
 ## Build-in Icons
 
-There are some built-in social icons in the theme, all from [iconcont](https://www.iconcont.cn/):
+There are some built-in social icons in the theme, all from [Iconfont](https://www.iconfont.cn/):
 
 ![icons](../../.vuepress/public/iconfont.png)
 
