@@ -4,21 +4,21 @@
 
 ## Introduction
 
-Fluid is an elegant Material-Design theme for Hexo, developed by [Fluid-dev](https://github.com/fluid-dev)
+Developed by [Fluid-dev](https://github.com/fluid-dev), Fluid is an elegant Material-Design theme for Hexo.
 
-GitHub Repository: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
+GitHub Repo: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 
 Preview: [Fluid's blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
 
 ## Quick Start
 
-### Install Hexo
+### Installing Hexo
 
 If you don't have a hexo blog, please follow [Hexo Docs](https://hexo.io/docs/) to install and initialize your blog.
 
-### Download Fluid
+### Downloading Fluid...
 
-#### Method A
+#### via npm
 
 Installing directly via Npm is recommended for Hexo version 5.0.0 and above. Run the following command in the blog directory:
 
@@ -28,11 +28,11 @@ npm install --save hexo-theme-fluid
 
 Then create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
 
-#### Method B
+#### via releases
 
 Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then extract it to `themes` directory and renamed to `fluid`.
 
-### Set theme
+### Setting theme
 
 Edit `_config.yml` in the blog root directory as follows:
 
@@ -40,7 +40,7 @@ Edit `_config.yml` in the blog root directory as follows:
 theme: fluid
 ```
 
-### Create about page
+### Creating the About Page
 
 The about page needs to be created manually:
 
@@ -48,7 +48,7 @@ The about page needs to be created manually:
 hexo new page about
 ```
 
-Then edit `/source/about/index.md` and add `layout` attribute.
+Then edit `/source/about/index.md` under the blog directory and add `layout` attribute.
 
 The modified example is as follows:
 
@@ -58,18 +58,18 @@ title: This is a title
 layout: about
 ---
 
-You can write the content here, support Markdown, HTML
+You can write the content here, with the support of Markdown and HTML
 ```
 
 :::warning
-`layout: about` must exists and can not be modified as other values, otherwise avatar and other styles will not be shown.
+`layout: about` must exist and **can not** be modified as other values, otherwise avatar and other styles **will not be shown**.
 :::
 
-## Theme Upgrade
+## Upgrading Fluid via...
 
-#### Method A
+#### npm
 
-> Applicable for Npm-installed theme.
+> Applicable for npm-installed theme.
 
 Execute the command in your blog directory:
 
@@ -77,15 +77,15 @@ Execute the command in your blog directory:
 npm update --save hexo-theme-fluid
 ```
 
-#### Method B
+#### files
 
 > Applicable for installed theme via release and all codes have not been modified.
 
-1. Backup your config files. We recommend you to use [override configuration](/en/guide/#override-configuration).
+1. Backup your config files. We recommend you to use [configuration override](/en/guide/#configuration-override).
 
 2. Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then replace the fluid directory.
 
-#### Method C
+#### or if you changed codes
 
 > Applicable to cases where some codes have been modified, or you want to pull the master branch.
 
@@ -101,6 +101,6 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
-## License
+## Code License
 
 [GPL-V3](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)

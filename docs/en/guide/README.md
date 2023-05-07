@@ -4,7 +4,7 @@
 
 ## About this Guide
 
-This guide is only for partial configuration instructions, **Not for the all configs**, For specific configuration requirements, please refer to the comments in the file `_config.yml` at the path of the theme. For more help, Please write your questions at [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new).
+**This guide is only for partial configuration instructions, not for the all configs**, for specific configuration requirements, please refer to the comments in the file `_config.yml` at the path of the theme. For more help, Please write your questions at [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new).
 
 :::tip
 About the config file in the guide:
@@ -14,21 +14,21 @@ About the config file in the guide:
 
 ## Global
 
-### Override Configuration
+### Configuration Override
 
 :::tip
-Override configuration can avoid losing your customized configuration when updating Fluid.
+Configuration override can avoid losing your customized configuration while updating Fluid.
 
-Users who installed Fluid via Npm can ignore it, other users are recommended to learn to use it.
+Users who installed Fluid via npm can ignore it, while we recommended other users to learn to use it.
 :::
 
-If your Hexo version >= 5.0.0, create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
+If your Hexo version >= 5.0.0(`hexo -v`), please create `_config.fluid.yml` in the blog directory and copy the content of our theme's[_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) into it.
 
 Notice:
-- The configuration existing in `_config.fluid.yml` is of high priority, modifying `_config.yml` is useless.
+- The configuration existing in `_config.fluid.yml` is of high priority, so modifying `_config.yml` is useless.
 - There may be configuration changes in the upgraded theme, you need to manually modify `_config.fluid.yml` synchronously.
-- You can use `hexo g -- debug` to check override configuration.
-- If you want to cancel some configurations, you should do this:
+- You can use `hexo g -- debug` to check configuration override.
+- If you want to cancel some configurations, you should:
 
 ```yaml
 about:
@@ -38,7 +38,7 @@ about:
 ```
 
 <details>
-  <summary>Hexo version < 5.0.0 click here</summary>
+  <summary>If your Hexo version < 5.0.0, look here</summary>
 
 You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/docs/data-files.html)
 
@@ -64,20 +64,20 @@ static_prefix:
 
 ### Local Search
 
-- The hexo-generator-search plug-in has been integrated, please disable it if you had installed other search plug-ins to avoid generating redundant index files.
+- The `hexo-generator-search` plug-in has already been integrated, disable it if you had installed other search plug-ins to avoid generating redundant index files.
 
 - By default, `local-search.xml` is generated in the root directory and being used.
 
 ### Banner Image
 
-- image source
+- Image source
 
-There is `banner_img` property for every pages in the **theme config**, it can be assigned a relative path or url.
+There is `banner_img` property for every pages in the **theme config**, which can be assigned as a relative path or url.
 
 To use a local image:
 
 ```yaml
-banner_img: /img/bg/example.jpg   # stored at /source/img/bg/example.jpg
+banner_img: /img/bg/example.jpg   # At /source/img/bg/example.jpg
 ```
 
 To use a url:
@@ -89,16 +89,16 @@ banner_img: https://static.zkqiang.cn/example.jpg
 ::: tip
 You can define the path yourself, but it should be in the `source` directory
 
-The source directory of blog and fluid will be merged eventually, so the source of blog is preferred.
+The source directory of blog and Fluid will be merged eventually, so the source of blog is preferred.
 :::
 
-- height
+- Image height
 
 For different people's preferences, you can control the height of the `banner_img` on the page.
 
 You can set `banner_img_height` for every pages in **theme config** with a valid range of 0 - 100. We think it is better to choose a number bigger than 70.
 
-- alpha of mask
+- Alpha of mask
 
 You can set `banner_mask_alpha` for every pages in **theme config** with a valid range of 0 - 1.0. 0 is completely transparent (no mask) while 1 is completely opaque.
 
@@ -108,7 +108,7 @@ The banner of each post page can be set independently. You can read the config a
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
-### Title of Blog
+### Title of your Blog
 
 The title is on the left side of the banner. It can be set by modifying the property `title` in file **site config**, which is also the title of the browser's tab.
 
@@ -116,10 +116,10 @@ If you want to set varies titles for different pages, you can change the **theme
 
 ```yaml
 navbar:
-  blog_title: your title
+  blog_title: #your title
 ```
 
-### Navbar
+### Navigation bar
 
 ```yaml
 navbar:
@@ -129,9 +129,9 @@ navbar:
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill', name: 'About Me' }
 ```
 
-- `key`: relate to [multilingual] (/en/guide/#languages). If no related , the value of the key itself will be displayed
+- `key`: relates to [multilingual] (/en/guide/#languages). If no related , the value of the key itself will be displayed
 - `link`: href link
-- `icon`: css class of icon, can be omitted. [Built-in icons of theme](/en/icon/) 
+- `icon`: css class of your icons which can be omitted. [View built-in icons of theme](/en/icon/) 
 - `name`: force this name to be displayed (no longer in multiple languages), can be omitted
 
 Navbar supports subordinate menu:
@@ -222,7 +222,7 @@ web_analytics:
 
 ### Languages
 
-Set a different language in the **site config** will change the text of the theme:
+Setting a different language in the **site config** will change the text of the theme:
 
 ```yaml
 language: en
@@ -250,11 +250,11 @@ If it happens, you can change the **theme config** as follow:
 force_https: true
 ```
 
-Then all requests are forced by HTTPS (if it is an external resource, it needs to support HTTPS itself)
+Then all requests are forced by HTTPS. (if it is an external resource, it needs to support HTTPS itself)
 
 ### Custom JS / CSS / HTML
 
-If you want to import external JS、CSS (such as iconfont) or HTML, you can set these in **theme config**:
+If you want to import external JS、CSS (such as `iconfont`) or HTML, you can set these in **theme config**:
 
 ```yaml
 # Set the path of the custom JS file, relative to the source directory
