@@ -14,15 +14,15 @@ About the config file in the guide:
 
 ## Global
 
-### Override Configuration
+### Configuration Override
 
 :::tip
-Override configuration can avoid losing your customized configuration when updating Fluid.
+Configuration override can avoid losing your customized configuration while updating Fluid.
 
-Users who installed Fluid via Npm can ignore it, other users are recommended to learn to use it.
+Users who installed Fluid via npm can ignore it, while we recommended other users to learn to use it.
 :::
 
-If your Hexo version >= 5.0.0, create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
+If your Hexo version >= 5.0.0, please create `_config.fluid.yml` in the blog directory and copy the content of our theme's[_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) into it.
 
 Notice:
 - The configuration existing in `_config.fluid.yml` is of high priority, modifying `_config.yml` is useless.
