@@ -77,7 +77,7 @@ There is `banner_img` property for every pages in the **theme config**, it can b
 To use a local image:
 
 ```yaml
-banner_img: /img/bg/example.jpg   # stored at /source/img/bg/example.jpg
+banner_img: /img/bg/example.jpg   # At /source/img/bg/example.jpg
 ```
 
 To use a url:
@@ -89,7 +89,7 @@ banner_img: https://static.zkqiang.cn/example.jpg
 ::: tip
 You can define the path yourself, but it should be in the `source` directory
 
-The source directory of blog and fluid will be merged eventually, so the source of blog is preferred.
+The source directory of blog and Fluid will be merged eventually, so the source of blog is preferred.
 :::
 
 - height
