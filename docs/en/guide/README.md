@@ -4,7 +4,7 @@
 
 ## About this Guide
 
-This guide is only for partial configuration instructions, **Not for the all configs**, For specific configuration requirements, please refer to the comments in the file `_config.yml` at the path of the theme. For more help, Please write your questions at [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new).
+**This guide is only for partial configuration instructions, not for the all configs**, for specific configuration requirements, please refer to the comments in the file `_config.yml` at the path of the theme. For more help, Please write your questions at [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new).
 
 :::tip
 About the config file in the guide:
@@ -22,13 +22,13 @@ Configuration override can avoid losing your customized configuration while upda
 Users who installed Fluid via npm can ignore it, while we recommended other users to learn to use it.
 :::
 
-If your Hexo version >= 5.0.0, please create `_config.fluid.yml` in the blog directory and copy the content of our theme's[_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) into it.
+If your Hexo version >= 5.0.0(`hexo -v`), please create `_config.fluid.yml` in the blog directory and copy the content of our theme's[_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) into it.
 
 Notice:
-- The configuration existing in `_config.fluid.yml` is of high priority, modifying `_config.yml` is useless.
+- The configuration existing in `_config.fluid.yml` is of high priority, so modifying `_config.yml` is useless.
 - There may be configuration changes in the upgraded theme, you need to manually modify `_config.fluid.yml` synchronously.
 - You can use `hexo g -- debug` to check override configuration.
-- If you want to cancel some configurations, you should do this:
+- If you want to cancel some configurations, you should:
 
 ```yaml
 about:
@@ -38,7 +38,7 @@ about:
 ```
 
 <details>
-  <summary>Hexo version < 5.0.0 click here</summary>
+  <summary>If your Hexo version < 5.0.0, look here</summary>
 
 You should make sure that your version of *Hexo* is not lower than *3.0*, because of the function about [data-files](https://hexo.io/docs/data-files.html)
 
@@ -70,7 +70,7 @@ static_prefix:
 
 ### Banner Image
 
-- image source
+- Image source
 
 There is `banner_img` property for every pages in the **theme config**, it can be assigned a relative path or url.
 
@@ -92,13 +92,13 @@ You can define the path yourself, but it should be in the `source` directory
 The source directory of blog and Fluid will be merged eventually, so the source of blog is preferred.
 :::
 
-- height
+- Image height
 
 For different people's preferences, you can control the height of the `banner_img` on the page.
 
 You can set `banner_img_height` for every pages in **theme config** with a valid range of 0 - 100. We think it is better to choose a number bigger than 70.
 
-- alpha of mask
+- Alpha of mask
 
 You can set `banner_mask_alpha` for every pages in **theme config** with a valid range of 0 - 1.0. 0 is completely transparent (no mask) while 1 is completely opaque.
 
@@ -119,7 +119,7 @@ navbar:
   blog_title: your title
 ```
 
-### Navbar
+### Navigation bar
 
 ```yaml
 navbar:
