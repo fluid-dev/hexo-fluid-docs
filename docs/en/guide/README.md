@@ -64,7 +64,7 @@ static_prefix:
 
 ### Local Search
 
-- The hexo-generator-search plug-in has been integrated, please disable it if you had installed other search plug-ins to avoid generating redundant index files.
+- The `hexo-generator-search` plug-in has already been integrated, disable it if you had installed other search plug-ins to avoid generating redundant index files.
 
 - By default, `local-search.xml` is generated in the root directory and being used.
 
@@ -72,7 +72,7 @@ static_prefix:
 
 - Image source
 
-There is `banner_img` property for every pages in the **theme config**, it can be assigned a relative path or url.
+There is `banner_img` property for every pages in the **theme config**, which can be assigned as a relative path or url.
 
 To use a local image:
 
