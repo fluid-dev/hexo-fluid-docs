@@ -108,7 +108,7 @@ The banner of each post page can be set independently. You can read the config a
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
-### Title of Blog
+### Title of your Blog
 
 The title is on the left side of the banner. It can be set by modifying the property `title` in file **site config**, which is also the title of the browser's tab.
 
@@ -116,7 +116,7 @@ If you want to set varies titles for different pages, you can change the **theme
 
 ```yaml
 navbar:
-  blog_title: your title
+  blog_title: #your title
 ```
 
 ### Navigation bar
@@ -129,9 +129,9 @@ navbar:
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill', name: 'About Me' }
 ```
 
-- `key`: relate to [multilingual] (/en/guide/#languages). If no related , the value of the key itself will be displayed
+- `key`: relates to [multilingual] (/en/guide/#languages). If no related , the value of the key itself will be displayed
 - `link`: href link
-- `icon`: css class of icon, can be omitted. [Built-in icons of theme](/en/icon/) 
+- `icon`: css class of your icons which can be omitted. [View built-in icons of theme](/en/icon/) 
 - `name`: force this name to be displayed (no longer in multiple languages), can be omitted
 
 Navbar supports subordinate menu:
@@ -222,7 +222,7 @@ web_analytics:
 
 ### Languages
 
-Set a different language in the **site config** will change the text of the theme:
+Setting a different language in the **site config** will change the text of the theme:
 
 ```yaml
 language: en
@@ -250,11 +250,11 @@ If it happens, you can change the **theme config** as follow:
 force_https: true
 ```
 
-Then all requests are forced by HTTPS (if it is an external resource, it needs to support HTTPS itself)
+Then all requests are forced by HTTPS. (if it is an external resource, it needs to support HTTPS itself)
 
 ### Custom JS / CSS / HTML
 
-If you want to import external JS、CSS (such as iconfont) or HTML, you can set these in **theme config**:
+If you want to import external JS、CSS (such as `iconfont`) or HTML, you can set these in **theme config**:
 
 ```yaml
 # Set the path of the custom JS file, relative to the source directory
