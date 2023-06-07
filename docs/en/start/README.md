@@ -81,7 +81,7 @@ npm update --save hexo-theme-fluid
 
 > Applicable for installed theme via release and all codes have not been modified.
 
-1. Backup your config files. We recommend you to use [override configuration](/en/guide/#override-configuration).
+1. Backup your config files. We recommend you to use [configuration override](/en/guide/#configuration-override).
 
 2. Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then replace the fluid directory.
 
