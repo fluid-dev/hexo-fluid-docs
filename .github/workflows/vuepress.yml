@@ -40,15 +40,28 @@ jobs:
         git commit -m 'Update'
         git push -f git@github.com:fluid-dev/hexo-fluid-docs.git master
 
+    - name: Turnstyle
+      uses: softprops/turnstyle@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup qshell
+      uses: foxundermoon/setup-qshell@v5
+      with:
+        version: '2.12.0'
+
     - name: Upload to OSS
       env:
-        OSS_AccessKeyID: ${{ secrets.OSS_AccessKeyID }}
-        OSS_AccessKeySecret: ${{ secrets.OSS_AccessKeySecret }}
+        QINIU_ACCESSKEY: ${{ secrets.QINIU_ACCESSKEY }}
+        QINIU_SECRETKEY: ${{ secrets.QINIU_SECRETKEY }}
+        QINIU_BUCKET: 'fluid-dev'
       run: |
         rm -rf ./docs/.vuepress/dist/.git
-        wget -q http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
-        chmod +x ./ossutil64
-        ./ossutil64 config -e oss-ap-southeast-1.aliyuncs.com -i $OSS_AccessKeyID -k $OSS_AccessKeySecret -L CH
         sed -i 's/\/hexo-fluid-docs\//\/docs\//g' `grep 'hexo-fluid-docs' -rl ./docs/.vuepress/dist/*`
-        echo y | ./ossutil64 rm oss://fluid-dev/docs/ -r
-        ./ossutil64 cp -r ./docs/.vuepress/dist oss://fluid-dev/docs
+        qshell account $QINIU_ACCESSKEY $QINIU_SECRETKEY action
+        qshell listbucket $QINIU_BUCKET -o bucket.txt
+        awk -F '\t' '/docs\// {print $1}' bucket.txt > to_delete.txt
+        qshell batchdelete -F'\t' --force $QINIU_BUCKET -i to_delete.txt
+        qshell qupload2 --src-dir=./docs/.vuepress/dist --bucket=$QINIU_BUCKET --key-prefix=docs/ --overwrite
+        echo 'https://fluid-dev.com/docs/\nhttps://hexo.fluid-dev.com/docs/' >> cdnrefresh.txt
+        qshell cdnrefresh --dirs -i cdnrefresh.txt
