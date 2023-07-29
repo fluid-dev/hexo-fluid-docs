@@ -185,7 +185,7 @@ lazyload:
 
 `loading_img`: 指定加载时的占位图片
 
-`onlypost`: 为 true 时，懒加载仅在文章页生效，如果自定义页面需要使用，可以在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `lazyload: true`
+`onlypost`: 为 true 时，懒加载仅在文章页生效，如果自定义页面需要使用，可以在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `lazyload: true`
 
 `offset_factor`: 触发加载的偏移倍数，基数是视窗高度（即提前 N 屏高度触发加载），可根据部署环境的请求速度调节
 
@@ -380,7 +380,7 @@ open_graph:
   fb_app_id:
 ```
 
-另外你可以在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置字段来指定单个页面的 OpenGraph 属性：
+另外你可以在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置字段来指定单个页面的 OpenGraph 属性：
 
 ```yaml
 ---
@@ -481,7 +481,7 @@ index:
 余下的正文
 ```
 
-或者在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `excerpt` 字段，如：
+或者在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `excerpt` 字段，如：
 
 ```yaml
 ---
@@ -528,7 +528,7 @@ index:
 
 ### 隐藏文章
 
-如果想把某些文章隐藏起来，不在首页和其他分类里展示，可以在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `hide: true` 属性。
+如果想把某些文章隐藏，**不在首页和其他归档分类页里展示**，可以在文章开头 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `hide: true` 属性。
 
 ```yaml
 ---
@@ -540,15 +540,25 @@ hide: true
 以下是文章内容
 ```
 
-:::tip
-隐藏会使文章在分类和标签类里都不显示
+隐藏后依然可以通过文章链接访问，所以可以用于一些需要链接跳转的特殊文章。
 
-隐藏后依然可以通过文章链接访问
-:::
+### 归档文章
+
+如果只是想让文章在首页隐藏，但仍**需要在归档分类页里展示**，可以在文章开头 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `archive: true` 属性。
+
+```yaml
+---
+title: 文章标题
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+archive: true
+---
+以下是文章内容
+```
 
 ### 文章排序
 
-如果想手动将某些文章固定在首页靠前的位置，可以在安装 `hexo-generator-index` >= 2.0.0 版本的情况下，在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `sticky` 属性：
+如果想手动将某些文章固定在首页靠前的位置，可以在安装 `hexo-generator-index` >= 2.0.0 版本的情况下，在文章开头 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `sticky` 属性：
 
 ```yaml
 ---
@@ -577,7 +587,7 @@ index:
 
 ### 文章在首页的封面图
 
-对于单篇文章，在文章开头 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `index_img` 属性。
+对于单篇文章，在文章开头 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中配置 `index_img` 属性。
 
 ```yaml
 ---
@@ -603,7 +613,7 @@ post:
 
 ### 文章页顶部大图
 
-默认显示**主题配置**中的 `post.banner_img`，如需要设置单个文章的 Banner，在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中指定 `banner_img` 属性。
+默认显示**主题配置**中的 `post.banner_img`，如需要设置单个文章的 Banner，在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中指定 `banner_img` 属性。
 
 本地图片存放位置同上。
 
@@ -724,7 +734,7 @@ disqus:
 如果设置后评论模块没有显示，说明配置没有完成，或者配置有误出现报错（请在浏览器控制台查看具体报错）
 :::
 
-如果想在某个文章页关闭评论，或者想在某个自定义页面开启评论，可以通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件。
+如果想在某个文章页关闭评论，或者想在某个自定义页面开启评论，可以通过在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件。
 
 例如在关于页开启并指定评论插件：
 
@@ -918,7 +928,7 @@ post:
     engine: mathjax
 ```
 
-`specific`: 建议开启。当为 true 时，只有在文章 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
+`specific`: 建议开启。当为 true 时，只有在文章 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。
 
 `engine`: 公式引擎，目前支持 `mathjax` 或 `katex`。
 
@@ -965,7 +975,7 @@ $$
 - 不可以同时安装多个渲染插件，包括 `hexo-math` 或者 `hexo-katex` 这类插件，请注意检查 `package.json`。
 - 如果更换公式引擎，对应渲染器也要一并更换。
 - 不同的渲染器，可能会导致一些 Markdown 语法不支持，或者渲染样式有细微差异。
-- 自定义页面默认不加载渲染，如需使用，需在 Front-matter 中指定 `math: true`
+- 自定义页面默认不加载渲染，如需使用，需在 front-matter 中指定 `math: true`
 :::
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
@@ -982,12 +992,12 @@ post:
     options:
 ```
 
-`specific`: 建议开启。当为 true 时，只有在文章 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `mermaid: true` 才会在文章页启动流程图渲染，以便在页面不包含流程图时提高加载速度。
+`specific`: 建议开启。当为 true 时，只有在文章 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 里指定 `mermaid: true` 才会在文章页启动流程图渲染，以便在页面不包含流程图时提高加载速度。
 
 `options`: 官方 API 的配置项，具体可见 [mermaidAPI.js](http://mermaid-js.github.io/mermaid/#/mermaidAPI)
 
 :::tip
-自定义页面默认不加载，如需使用，需在 Front-matter 中指定 `mermaid: true`
+自定义页面默认不加载，如需使用，需在 front-matter 中指定 `mermaid: true`
 :::
 
 使用 Mermaid 可以通过内置的 Tag 书写：
@@ -1124,7 +1134,7 @@ about:
 
 ### 评论
 
-开启评论的方式是通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件。
+开启评论的方式是通过在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件。
 
 ```yaml
 ---
@@ -1199,6 +1209,10 @@ subtitle: 若不填默认是 title
 </div>
 ```
 
+:::tip
+如果需要和文章页相同的功能作为自定义页面，更建议按常规的文章一样在 `_posts` 中新建，然后按需使用[隐藏文章](/guide/#隐藏文章)功能，再通过链接来跳转。
+:::
+
 ### 配置
 
 页面的参数配置可以在**主题配置**中统一设置：
@@ -1210,7 +1224,7 @@ page:
   banner_mask_alpha: 0.3
 ```
 
-也可以直接在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 里单独设置：
+也可以直接在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 里单独设置：
 
 ```yaml
 ---
@@ -1225,7 +1239,7 @@ banner_mask_alpha: 0.5
 
 ### 评论
 
-自定义页面也可以开启评论插件，和关于页的方式相同，通过在 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件：
+自定义页面也可以开启评论插件，和关于页的方式相同，通过在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件：
 
 ```yaml
 ---

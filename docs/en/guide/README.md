@@ -167,7 +167,7 @@ lazyload:
 
 `loading_img`: The placeholder image when loading
 
-`onlypost`: If true, only enable lazyload on the post page. For custom pages, you can set `lazyload: true` in [Front-matter](https://hexo.io/zh-cn/docs/front-matter)
+`onlypost`: If true, only enable lazyload on the post page. For custom pages, you can set `lazyload: true` in [front-matter](https://hexo.io/zh-cn/docs/front-matter)
 
 `offset_factor`: The factor of viewport height that triggers loading
 
@@ -305,7 +305,7 @@ open_graph:
   fb_app_id:
 ```
 
-In addition, you can set fields in [Front-matter](https://hexo.io/docs/front-matter) to specify the OpenGraph property of a single page:
+In addition, you can set fields in [front-matter](https://hexo.io/docs/front-matter) to specify the OpenGraph property of a single page:
 
 ```yaml
 ---
@@ -402,7 +402,7 @@ Part of the content as an excerpt
 The rest of the text
 ```
 
-Or you can set `excerpt` in [Front-matter](https://hexo.io/docs/front-matter):
+Or you can set `excerpt` in [front-matter](https://hexo.io/docs/front-matter):
 
 ```yaml
 ---
@@ -447,7 +447,7 @@ index:
 
 ### Hide Posts
 
-If you want to hide some posts on the index page, you can set `hide: true` at the [Front-matter](https://hexo.io/docs/front-matter) of the post.
+If you want to hide some posts, you can set `hide: true` at the [front-matter](https://hexo.io/docs/front-matter) of the post.
 
 ```yaml
 ---
@@ -459,14 +459,26 @@ hide: true
 This is post content
 ```
 
-:::tip
-Hiding makes the post invisible in both category page and tag page.
-You can still enter post link.
-:::
+`hide` makes the post invisible on all pages.
+But you can still enter post link.
+
+### Archive Posts
+
+If you want to makes the post invisible on index pages, you can set `archive: true` at the [front-matter](https://hexo.io/docs/front-matter) of the post.
+
+```yaml
+---
+title: post title
+index_img: /img/example.jpg
+date: 2019-10-10 10:00:00
+archive: true
+---
+This is post content
+```
 
 ### Sort Posts
 
-If you want to sort posts on the index page, you can set `sticky` at the [Front-matter](https://hexo.io/docs/front-matter) of the post, the premise is `hexo-generator-index` >= 2.0.0.
+If you want to sort posts on the index page, you can set `sticky` at the [front-matter](https://hexo.io/docs/front-matter) of the post, the premise is `hexo-generator-index` >= 2.0.0.
 
 ```yaml
 ---
@@ -495,7 +507,7 @@ index:
 
 ### Index Image
 
-You can define it at [Front-matter](https://hexo.io/docs/front-matter) of a post.
+You can define it at [front-matter](https://hexo.io/docs/front-matter) of a post.
 
 ```yaml
 ---
@@ -522,7 +534,7 @@ When `default_index_img` and `index_img` are empty, no image will be displayed o
 
 ### Banner Image
 
-The default display of `post.banner_img` in **theme config**, you can set `banner_img` via [Front-matter](https://hexo.io/zh-cn/docs/front-matter) to set it separately:
+The default display of `post.banner_img` in **theme config**, you can set `banner_img` via [front-matter](https://hexo.io/zh-cn/docs/front-matter) to set it separately:
 
 ```yaml
 ---
@@ -641,7 +653,7 @@ If you want to import a new comment plugin, you can add `<script>` through [Cust
 If your comment area is not displayed, there may be throwing some errors, you can find out the reason in the console of your browser.
 :::
 
-If you want to disable comment plugin on a post page, or want to enable comments on a custom page, you can set `comment: false` or `comment: 'type'` into [Front-matter](https://hexo.io/zh-cn/docs/front-matter).
+If you want to disable comment plugin on a post page, or want to enable comments on a custom page, you can set `comment: false` or `comment: 'type'` into [front-matter](https://hexo.io/zh-cn/docs/front-matter).
 
 For example, enable comment plugin on the about page:
 
@@ -822,7 +834,7 @@ post:
     engine: mathjax
 ```
 
-if `specific`: true，you should add `math: true` into [Front-matter](https://hexo.io/docs/front-matter) , and then the typesetting will be display on post page, and it can improve the speed of page load.
+if `specific`: true，you should add `math: true` into [front-matter](https://hexo.io/docs/front-matter) , and then the typesetting will be display on post page, and it can improve the speed of page load.
 
 `engine`: engine for typesetting, `mathjax` or `katex` is supported.
 
@@ -865,7 +877,7 @@ $$
 :::warning
 - You can't install more than one renderer, and can't install plugins such as `hexo-math` or `hexo-katex`.
 - If your typesetting can't display correctly, you can check the below steps.
-- The custom page doesn't load math by default, you need to specify `math: true`  into [Front-matter](https://hexo.io/docs/front-matter) to ues it.
+- The custom page doesn't load math by default, you need to specify `math: true`  into [front-matter](https://hexo.io/docs/front-matter) to ues it.
 :::
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
@@ -882,7 +894,7 @@ post:
     options:
 ```
 
-`specific`: If true, only set `mermaid: true` into Front-matter will enable mermaid, to load faster when the page does not contain mermaid
+`specific`: If true, only set `mermaid: true` into front-matter will enable mermaid, to load faster when the page does not contain mermaid
 
 `options`: API options, see [mermaidAPI.js](http://mermaid-js.github.io/mermaid/#/mermaidAPI)
 
@@ -1003,7 +1015,7 @@ about:
 
 ### Comment
 
-Enable comment plugin via the [Front-matter](https://hexo.io/zh-cn/docs/front-matter) set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
+Enable comment plugin via the [front-matter](https://hexo.io/zh-cn/docs/front-matter) set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
 
 ```yaml
 ---
@@ -1087,7 +1099,7 @@ page:
   banner_mask_alpha: 0.3
 ```
 
-Also set it in [Front-matter](https://hexo.io/zh-cn/docs/front-matter):
+Also set it in [front-matter](https://hexo.io/zh-cn/docs/front-matter):
 
 ```yaml
 ---
@@ -1102,7 +1114,7 @@ Markdown or HTML
 
 ### Comment
 
-Enable comment plugin in the same way as the about page, via the [Front-matter](https://hexo.io/zh-cn/docs/front-matter), set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
+Enable comment plugin in the same way as the about page, via the [front-matter](https://hexo.io/zh-cn/docs/front-matter), set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
 
 ```yaml
 ---
