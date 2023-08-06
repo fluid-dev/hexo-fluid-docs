@@ -757,6 +757,19 @@ Optional：
 <span class="label label-warning">warning</span>
 <span class="label label-danger">danger</span>
 
+#### Fold Block
+
+By using fold blocks, you can fold code, images, text, or any other content. You can use the following format in markdown:
+
+```markdown
+{% fold info "title" %}
+Some content or `markdown`
+{% endfold %}
+```
+
+info: Optional param similar to label tag
+title: Title of the fold block
+
 #### CheckBox
 
 You can use the following format in markdown:

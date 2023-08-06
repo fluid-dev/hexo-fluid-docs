@@ -841,9 +841,18 @@ post:
 <span class="label label-warning">warning</span>
 <span class="label label-danger">danger</span>
 
-:::warning
-若使用 `{% label primary @text %}`，text 不能以 @ 开头
-:::
+#### 折叠块
+
+使用折叠块，可以折叠代码、图片、文字等任何内容，你可以在 markdown 中按如下格式：
+
+```markdown
+{% fold info @title %}
+需要折叠的一段内容，支持 markdown
+{% endfold %}
+```
+
+info: 和行内标签类似的可选参数
+title: 折叠块上的标题
 
 #### 勾选框
 
