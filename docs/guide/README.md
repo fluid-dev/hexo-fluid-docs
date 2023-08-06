@@ -910,6 +910,17 @@ n1-n2-...：每行的图片数量，可以省略，默认单行最多 3 张图�
 
 ![Group Images](../.vuepress/public/group_image.png)
 
+#### 折叠块
+
+使用折叠块，可以折叠代码、图片、文字等任何内容，你可以在 markdown 中按如下格式：
+
+```markdown
+{% fold "title" %}
+需要折叠的一段内容
+{% endfold %}
+```
+title: 折叠块上的标题
+
 ### LaTeX 数学公式
 
 :::tip
