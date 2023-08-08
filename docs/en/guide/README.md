@@ -816,6 +816,34 @@ eg: `{% gp 5 3-2 %}` means 5 images in total, 3 in the first row and 2 in the se
 
 ![Group Images](../../.vuepress/public/group_image.png)
 
+#### Fold Block
+
+By using fold blocks, you can fold code, images, text, or any other content. You can use the following format in markdown:
+
+```markdown
+{% fold "title" %}
+Content to be folded
+{% endfold %}
+```
+
+title: Title of the fold block
+
+To customize the color of the fold block, please modify the default configuration in the theme settings.
+
+```yaml
+color:
+  # ...
+  # Color of the text for the folding block title
+  fold_title_color: "#3c4858"
+  fold_title_color_dark: "#c4c6c9"
+  # Background color of the folding block
+  fold_bg_color: "#e5efe7"
+  fold_bg_color_dark: "#4f665b"
+  # Color of the folding block border.
+  fold_board_color: "#e5efe7b8"
+  fold_board_color_dark: "#4f665bb8"
+```
+
 ### Math
 
 :::tip
