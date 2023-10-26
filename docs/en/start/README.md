@@ -14,23 +14,23 @@ Preview: [Fluid's blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https:/
 
 ### Installing Hexo
 
-If you don't have a hexo blog, please follow [Hexo Docs](https://hexo.io/docs/) to install and initialize your blog.
+If you don't have a hexo in your computer, please follow [Hexo Oficial Docs](https://hexo.io/docs/) to install and initialize your blog.
 
 ### Downloading Fluid...
 
 #### via npm
 
-Installing directly via Npm is recommended for Hexo version 5.0.0 and above. Run the following command in the blog directory:
+Installing directly via Npm is recommended for Hexo version 5.0.0 and above. To install run the following command in the blog directory:
 
 ```sh
 npm install --save hexo-theme-fluid
 ```
 
-Then create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
+Then create `_config.fluid.yml` in the blog directory and copy the content of [the theme's _config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) into it.
 
 #### via releases
 
-Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then extract it to `themes` directory and renamed to `fluid`.
+Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases) of the theme, then extract it to `themes` directory and rename it to `fluid`.
 
 ### Setting theme
 
@@ -101,6 +101,6 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 
 <InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
-## Code License
+## Code License we use
 
-[GPL-V3](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE)
+We use [GPL-V3](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE) as our license.

@@ -27,7 +27,7 @@ If your Hexo version >= 5.0.0(`hexo -v`), please create `_config.fluid.yml` in t
 Notice:
 - The configuration existing in `_config.fluid.yml` is of high priority, so modifying `_config.yml` is useless.
 - There may be configuration changes in the upgraded theme, you need to manually modify `_config.fluid.yml` synchronously.
-- You can use `hexo g -- debug` to check configuration override.
+- You can use `hexo g -- debug` to check override configuration.
 - If you want to cancel some configurations, you should:
 
 ```yaml
@@ -206,7 +206,7 @@ title: example
 
 ### Web Analytics
 
-Varies analytics servers have been supported, you can fill the 'Key' and 'ID' to enable it.
+Variable analytics servers have been supported, you can fill the 'Key' and 'ID' to enable it.
 
 ```yaml
 web_analytics:
@@ -240,9 +240,9 @@ Of course, you can also choose other language yaml, just keep the filename and c
 
 ### Enforce Https
 
-When your domain update to `https`, and some resources on your blog only support http protocol, the browser will not load this resources.
+When your domain is updated to `https`, but some resources on your blog only support `http` protocol, the browser will not load this resources.
 
-There will be errors in the console: `Mixed Content: The page at 'https://xxx' was loaded over HTTPS`。
+There will be errors in the browser console: `Mixed Content: The page at 'http://xxx' was loaded over HTTPS`。
 
 If it happens, you can change the **theme config** as follow:
 
