@@ -859,23 +859,27 @@ title: 折叠块上的标题
 在 markdown 中加入如下的代码来使用 Checkbox：
 
 ```markdown
-{% cb text, checked?, incline? %}
+{% cb text, checked?, incline?, disabled? %}
 ```
 
 text：显示的文字  
 checked：默认是否已勾选，默认 false  
 incline: 是否内联（可以理解为后面的文字是否换行），默认 false
+disabled: 勾选框是否为不可点击的样式，默认 false
 
 示例：
 <div>
-  <input type="checkbox" disabled checked>{% cb 普通示例 %}
+  <input type="checkbox" checked>{% cb 普通示例 %}
 </div>
 <div>
-  <input type="checkbox" disabled checked>{% cb 默认选中, true %}
+  <input type="checkbox" checked>{% cb 默认选中, true %}
 </div>
-<input type="checkbox" disabled>{% cb 内联示例, false, true %} 后面文字不换行
+<input type="checkbox">{% cb 内联示例, false, true %} 后面文字不换行
 <div>
-  <input type="checkbox" disabled>{% cb false %} 也可以只传入一个参数，文字写在后边（这样不支持外联）
+  <input type="checkbox">{% cb false %} 也可以只传入一个参数，文字写在后边（这样不支持外联）
+</div>
+<div>
+  <input type="checkbox" disabled>{% cb 不可点击的样式, true, false, true %}
 </div>
 
 #### 按钮
@@ -883,7 +887,7 @@ incline: 是否内联（可以理解为后面的文字是否换行），默认 f
 你可以在 markdown 中加入如下的代码来使用 Button：
 
 ```markdown
-{% btn url, text, title %}
+{% btn url, text, title? %}
 ```
 
 或者使用 HTML 形式：

@@ -775,29 +775,33 @@ title: Title of the fold block
 You can use the following format in markdown:
 
 ```markdown
-{% cb text, checked?, incline? %}
+{% cb text, checked?, incline?, disabled? %}
 ```
 
 text: text of item  
 checked：this item is checked or not, default false
 incline: inline or not, default false
+disabled: disable click, default false
 
 eg：
 <div>
-  <input type="checkbox" disabled checked>{% cb simple %}
+  <input type="checkbox" checked>{% cb simple %}
 </div>
 <div>
-  <input type="checkbox" disabled checked>{% cb checked, true %}
+  <input type="checkbox" checked>{% cb checked, true %}
 </div>
-<input type="checkbox" disabled>{% cb inline, false, true %} no wrapping after text
+<input type="checkbox">{% cb inline, false, true %} no wrapping after text
 <div>
-  <input type="checkbox" disabled>{% cb false %} You can also write some text after the checkbox
+  <input type="checkbox">{% cb false %} You can also write some text after the checkbox
+</div>
+<div>
+  <input type="checkbox" disabled>{% cb disable click, true, false, true %}
 </div>
 
 #### Button
 
 ```markdown
-{% btn url, text, title %}
+{% btn url, text, title? %}
 ```
 
 Or：
