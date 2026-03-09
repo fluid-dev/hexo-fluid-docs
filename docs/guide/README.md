@@ -246,11 +246,15 @@ web_analytics:  # 网页访问统计
     app_id:
     app_key:
     server_url:  # REST API 服务器地址，国际版不填
+  openkounter:  # OpenKounter 计数统计（基于 EdgeOne/Cloudflare Workers），可用于 PV UV 展示
+    server_url:  # OpenKounter API 服务器地址，详见 https://github.com/Mintimate/open-kounter
+    path: window.location.pathname  # 统计页面时获取路径的属性
+    ignore_local: false  # 开启后不统计本地路径（localhost、127.0.0.1、[::1]）
 ```
 
 ### 展示 PV 与 UV 统计
 
-页脚可以展示 PV 与 UV 统计数据，目前支持两种数据来源：[LeanCloud](https://www.leancloud.cn/) 与 [不蒜子](http://busuanzi.ibruce.info/)。
+页脚可以展示 PV 与 UV 统计数据，目前支持三种数据来源：[LeanCloud](https://www.leancloud.cn/)、[不蒜子](http://busuanzi.ibruce.info/) 与 [OpenKounter](https://github.com/Mintimate/open-kounter)。
 
 相关**主题配置**如下：
 
@@ -258,7 +262,7 @@ web_analytics:  # 网页访问统计
 footer:
   statistics:
     enable: false
-    source: "busuanzi"  # 可选 leancloud | busuanzi  根据自己需求选择
+    source: "busuanzi"  # 可选 leancloud | busuanzi | openkounter  根据自己需求选择
     pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含)，下同
     uv_format: "总访客数 {} 人"
 ```
@@ -271,6 +275,8 @@ footer:
 LeanCloud 使用前需要申请账号（国内需要身份认证），然后在 `web_analytics` 配置项中将 `leancloud` API 相关参数填上才能生效。
 
 LeanCloud 在 localhost 域名下不会增加数据。
+
+OpenKounter 是基于 EdgeOne Pages + KV 的轻量计数服务，需要自行部署并在 `web_analytics` 中填写 `server_url`，详见 [OpenKounter 项目地址](https://github.com/Mintimate/open-kounter)。
 
 如果参数填写错误或者接口异常，不会显示数据，请在浏览器控制台排查具体原因。
 :::
@@ -656,7 +662,7 @@ post:
       format: "{} 分钟"
     views:  # 阅读次数
       enable: false
-      source: "leancloud"  # 统计数据来源，可选：leancloud | busuanzi   注意不蒜子会间歇抽风
+      source: "leancloud"  # 统计数据来源，可选：leancloud | busuanzi | openkounter   注意不蒜子会间歇抽风
       format: "{} 次"
 ```
 
