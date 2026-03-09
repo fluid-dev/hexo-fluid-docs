@@ -13,15 +13,19 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "moment": "2.29.1",
-    "moment-timezone": "0.5.31",
+    "moment": "2.29.4",
+    "moment-timezone": "0.5.35",
     "vue-google-adsense": "1.10.1",
     "vue-script2": "2.1.0",
-    "vuepress": "1.7.1",
+    "vuepress": "1.9.10",
     "vuepress-plugin-baidu-autopush": "1.0.1",
     "vuepress-plugin-clean-urls": "1.1.2",
     "vuepress-plugin-seo": "0.1.4",
     "vuepress-plugin-sitemap": "2.3.1",
     "vuepress-plugin-smooth-scroll": "0.0.10"
+  },
+  "resolutions": {
+    "vue": "2.7.16",
+    "vue-server-renderer": "2.7.16"
   }
 }
