@@ -1,7 +1,5 @@
 # Advance
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## Hexo Plugin
 
 :::warning
@@ -19,8 +17,6 @@ All plugins are only recommended and can’t be sure they are fully compatible w
 [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) : generate Atom 1.0 or RSS 2.0 feed
 
 [hexo-admin](https://github.com/jaredly/hexo-admin) : an admin UI for Hexo
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### Faster Loading
 

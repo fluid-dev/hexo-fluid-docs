@@ -1,7 +1,5 @@
 # 开始使用
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## 主题简介
 
 Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 [Fluid-dev](https://github.com/fluid-dev) 负责开发与维护。
@@ -102,8 +100,6 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git develop
 ```
 
 3. 解决代码冲突，保留自己修改的部分（如何解决冲突可自行搜索）。
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## 版本号释义
 

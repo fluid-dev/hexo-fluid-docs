@@ -1,7 +1,5 @@
 # 配置指南
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## 关于指南
 
 :::tip
@@ -124,8 +122,6 @@ banner_img: https://static.zkqiang.cn/example.jpg
 2. `fixed` 在移动端兼容性很差
 :::
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### 博客标题
 
 页面左上角的博客标题，默认使用**站点配置**中的 `title`，这个配置同时控制着网页在浏览器标签中的标题。
@@ -166,8 +162,6 @@ menu:
       ]
   }
 ```
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### 懒加载
 
@@ -280,8 +274,6 @@ OpenKounter 是基于 EdgeOne Pages + KV 的轻量计数服务，需要自行部
 
 如果参数填写错误或者接口异常，不会显示数据，请在浏览器控制台排查具体原因。
 :::
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### 语言配置
 
@@ -504,8 +496,6 @@ excerpt: 这是摘要
 无论哪种摘要都最多显示 3 行，当屏幕宽度不足时会隐藏部分摘要。
 :::
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### 文章跳转方式
 
 ```yaml
@@ -696,8 +686,6 @@ code:
 `highlight`: 是否开启代码高亮
 
 `lib`: 选择生成高亮的库，可选项: highlightjs、prismjs，对应下面两组配置，高亮的配置说明具体见**主题配置**中的注释
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### 评论
 
@@ -997,8 +985,6 @@ $$
 - 自定义页面默认不加载渲染，如需使用，需在 front-matter 中指定 `math: true`
 :::
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### Mermaid 流程图
 
 当需要使用 [Mermaid](http://mermaid-js.github.io/mermaid/#/) 渲染流程图时，可手动开启本功能：
@@ -1149,8 +1135,6 @@ about:
 ```
 :::
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### 评论
 
 开启评论的方式是通过在 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 设置 `comment: bool` 来控制评论开关，或者通过 `comment: 'type'` 来开启指定的评论插件。
@@ -1194,8 +1178,6 @@ links:
 - `default_avatar`: 成员的默认头像（仅在指定了头像并且加载失败时生效）
 
 友链页也可以使用自定义区域和评论，使用方式类似于文章页，具体见配置项与相关注释。
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## 自定义页面
 

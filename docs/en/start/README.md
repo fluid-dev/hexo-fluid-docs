@@ -1,7 +1,5 @@
 # Start
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## Introduction
 
 Developed by [Fluid-dev](https://github.com/fluid-dev), Fluid is an elegant Material-Design theme for Hexo.
@@ -98,8 +96,6 @@ git pull https://github.com/fluid-dev/hexo-theme-fluid.git master
 ```
 
 3. Resolve code conflicts if any.
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## Code License
 

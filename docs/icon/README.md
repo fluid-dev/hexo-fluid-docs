@@ -1,7 +1,5 @@
 # 图标
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## 内置社交图标
 
 主题内置了一些社交类图标，均来自 [Iconfont](https://www.iconfont.cn/)，由于不支持公开展示，因此只能通过图片：
@@ -11,8 +9,6 @@
 将 `icon-` 开头的那行填入 css class 即可，例如 `iconfont icon-wechat-fill`。
 
 以上主要用在关于页中，当然你也可以通过插入 HTML 的方式用到主题的任何地方。
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## 自定义图标
 

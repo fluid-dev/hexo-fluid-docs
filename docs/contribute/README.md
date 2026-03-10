@@ -1,7 +1,5 @@
 # 支持我们
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## 赞赏
 
 如果你觉得这个项目有帮助，并愿意支持它的发展，可以通过以下方式支持我们的开源创作：
@@ -18,8 +16,6 @@
         </tr>
     </thead>
 </table>
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## 商业赞助
 

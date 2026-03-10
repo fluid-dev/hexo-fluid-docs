@@ -1,7 +1,5 @@
 # 进阶用法
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## Hexo 注入代码
 
 [Hexo 注入器](https://hexo.io/zh-cn/api/injector.html)是 Hexo 5 版本自身加入的一项新功能，所以在所有 Hexo 主题都是支持这个功能的。
@@ -96,8 +94,6 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) : 生成 Atom 1.0 or RSS 2.0 feed
 
 [hexo-admin](https://github.com/jaredly/hexo-admin) : 为 Hexo 搭建可视化管理页面
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## 加快网页加载
 

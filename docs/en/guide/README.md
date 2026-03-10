@@ -1,7 +1,5 @@
 # Guide
 
-<Adsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.slot is-new-ads-code="yes" class="side-ads"></Adsense>
-
 ## About this Guide
 
 **This guide is only for partial configuration instructions, not for the all configs**, for specific configuration requirements, please refer to the comments in the file `_config.yml` at the path of the theme. For more help, Please write your questions at [issues](https://github.com/fluid-dev/hexo-theme-fluid/issues/new).
@@ -106,8 +104,6 @@ You can set `banner_mask_alpha` for every pages in **theme config** with a valid
 The banner of each post page can be set independently. You can read the config about the posts for more details.
 :::
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### Title of your Blog
 
 The title is on the left side of the banner. It can be set by modifying the property `title` in file **site config**, which is also the title of the browser's tab.
@@ -148,8 +144,6 @@ menu:
       ]
   }
 ```
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### Lazyload
 
@@ -217,8 +211,6 @@ web_analytics:
   woyaola:  # 51.la analysis's ID，refer to https://www.51.la/user/site/index
   cnzz:  # cnzz analysis's web_id，refer https://web.umeng.com/main.php?c=site&a=show
 ```
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### Languages
 
@@ -417,8 +409,6 @@ Priority: Manually > Automatically.
 There are 3 lines works will display in index page, the rest will be hidden automatically.
 :::
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### Post Url Target
 
 ```yaml
@@ -611,8 +601,6 @@ code:
 `highlight`: Configs of highlight library
 
 `lib`: Select the library to generate the highlight, options: highlightjs, prismjs, see the comments of the highlight configs in **theme config**
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ### Comment
 
@@ -897,8 +885,6 @@ $$
 - The custom page doesn't load math by default, you need to specify `math: true`  into [front-matter](https://hexo.io/docs/front-matter) to ues it.
 :::
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### Mermaid
 
 If you want to use [Mermaid](http://mermaid-js.github.io/mermaid/#/), you should enable it:
@@ -1028,8 +1014,6 @@ about:
 - `tip`: display the tip when the mouse hovers over the icon
 - `qrcode`: QR-code image, when using this field, clicking will not be directed, but hover QR-code
 
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
-
 ### Comment
 
 Enable comment plugin via the [front-matter](https://hexo.io/zh-cn/docs/front-matter) set `comment: bool` to enable the comment plugin, or set `comment: 'type'`to enable the specified comment plugin.
@@ -1071,8 +1055,6 @@ links:
 - `link`: The link of the site
 - `avatar`: The avatar image of the site, can be omitted
 - `default_avatar`: The default avatar of the site (replace only when the avatar is specified and fails to load)
-
-<InArticleAdsense :data-ad-client=$themeConfig.ads.client :data-ad-slot=$themeConfig.ads.inSlot is-new-ads-code="yes"></InArticleAdsense>
 
 ## Custom Page
 
