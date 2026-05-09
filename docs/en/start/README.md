@@ -6,7 +6,7 @@ Developed by [Fluid-dev](https://github.com/fluid-dev), Fluid is an elegant Mate
 
 GitHub Repo: [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 
-Preview: [Fluid's blog](https://hexo.fluid-dev.com/)    [zkqiang's blog](https://zkqiang.cn)
+Preview: [Fluid's blog](https://fluid.ist/)
 
 ## Quick Start
 

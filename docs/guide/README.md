@@ -95,7 +95,7 @@ banner_img: /img/bg/example.jpg   # 对应存放在 /source/img/bg/example.jpg
 指向外站链接：
 
 ```yaml
-banner_img: https://static.zkqiang.cn/example.jpg
+banner_img: https://static.fluid.ist/example.jpg
 ```
 
 :::tip
@@ -156,9 +156,9 @@ menu:
       key: '文档',
       icon: 'iconfont icon-books',
       submenu: [
-        { key: '主题博客', link: 'https://hexo.fluid-dev.com/' },
-        { key: '配置指南', link: 'https://hexo.fluid-dev.com/docs/guide/' },
-        { key: '图标用法', link: 'https://hexo.fluid-dev.com/docs/icon/' }
+        { key: '主题博客', link: 'https://fluid.ist/' },
+        { key: '配置指南', link: 'https://fluid.ist/docs/guide/' },
+        { key: '图标用法', link: 'https://fluid.ist/docs/icon/' }
       ]
   }
 ```
@@ -1165,7 +1165,7 @@ links:
     - {
       title: 'Fluid Docs',
       intro: '主题使用指南',
-      link: 'https://hexo.fluid-dev.com/docs/',
+      link: 'https://fluid.ist/docs/',
       avatar: '/img/favicon.png'
     }
   default_avatar: /img/avatar.png

@@ -81,7 +81,7 @@ banner_img: /img/bg/example.jpg   # At /source/img/bg/example.jpg
 To use a url:
 
 ```yaml
-banner_img: https://static.zkqiang.cn/example.jpg
+banner_img: https://static.fluid.ist/example.jpg
 ```
 
 ::: tip
@@ -138,9 +138,9 @@ menu:
       key: 'Docs',
       icon: 'iconfont icon-books',
       submenu: [
-        { key: 'Guide', link: 'https://hexo.fluid-dev.com/docs/en/guide/' },
-        { key: 'Advance', link: 'https://hexo.fluid-dev.com/docs/en/advance/' },
-        { key: 'Icon', link: 'https://hexo.fluid-dev.com/docs/en/icon/' }
+        { key: 'Guide', link: 'https://fluid.ist/docs/en/guide/' },
+        { key: 'Advance', link: 'https://fluid.ist/docs/en/advance/' },
+        { key: 'Icon', link: 'https://fluid.ist/docs/en/icon/' }
       ]
   }
 ```
@@ -1044,7 +1044,7 @@ links:
     - {
       title: 'Fluid Docs',
       intro: 'Theme usage guide',
-      link: 'https://hexo.fluid-dev.com/docs/',
+      link: 'https://fluid.ist/docs/',
       avatar: '/img/favicon.png'
     }
   default_avatar: /img/avatar.png
