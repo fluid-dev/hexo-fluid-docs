@@ -13,13 +13,13 @@ jobs:
 
     steps:
       - name: Download Source file
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: source
           fetch-depth: 0
 
       - name: Prepare Node env
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "20.x"
 
@@ -38,14 +38,17 @@ jobs:
           git commit -m 'Update'
           git push -f https://x-access-token:${GITHUB_TOKEN}@github.com/fluid-dev/hexo-fluid-docs.git master
 
+      - name: Prepare artifacts for COS
+        run: |
+          rm -rf ./docs/.vuepress/dist/.git
+          grep -rl 'hexo-fluid-docs' ./docs/.vuepress/dist | xargs -r sed -i 's/\/hexo-fluid-docs\//\/docs\//g'
+
       - name: Upload to COS
         uses: zkqiang/tencent-cos-action@v1
         with:
           commands: |
-            rm -rf ./docs/.vuepress/dist/.git
-            sed -i 's/\/hexo-fluid-docs\//\/docs\//g' `grep 'hexo-fluid-docs' -rl ./docs/.vuepress/dist/*`
-            rm -r -f cos://${{ secrets.COS_BUCKET }}/docs/
-            cp -r ./docs/.vuepress/dist/ cos://${{ secrets.COS_BUCKET }}/docs/
+            rm -r -f cos://default/docs/
+            cp -r ./docs/.vuepress/dist/ cos://default/docs/
           secret_id: ${{ secrets.COS_SECRET_ID }}
           secret_key: ${{ secrets.COS_SECRET_KEY }}
           bucket: ${{ secrets.COS_BUCKET }}
